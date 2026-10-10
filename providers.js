@@ -121,8 +121,10 @@ const Providers = (() => {
         {id:'qa_weak', label:'Practice my weak topics', route:'progress'},
       ], 'local');
     },
-    ask(message){
-      return unavailable('The Wegweiser Teacher chat isn\u2019t connected to a real AI backend yet in this build. Try one of the quick actions below \u2014 those route to real, working local tools instead of a simulated reply.');
+    ask(message, context){
+      const base = 'The Wegweiser Teacher chat isn\u2019t connected to a real AI backend yet in this build.';
+      const ctxNote = context ? ` A local context object was captured (${context.ref.kind}: ${context.ref.id}) and is ready to send once a real teacher model is connected \u2014 nothing was transmitted anywhere.` : '';
+      return unavailable(base + ctxNote + ' Try one of the quick actions below instead of the free-text box for something that works right now.');
     },
   };
 

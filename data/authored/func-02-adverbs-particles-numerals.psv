@@ -1,0 +1,515 @@
+# lemma|type|English|cefr|note
+@domain adverbs-time
+heute|adv|today|A1|time
+morgen|adv|tomorrow; in the morning|A1|time
+gestern|adv|yesterday|A1|time
+übermorgen|adv|the day after tomorrow|A2|time
+vorgestern|adv|the day before yesterday|A2|time
+jetzt|adv|now|A1|time
+nun|adv|now; well|B1|time
+gleich|adv|right away; in a moment|A1|time
+sofort|adv|immediately|A1|time
+bald|adv|soon|A1|time
+später|adv|later|A1|time
+früher|adv|earlier; formerly|A2|time
+damals|adv|back then|A2|time
+einst|adv|once; formerly|C1|time
+neulich|adv|recently; the other day|B1|time
+kürzlich|adv|recently|B1|time
+vorhin|adv|a moment ago|B1|time
+nachher|adv|afterwards|A2|time
+vorher|adv|beforehand|A2|time
+danach|adv|after that|A2|time
+davor|adv|before that; in front of it|B1|time
+dann|adv|then|A1|time
+zuerst|adv|first; at first|A1|time
+zunächst|adv|first of all|B1|time
+anfangs|adv|at first|B1|time
+schließlich|adv|finally; after all|B1|time
+endlich|adv|finally; at last|A2|time
+zuletzt|adv|last; finally|B1|time
+inzwischen|adv|meanwhile|B1|time
+mittlerweile|adv|by now; meanwhile|B2|time
+unterdessen|adv|meanwhile|C1|time
+währenddessen|adv|meanwhile|B2|time
+immer|adv|always|A1|frequency
+oft|adv|often|A1|frequency
+häufig|adv|frequently|A2|frequency
+manchmal|adv|sometimes|A1|frequency
+selten|adv|rarely|A1|frequency
+nie|adv|never|A1|frequency
+niemals|adv|never (emphatic)|A2|frequency
+meistens|adv|mostly|A2|frequency
+meist|adv|mostly|B1|frequency
+normalerweise|adv|normally|A2|frequency
+gewöhnlich|adv|usually|B1|frequency
+üblicherweise|adv|usually|B2|frequency
+regelmäßig|adv|regularly|A2|frequency
+ständig|adv|constantly|B1|frequency
+dauernd|adv|constantly|B1|frequency
+stets|adv|always; invariably|C1|frequency
+jederzeit|adv|at any time|B1|frequency
+einmal|adv|once; one day|A1|frequency
+zweimal|adv|twice|A1|frequency
+mehrmals|adv|several times|B1|frequency
+wieder|adv|again|A1|time
+noch|adv|still; yet|A1|time
+schon|adv|already; yet|A1|time
+bereits|adv|already|A2|time
+erst|adv|only; not until|A2|time
+noch einmal|adv|once more|A1|time
+schon wieder|adv|again (already)|A2|time
+nie mehr|adv|never again|B1|time
+nicht mehr|adv|no longer|A2|time
+nicht mehr|adv|no longer|A2|time
+noch nicht|adv|not yet|A1|time
+seither|adv|since then|B2|time
+bisher|adv|so far; until now|B1|time
+bislang|adv|so far|B2|time
+künftig|adv|in future|C1|time
+zukünftig|adv|in future|C1|time
+ehemals|adv|formerly|C1|time
+tagsüber|adv|during the day|B1|time
+nachts|adv|at night|A2|time
+morgens|adv|in the morning|A1|time
+mittags|adv|at noon|A1|time
+abends|adv|in the evening|A1|time
+montags|adv|on Mondays|A2|time
+sonntags|adv|on Sundays|A2|time
+werktags|adv|on weekdays|B2|time
+wochentags|adv|on weekdays|B2|time
+rechtzeitig|adv|in time|B1|time
+pünktlich|adv|punctually|A2|time
+vorübergehend|adv|temporarily|B2|time
+dauerhaft|adv|permanently|B2|time
+lange|adv|for a long time|A1|time
+kurz|adv|briefly|A2|time
+zeitweise|adv|at times|B2|time
+allmählich|adv|gradually|B2|time
+plötzlich|adv|suddenly|A2|time
+@domain adverbs-place
+hier|adv|here|A1|place
+da|adv|there; here|A1|place
+dort|adv|there|A1|place
+dahin|adv|(to) there|B1|place
+hierher|adv|(to) here|A2|place
+dorthin|adv|(to) there|A2|place
+oben|adv|above; upstairs|A1|place
+unten|adv|below; downstairs|A1|place
+vorn|adv|at the front|A1|place
+vorne|adv|at the front|A1|place
+hinten|adv|at the back|A1|place
+links|adv|left|A1|place
+rechts|adv|right|A1|place
+geradeaus|adv|straight ahead|A1|place
+draußen|adv|outside|A1|place
+drinnen|adv|inside|A2|place
+innen|adv|inside|B1|place
+außen|adv|outside|B1|place
+überall|adv|everywhere|A2|place
+nirgends|adv|nowhere|B1|place
+nirgendwo|adv|nowhere|B1|place
+irgendwo|adv|somewhere|A2|place
+irgendwohin|adv|somewhere (to)|B2|place
+irgendwie|adv|somehow|B1|manner
+woanders|adv|elsewhere|B2|place
+anderswo|adv|elsewhere|C1|place
+überallhin|adv|everywhere (to)|C1|place
+daheim|adv|at home|B1|place
+zuhause|adv|at home|A1|place
+nach Hause|adv|(going) home|A1|place
+heim|adv|home (direction)|B1|place
+weg|adv|away|A1|place
+fort|adv|away; gone|B1|place
+weit|adv|far|A1|place
+nah|adv|near|A1|place
+hin|adv|there (direction away from speaker)|A2|place
+her|adv|here (direction towards speaker)|A2|place
+herein|adv|in (towards speaker)|A2|place
+hinein|adv|into (away from speaker)|B1|place
+heraus|adv|out (towards speaker)|B1|place
+hinaus|adv|out (away from speaker)|B1|place
+herauf|adv|up (towards speaker)|B2|place
+hinauf|adv|up (away from speaker)|B2|place
+herunter|adv|down (towards speaker)|B2|place
+hinunter|adv|down (away from speaker)|B2|place
+hinüber|adv|over (to the other side)|B2|place
+herüber|adv|over (to this side)|B2|place
+aufwärts|adv|upwards|B1|place
+abwärts|adv|downwards|B2|place
+vorwärts|adv|forwards|B1|place
+rückwärts|adv|backwards|B1|place
+seitwärts|adv|sideways|C1|place
+zurück|adv|back|A1|place
+voraus|adv|ahead|B2|place
+bergauf|adv|uphill|B2|place
+bergab|adv|downhill|B2|place
+gegenüber|adv|opposite|A2|place
+nebenan|adv|next door|A2|place
+daneben|adv|next to it|B1|place
+dahinter|adv|behind it|B1|place
+davor|adv|in front of it|B1|place
+darunter|adv|underneath|B1|place
+darüber|adv|above it; about it|B1|place
+dazwischen|adv|in between|B2|place
+mittendrin|adv|in the middle|C1|place
+überall|adv|everywhere|A2|place
+@domain adverbs-degree
+sehr|adv|very|A1|degree
+ganz|adv|quite; entirely|A1|degree
+ziemlich|adv|rather; quite|A2|degree
+besonders|adv|especially|A2|degree
+äußerst|adv|extremely|B1|degree
+höchst|adv|highly; extremely|C1|degree
+völlig|adv|completely|B1|degree
+vollkommen|adv|completely; perfectly|B1|degree
+total|adv|totally|B1|degree
+absolut|adv|absolutely|B1|degree
+komplett|adv|completely|B1|degree
+gänzlich|adv|entirely|C1|degree
+durchaus|adv|quite; certainly|B2|degree
+ausgesprochen|adv|decidedly|B2|degree
+richtig|adv|really; properly|A2|degree
+echt|adv|really|A2|degree
+wirklich|adv|really|A2|degree
+recht|adv|quite; rather|B1|degree
+etwas|adv|somewhat; a little|A2|degree
+ein bisschen|adv|a little|A1|degree
+ein wenig|adv|a little|A2|degree
+kaum|adv|hardly|B1|degree
+fast|adv|almost|A1|degree
+beinahe|adv|almost|B1|degree
+nahezu|adv|almost; nearly|C1|degree
+annähernd|adv|approximately|C1|degree
+ungefähr|adv|approximately|A2|degree
+circa|adv|approximately|A2|degree
+etwa|adv|approximately|B1|degree
+knapp|adv|barely; just|B1|degree
+mindestens|adv|at least|A2|degree
+wenigstens|adv|at least|B1|degree
+höchstens|adv|at most|B1|degree
+zumindest|adv|at least|B2|degree
+genug|adv|enough|A1|degree
+zu|adv|too|A1|degree
+so|adv|so; thus|A1|degree
+sehr viel|adv|a lot|A2|degree
+viel|adv|much; a lot|A1|degree
+mehr|adv|more|A1|degree
+weniger|adv|less|A2|degree
+am meisten|adv|most|A2|degree
+am wenigsten|adv|least|B1|degree
+noch mehr|adv|even more|B1|degree
+immer mehr|adv|more and more|B1|degree
+immer weniger|adv|less and less|B2|degree
+allzu|adv|all too|C1|degree
+überaus|adv|exceedingly|C1|degree
+gar|adv|at all; even|B1|degree
+gar nicht|adv|not at all|A2|degree
+überhaupt|adv|at all; in general|B1|degree
+überhaupt nicht|adv|not at all|B1|degree
+keineswegs|adv|by no means|C1|degree
+@domain adverbs-manner
+gern|adv|gladly|A1|manner
+gerne|adv|gladly|A1|manner
+lieber|adv|rather; preferably|A2|manner
+am liebsten|adv|most of all; preferably|A2|manner
+so|adv|like this; in this way|A1|manner
+anders|adv|differently|A1|manner
+ebenso|adv|just as|B1|manner
+genauso|adv|just the same|A2|manner
+ebenfalls|adv|likewise|B1|manner
+auch|adv|also; too|A1|manner
+ebenfalls|adv|also|B1|manner
+zusammen|adv|together|A1|manner
+gemeinsam|adv|together; jointly|A2|manner
+allein|adv|alone|A1|manner
+alleine|adv|alone|A2|manner
+extra|adv|on purpose; specially|B1|manner
+absichtlich|adv|deliberately|B2|manner
+zufällig|adv|by chance|B1|manner
+umsonst|adv|in vain; for free|A2|manner
+vergeblich|adv|in vain|C1|manner
+leider|adv|unfortunately|A1|attitude
+zum Glück|adv|luckily|A2|attitude
+glücklicherweise|adv|fortunately|B1|attitude
+hoffentlich|adv|hopefully|A2|attitude
+vielleicht|adv|perhaps|A1|attitude
+möglicherweise|adv|possibly|B1|attitude
+eventuell|adv|possibly|B1|attitude
+wahrscheinlich|adv|probably|A2|attitude
+sicher|adv|certainly|A2|attitude
+sicherlich|adv|certainly|B1|attitude
+bestimmt|adv|definitely|A2|attitude
+natürlich|adv|of course|A1|attitude
+selbstverständlich|adv|of course; naturally|B1|attitude
+klar|adv|clearly; sure|A1|attitude
+offenbar|adv|apparently|B2|attitude
+anscheinend|adv|apparently|B2|attitude
+scheinbar|adv|seemingly|B2|attitude
+tatsächlich|adv|actually; really|B1|attitude
+eigentlich|adv|actually|A2|attitude
+übrigens|adv|by the way|A2|attitude
+jedenfalls|adv|in any case|B1|attitude
+sowieso|adv|anyway|B1|attitude
+ohnehin|adv|anyway|C1|attitude
+trotzdem|adv|nevertheless|A2|connection
+deshalb|adv|therefore|A2|connection
+deswegen|adv|therefore|A2|connection
+darum|adv|that is why|A2|connection
+daher|adv|hence; therefore|B1|connection
+folglich|adv|consequently|B2|connection
+somit|adv|thus|B2|connection
+also|adv|so; therefore|A1|connection
+dennoch|adv|nevertheless|B1|connection
+allerdings|adv|however|B1|connection
+immerhin|adv|at least; after all|B2|connection
+außerdem|adv|besides; moreover|A2|connection
+zudem|adv|moreover|B2|connection
+ferner|adv|furthermore|B2|connection
+darüber hinaus|adv|moreover|C1|connection
+andererseits|adv|on the other hand|B1|connection
+einerseits|adv|on the one hand|B1|connection
+dagegen|adv|on the other hand; against it|B1|connection
+hingegen|adv|on the other hand|C1|connection
+stattdessen|adv|instead|B1|connection
+sonst|adv|otherwise; else|A2|connection
+andernfalls|adv|otherwise|C1|connection
+ansonsten|adv|otherwise|B2|connection
+nämlich|adv|namely; you see|B1|connection
+beispielsweise|adv|for example|B1|connection
+zum Beispiel|adv|for example|A1|connection
+insbesondere|adv|in particular|B2|connection
+vor allem|adv|above all|B1|connection
+hauptsächlich|adv|mainly|B2|connection
+überwiegend|adv|predominantly|C1|connection
+teils|adv|partly|C1|connection
+teilweise|adv|partly|B1|connection
+grundsätzlich|adv|basically; in principle|B2|connection
+im Grunde|adv|basically|B2|connection
+eigentlich|adv|really|A2|connection
+zumindest|adv|at least|B2|connection
+gegebenenfalls|adv|if applicable|C1|connection
+ggf.|adv|if applicable (abbreviation)|C1|connection
+insgesamt|adv|overall|B1|connection
+im Allgemeinen|adv|in general|B1|connection
+allgemein|adv|generally|B1|connection
+schlicht|adv|simply|C1|manner
+einfach|adv|simply; just|A2|manner
+nur|adv|only|A1|focus
+bloß|adv|merely; just|B1|focus
+lediglich|adv|merely|B2|focus
+allein|adv|only|B2|focus
+sogar|adv|even|A2|focus
+selbst|adv|even|B1|focus
+gerade|adv|just; exactly|A2|focus
+eben|adv|just; precisely|B1|focus
+soeben|adv|just now|B2|time
+ausgerechnet|adv|of all things|C1|focus
+wohl|adv|probably; well|B1|attitude
+freilich|adv|to be sure|C1|attitude
+gewiss|adv|certainly|C1|attitude
+wirklich|adv|really|A2|attitude
+hoffentlich|adv|hopefully|A2|attitude
+vermutlich|adv|presumably|B2|attitude
+angeblich|adv|allegedly|B2|attitude
+womöglich|adv|possibly|C1|attitude
+bekanntlich|adv|as is well known|C1|attitude
+zusammenfassend|adv|in summary|C1|connection
+kurzum|adv|in short|C1|connection
+schließlich|adv|after all|B1|connection
+ebenso wenig|adv|just as little|C1|connection
+je nachdem|adv|depending|B2|connection
+@domain question
+wie|adv|how|A1|interrogative
+wo|adv|where|A1|interrogative
+woher|adv|where from|A1|interrogative
+wohin|adv|where to|A1|interrogative
+wann|adv|when|A1|interrogative
+warum|adv|why|A1|interrogative
+weshalb|adv|why|B1|interrogative
+wieso|adv|why; how come|A2|interrogative
+weswegen|adv|why|B2|interrogative
+wozu|adv|what for|B1|interrogative
+womit|adv|with what|B1|interrogative
+wofür|adv|for what|B1|interrogative
+worüber|adv|about what|B1|interrogative
+worauf|adv|on what|B1|interrogative
+wovon|adv|of what|B1|interrogative
+wodurch|adv|through what; how|B2|interrogative
+wie viel|adv|how much|A1|interrogative
+wie viele|adv|how many|A1|interrogative
+wie lange|adv|how long|A1|interrogative
+wie oft|adv|how often|A1|interrogative
+wie spät|adv|how late|A1|interrogative
+seit wann|adv|since when|A2|interrogative
+bis wann|adv|until when|A2|interrogative
+@domain pronominal
+damit|adv|with it; with that|A2|pronominal
+dafür|adv|for it; for that|A2|pronominal
+dagegen|adv|against it|A2|pronominal
+davon|adv|of it; from that|A2|pronominal
+dazu|adv|to it; in addition|A2|pronominal
+darauf|adv|on it; after that|A2|pronominal
+daraus|adv|out of it|B1|pronominal
+darin|adv|in it|B1|pronominal
+dadurch|adv|thereby; through it|B1|pronominal
+daran|adv|on it; of it|B1|pronominal
+darum|adv|about it|B1|pronominal
+hierfür|adv|for this|B2|pronominal
+hierbei|adv|in this case|B2|pronominal
+hiermit|adv|hereby; with this|B1|pronominal
+hierzu|adv|to this|B2|pronominal
+hierüber|adv|about this|C1|pronominal
+wonach|adv|after what; according to which|B2|pronominal
+woran|adv|on what|B2|pronominal
+worin|adv|in what|B2|pronominal
+wobei|adv|whereby|B2|pronominal
+@domain particles
+nicht|part|not|A1|negation
+kein|part|no (negation)|A1|negation
+nein|part|no|A1|answer
+ja|part|yes; indeed|A1|answer
+doch|part|yes (contradicting); but; though|A1|answer / modal
+jawohl|part|yes indeed|B1|answer
+genau|part|exactly|A1|answer
+okay|part|OK|A1|answer
+nur|mpart|only; just (modal)|B1|modal particle
+mal|mpart|just; once (softener)|A2|modal particle
+eben|mpart|simply; just (modal)|B2|modal particle
+halt|mpart|simply; just (modal)|B2|modal particle
+wohl|mpart|probably (modal)|B2|modal particle
+ja|mpart|as you know (modal)|B2|modal particle
+denn|mpart|then; actually (modal in questions)|A2|modal particle
+doch|mpart|surely; after all (modal)|B1|modal particle
+aber|mpart|but; really (modal)|B1|modal particle
+schon|mpart|certainly; all right (modal)|B1|modal particle
+bloß|mpart|just; only (modal)|B2|modal particle
+eigentlich|mpart|actually (modal)|B1|modal particle
+etwa|mpart|perhaps (in questions)|B2|modal particle
+vielleicht|mpart|perhaps; really (modal)|B1|modal particle
+ruhig|mpart|feel free; just (modal)|B2|modal particle
+einfach|mpart|simply (modal)|B1|modal particle
+gleich|mpart|right away (modal)|B2|modal particle
+zu|part|to (infinitive particle)|A2|infinitive
+am|part|at the; on the (superlative marker)|A2|superlative
+noch|part|even; yet (before comparative)|B1|degree
+sogar|part|even|A2|focus
+auch|part|also; even|A1|focus
+nur|part|only|A1|focus
+allerdings|part|admittedly; certainly|B2|attitude
+@domain interjections
+Hallo|intj|hello|A1|greeting
+Hi|intj|hi|A1|greeting
+Hey|intj|hey|A1|greeting
+Tschüss|intj|bye|A1|greeting
+Tschüs|intj|bye|A1|greeting
+Ciao|intj|bye; ciao|A1|greeting
+Servus|intj|hello; goodbye (Southern German/Austrian)|B1|greeting
+Moin|intj|hello (Northern German)|B1|greeting
+Grüß Gott|intj|hello (Southern German/Austrian)|B1|greeting
+Grüezi|intj|hello (Swiss German)|B2|greeting
+Danke|intj|thanks|A1|polite
+Bitte|intj|please; you're welcome|A1|polite
+Verzeihung|intj|pardon|A2|polite
+Entschuldigung|intj|excuse me; sorry|A1|polite
+Pardon|intj|pardon|B1|polite
+Prost|intj|cheers|A1|social
+Zum Wohl|intj|to your health; cheers|A2|social
+Gesundheit|intj|bless you|A1|social
+Mahlzeit|intj|enjoy your meal (also lunchtime greeting)|B1|social
+Guten Appetit|intj|enjoy your meal|A1|social
+Herzlichen Glückwunsch|intj|congratulations|A1|social
+Viel Glück|intj|good luck|A1|social
+Hurra|intj|hooray|A2|exclamation
+Juhu|intj|yippee|B1|exclamation
+Oh|intj|oh|A1|exclamation
+Ach|intj|oh; ah|A2|exclamation
+Ach so|intj|I see|A2|exclamation
+Aha|intj|aha; I see|A2|exclamation
+Igitt|intj|yuck|B2|exclamation
+Aua|intj|ouch|A2|exclamation
+Autsch|intj|ouch|A2|exclamation
+Pfui|intj|yuck; shame on you|C1|exclamation
+Mensch|intj|man; wow|B1|exclamation
+Mist|intj|damn; rubbish|B1|exclamation
+Na|intj|well; so|B1|exclamation
+Hm|intj|hmm|A1|exclamation
+Äh|intj|er; uh|B1|exclamation
+Psst|intj|psst|B2|exclamation
+Pst|intj|psst|B2|exclamation
+Hilfe|intj|help|A1|exclamation
+Vorsicht|intj|watch out; careful|A1|exclamation
+Achtung|intj|attention; watch out|A1|exclamation
+Halt|intj|stop|A1|exclamation
+Los|intj|go; come on|A2|exclamation
+Na klar|intj|of course|A2|exclamation
+Na ja|intj|well|A2|exclamation
+Naja|intj|well|A2|exclamation
+Tja|intj|well (resignation)|B2|exclamation
+Wow|intj|wow|A2|exclamation
+Uff|intj|phew|B2|exclamation
+Puh|intj|phew|B2|exclamation
+Oje|intj|oh dear|B1|exclamation
+Ojemine|intj|oh dear me|C1|exclamation
+Sapperlot|intj|good heavens (old-fashioned)|C2|exclamation
+Donnerwetter|intj|wow (old-fashioned)|C1|exclamation
+@domain numerals
+null|num|zero|A1|cardinal
+eins|num|one|A1|cardinal
+zwei|num|two|A1|cardinal
+drei|num|three|A1|cardinal
+vier|num|four|A1|cardinal
+fünf|num|five|A1|cardinal
+sechs|num|six|A1|cardinal
+sieben|num|seven|A1|cardinal
+acht|num|eight|A1|cardinal
+neun|num|nine|A1|cardinal
+zehn|num|ten|A1|cardinal
+elf|num|eleven|A1|cardinal
+zwölf|num|twelve|A1|cardinal
+dreizehn|num|thirteen|A1|cardinal
+vierzehn|num|fourteen|A1|cardinal
+fünfzehn|num|fifteen|A1|cardinal
+sechzehn|num|sixteen|A1|cardinal
+siebzehn|num|seventeen|A1|cardinal
+achtzehn|num|eighteen|A1|cardinal
+neunzehn|num|nineteen|A1|cardinal
+zwanzig|num|twenty|A1|cardinal
+dreißig|num|thirty|A1|cardinal
+vierzig|num|forty|A1|cardinal
+fünfzig|num|fifty|A1|cardinal
+sechzig|num|sixty|A1|cardinal
+siebzig|num|seventy|A1|cardinal
+achtzig|num|eighty|A1|cardinal
+neunzig|num|ninety|A1|cardinal
+hundert|num|one hundred|A1|cardinal
+tausend|num|one thousand|A1|cardinal
+Million|num|million|A2|cardinal
+Milliarde|num|billion (10^9)|B1|cardinal
+Billion|num|trillion (10^12)|B2|cardinal
+erste|num|first|A1|ordinal
+zweite|num|second|A1|ordinal
+dritte|num|third|A1|ordinal
+vierte|num|fourth|A1|ordinal
+fünfte|num|fifth|A1|ordinal
+sechste|num|sixth|A1|ordinal
+siebte|num|seventh|A1|ordinal
+achte|num|eighth|A1|ordinal
+neunte|num|ninth|A1|ordinal
+zehnte|num|tenth|A1|ordinal
+zwanzigste|num|twentieth|A2|ordinal
+hundertste|num|hundredth|B1|ordinal
+halb|num|half|A1|fraction
+ein Drittel|num|one third|B1|fraction
+ein Viertel|num|one quarter|A1|fraction
+dreiviertel|num|three quarters|A2|fraction
+doppelt|num|double|B1|multiplicative
+dreifach|num|threefold|B2|multiplicative
+einmalig|num|unique; one-time|B2|multiplicative
+erstens|num|firstly|B1|adverbial
+zweitens|num|secondly|B1|adverbial
+drittens|num|thirdly|B1|adverbial
+letztens|num|lastly; recently|B2|adverbial
+zu zweit|num|in twos; as a pair|B1|distributive
+zu dritt|num|in threes|B1|distributive
+beide|num|both|A2|collective

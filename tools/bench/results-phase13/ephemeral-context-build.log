@@ -1,0 +1,23 @@
+shell {"shellMs":253,"heapMB":5.1}
+  [page] progress 11s 8820 heapMB 11
+  [page] progress 21s 16394 heapMB 19
+  [page] progress 32s 22354 heapMB 32
+  [page] progress 42s 27202 heapMB 32
+  [page] progress 52s 31346 heapMB 13
+  [page] progress 62s 35240 heapMB 30
+  [page] progress 72s 39326 heapMB 13
+  [page] progress 83s 43062 heapMB 12
+  [page] progress 94s 48821 heapMB 11
+  [page] progress 105s 53972 heapMB 10
+  [page] progress 115s 59039 heapMB 13
+  [page] progress 125s 64043 heapMB 11
+  [page] progress 137s 68650 heapMB 16
+  [page] progress 148s 72650 heapMB 39
+  [page] progress 158s 76117 heapMB 43
+  [page] progress 169s 79869 heapMB 13
+  [page] progress 180s 82598 heapMB 20
+  [page] progress 191s 87037 heapMB 18
+  [page] progress 202s 90911 heapMB 29
+build {"ms":211444,"status":{"phase":"ready","complete":true,"usable":true,"done":92880,"total":92880,"chunksDone":31,"chunksTotal":31,"message":"","error":null,"warning":"Low free storage (217 MB). The dictionary index needs roughly 450 MB."},"samples":[]}
+diag {"rows":92880,"usageMB":104,"quotaMB":217,"complete":true,"excluded":{"strong":26409,"de-ndecl":54756,"no-table-tags":37555,"haben":9062,"weak":8779,"de-conj":9832,"neuter":1685,"de-adecl":13870,"sein":1419,"present":75,"irregular":170,"g":45,"masculine":2,"l-self":25,"feminine":15,"glossary":12,"de-decl-ein":1}}
+errors []

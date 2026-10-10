@@ -71,7 +71,8 @@ const DSL = (() => {
       if(!m) return;
       const key = m[1], val = m[2];
       const listKeys = {syn:'synonyms', opp:'opposites', rel:'related', col:'collocations',
-                        phr:'phrases', path:'pathways', gram:'grammarIds', mistake:'commonMistakes'};
+                        phr:'phrases', path:'pathways', gram:'grammarIds', mistake:'commonMistakes',
+                        mistakeIds:'commonMistakeIds'};
       if(listKeys[key]) out[listKeys[key]] = val.split(',').map(x=>x.trim()).filter(Boolean);
       else if(key==='freq') out.frequency = Number(val);
       else if(key==='sub') out.subtopic = val.trim();

@@ -1,0 +1,157 @@
+{
+ "cold": {
+  "label": "cold (empty IndexedDB)",
+  "shellMs": 462,
+  "dictReadyMs": 9098,
+  "heapMB": 303.2,
+  "poolSize": 93019,
+  "storageUsageMB": 43.2,
+  "errors": [],
+  "searches": {
+   "gehen": {
+    "firstMs": 732,
+    "avgMs": 212.9,
+    "total": 172,
+    "top": "gehen"
+   },
+   "ging": {
+    "firstMs": 254,
+    "avgMs": 237.3,
+    "total": 413,
+    "top": "gehen"
+   },
+   "gegangen": {
+    "firstMs": 232.5,
+    "avgMs": 239.8,
+    "total": 5,
+    "top": "gehen"
+   },
+   "Haus": {
+    "firstMs": 196.6,
+    "avgMs": 206.2,
+    "total": 634,
+    "top": "das Haus"
+   },
+   "Häuser": {
+    "firstMs": 251.2,
+    "avgMs": 261.7,
+    "total": 14,
+    "top": "das Haus"
+   },
+   "der Tisch": {
+    "firstMs": 225.8,
+    "avgMs": 202.7,
+    "total": 1,
+    "top": null
+   },
+   "Tisch": {
+    "firstMs": 224.1,
+    "avgMs": 236.6,
+    "total": 968,
+    "top": "der Tisch"
+   },
+   "Frau": {
+    "firstMs": 252.2,
+    "avgMs": 216.5,
+    "total": 131,
+    "top": "die Frau"
+   },
+   "frau": {
+    "firstMs": 218.6,
+    "avgMs": 220.4,
+    "total": 131,
+    "top": "die Frau"
+   },
+   "arbe": {
+    "firstMs": 193.3,
+    "avgMs": 198.3,
+    "total": 431,
+    "top": "die Arbeit"
+   },
+   "xqzvbn": {
+    "firstMs": 233.1,
+    "avgMs": 228.4,
+    "total": 0,
+    "top": null
+   }
+  }
+ },
+ "warm": {
+  "label": "warm (chunks cached in IndexedDB)",
+  "shellMs": 357,
+  "dictReadyMs": 5573,
+  "heapMB": 287.9,
+  "poolSize": 93019,
+  "storageUsageMB": 43.2,
+  "errors": [],
+  "searches": {
+   "gehen": {
+    "firstMs": 782.5,
+    "avgMs": 236.6,
+    "total": 172,
+    "top": "gehen"
+   },
+   "ging": {
+    "firstMs": 273.8,
+    "avgMs": 268.2,
+    "total": 413,
+    "top": "gehen"
+   },
+   "gegangen": {
+    "firstMs": 306.7,
+    "avgMs": 270.3,
+    "total": 5,
+    "top": "gehen"
+   },
+   "Haus": {
+    "firstMs": 229,
+    "avgMs": 232.8,
+    "total": 634,
+    "top": "das Haus"
+   },
+   "Häuser": {
+    "firstMs": 259.1,
+    "avgMs": 276.5,
+    "total": 14,
+    "top": "das Haus"
+   },
+   "der Tisch": {
+    "firstMs": 237.5,
+    "avgMs": 212.5,
+    "total": 1,
+    "top": null
+   },
+   "Tisch": {
+    "firstMs": 246.5,
+    "avgMs": 241,
+    "total": 968,
+    "top": "der Tisch"
+   },
+   "Frau": {
+    "firstMs": 215.1,
+    "avgMs": 232.9,
+    "total": 131,
+    "top": "die Frau"
+   },
+   "frau": {
+    "firstMs": 241.9,
+    "avgMs": 240.6,
+    "total": 131,
+    "top": "die Frau"
+   },
+   "arbe": {
+    "firstMs": 238.3,
+    "avgMs": 241.5,
+    "total": 431,
+    "top": "die Arbeit"
+   },
+   "xqzvbn": {
+    "firstMs": 290.4,
+    "avgMs": 238.6,
+    "total": 0,
+    "top": null
+   }
+  }
+ }
+}
+done

@@ -130,6 +130,16 @@ a{color:var(--gold);}
   border:1px solid var(--border);color:var(--text-dim);
 }
 .pill.on{background:var(--teal-dim);color:var(--teal);border-color:var(--teal);}
+.az-bar{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px;}
+.az-letter{
+  width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--panel);
+  color:var(--text);font-size:.85rem;font-weight:600;cursor:pointer;
+}
+.az-letter:hover:not(:disabled){border-color:var(--gold);}
+.az-letter.active{background:var(--gold);color:#1a1a1a;border-color:var(--gold);}
+.az-letter:disabled{opacity:.3;cursor:default;}
+.clickable-word{cursor:pointer;border-radius:3px;padding:0 1px;}
+.clickable-word:hover, .clickable-word:focus{background:var(--gold-dim, rgba(212,175,55,.18));outline:none;}
 .choice-grid{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
 .choice{
   padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);
@@ -288,6 +298,8 @@ textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:va
 <script src="src/content/grammar.js"></script>
 <script src="src/content/vocabulary.core.js"></script>
 <script src="src/content/vocabulary.upper.js"></script>
+<script src="src/content/vocabulary.expansion.js"></script>
+<script src="src/content/vocabulary.expansion2.js"></script>
 <script src="src/content/lessons.a0a1.js"></script>
 <script src="src/content/lessons.a2.js"></script>
 <script src="src/content/lessons.b1.js"></script>
@@ -306,6 +318,10 @@ textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:va
 <script src="src/services/assessment.js"></script>
 <script src="src/services/teacher.js"></script>
 <script src="src/services/query.js"></script>
+<script src="src/services/dictionary.js"></script>
+<script src="src/services/masterLexiconRuntime.js"></script>
+<script src="src/lexicon/lexiconCore.js"></script>
+<script src="src/lexicon/lexiconStore.js"></script>
 <script>
   /* Merge the expanded content into the legacy globals BEFORE app.js
      boots, so every existing screen sees A0-C2 content transparently.

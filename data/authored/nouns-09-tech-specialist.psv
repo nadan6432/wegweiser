@@ -1,0 +1,210 @@
+@domain programming
+Programmierer|m|Programmierer|programmer|A2
+Programmiererin|f|Programmiererinnen|female programmer|A2
+Anwendungsentwicklung|f|-|application development|C1
+Ausdruck|m|Ausdrücke|expression; printout|B1
+Zeichenkette|f|Zeichenketten|string (of characters)|C1
+Zeichen|n|Zeichen|character; sign|A2
+Ganzzahl|f|Ganzzahlen|integer|C1
+Fließkommazahl|f|Fließkommazahlen|floating-point number|C2
+Feld|n|Felder|field; array|B1
+Liste|f|Listen|list|A1
+Warteschlange|f|Warteschlangen|queue|C1
+Stapel|m|Stapel|stack; pile|B2
+Baum|m|Bäume|tree|A1
+Knoten|m|Knoten|knot; node|B2
+Kante|f|Kanten|edge|B2
+Graph|m|Graphen|graph|C1
+Objekt|n|Objekte|object|B1
+Klasse|f|Klassen|class|A1
+Methode|f|Methoden|method|B1
+Parameter|m|Parameter|parameter|B2
+Rückgabewert|m|Rückgabewerte|return value|C1
+Argument|n|Argumente|argument|B2
+Ausnahme|f|Ausnahmen|exception|B1
+Rekursion|f|Rekursionen|recursion|C1
+Datentyp|m|Datentypen|data type|C1
+Zeiger|m|Zeiger|pointer|B2
+Kompilierer|m|Kompilierer|compiler|C1
+Interpreter|m|Interpreter|interpreter|C1
+Laufzeit|f|Laufzeiten|runtime|C1
+Zeitkomplexität|f|Zeitkomplexitäten|time complexity|C2
+Speicherverwaltung|f|-|memory management|C1
+Nebenläufigkeit|f|-|concurrency|C2
+Prozess|m|Prozesse|process|B2
+Thread|m|Threads|thread|C1
+Systemaufruf|m|Systemaufrufe|system call|C2
+Treiber|m|Treiber|driver (software); driver|B2
+Kernel|m|Kernel|kernel|C1
+Skript|n|Skripte|script|B2
+Framework|n|Frameworks|framework|C1
+Repository|n|Repositories|repository|C1
+Versionsverwaltung|f|-|version control|C1
+Testfall|m|Testfälle|test case|C1
+Abhängigkeit|f|Abhängigkeiten|dependency; dependence|B2
+Fehlerbehebung|f|Fehlerbehebungen|bug fix|C1
+Dokumentation|f|Dokumentationen|documentation|B2
+Anforderung|f|Anforderungen|requirement|B2
+Entwurf|m|Entwürfe|design; draft|B2
+Wartung|f|Wartungen|maintenance|B2
+@domain networking
+Netzwerkkarte|f|Netzwerkkarten|network card|C1
+Datenpaket|n|Datenpakete|data packet|C1
+IP-Adresse|f|IP-Adressen|IP address|B2
+Domain|f|Domains|domain|B2
+Anschluss|m|Anschlüsse|connection; port|B1
+Port|m|Ports|port|C1
+Funknetz|n|Funknetze|wireless network|B2
+Mobilfunk|m|-|mobile network|B2
+Glasfaser|f|Glasfasern|fibre optic|C1
+Übertragungsrate|f|Übertragungsraten|transfer rate|C1
+Latenz|f|Latenzen|latency|C2
+Lastverteilung|f|Lastverteilungen|load balancing|C2
+Zugriffsrechte|p|-|access rights|C1
+Fernzugriff|m|Fernzugriffe|remote access|C1
+Weiterleitung|f|Weiterleitungen|forwarding; redirect|C1
+Namensauflösung|f|Namensauflösungen|name resolution|C2
+Verschlüsselungsverfahren|n|Verschlüsselungsverfahren|encryption method|C2
+Schlüsselpaar|n|Schlüsselpaare|key pair|C2
+Signatur|f|Signaturen|signature|B2
+Prüfsumme|f|Prüfsummen|checksum|C2
+Hashwert|m|Hashwerte|hash value|C2
+Angriffsfläche|f|Angriffsflächen|attack surface|C2
+Eindringling|m|Eindringlinge|intruder|C1
+Sicherheitsvorfall|m|Sicherheitsvorfälle|security incident|C1
+Sicherheitsrichtlinie|f|Sicherheitsrichtlinien|security policy|C1
+Schwachstellenanalyse|f|Schwachstellenanalysen|vulnerability analysis|C2
+Penetrationstest|m|Penetrationstests|penetration test|C2
+Protokolldatei|f|Protokolldateien|log file|C1
+Zugangskontrolle|f|Zugangskontrollen|access control|C1
+Datenschutzbeauftragte|m|Datenschutzbeauftragte|data protection officer|C1
+@domain ai
+Künstliche Intelligenz|f|-|artificial intelligence|B2
+Maschinelles Lernen|n|-|machine learning|C1
+Lernverfahren|n|Lernverfahren|learning method|C1
+Trainingsdaten|p|-|training data|C1
+Modell|n|Modelle|model|B1
+Neuronales Netz|n|-|neural network|C1
+Spracherkennung|f|-|speech recognition|C1
+Bilderkennung|f|-|image recognition|C1
+Sprachmodell|n|Sprachmodelle|language model|C1
+Vorhersage|f|Vorhersagen|prediction|B2
+Wahrscheinlichkeitsrechnung|f|-|probability theory|C1
+Datenanalyse|f|Datenanalysen|data analysis|C1
+Datenwissenschaft|f|-|data science|C1
+Automatisierung|f|Automatisierungen|automation|B2
+Robotik|f|-|robotics|C1
+@domain medicine
+Anatomie|f|Anatomien|anatomy|B2
+Physiologie|f|-|physiology|C1
+Chirurgie|f|Chirurgien|surgery|B2
+Anästhesie|f|-|anaesthesia|C1
+Kardiologie|f|-|cardiology|C1
+Neurologie|f|-|neurology|C1
+Onkologie|f|-|oncology|C2
+Pädiatrie|f|-|paediatrics|C1
+Orthopädie|f|-|orthopaedics|C1
+Radiologie|f|-|radiology|C1
+Röntgenbild|n|Röntgenbilder|X-ray image|B2
+Blutbild|n|Blutbilder|blood count|C1
+Blutprobe|f|Blutproben|blood sample|B2
+Blutgruppe|f|Blutgruppen|blood group|B2
+Blutspende|f|Blutspenden|blood donation|B2
+Herzschlag|m|Herzschläge|heartbeat|B2
+Herzschrittmacher|m|Herzschrittmacher|pacemaker|C1
+Kreislaufproblem|n|Kreislaufprobleme|circulation problem|C1
+Nebenwirkung|f|Nebenwirkungen|side effect|B2
+Wirkstoff|m|Wirkstoffe|active ingredient|C1
+Dosierung|f|Dosierungen|dosage|C1
+Beipackzettel|m|Beipackzettel|patient information leaflet|B2
+Schmerzmittel|n|Schmerzmittel|painkiller|B1
+Antibiotikum|n|Antibiotika|antibiotic|B2
+Betäubung|f|Betäubungen|anaesthetic; numbness|C1
+Gipsverband|m|Gipsverbände|plaster cast|B2
+Knochenbruch|m|Knochenbrüche|fracture|B2
+Zerrung|f|Zerrungen|strain|C1
+Verstauchung|f|Verstauchungen|sprain|C1
+Prellung|f|Prellungen|bruise; contusion|C1
+Blutung|f|Blutungen|bleeding|B2
+Vergiftung|f|Vergiftungen|poisoning|B2
+Lebensmittelvergiftung|f|Lebensmittelvergiftungen|food poisoning|B2
+Sonnenbrand|m|Sonnenbrände|sunburn|B1
+Sonnenstich|m|Sonnenstiche|sunstroke|B2
+Hitzschlag|m|Hitzschläge|heatstroke|C1
+Mandelentzündung|f|Mandelentzündungen|tonsillitis|C1
+Lungenentzündung|f|Lungenentzündungen|pneumonia|B2
+Blinddarm|m|Blinddärme|appendix|B2
+Krankengymnastik|f|-|physiotherapy|B2
+Physiotherapie|f|-|physiotherapy|B2
+Psychotherapie|f|-|psychotherapy|C1
+Rehabilitation|f|-|rehabilitation|C1
+Vorsorge|f|-|prevention; precaution|B2
+Vorsorgeuntersuchung|f|Vorsorgeuntersuchungen|preventive check-up|C1
+Organspende|f|Organspenden|organ donation|C1
+Patientenakte|f|Patientenakten|patient file|C1
+Überweisungsschein|m|Überweisungsscheine|referral|C1
+@domain business
+Geschäftsidee|f|Geschäftsideen|business idea|B2
+Geschäftsbericht|m|Geschäftsberichte|annual report|C1
+Geschäftsreise|f|Geschäftsreisen|business trip|B1
+Geschäftsführung|f|Geschäftsführungen|management|C1
+Geschäftspartner|m|Geschäftspartner|business partner|B2
+Firmengründer|m|Firmengründer|company founder|B2
+Gründung|f|Gründungen|foundation; start-up|B2
+Start-up|n|Start-ups|start-up|B2
+Kleinunternehmen|n|Kleinunternehmen|small business|C1
+Mittelstand|m|-|medium-sized businesses|C1
+Konzern|m|Konzerne|corporation|C1
+Aktiengesellschaft|f|Aktiengesellschaften|public limited company|C1
+Gesellschafter|m|Gesellschafter|shareholder; partner|C1
+Vorstand|m|Vorstände|executive board|C1
+Aufsichtsrat|m|Aufsichtsräte|supervisory board|C1
+Personalabteilung|f|Personalabteilungen|HR department|B2
+Personalchef|m|Personalchefs|HR manager|B2
+Buchhalter|m|Buchhalter|accountant|B2
+Wirtschaftsprüfer|m|Wirtschaftsprüfer|auditor|C1
+Marketing|n|-|marketing|B1
+Vertrieb|m|-|sales; distribution|B2
+Einkauf|m|-|purchasing (department)|B2
+Lager|n|Lager|warehouse; camp|B1
+Lagerbestand|m|Lagerbestände|stock level|C1
+Lieferant|m|Lieferanten|supplier|B2
+Lieferzeit|f|Lieferzeiten|delivery time|B1
+Lieferschein|m|Lieferscheine|delivery note|C1
+Zahlungsfrist|f|Zahlungsfristen|payment deadline|C1
+Mahnung|f|Mahnungen|reminder (payment)|B2
+Angebotsvergleich|m|Angebotsvergleiche|comparison of offers|C1
+Kostenvoranschlag|m|Kostenvoranschläge|cost estimate|C1
+Geschäftsjahr|n|Geschäftsjahre|financial year|C1
+Quartal|n|Quartale|quarter (of a year)|B2
+Kennzahl|f|Kennzahlen|key figure|C1
+Gewinnspanne|f|Gewinnspannen|profit margin|C1
+Wachstum|n|-|growth|B2
+Produktivität|f|-|productivity|B2
+Effizienz|f|-|efficiency|B2
+Strategie|f|Strategien|strategy|B2
+Zielgruppe|f|Zielgruppen|target group|B2
+Marktforschung|f|-|market research|C1
+Wettbewerbsvorteil|m|Wettbewerbsvorteile|competitive advantage|C1
+Vertragspartner|m|Vertragspartner|contracting party|C1
+Kündigungsfrist|f|Kündigungsfristen|notice period|B2
+Probezeit|f|Probezeiten|probation period|B2
+Betriebsklima|n|-|working atmosphere|C1
+Weiterbildungsangebot|n|Weiterbildungsangebote|training offer|C1
+@domain economics
+Volkswirtschaft|f|Volkswirtschaften|national economy|C1
+Betriebswirtschaft|f|-|business administration|C1
+Bruttoinlandsprodukt|n|-|gross domestic product|C1
+Konjunktur|f|Konjunkturen|economic cycle|C1
+Rezession|f|Rezessionen|recession|C1
+Arbeitsmarktpolitik|f|-|labour market policy|C2
+Zinssatz|m|Zinssätze|interest rate|B2
+Leitzins|m|Leitzinsen|key interest rate|C1
+Haushaltsdefizit|n|Haushaltsdefizite|budget deficit|C1
+Staatsverschuldung|f|-|national debt|C1
+Subvention|f|Subventionen|subsidy|C1
+Handelsabkommen|n|Handelsabkommen|trade agreement|C1
+Zollunion|f|Zollunionen|customs union|C1
+Binnenmarkt|m|Binnenmärkte|internal market|C1
+Kaufkraft|f|-|purchasing power|C1
+Angebot und Nachfrage|f|-|supply and demand|C1

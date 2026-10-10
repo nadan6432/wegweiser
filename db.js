@@ -17,9 +17,17 @@ const DB = (() => {
      missing object stores here, so every existing store and its data
      (profile, vocabProgress, lessonProgress, mistakes, sessions, attempts,
      feedback, readingProgress, writingSubmissions) is preserved untouched. */
-  const DB_VERSION = 2;
+  /* v3 (Phase 9): adds a store for the master-lexicon offline chunk cache
+     (see src/services/masterLexiconRuntime.js) — again purely additive,
+     every existing store and its data is untouched. */
+  /* v4 (Phase 13): adds `learnedLexicon` — a snapshot of each master-dictionary word the user
+     deliberately added to Learning, so it survives reloads without the full lexicon being loaded.
+     Purely additive again: no existing store or record is touched. (`masterLexiconCache`, the
+     Phase 9 chunk cache, is no longer written; it is emptied once the new indexed lexicon
+     database is complete — see src/lexicon/lexiconStore.js.) */
+  const DB_VERSION = 4;
   const STORES = ['profile','vocabProgress','lessonProgress','mistakes','sessions','attempts','feedback','readingProgress','writingSubmissions',
-    'skillProgress','unitProgress','assessmentResults','learnerContext'];
+    'skillProgress','unitProgress','assessmentResults','learnerContext','masterLexiconCache','learnedLexicon'];
   let idb = null;
   let mode = 'pending'; // 'indexeddb' | 'localstorage' | 'memory'
   const memStore = {}; // store -> {id: obj}

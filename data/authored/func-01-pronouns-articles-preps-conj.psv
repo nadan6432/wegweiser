@@ -1,0 +1,173 @@
+# lemma|type|English|cefr|note
+ich|pron|I|A1|personal, 1st sg
+du|pron|you (informal singular)|A1|personal, 2nd sg
+er|pron|he; it (masc.)|A1|personal
+sie|pron|she; they; it (fem.); Sie = you (formal)|A1|personal
+es|pron|it|A1|personal
+wir|pron|we|A1|personal
+ihr|pron|you (informal plural)|A1|personal
+mich|pron|me (accusative)|A1|
+dich|pron|you (accusative, informal)|A1|
+ihn|pron|him; it (accusative)|A1|
+uns|pron|us; to us|A1|
+euch|pron|you (accusative/dative, plural informal)|A1|
+mir|pron|to me (dative)|A1|
+dir|pron|to you (dative, informal)|A1|
+ihm|pron|to him; to it (dative)|A1|
+ihnen|pron|to them (dative); to you (formal dative, Ihnen)|A1|
+sich|pron|himself, herself, itself, themselves (reflexive)|A2|reflexive
+mein|det|my|A1|possessive
+dein|det|your (informal singular)|A1|possessive
+sein|det|his; its|A1|possessive
+unser|det|our|A1|possessive
+euer|det|your (informal plural)|A2|possessive
+Ihr|det|your (formal)|A1|possessive
+dieser|det|this; this one|A1|demonstrative
+jener|det|that; that one (formal)|B1|demonstrative
+jeder|det|every; each; everyone|A2|
+alle|det|all; everyone|A1|
+manche|det|some; many a|B1|
+einige|det|some; a few|A2|
+mehrere|det|several|B1|
+viele|det|many|A1|
+wenige|det|few|A2|
+beide|det|both|A2|
+kein|det|no; not any|A1|negative article
+solcher|det|such|B2|
+derselbe|pron|the same|B1|
+derjenige|pron|the one; the person who|B2|
+welcher|pron|which; what kind of|A1|interrogative
+wer|pron|who|A1|interrogative
+was|pron|what|A1|interrogative
+wem|pron|to whom|A2|interrogative dative
+wen|pron|whom|A2|interrogative accusative
+wessen|pron|whose|B1|interrogative genitive
+man|pron|one; you; people (generic)|A2|indefinite
+jemand|pron|someone; anyone|A2|indefinite
+niemand|pron|nobody; no one|A2|indefinite
+etwas|pron|something; some|A2|indefinite
+nichts|pron|nothing|A1|indefinite
+alles|pron|everything|A1|indefinite
+jedermann|pron|everyone; everybody|C1|indefinite
+irgendwer|pron|somebody; anybody|B1|indefinite
+irgendetwas|pron|something; anything|B1|indefinite
+selbst|pron|oneself; even; -self|A2|
+selber|pron|oneself (colloquial)|A2|
+einander|pron|each other; one another|B2|reciprocal
+der|art|the (masculine nominative; feminine genitive/dative; plural genitive)|A1|definite
+die|art|the (feminine/plural nominative and accusative)|A1|definite
+das|art|the (neuter nominative/accusative)|A1|definite
+dem|art|the (masculine/neuter dative)|A1|definite
+den|art|the (masculine accusative; plural dative)|A1|definite
+des|art|the (masculine/neuter genitive)|B1|definite
+ein|art|a; an|A1|indefinite
+eine|art|a; an (feminine)|A1|indefinite
+mit|prep|with; by|A1|D
+ohne|prep|without|A1|A
+für|prep|for|A1|A
+gegen|prep|against; around (time)|A1|A
+durch|prep|through; by|A1|A
+um|prep|around; at (time); about|A1|A
+bis|prep|until; up to|A1|A
+entlang|prep|along|B1|A
+bei|prep|at; near; with|A1|D
+nach|prep|after; to; according to|A1|D
+von|prep|from; of; by|A1|D
+zu|prep|to; at|A1|D
+aus|prep|out of; from|A1|D
+seit|prep|since; for (time)|A1|D
+gegenüber|prep|opposite; towards|B1|D
+außer|prep|except; besides|B1|D
+ab|prep|from; as of|A2|D
+an|prep|at; on; to|A1|W
+auf|prep|on; onto; at|A1|W
+in|prep|in; into|A1|W
+unter|prep|under; among|A1|W
+über|prep|over; about; above|A1|W
+vor|prep|in front of; before; ago|A1|W
+hinter|prep|behind|A1|W
+neben|prep|next to; beside|A1|W
+zwischen|prep|between|A1|W
+wegen|prep|because of|A2|G (colloquially D)
+trotz|prep|despite|B1|G
+während|prep|during|A2|G
+statt|prep|instead of|B1|G
+anstatt|prep|instead of|B1|G
+innerhalb|prep|within|B1|G
+außerhalb|prep|outside of|B1|G
+oberhalb|prep|above|B2|G
+unterhalb|prep|below|B2|G
+diesseits|prep|on this side of|C1|G
+jenseits|prep|beyond; on the other side of|C1|G
+aufgrund|prep|because of; on the basis of|B2|G
+anlässlich|prep|on the occasion of|C1|G
+bezüglich|prep|regarding|C1|G
+hinsichtlich|prep|with regard to|C1|G
+angesichts|prep|in view of|C1|G
+infolge|prep|as a result of|C1|G
+mittels|prep|by means of|C1|G
+zufolge|prep|according to|C1|D or G
+gemäß|prep|in accordance with|C1|D
+entgegen|prep|contrary to; towards|C1|D
+laut|prep|according to|B2|G or D
+zugunsten|prep|in favour of|C1|G
+zuliebe|prep|for the sake of|C1|D
+samt|prep|together with|C1|D
+nebst|prep|along with|C2|D
+binnen|prep|within (time)|C1|D or G
+pro|prep|per|B1|A
+per|prep|by means of; per|B2|A
+via|prep|via|B2|A
+zwecks|prep|for the purpose of|C2|G
+unweit|prep|not far from|C2|G
+mitsamt|prep|together with|C2|D
+und|conj|and|A1|
+oder|conj|or|A1|
+aber|conj|but|A1|
+denn|conj|for; because|A2|
+sondern|conj|but rather|A2|
+doch|conj|yet; however|A2|
+sowie|conj|as well as|B1|
+sowohl|conj|both (sowohl … als auch)|B1|
+entweder|conj|either (entweder … oder)|B1|
+weder|conj|neither (weder … noch)|B1|
+noch|conj|nor (weder … noch)|B1|
+beziehungsweise|conj|respectively; or rather|B2|
+bzw.|conj|respectively (abbreviation of beziehungsweise)|B2|
+jedoch|conj|however|B1|
+allein|conj|only; but (literary)|C1|
+weil|subj|because|A1|
+dass|subj|that|A1|
+wenn|subj|if; when; whenever|A1|
+als|subj|when; as; than|A1|
+ob|subj|whether; if|A2|
+obwohl|subj|although|A2|
+obgleich|subj|although|C1|
+obschon|subj|although|C1|
+während|subj|while; whereas|A2|
+bevor|subj|before|A2|
+nachdem|subj|after|A2|
+seit|subj|since|A2|
+seitdem|subj|since then; ever since|B1|
+bis|subj|until|A2|
+sobald|subj|as soon as|B1|
+solange|subj|as long as|B1|
+sooft|subj|whenever|C1|
+falls|subj|in case; if|B1|
+sofern|subj|provided that; insofar as|B2|
+soweit|subj|as far as|B2|
+indem|subj|by (doing); while|B2|
+damit|subj|so that|B1|
+sodass|subj|so that; with the result that|B1|
+so dass|subj|so that (variant spelling)|B1|
+da|subj|since; as (causal)|B1|
+ehe|subj|before (formal)|C1|
+wie|subj|as; how; like|A1|
+wohingegen|subj|whereas|C1|
+zumal|subj|especially since|C1|
+insofern|subj|to that extent; insofar as|C1|
+je|subj|the more (je … desto)|B2|
+anstatt dass|subj|instead of (doing)|C1|
+ohne dass|subj|without (something happening)|B2|
+statt dass|subj|instead of (something happening)|C1|
+wo|subj|where; whereas|A1|

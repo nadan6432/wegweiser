@@ -1,0 +1,360 @@
+@domain school
+Schule|f|Schulen|school|A1
+Grundschule|f|Grundschulen|primary school|A2
+Gymnasium|n|Gymnasien|grammar school|A2
+Realschule|f|Realschulen|secondary school (intermediate)|B1
+Hauptschule|f|Hauptschulen|secondary school (basic)|B1
+Universität|f|Universitäten|university|A1
+Hochschule|f|Hochschulen|university; college|A2
+Fachhochschule|f|Fachhochschulen|university of applied sciences|B1
+Kindergarten|m|Kindergärten|kindergarten|A1
+Klasse|f|Klassen|class; grade|A1
+Klassenzimmer|n|Klassenzimmer|classroom|A1
+Unterricht|m|-|lessons; teaching|A1
+Stunde|f|Stunden|hour; lesson|A1
+Pause|f|Pausen|break|A1
+Hausaufgabe|f|Hausaufgaben|homework assignment|A1
+Aufgabe|f|Aufgaben|task; exercise|A1
+Übung|f|Übungen|exercise; practice|A1
+Frage|f|Fragen|question|A1
+Antwort|f|Antworten|answer|A1
+Fehler|m|Fehler|mistake; error|A1
+Note|f|Noten|grade; note|A1
+Zeugnis|n|Zeugnisse|report card; certificate|A2
+Prüfung|f|Prüfungen|exam|A1
+Test|m|Tests|test|A1
+Klausur|f|Klausuren|written exam|B1
+Abitur|n|-|school-leaving exam|B1
+Abschluss|m|Abschlüsse|degree; qualification; conclusion|B1
+Studium|n|Studien|university studies|A2
+Student|m|Studenten|student (male)|A1
+Studentin|f|Studentinnen|student (female)|A1
+Schüler|m|Schüler|pupil (male)|A1
+Schülerin|f|Schülerinnen|pupil (female)|A1
+Lehrer|m|Lehrer|teacher (male)|A1
+Lehrerin|f|Lehrerinnen|teacher (female)|A1
+Professor|m|Professoren|professor|A2
+Dozent|m|Dozenten|lecturer|B1
+Direktor|m|Direktoren|headmaster; director|B1
+Vorlesung|f|Vorlesungen|lecture|A2
+Seminar|n|Seminare|seminar|B1
+Kurs|m|Kurse|course|A1
+Sprachkurs|m|Sprachkurse|language course|A1
+Semester|n|Semester|semester|A2
+Stundenplan|m|Stundenpläne|timetable|A2
+Fach|n|Fächer|subject|A1
+Mathematik|f|-|mathematics|A1
+Physik|f|-|physics|A2
+Chemie|f|-|chemistry|A2
+Biologie|f|-|biology|A2
+Geschichte|f|Geschichten|history; story|A1
+Erdkunde|f|-|geography|B1
+Geografie|f|-|geography|B1
+Sport|m|-|sport; PE|A1
+Kunst|f|Künste|art|A2
+Musik|f|-|music|A1
+Religion|f|Religionen|religion|A2
+Informatik|f|-|computer science|B1
+Philosophie|f|-|philosophy|B1
+Literatur|f|Literaturen|literature|B1
+Sprache|f|Sprachen|language|A1
+Deutsch|n|-|German (language)|A1
+Englisch|n|-|English (language)|A1
+Wort|n|Wörter|word|A1
+Wörterbuch|n|Wörterbücher|dictionary|A1
+Satz|m|Sätze|sentence; set|A1
+Text|m|Texte|text|A1
+Buchstabe|m|Buchstaben|letter (of the alphabet)|A1
+Alphabet|n|Alphabete|alphabet|A2
+Zahl|f|Zahlen|number|A1
+Grammatik|f|Grammatiken|grammar|A1
+Aussprache|f|Aussprachen|pronunciation|A2
+Rechtschreibung|f|-|spelling|B1
+Bedeutung|f|Bedeutungen|meaning|A2
+Beispiel|n|Beispiele|example|A1
+Heft|n|Hefte|exercise book|A1
+Buch|n|Bücher|book|A1
+Lehrbuch|n|Lehrbücher|textbook|A2
+Schulbuch|n|Schulbücher|schoolbook|A2
+Stift|m|Stifte|pen; pencil|A1
+Kugelschreiber|m|Kugelschreiber|ballpoint pen|A1
+Bleistift|m|Bleistifte|pencil|A1
+Radiergummi|m|Radiergummis|eraser|A2
+Lineal|n|Lineale|ruler|A2
+Schere|f|Scheren|scissors|A2
+Kleber|m|Kleber|glue|B1
+Papier|n|Papiere|paper|A1
+Tafel|f|Tafeln|blackboard; bar (chocolate)|A1
+Kreide|f|Kreiden|chalk|B1
+Federmäppchen|n|Federmäppchen|pencil case|B2
+Schultasche|f|Schultaschen|school bag|A2
+Stipendium|n|Stipendien|scholarship|B2
+Bildung|f|-|education|B1
+Ausbildung|f|Ausbildungen|vocational training|A2
+Weiterbildung|f|Weiterbildungen|further education|B2
+Fortbildung|f|Fortbildungen|further training|B2
+Lehre|f|Lehren|apprenticeship; teaching|B1
+Lehrling|m|Lehrlinge|apprentice|B1
+Auszubildende|m|Auszubildende|trainee|B1
+Praktikum|n|Praktika|internship|A2
+Praktikant|m|Praktikanten|intern|B1
+Qualifikation|f|Qualifikationen|qualification|B2
+Kenntnis|f|Kenntnisse|knowledge; skill|B1
+Fähigkeit|f|Fähigkeiten|ability|B1
+Wissen|n|-|knowledge|B1
+Wissenschaft|f|Wissenschaften|science|B1
+Forschung|f|Forschungen|research|B2
+Thema|n|Themen|topic|A1
+Referat|n|Referate|presentation; talk|B1
+Hausarbeit|f|Hausarbeiten|term paper|B2
+Diplom|n|Diplome|diploma|B2
+Doktor|m|Doktoren|doctor|B1
+Bibliothek|f|Bibliotheken|library|A1
+Mensa|f|Mensen|university canteen|B1
+Campus|m|-|campus|B2
+Hörsaal|m|Hörsäle|lecture hall|B1
+@domain work
+Arbeit|f|Arbeiten|work; job|A1
+Job|m|Jobs|job|A1
+Beruf|m|Berufe|profession; occupation|A1
+Stelle|f|Stellen|position; job; place|A2
+Arbeitsplatz|m|Arbeitsplätze|workplace; job|A2
+Arbeitgeber|m|Arbeitgeber|employer|B1
+Arbeitnehmer|m|Arbeitnehmer|employee|B1
+Angestellte|m|Angestellte|employee|B1
+Chef|m|Chefs|boss|A1
+Chefin|f|Chefinnen|boss (female)|A1
+Kollege|m|Kollegen|colleague|A2
+Mitarbeiter|m|Mitarbeiter|employee; co-worker|A2
+Büro|n|Büros|office|A1
+Firma|f|Firmen|company|A1
+Unternehmen|n|Unternehmen|company; enterprise|B1
+Betrieb|m|Betriebe|business; operation|B1
+Fabrik|f|Fabriken|factory|A2
+Werkstatt|f|Werkstätten|workshop|A2
+Abteilung|f|Abteilungen|department|B1
+Besprechung|f|Besprechungen|meeting|B1
+Sitzung|f|Sitzungen|meeting; session|B1
+Konferenz|f|Konferenzen|conference|B1
+Termin|m|Termine|appointment; deadline|A1
+Bewerbung|f|Bewerbungen|application|A2
+Lebenslauf|m|Lebensläufe|CV|A2
+Vorstellungsgespräch|n|Vorstellungsgespräche|job interview|B1
+Gehalt|n|Gehälter|salary|A2
+Lohn|m|Löhne|wage|B1
+Einkommen|n|Einkommen|income|B1
+Arbeitszeit|f|Arbeitszeiten|working hours|A2
+Überstunde|f|Überstunden|overtime hour|B1
+Urlaub|m|Urlaube|holiday; leave|A1
+Feierabend|m|Feierabende|end of the working day|B1
+Schicht|f|Schichten|shift; layer|B1
+Vertrag|m|Verträge|contract|B1
+Arbeitsvertrag|m|Arbeitsverträge|employment contract|B1
+Kündigung|f|Kündigungen|notice; dismissal|B1
+Arbeitslosigkeit|f|-|unemployment|B1
+Arbeitslose|m|Arbeitslose|unemployed person|B1
+Rente|f|Renten|pension|B1
+Rentner|m|Rentner|pensioner|B1
+Karriere|f|Karrieren|career|B1
+Erfahrung|f|Erfahrungen|experience|A2
+Aufgabe|f|Aufgaben|task; duty|A1
+Verantwortung|f|-|responsibility|B1
+Leitung|f|Leitungen|management; line|B2
+Geschäftsführer|m|Geschäftsführer|managing director|B2
+Direktor|m|Direktoren|director|B1
+Sekretärin|f|Sekretärinnen|secretary|A2
+Beamte|m|Beamte|civil servant|B1
+Gewerkschaft|f|Gewerkschaften|trade union|B2
+Betriebsrat|m|Betriebsräte|works council|C1
+Kunde|m|Kunden|customer|A1
+Kundin|f|Kundinnen|female customer|A1
+Kundendienst|m|Kundendienste|customer service|B1
+Auftrag|m|Aufträge|order; commission|B1
+Angebot|n|Angebote|offer; supply|A2
+Nachfrage|f|Nachfragen|demand; enquiry|B2
+Preis|m|Preise|price; prize|A1
+Rechnung|f|Rechnungen|bill; invoice|A1
+Lieferung|f|Lieferungen|delivery|B1
+Bestellung|f|Bestellungen|order|A2
+Ware|f|Waren|goods|B1
+Produkt|n|Produkte|product|A2
+Produktion|f|Produktionen|production|B1
+Herstellung|f|-|manufacture|B2
+Qualität|f|Qualitäten|quality|B1
+Menge|f|Mengen|quantity|A2
+Markt|m|Märkte|market|A1
+Konkurrenz|f|-|competition|B2
+Wettbewerb|m|Wettbewerbe|competition|B2
+Gewinn|m|Gewinne|profit; prize|B1
+Verlust|m|Verluste|loss|B1
+Umsatz|m|Umsätze|turnover; sales|B2
+Kosten|p|-|costs|A2
+Budget|n|Budgets|budget|B2
+Investition|f|Investitionen|investment|B2
+Aktie|f|Aktien|share; stock|B2
+Börse|f|Börsen|stock exchange|B2
+Wirtschaft|f|Wirtschaften|economy; business|B1
+Handel|m|-|trade|B1
+Export|m|Exporte|export|B2
+Import|m|Importe|import|B2
+Steuer|f|Steuern|tax|B1
+Zoll|m|Zölle|customs; duty|B1
+Bilanz|f|Bilanzen|balance sheet|C1
+Buchhaltung|f|-|accounting|B2
+Werbung|f|Werbungen|advertising|A2
+Reklame|f|Reklamen|advertisement|B1
+Marke|f|Marken|brand; stamp|B1
+Verhandlung|f|Verhandlungen|negotiation|B2
+Vereinbarung|f|Vereinbarungen|agreement|B2
+Zusammenarbeit|f|-|cooperation|B1
+Projekt|n|Projekte|project|A2
+Ziel|n|Ziele|goal; destination|A2
+Plan|m|Pläne|plan|A2
+Ergebnis|n|Ergebnisse|result|A2
+Erfolg|m|Erfolge|success|A2
+Misserfolg|m|Misserfolge|failure|C1
+Beruf|m|Berufe|profession|A1
+Arzt|m|Ärzte|doctor|A1
+Bäcker|m|Bäcker|baker|A1
+Metzger|m|Metzger|butcher|A2
+Koch|m|Köche|cook; chef|A1
+Köchin|f|Köchinnen|female cook|A1
+Kellner|m|Kellner|waiter|A1
+Kellnerin|f|Kellnerinnen|waitress|A1
+Verkäufer|m|Verkäufer|salesman; shop assistant|A1
+Verkäuferin|f|Verkäuferinnen|saleswoman|A1
+Friseur|m|Friseure|hairdresser|A1
+Friseurin|f|Friseurinnen|female hairdresser|A1
+Polizist|m|Polizisten|police officer|A1
+Polizistin|f|Polizistinnen|female police officer|A1
+Feuerwehrmann|m|Feuerwehrleute|firefighter|A2
+Lehrer|m|Lehrer|teacher|A1
+Ingenieur|m|Ingenieure|engineer|A1
+Ingenieurin|f|Ingenieurinnen|female engineer|A1
+Techniker|m|Techniker|technician|A2
+Mechaniker|m|Mechaniker|mechanic|A2
+Elektriker|m|Elektriker|electrician|A2
+Klempner|m|Klempner|plumber|B1
+Installateur|m|Installateure|plumber; installer|B1
+Maler|m|Maler|painter|A2
+Tischler|m|Tischler|carpenter; joiner|B1
+Schreiner|m|Schreiner|carpenter|B1
+Maurer|m|Maurer|bricklayer|B1
+Architekt|m|Architekten|architect|A2
+Bauarbeiter|m|Bauarbeiter|construction worker|A2
+Landwirt|m|Landwirte|farmer|B1
+Bauer|m|Bauern|farmer|A2
+Fischer|m|Fischer|fisherman|B1
+Gärtner|m|Gärtner|gardener|A2
+Fahrer|m|Fahrer|driver|A2
+Busfahrer|m|Busfahrer|bus driver|A2
+Taxifahrer|m|Taxifahrer|taxi driver|A2
+Pilot|m|Piloten|pilot|A2
+Flugbegleiter|m|Flugbegleiter|flight attendant|B1
+Schauspieler|m|Schauspieler|actor|A2
+Sänger|m|Sänger|singer|A2
+Musiker|m|Musiker|musician|A2
+Künstler|m|Künstler|artist|A2
+Schriftsteller|m|Schriftsteller|writer|B1
+Journalist|m|Journalisten|journalist|A2
+Reporter|m|Reporter|reporter|B1
+Fotograf|m|Fotografen|photographer|A2
+Rechtsanwalt|m|Rechtsanwälte|lawyer|B1
+Anwalt|m|Anwälte|lawyer|B1
+Richter|m|Richter|judge|B1
+Politiker|m|Politiker|politician|A2
+Soldat|m|Soldaten|soldier|A2
+Wissenschaftler|m|Wissenschaftler|scientist|B1
+Forscher|m|Forscher|researcher|B1
+Programmierer|m|Programmierer|programmer|A2
+Informatiker|m|Informatiker|computer scientist|B1
+Übersetzer|m|Übersetzer|translator|B1
+Dolmetscher|m|Dolmetscher|interpreter|B1
+Bankkaufmann|m|Bankkaufleute|bank clerk|B2
+Kaufmann|m|Kaufleute|merchant; businessman|B1
+Steuerberater|m|Steuerberater|tax consultant|B2
+Berater|m|Berater|consultant; adviser|B1
+Psychologe|m|Psychologen|psychologist|B1
+Tierarzt|m|Tierärzte|vet|A2
+Hausmeister|m|Hausmeister|caretaker|B1
+Putzfrau|f|Putzfrauen|cleaning lady|A2
+Reinigungskraft|f|Reinigungskräfte|cleaner|B2
+@domain money
+Geld|n|Gelder|money|A1
+Euro|m|Euro|euro|A1
+Cent|m|Cent|cent|A1
+Münze|f|Münzen|coin|A2
+Schein|m|Scheine|banknote; certificate|A2
+Bargeld|n|-|cash|A2
+Kreditkarte|f|Kreditkarten|credit card|A2
+Bankkarte|f|Bankkarten|bank card|A2
+Bank|f|Banken|bank|A1
+Konto|n|Konten|account|A2
+Girokonto|n|Girokonten|current account|B1
+Sparkonto|n|Sparkonten|savings account|B1
+Kontostand|m|Kontostände|account balance|B1
+Überweisung|f|Überweisungen|bank transfer|B1
+Geldautomat|m|Geldautomaten|cash machine|A2
+Kredit|m|Kredite|loan; credit|B1
+Schulden|p|-|debts|B1
+Zinsen|p|-|interest|B2
+Sparen|n|-|saving|A2
+Vermögen|n|Vermögen|assets; wealth|B2
+Reichtum|m|Reichtümer|wealth|B2
+Armut|f|-|poverty|B1
+Währung|f|Währungen|currency|B1
+Wechselkurs|m|Wechselkurse|exchange rate|B2
+Preiserhöhung|f|Preiserhöhungen|price increase|B2
+Inflation|f|Inflationen|inflation|B2
+Rabatt|m|Rabatte|discount|A2
+Ermäßigung|f|Ermäßigungen|reduction; concession|B1
+Sonderangebot|n|Sonderangebote|special offer|A2
+Trinkgeld|n|Trinkgelder|tip|A2
+Quittung|f|Quittungen|receipt|B1
+Beleg|m|Belege|receipt; proof|B2
+Kasse|f|Kassen|checkout; till|A1
+Betrag|m|Beträge|amount|B1
+Summe|f|Summen|sum|A2
+Gebühr|f|Gebühren|fee|B1
+Beitrag|m|Beiträge|contribution; fee; article|B1
+Zuschuss|m|Zuschüsse|subsidy; allowance|B2
+Spende|f|Spenden|donation|B2
+Miete|f|Mieten|rent|A2
+Versicherungsbeitrag|m|Versicherungsbeiträge|insurance premium|C1
+Finanzamt|n|Finanzämter|tax office|B2
+Steuererklärung|f|Steuererklärungen|tax return|B2
+@domain shopping
+Geschäft|n|Geschäfte|shop; business|A1
+Laden|m|Läden|shop|A1
+Supermarkt|m|Supermärkte|supermarket|A1
+Kaufhaus|n|Kaufhäuser|department store|A2
+Einkaufszentrum|n|Einkaufszentren|shopping centre|A2
+Markt|m|Märkte|market|A1
+Wochenmarkt|m|Wochenmärkte|weekly market|A2
+Bäckerei|f|Bäckereien|bakery|A1
+Metzgerei|f|Metzgereien|butcher's shop|A2
+Buchhandlung|f|Buchhandlungen|bookshop|A2
+Drogerie|f|Drogerien|drugstore|A2
+Reinigung|f|Reinigungen|dry cleaner's|B1
+Blumengeschäft|n|Blumengeschäfte|flower shop|A2
+Schuhgeschäft|n|Schuhgeschäfte|shoe shop|A2
+Kiosk|m|Kioske|kiosk|A2
+Tankstelle|f|Tankstellen|petrol station|A1
+Einkauf|m|Einkäufe|purchase; shopping|A1
+Einkaufsliste|f|Einkaufslisten|shopping list|A2
+Einkaufswagen|m|Einkaufswagen|shopping trolley|A2
+Einkaufstasche|f|Einkaufstaschen|shopping bag|A2
+Tüte|f|Tüten|bag|A1
+Verpackung|f|Verpackungen|packaging|B1
+Schaufenster|n|Schaufenster|shop window|B1
+Regal|n|Regale|shelf|A1
+Kundschaft|f|-|clientele|C1
+Öffnungszeiten|p|-|opening hours|A1
+Sonderpreis|m|Sonderpreise|special price|B1
+Garantie|f|Garantien|guarantee|B1
+Umtausch|m|Umtausche|exchange|B1
+Reklamation|f|Reklamationen|complaint|B2
+Beschwerde|f|Beschwerden|complaint|B1
+Kaufvertrag|m|Kaufverträge|purchase contract|B2
+Online-Shop|m|Online-Shops|online shop|B1
+Onlinehandel|m|-|online trade|B2

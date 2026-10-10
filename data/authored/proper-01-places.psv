@@ -1,0 +1,166 @@
+# Name|g(m/f/n/p/-)|English|cefr
+@domain countries
+Deutschland|n|Germany|A1
+Österreich|n|Austria|A1
+Schweiz|f|Switzerland|A1
+Liechtenstein|n|Liechtenstein|B1
+Luxemburg|n|Luxembourg|A2
+Frankreich|n|France|A1
+Italien|n|Italy|A1
+Spanien|n|Spain|A1
+Portugal|n|Portugal|A1
+England|n|England|A1
+Großbritannien|n|Great Britain|A2
+Schottland|n|Scotland|A2
+Irland|n|Ireland|A2
+Niederlande|p|the Netherlands|A1
+Holland|n|Holland|A1
+Belgien|n|Belgium|A1
+Dänemark|n|Denmark|A1
+Schweden|n|Sweden|A1
+Norwegen|n|Norway|A1
+Finnland|n|Finland|A1
+Island|n|Iceland|A2
+Polen|n|Poland|A1
+Tschechien|n|Czech Republic|A1
+Slowakei|f|Slovakia|A2
+Ungarn|n|Hungary|A1
+Rumänien|n|Romania|A2
+Bulgarien|n|Bulgaria|A2
+Griechenland|n|Greece|A1
+Türkei|f|Turkey|A1
+Russland|n|Russia|A1
+Ukraine|f|Ukraine|A1
+Kroatien|n|Croatia|A2
+Serbien|n|Serbia|A2
+Slowenien|n|Slovenia|A2
+Estland|n|Estonia|B1
+Lettland|n|Latvia|B1
+Litauen|n|Lithuania|B1
+Albanien|n|Albania|B1
+Zypern|n|Cyprus|B1
+Malta|n|Malta|B1
+Amerika|n|America|A1
+USA|p|USA|A1
+Kanada|n|Canada|A1
+Mexiko|n|Mexico|A1
+Brasilien|n|Brazil|A1
+Argentinien|n|Argentina|A1
+Chile|n|Chile|A2
+Kolumbien|n|Colombia|A2
+Peru|n|Peru|A2
+Kuba|n|Cuba|A2
+China|n|China|A1
+Japan|n|Japan|A1
+Korea|n|Korea|A2
+Indien|n|India|A1
+Pakistan|n|Pakistan|A1
+Afghanistan|n|Afghanistan|A1
+Iran|m|Iran|A2
+Irak|m|Iraq|A2
+Syrien|n|Syria|A2
+Israel|n|Israel|A2
+Saudi-Arabien|n|Saudi Arabia|A2
+Ägypten|n|Egypt|A1
+Marokko|n|Morocco|A2
+Tunesien|n|Tunisia|A2
+Algerien|n|Algeria|A2
+Nigeria|n|Nigeria|A2
+Südafrika|n|South Africa|A2
+Kenia|n|Kenya|A2
+Äthiopien|n|Ethiopia|B1
+Australien|n|Australia|A1
+Neuseeland|n|New Zealand|A2
+Thailand|n|Thailand|A2
+Vietnam|n|Vietnam|A2
+Indonesien|n|Indonesia|A2
+Bangladesch|n|Bangladesh|A2
+Sri Lanka|n|Sri Lanka|B1
+Nepal|n|Nepal|B1
+Kasachstan|n|Kazakhstan|B1
+Europa|n|Europe|A1
+Asien|n|Asia|A1
+Afrika|n|Africa|A1
+Nordamerika|n|North America|A2
+Südamerika|n|South America|A2
+Antarktis|f|Antarctica|B1
+Arktis|f|the Arctic|B2
+@domain cities
+Berlin|n|Berlin|A1
+Hamburg|n|Hamburg|A1
+München|n|Munich|A1
+Köln|n|Cologne|A1
+Frankfurt|n|Frankfurt|A1
+Stuttgart|n|Stuttgart|A1
+Düsseldorf|n|Düsseldorf|A1
+Dortmund|n|Dortmund|A2
+Essen|n|Essen (city)|A2
+Leipzig|n|Leipzig|A1
+Dresden|n|Dresden|A1
+Hannover|n|Hanover|A2
+Nürnberg|n|Nuremberg|A1
+Bremen|n|Bremen|A1
+Bonn|n|Bonn|A1
+Heidelberg|n|Heidelberg|A2
+Freiburg|n|Freiburg|A2
+Augsburg|n|Augsburg|B1
+Potsdam|n|Potsdam|B1
+Lübeck|n|Lübeck|B1
+Aachen|n|Aachen|B1
+Wien|n|Vienna|A1
+Salzburg|n|Salzburg|A2
+Innsbruck|n|Innsbruck|B1
+Graz|n|Graz|B1
+Zürich|n|Zurich|A1
+Bern|n|Bern|A1
+Basel|n|Basel|A2
+Genf|n|Geneva|A2
+Prag|n|Prague|A2
+Warschau|n|Warsaw|A2
+Budapest|n|Budapest|A2
+Rom|n|Rome|A1
+Mailand|n|Milan|A2
+Venedig|n|Venice|A2
+Neapel|n|Naples|B1
+Paris|n|Paris|A1
+Brüssel|n|Brussels|A2
+Straßburg|n|Strasbourg|B1
+Moskau|n|Moscow|A2
+Athen|n|Athens|A2
+Kopenhagen|n|Copenhagen|A2
+Stockholm|n|Stockholm|A2
+Lissabon|n|Lisbon|A2
+Peking|n|Beijing|A2
+Tokio|n|Tokyo|A1
+Kairo|n|Cairo|A2
+New York|n|New York|A1
+London|n|London|A1
+Madrid|n|Madrid|A1
+Istanbul|n|Istanbul|A1
+Islamabad|n|Islamabad|A2
+Kabul|n|Kabul|A2
+Delhi|n|Delhi|A2
+@domain german-regions
+Bayern|n|Bavaria|A2
+Baden-Württemberg|n|Baden-Württemberg|B1
+Nordrhein-Westfalen|n|North Rhine-Westphalia|B1
+Niedersachsen|n|Lower Saxony|B1
+Sachsen|n|Saxony|B1
+Thüringen|n|Thuringia|B1
+Hessen|n|Hesse|B1
+Brandenburg|n|Brandenburg|B1
+Mecklenburg-Vorpommern|n|Mecklenburg-Western Pomerania|B2
+Schleswig-Holstein|n|Schleswig-Holstein|B1
+Rheinland-Pfalz|n|Rhineland-Palatinate|B2
+Saarland|n|Saarland|B1
+Sachsen-Anhalt|n|Saxony-Anhalt|B2
+Rhein|m|Rhine|A2
+Donau|f|Danube|A2
+Elbe|f|Elbe|B1
+Bodensee|m|Lake Constance|B1
+Nordsee|f|North Sea|A2
+Ostsee|f|Baltic Sea|A2
+Mittelmeer|n|Mediterranean Sea|A2
+Alpen|p|the Alps|A2
+Schwarzwald|m|Black Forest|A2
+Harz|m|Harz mountains|B1

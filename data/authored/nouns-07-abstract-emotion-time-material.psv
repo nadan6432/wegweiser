@@ -1,0 +1,371 @@
+@domain emotions
+Gefühl|n|Gefühle|feeling|A2
+Emotion|f|Emotionen|emotion|B1
+Freude|f|Freuden|joy|A2
+Glück|n|-|happiness; luck|A2
+Liebe|f|-|love|A1
+Lust|f|-|desire; inclination|B1
+Spaß|m|Späße|fun|A1
+Humor|m|-|humour|B1
+Angst|f|Ängste|fear|A2
+Sorge|f|Sorgen|worry|A2
+Wut|f|-|anger|B1
+Ärger|m|-|annoyance; trouble|B1
+Zorn|m|-|wrath|C1
+Trauer|f|-|grief; sadness|B1
+Einsamkeit|f|-|loneliness|B2
+Hoffnung|f|Hoffnungen|hope|B1
+Enttäuschung|f|Enttäuschungen|disappointment|B2
+Überraschung|f|Überraschungen|surprise|A2
+Neugier|f|-|curiosity|B2
+Langeweile|f|-|boredom|B1
+Eifersucht|f|-|jealousy|B2
+Neid|m|-|envy|B2
+Stolz|m|-|pride|B2
+Scham|f|-|shame|B2
+Schuldgefühl|n|Schuldgefühle|guilt feeling|C1
+Mitleid|n|-|pity; compassion|B2
+Vertrauen|n|-|trust|B1
+Zweifel|m|Zweifel|doubt|B2
+Mut|m|-|courage|B1
+Geduld|f|-|patience|B1
+Stimmung|f|Stimmungen|mood; atmosphere|B1
+Laune|f|Launen|mood|B2
+Sehnsucht|f|Sehnsüchte|longing|B2
+Verzweiflung|f|-|despair|C1
+Begeisterung|f|-|enthusiasm|B2
+Zufriedenheit|f|-|contentment|B2
+Erleichterung|f|-|relief|B2
+@domain relationships
+Beziehung|f|Beziehungen|relationship|B1
+Freundschaft|f|Freundschaften|friendship|A2
+Verhältnis|n|Verhältnisse|relationship; ratio|B2
+Streit|m|-|argument|B1
+Konflikt|m|Konflikte|conflict|B2
+Versöhnung|f|Versöhnungen|reconciliation|C1
+Trennung|f|Trennungen|separation|B1
+Kuss|m|Küsse|kiss|A2
+Umarmung|f|Umarmungen|hug|B1
+Treue|f|-|loyalty; fidelity|C1
+Verständnis|n|-|understanding|B1
+Zusammenhalt|m|-|cohesion|C1
+Hilfe|f|Hilfen|help|A1
+Unterstützung|f|Unterstützungen|support|B1
+Einladung|f|Einladungen|invitation|A2
+Besuch|m|Besuche|visit; visitor|A1
+Begegnung|f|Begegnungen|encounter|B2
+Bekannte|m|Bekannte|acquaintance|B1
+@domain time
+Zeit|f|Zeiten|time|A1
+Sekunde|f|Sekunden|second|A1
+Minute|f|Minuten|minute|A1
+Stunde|f|Stunden|hour|A1
+Tag|m|Tage|day|A1
+Woche|f|Wochen|week|A1
+Wochenende|n|Wochenenden|weekend|A1
+Monat|m|Monate|month|A1
+Jahr|n|Jahre|year|A1
+Jahrzehnt|n|Jahrzehnte|decade|B1
+Jahrhundert|n|Jahrhunderte|century|B1
+Jahrtausend|n|Jahrtausende|millennium|B2
+Morgen|m|Morgen|morning|A1
+Vormittag|m|Vormittage|late morning|A1
+Mittag|m|Mittage|midday|A1
+Nachmittag|m|Nachmittage|afternoon|A1
+Abend|m|Abende|evening|A1
+Nacht|f|Nächte|night|A1
+Mitternacht|f|-|midnight|A2
+Dämmerung|f|-|dusk; dawn|B2
+Sonnenaufgang|m|Sonnenaufgänge|sunrise|B1
+Sonnenuntergang|m|Sonnenuntergänge|sunset|B1
+Datum|n|Daten|date|A1
+Kalender|m|Kalender|calendar|A1
+Uhrzeit|f|Uhrzeiten|time (of day)|A1
+Zeitpunkt|m|Zeitpunkte|point in time|B1
+Zeitraum|m|Zeiträume|period|B1
+Zeitalter|n|Zeitalter|era|C1
+Moment|m|Momente|moment|A2
+Augenblick|m|Augenblicke|moment|B1
+Weile|f|-|while|B1
+Frist|f|Fristen|deadline; period|B2
+Dauer|f|-|duration|B1
+Anfang|m|Anfänge|beginning|A1
+Ende|n|Enden|end|A1
+Beginn|m|-|beginning|B1
+Schluss|m|Schlüsse|end; conclusion|A2
+Pause|f|Pausen|break|A1
+Verspätung|f|Verspätungen|delay|A2
+Montag|m|Montage|Monday|A1
+Dienstag|m|Dienstage|Tuesday|A1
+Mittwoch|m|Mittwoche|Wednesday|A1
+Donnerstag|m|Donnerstage|Thursday|A1
+Freitag|m|Freitage|Friday|A1
+Samstag|m|Samstage|Saturday|A1
+Sonnabend|m|Sonnabende|Saturday (Northern German)|A2
+Sonntag|m|Sonntage|Sunday|A1
+Januar|m|Januare|January|A1
+Februar|m|Februare|February|A1
+März|m|Märze|March|A1
+April|m|Aprile|April|A1
+Mai|m|Maie|May|A1
+Juni|m|Junis|June|A1
+Juli|m|Julis|July|A1
+August|m|Auguste|August|A1
+September|m|September|September|A1
+Oktober|m|Oktober|October|A1
+November|m|November|November|A1
+Dezember|m|Dezember|December|A1
+@domain abstract
+Idee|f|Ideen|idea|A1
+Gedanke|m|Gedanken|thought|B1
+Meinung|f|Meinungen|opinion|A2
+Ansicht|f|Ansichten|view; opinion|B1
+Standpunkt|m|Standpunkte|standpoint|B2
+Absicht|f|Absichten|intention|B1
+Plan|m|Pläne|plan|A2
+Wunsch|m|Wünsche|wish|A2
+Traum|m|Träume|dream|A2
+Zweck|m|Zwecke|purpose|B1
+Sinn|m|Sinne|sense; meaning|B1
+Grund|m|Gründe|reason; ground|A2
+Ursache|f|Ursachen|cause|B1
+Möglichkeit|f|Möglichkeiten|possibility|A2
+Chance|f|Chancen|chance|A2
+Gelegenheit|f|Gelegenheiten|opportunity|B1
+Problem|n|Probleme|problem|A1
+Schwierigkeit|f|Schwierigkeiten|difficulty|B1
+Lösung|f|Lösungen|solution|B1
+Wahrheit|f|Wahrheiten|truth|B1
+Lüge|f|Lügen|lie|B1
+Fehler|m|Fehler|mistake|A1
+Erfolg|m|Erfolge|success|A2
+Wert|m|Werte|value|B1
+Bedeutung|f|Bedeutungen|meaning; importance|A2
+Unterschied|m|Unterschiede|difference|A2
+Ähnlichkeit|f|Ähnlichkeiten|similarity|B2
+Vergleich|m|Vergleiche|comparison|B1
+Verbindung|f|Verbindungen|connection|A2
+Beziehung|f|Beziehungen|relation|B1
+Bereich|m|Bereiche|area; field|B1
+Gebiet|n|Gebiete|area; region; field|B1
+Situation|f|Situationen|situation|A2
+Zustand|m|Zustände|state; condition|B1
+Lage|f|Lagen|situation; location|B1
+Umstand|m|Umstände|circumstance|B2
+Bedingung|f|Bedingungen|condition|B1
+Voraussetzung|f|Voraussetzungen|prerequisite|B2
+Folge|f|Folgen|consequence|B1
+Ergebnis|n|Ergebnisse|result|A2
+Entscheidung|f|Entscheidungen|decision|B1
+Wahl|f|Wahlen|choice|A2
+Entwicklung|f|Entwicklungen|development|B1
+Veränderung|f|Veränderungen|change|B1
+Wandel|m|-|change|C1
+Fortschritt|m|Fortschritte|progress|B1
+Ziel|n|Ziele|goal|A2
+Aufgabe|f|Aufgaben|task|A1
+Verantwortung|f|-|responsibility|B1
+Pflicht|f|Pflichten|duty|B1
+Recht|n|Rechte|right|B1
+Regel|f|Regeln|rule|A2
+Ausnahme|f|Ausnahmen|exception|B1
+Prinzip|n|Prinzipien|principle|B2
+Theorie|f|Theorien|theory|B1
+Praxis|f|Praxen|practice|B1
+Erfahrung|f|Erfahrungen|experience|A2
+Wissen|n|-|knowledge|B1
+Verstand|m|-|reason; intellect|B2
+Vernunft|f|-|reason|C1
+Fantasie|f|Fantasien|imagination|B1
+Aufmerksamkeit|f|-|attention|B2
+Interesse|n|Interessen|interest|A2
+Bedürfnis|n|Bedürfnisse|need|B2
+Anspruch|m|Ansprüche|claim; demand|B2
+Versuch|m|Versuche|attempt|B1
+Bemühung|f|Bemühungen|effort|C1
+Anstrengung|f|Anstrengungen|effort|B2
+Leistung|f|Leistungen|achievement; performance|B1
+Kraft|f|Kräfte|strength|B1
+Macht|f|Mächte|power|B1
+Einfluss|m|Einflüsse|influence|B2
+Kontrolle|f|Kontrollen|control|B1
+Ordnung|f|Ordnungen|order|A2
+Chaos|n|-|chaos|B2
+Sicherheit|f|-|safety|A2
+Gefahr|f|Gefahren|danger|B1
+Risiko|n|Risiken|risk|B1
+Zufall|m|Zufälle|coincidence|B2
+Schicksal|n|Schicksale|fate|B2
+Glück|n|-|luck|A2
+Pech|n|-|bad luck|B1
+Beispiel|n|Beispiele|example|A1
+Muster|n|Muster|pattern; sample|B1
+Form|f|Formen|shape; form|A2
+Art|f|Arten|kind; type; way|A2
+Sorte|f|Sorten|kind; variety|B1
+Typ|m|Typen|type|B1
+Merkmal|n|Merkmale|feature; characteristic|B2
+Eigenschaft|f|Eigenschaften|characteristic; quality|B2
+Teil|m|Teile|part|A1
+Stück|n|Stücke|piece|A1
+Rest|m|Reste|rest; remainder|A2
+Ganze|n|-|whole|B1
+Mitte|f|-|middle|A2
+Rand|m|Ränder|edge|B1
+Seite|f|Seiten|side; page|A1
+Richtung|f|Richtungen|direction|A1
+Ort|m|Orte|place|A1
+Stelle|f|Stellen|place; spot|A2
+Position|f|Positionen|position|B1
+Abstand|m|Abstände|distance; gap|B1
+Entfernung|f|Entfernungen|distance|B1
+Nähe|f|-|proximity|B1
+Ferne|f|-|distance|C1
+Weg|m|Wege|way; path|A1
+Ziel|n|Ziele|destination; aim|A2
+Reihe|f|Reihen|row; series|B1
+Folge|f|Folgen|sequence|B2
+Liste|f|Listen|list|A1
+Nummer|f|Nummern|number|A1
+Anzahl|f|-|number|A2
+Betrag|m|Beträge|amount|B1
+Grad|m|Grade|degree|B1
+Stufe|f|Stufen|step; level|B1
+Niveau|n|Niveaus|level|B1
+Ebene|f|Ebenen|level; plane|B2
+Höhepunkt|m|Höhepunkte|highlight; peak|B2
+Tiefpunkt|m|Tiefpunkte|low point|C1
+Vorteil|m|Vorteile|advantage|A2
+Nachteil|m|Nachteile|disadvantage|A2
+Gefallen|m|-|favour|B1
+Dank|m|-|thanks|A2
+Entschuldigung|f|Entschuldigungen|apology; excuse|A1
+Bitte|f|Bitten|request|A2
+Einfall|m|Einfälle|idea; notion|C1
+Gewohnheit|f|Gewohnheiten|habit|B1
+Angewohnheit|f|Angewohnheiten|habit|B2
+Charakter|m|Charaktere|character|B1
+Eigenart|f|Eigenarten|peculiarity|C1
+Verhalten|n|-|behaviour|B1
+Benehmen|n|-|manners; behaviour|B2
+Höflichkeit|f|-|politeness|B2
+Ehrlichkeit|f|-|honesty|B2
+Freundlichkeit|f|-|friendliness|B2
+Ehre|f|Ehren|honour|B2
+Würde|f|-|dignity|C1
+Moral|f|-|morality|B2
+Ethik|f|-|ethics|C1
+Weisheit|f|Weisheiten|wisdom|C1
+Bewusstsein|n|-|consciousness; awareness|C1
+Erkenntnis|f|Erkenntnisse|insight; realisation|C1
+Überzeugung|f|Überzeugungen|conviction|C1
+Behauptung|f|Behauptungen|claim; assertion|C1
+Annahme|f|Annahmen|assumption|B2
+Vermutung|f|Vermutungen|assumption; guess|B2
+Argument|n|Argumente|argument|B2
+Begründung|f|Begründungen|reasoning; justification|B2
+Schlussfolgerung|f|Schlussfolgerungen|conclusion|C1
+Zusammenfassung|f|Zusammenfassungen|summary|B1
+Einleitung|f|Einleitungen|introduction|B2
+Erklärung|f|Erklärungen|explanation; declaration|B1
+Beschreibung|f|Beschreibungen|description|B1
+Darstellung|f|Darstellungen|depiction|B2
+Übersicht|f|Übersichten|overview|B2
+Überblick|m|Überblicke|overview|B2
+Hinweis|m|Hinweise|hint; notice|B1
+Tipp|m|Tipps|tip|A2
+Rat|m|Ratschläge|advice; council|B1
+Ratschlag|m|Ratschläge|piece of advice|B1
+Warnung|f|Warnungen|warning|B1
+Verbot|n|Verbote|ban; prohibition|B1
+Erlaubnis|f|Erlaubnisse|permission|B1
+Einigung|f|Einigungen|agreement|C1
+Kompromiss|m|Kompromisse|compromise|B2
+Absage|f|Absagen|refusal; cancellation|B1
+Zusage|f|Zusagen|acceptance; promise|B1
+Versprechen|n|Versprechen|promise|B1
+@domain materials
+Material|n|Materialien|material|B1
+Stoff|m|Stoffe|substance; fabric|B1
+Holz|n|Hölzer|wood|A1
+Glas|n|Gläser|glass|A1
+Plastik|n|-|plastic|A2
+Kunststoff|m|Kunststoffe|plastic|B1
+Papier|n|Papiere|paper|A1
+Pappe|f|Pappen|cardboard|B1
+Karton|m|Kartons|cardboard box|B1
+Metall|n|Metalle|metal|B1
+Eisen|n|-|iron|B1
+Stahl|m|-|steel|B1
+Kupfer|n|-|copper|B1
+Aluminium|n|-|aluminium|B1
+Gold|n|-|gold|A2
+Silber|n|-|silver|A2
+Blei|n|-|lead|B2
+Beton|m|-|concrete|B1
+Zement|m|-|cement|B1
+Ziegel|m|Ziegel|brick; tile|B1
+Backstein|m|Backsteine|brick|B2
+Sand|m|-|sand|A2
+Lehm|m|-|clay; loam|B2
+Ton|m|Töne|clay; tone|B1
+Gummi|m|Gummis|rubber|B1
+Leder|n|-|leather|B1
+Wolle|f|-|wool|A2
+Stoff|m|Stoffe|cloth|B1
+Faden|m|Fäden|thread|B1
+Seil|n|Seile|rope|B1
+Schnur|f|Schnüre|string|B1
+Draht|m|Drähte|wire|B2
+Öl|n|Öle|oil|A1
+Benzin|n|-|petrol|A1
+Farbe|f|Farben|colour; paint|A1
+Lack|m|Lacke|varnish; lacquer|B2
+Kleber|m|Kleber|glue|B1
+Staub|m|-|dust|A2
+Schmutz|m|-|dirt|A2
+Rauch|m|-|smoke|B1
+Dampf|m|Dämpfe|steam|B1
+Asche|f|-|ash|B2
+Flamme|f|Flammen|flame|B1
+Funke|m|Funken|spark|B2
+Licht|n|Lichter|light|A1
+Schatten|m|Schatten|shadow|B1
+Farbe|f|Farben|colour|A1
+@domain daily
+Tag|m|Tage|day|A1
+Alltag|m|-|daily life|A2
+Gewohnheit|f|Gewohnheiten|habit|B1
+Routine|f|Routinen|routine|B1
+Ordnung|f|-|tidiness|A2
+Haushalt|m|Haushalte|housework; household|B1
+Wäsche|f|-|laundry|A2
+Abwasch|m|-|washing-up|B1
+Einkauf|m|Einkäufe|shopping|A1
+Frühstückszeit|f|Frühstückszeiten|breakfast time|B1
+Mittagspause|f|Mittagspausen|lunch break|A2
+Feierabend|m|-|end of work|B1
+Wochenende|n|Wochenenden|weekend|A1
+Nachbarschaft|f|-|neighbourhood|B1
+Lärm|m|-|noise|B1
+Ruhe|f|-|quiet|A2
+Nachtruhe|f|-|night-time quiet|B2
+Hausordnung|f|Hausordnungen|house rules|B2
+Mülltonne|f|Mülltonnen|rubbish bin|B1
+Einweg|n|-|single-use|C1
+Pfand|n|Pfänder|deposit (on bottles)|B1
+Pfandflasche|f|Pfandflaschen|returnable bottle|B1
+Flohmarkt|m|Flohmärkte|flea market|B1
+Sperrmüll|m|-|bulky waste|B2
+Bargeld|n|-|cash|A2
+Wechselgeld|n|-|change (money)|A2
+Brieftasche|f|Brieftaschen|wallet|A2
+Schlüsselbund|m|Schlüsselbunde|bunch of keys|B1
+Regenwetter|n|-|rainy weather|B1
+Zeitplan|m|Zeitpläne|schedule|B1
+Tagesablauf|m|Tagesabläufe|daily routine|B1
+Morgenroutine|f|Morgenroutinen|morning routine|B2
+Nickerchen|n|Nickerchen|nap|B2
+Mittagsschlaf|m|-|midday nap|B1
+Schlafenszeit|f|Schlafenszeiten|bedtime|B1
+Traum|m|Träume|dream|A2

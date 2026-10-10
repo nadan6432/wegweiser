@@ -1,0 +1,10 @@
+RESULT cold-start {"shellMs":1387,"heapMB":5.1}
+PASS - search works DURING the first-time build and is flagged as partial  {"n":0,"done":4006}
+PASS - progress UI is shown during the build
+  [page] progress 18s done=43062 heapMB=40
+  [page] progress 38s done=86537 heapMB=45
+PASS - build completed with all 92,880 records stored  {"rows":92880}
+RESULT build {"buildMs":42063,"firstUsableMs":346,"heapMBduringBuild":34,"rows":92880,"storageUsageMB":109.7,"quotaMB":162332,"requestsToLemmaChunks":31}
+PASS - no unexpected console/page errors (network failures deliberately induced by the offline tests are excluded)  []
+
+4 passed, 0 failed (browser phase13 — build)

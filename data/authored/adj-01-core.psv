@@ -1,0 +1,316 @@
+# lemma|comp(+ auto, - none, inv, or comp,am sup)|English|cefr
+gut|besser,am besten|good|A1
+hoch|höher,am höchsten|high|A1
+nah|näher,am nächsten|near; close|A1
+groß|größer,am größten|big; tall|A1
+klein|+|small; little|A1
+lang|länger,am längsten|long|A1
+kurz|kürzer,am kürzesten|short|A1
+alt|älter,am ältesten|old|A1
+jung|jünger,am jüngsten|young|A1
+neu|+|new|A1
+schön|+|beautiful; nice|A1
+hässlich|+|ugly|A2
+schnell|+|fast; quick|A1
+langsam|+|slow|A1
+warm|wärmer,am wärmsten|warm|A1
+kalt|kälter,am kältesten|cold|A1
+heiß|+|hot|A1
+kühl|+|cool|A1
+heiter|+|cheerful; bright|B1
+gesund|gesünder,am gesündesten|healthy|A1
+krank|kränker,am kränksten|ill; sick|A1
+stark|stärker,am stärksten|strong|A1
+schwach|schwächer,am schwächsten|weak|A1
+schwer|+|heavy; difficult|A1
+leicht|+|light; easy|A1
+einfach|+|simple; easy|A1
+schwierig|+|difficult|A1
+teuer|teurer,am teuersten|expensive|A1
+billig|+|cheap|A1
+günstig|+|favourable; cheap|A2
+wichtig|+|important|A1
+interessant|+|interesting|A1
+langweilig|+|boring|A1
+lustig|+|funny; cheerful|A1
+traurig|+|sad|A1
+glücklich|+|happy; lucky|A1
+zufrieden|+|satisfied; content|A2
+müde|+|tired|A1
+hungrig|+|hungry|A2
+durstig|+|thirsty|A2
+satt|+|full (after eating)|A2
+freundlich|+|friendly|A1
+nett|+|nice; kind|A1
+höflich|+|polite|A2
+unhöflich|+|impolite|A2
+ehrlich|+|honest|A2
+faul|+|lazy; rotten|A2
+fleißig|+|hardworking|A2
+klug|klüger,am klügsten|clever|A2
+dumm|dümmer,am dümmsten|stupid|A2
+intelligent|+|intelligent|A2
+neugierig|+|curious|B1
+mutig|+|brave|B1
+ängstlich|+|anxious; timid|B1
+ruhig|+|calm; quiet|A1
+laut|+|loud|A1
+leise|+|quiet; soft|A1
+sauber|+|clean|A1
+schmutzig|+|dirty|A1
+ordentlich|+|tidy; proper|A2
+unordentlich|+|untidy|B1
+voll|+|full|A1
+leer|+|empty|A1
+offen|+|open|A1
+geschlossen|-|closed|A1
+frei|+|free; vacant|A1
+besetzt|-|occupied; engaged|A1
+richtig|-|correct; right|A1
+falsch|-|wrong; false|A1
+wahr|-|true|A2
+möglich|-|possible|A2
+unmöglich|-|impossible|A2
+sicher|+|safe; sure|A2
+gefährlich|+|dangerous|A2
+wirklich|-|real; really|A2
+echt|+|genuine; real|A2
+normal|+|normal|A2
+verschieden|-|different; various|A2
+gleich|-|same; equal|A1
+ähnlich|+|similar|A2
+anders|-|different; else|A1
+bekannt|+|known; famous|A2
+berühmt|+|famous|A2
+beliebt|+|popular|A2
+fremd|+|foreign; strange|B1
+seltsam|+|strange|B1
+merkwürdig|+|peculiar|B1
+komisch|+|funny; odd|A2
+toll|+|great|A1
+super|inv|super; great|A1
+prima|inv|great; excellent|A2
+klasse|inv|great; fantastic|A2
+schlimm|+|bad; serious|A2
+schlecht|schlechter,am schlechtesten|bad|A1
+böse|+|evil; angry|A2
+furchtbar|+|terrible|A2
+schrecklich|+|terrible|A2
+wunderbar|+|wonderful|A2
+fantastisch|+|fantastic|A2
+ausgezeichnet|-|excellent|B1
+perfekt|-|perfect|A2
+genau|+|exact; precise|A2
+ungefähr|-|approximate|A2
+fertig|-|finished; ready|A1
+bereit|-|ready|A2
+lebendig|+|alive; lively|B1
+tot|-|dead|A2
+rot|+|red|A1
+blau|+|blue|A1
+grün|+|green|A1
+gelb|+|yellow|A1
+schwarz|schwärzer,am schwärzesten|black|A1
+weiß|+|white|A1
+braun|+|brown|A1
+grau|+|grey|A1
+rosa|inv|pink|A1
+lila|inv|purple|A1
+bunt|+|colourful|A2
+hell|+|bright; light|A1
+dunkel|+|dark|A1
+dick|+|thick; fat|A1
+dünn|+|thin|A1
+schlank|+|slim|A2
+breit|+|wide; broad|A1
+eng|+|narrow; tight|A1
+tief|+|deep|A2
+flach|+|flat; shallow|B1
+steil|+|steep|B1
+gerade|-|straight; even|A2
+rund|+|round|A2
+eckig|+|angular|B1
+spitz|+|pointed; sharp|B2
+scharf|schärfer,am schärfsten|sharp; spicy|A2
+stumpf|+|blunt; dull|C1
+glatt|+|smooth|B1
+rau|+|rough|B2
+weich|+|soft|A2
+hart|härter,am härtesten|hard|A1
+nass|+|wet|A1
+trocken|+|dry|A1
+feucht|+|damp|B1
+frisch|+|fresh|A1
+sauer|saurer,am sauersten|sour|A2
+süß|+|sweet|A1
+salzig|+|salty|A2
+bitter|+|bitter|A2
+lecker|+|tasty|A1
+köstlich|+|delicious|B1
+roh|+|raw|B1
+gekocht|-|cooked|A2
+gebraten|-|fried|A2
+reif|+|ripe; mature|B1
+sanft|+|gentle|B1
+grob|gröber,am gröbsten|coarse; rude|B2
+zart|+|tender; delicate|B2
+früh|+|early|A1
+spät|+|late|A1
+pünktlich|+|punctual|A2
+täglich|-|daily|A1
+wöchentlich|-|weekly|A2
+monatlich|-|monthly|A2
+jährlich|-|yearly|A2
+einzig|-|only; sole|B1
+ganz|-|whole; entire|A1
+halb|-|half|A1
+gesamt|-|entire; total|B1
+eigen|-|own|A2
+privat|-|private|A2
+öffentlich|-|public|A2
+persönlich|-|personal|A2
+allgemein|-|general|B1
+international|-|international|A2
+national|-|national|B1
+regional|-|regional|B1
+lokal|-|local|B1
+deutsch|-|German|A1
+englisch|-|English|A1
+europäisch|-|European|A2
+politisch|-|political|B1
+wirtschaftlich|-|economic|B1
+sozial|-|social|B1
+kulturell|-|cultural|B1
+historisch|-|historical|B1
+technisch|-|technical|B1
+wissenschaftlich|-|scientific|B2
+medizinisch|-|medical|B1
+rechtlich|-|legal|B2
+juristisch|-|legal (relating to law)|C1
+finanziell|-|financial|B2
+praktisch|+|practical|B1
+theoretisch|-|theoretical|B2
+modern|+|modern|A2
+alt|älter|old|A1
+traditionell|-|traditional|B1
+klassisch|-|classic|B1
+elektrisch|-|electric|A2
+digital|-|digital|B1
+online|inv|online|A2
+mobil|-|mobile|B1
+automatisch|-|automatic|B1
+manuell|-|manual|C1
+wichtig|+|important|A1
+notwendig|+|necessary|B1
+nötig|+|necessary|B1
+nützlich|+|useful|B1
+sinnvoll|+|sensible; meaningful|B2
+sinnlos|+|pointless|B2
+unnötig|+|unnecessary|B1
+überflüssig|+|superfluous|C1
+gewöhnlich|+|ordinary|B1
+üblich|+|usual|B1
+selten|+|rare|A2
+häufig|+|frequent|B1
+regelmäßig|+|regular|A2
+unregelmäßig|+|irregular|B1
+plötzlich|-|sudden|A2
+langfristig|-|long-term|B2
+kurzfristig|-|short-term|B2
+endlos|-|endless|B2
+lebenswichtig|-|vital|C1
+wesentlich|-|essential|B2
+grundlegend|-|fundamental|B2
+entscheidend|-|decisive|B2
+bedeutend|+|significant|B2
+erheblich|-|considerable|B2
+beträchtlich|-|considerable|C1
+gering|+|small; slight|B2
+riesig|-|huge|B1
+winzig|-|tiny|B1
+gewaltig|-|enormous|C1
+enorm|-|enormous|B2
+extrem|-|extreme|B1
+gründlich|+|thorough|B2
+oberflächlich|+|superficial|B2
+kompliziert|+|complicated|B1
+verständlich|+|understandable|B1
+unverständlich|-|incomprehensible|B2
+klar|+|clear|A2
+deutlich|+|clear; distinct|B1
+undeutlich|-|indistinct|B2
+verwirrt|-|confused|B1
+überrascht|-|surprised|A2
+erstaunt|-|astonished|B1
+erschrocken|-|frightened|B1
+wütend|+|angry|A2
+böse|+|angry; evil|A2
+ärgerlich|+|annoying; angry|B1
+eifersüchtig|+|jealous|B2
+stolz|+|proud|B1
+beleidigt|-|offended|B2
+verliebt|-|in love|A2
+verheiratet|-|married|A1
+ledig|-|single (unmarried)|A2
+geschieden|-|divorced|A2
+verwitwet|-|widowed|B2
+allein|-|alone|A1
+einsam|+|lonely|A2
+gemeinsam|-|shared; common|A2
+zusammen|-|together|A1
+beschäftigt|-|busy|A2
+arbeitslos|-|unemployed|A2
+berufstätig|-|employed; working|B1
+selbstständig|-|self-employed; independent|B1
+unabhängig|-|independent|B1
+abhängig|-|dependent|B1
+verantwortlich|-|responsible|B1
+zuständig|-|responsible; in charge|B1
+freiwillig|-|voluntary|B1
+verpflichtet|-|obliged|B2
+erlaubt|-|allowed|A2
+verboten|-|forbidden|A2
+kostenlos|-|free of charge|A1
+umsonst|-|free; in vain|A2
+gratis|inv|free of charge|A2
+teilweise|-|partial|B1
+vollständig|-|complete|B1
+unvollständig|-|incomplete|B2
+ausreichend|-|sufficient|B1
+genug|inv|enough|A1
+zahlreich|-|numerous|B2
+verfügbar|-|available|B1
+erhältlich|-|obtainable|B2
+vorhanden|-|available; existing|B1
+bequem|+|comfortable|A2
+unbequem|+|uncomfortable|B1
+gemütlich|+|cosy|A2
+praktisch|+|handy|B1
+elegant|+|elegant|B1
+modisch|+|fashionable|B1
+sportlich|+|sporty|A2
+attraktiv|+|attractive|B1
+hübsch|+|pretty|A2
+süß|+|cute|A2
+sympathisch|+|likeable|A2
+unsympathisch|+|unpleasant (of a person)|B1
+charmant|+|charming|B2
+lächerlich|+|ridiculous|B2
+peinlich|+|embarrassing|B1
+langweilig|+|dull|A1
+spannend|+|exciting|A2
+aufregend|+|exciting|B1
+beeindruckend|+|impressive|B2
+erstaunlich|+|amazing|B1
+großartig|+|great; magnificent|B1
+hervorragend|-|outstanding|B2
+mittelmäßig|-|mediocre|C1
+katastrophal|-|catastrophic|B2
+unglaublich|-|unbelievable|B1
+schädlich|+|harmful|B2
+giftig|+|poisonous|B1
+gesundheitsschädlich|-|harmful to health|C1
+umweltfreundlich|-|environmentally friendly|B1
+nachhaltig|+|sustainable|B2
+erneuerbar|-|renewable|B2
+orange|inv|orange|A1

@@ -1,0 +1,257 @@
+# Lemma|g|plural|English|cefr|domain   (plural: - = none/uncountable)
+@domain people
+Mann|m|Männer|man; husband|A1
+Frau|f|Frauen|woman; wife; Mrs|A1
+Kind|n|Kinder|child|A1
+Junge|m|Jungen|boy|A1
+Mädchen|n|Mädchen|girl|A1
+Baby|n|Babys|baby|A1
+Erwachsene|m|Erwachsene|adult|A2
+Jugendliche|m|Jugendliche|teenager; young person|B1
+Person|f|Personen|person|A1
+Mensch|m|Menschen|human being; person|A1
+Leute|p|-|people|A1
+Freund|m|Freunde|friend; boyfriend|A1
+Freundin|f|Freundinnen|female friend; girlfriend|A1
+Nachbar|m|Nachbarn|neighbour|A2
+Nachbarin|f|Nachbarinnen|female neighbour|A2
+Gast|m|Gäste|guest|A1
+Fremde|m|Fremde|stranger|B1
+Kollege|m|Kollegen|colleague|A2
+Kollegin|f|Kolleginnen|female colleague|A2
+Partner|m|Partner|partner|A2
+Partnerin|f|Partnerinnen|female partner|A2
+Held|m|Helden|hero|B1
+Bürger|m|Bürger|citizen|B1
+Bürgerin|f|Bürgerinnen|female citizen|B1
+Einwohner|m|Einwohner|inhabitant|B1
+Ausländer|m|Ausländer|foreigner|A2
+Ausländerin|f|Ausländerinnen|female foreigner|A2
+Herr|m|Herren|gentleman; Mr; lord|A1
+Dame|f|Damen|lady|A1
+Männchen|n|Männchen|little man; male (animal)|B2
+Weibchen|n|Weibchen|female (animal)|B2
+Riese|m|Riesen|giant|B1
+Zwerg|m|Zwerge|dwarf|B2
+Kerl|m|Kerle|guy; fellow|B2
+Typ|m|Typen|guy; type|B1
+Persönlichkeit|f|Persönlichkeiten|personality|B1
+Individuum|n|Individuen|individual|C1
+Gesellschaft|f|Gesellschaften|society; company|B1
+Gemeinschaft|f|Gemeinschaften|community|B2
+Minderheit|f|Minderheiten|minority|B2
+Mehrheit|f|Mehrheiten|majority|B2
+Volk|n|Völker|people; nation|B1
+Bevölkerung|f|Bevölkerungen|population|B1
+Generation|f|Generationen|generation|B1
+Mitglied|n|Mitglieder|member|B1
+Gruppe|f|Gruppen|group|A2
+Team|n|Teams|team|A2
+Clique|f|Cliquen|clique|C1
+@domain family
+Familie|f|Familien|family|A1
+Eltern|p|-|parents|A1
+Vater|m|Väter|father|A1
+Mutter|f|Mütter|mother|A1
+Papa|m|Papas|dad|A1
+Mama|f|Mamas|mum|A1
+Sohn|m|Söhne|son|A1
+Tochter|f|Töchter|daughter|A1
+Bruder|m|Brüder|brother|A1
+Schwester|f|Schwestern|sister|A1
+Geschwister|p|-|siblings|A1
+Großvater|m|Großväter|grandfather|A1
+Großmutter|f|Großmütter|grandmother|A1
+Opa|m|Opas|grandpa|A1
+Oma|f|Omas|grandma|A1
+Großeltern|p|-|grandparents|A1
+Enkel|m|Enkel|grandson; grandchild|A2
+Enkelin|f|Enkelinnen|granddaughter|A2
+Onkel|m|Onkel|uncle|A1
+Tante|f|Tanten|aunt|A1
+Cousin|m|Cousins|male cousin|A1
+Cousine|f|Cousinen|female cousin|A1
+Neffe|m|Neffen|nephew|A2
+Nichte|f|Nichten|niece|A2
+Ehemann|m|Ehemänner|husband|A2
+Ehefrau|f|Ehefrauen|wife|A2
+Ehepaar|n|Ehepaare|married couple|B1
+Paar|n|Paare|couple; pair|A2
+Schwiegermutter|f|Schwiegermütter|mother-in-law|B1
+Schwiegervater|m|Schwiegerväter|father-in-law|B1
+Schwiegersohn|m|Schwiegersöhne|son-in-law|B2
+Schwiegertochter|f|Schwiegertöchter|daughter-in-law|B2
+Schwager|m|Schwäger|brother-in-law|B2
+Schwägerin|f|Schwägerinnen|sister-in-law|B2
+Stiefvater|m|Stiefväter|stepfather|B2
+Stiefmutter|f|Stiefmütter|stepmother|B2
+Zwilling|m|Zwillinge|twin|B1
+Verwandte|m|Verwandte|relative|A2
+Vorfahr|m|Vorfahren|ancestor|C1
+Waise|f|Waisen|orphan|C1
+Witwe|f|Witwen|widow|B2
+Witwer|m|Witwer|widower|B2
+Scheidung|f|Scheidungen|divorce|B1
+Hochzeit|f|Hochzeiten|wedding|A2
+Ehe|f|Ehen|marriage|B1
+Verlobung|f|Verlobungen|engagement|B2
+Verlobte|m|Verlobte|fiancé|B2
+Geburt|f|Geburten|birth|A2
+Taufe|f|Taufen|baptism|B2
+Erziehung|f|-|upbringing; education|B2
+Kindheit|f|-|childhood|B1
+Jugend|f|-|youth|B1
+Alter|n|-|age; old age|A2
+@domain body
+Körper|m|Körper|body|A1
+Kopf|m|Köpfe|head|A1
+Gesicht|n|Gesichter|face|A1
+Haar|n|Haare|hair|A1
+Auge|n|Augen|eye|A1
+Ohr|n|Ohren|ear|A1
+Nase|f|Nasen|nose|A1
+Mund|m|Münder|mouth|A1
+Zahn|m|Zähne|tooth|A1
+Zunge|f|Zungen|tongue|A2
+Lippe|f|Lippen|lip|A2
+Hals|m|Hälse|neck; throat|A1
+Nacken|m|Nacken|nape of the neck|B1
+Schulter|f|Schultern|shoulder|A1
+Arm|m|Arme|arm|A1
+Ellbogen|m|Ellbogen|elbow|B1
+Hand|f|Hände|hand|A1
+Finger|m|Finger|finger|A1
+Daumen|m|Daumen|thumb|A2
+Nagel|m|Nägel|nail|B1
+Brust|f|Brüste|chest; breast|A2
+Rücken|m|Rücken|back|A1
+Bauch|m|Bäuche|belly; stomach|A1
+Hüfte|f|Hüften|hip|B1
+Bein|n|Beine|leg|A1
+Knie|n|Knie|knee|A1
+Fuß|m|Füße|foot|A1
+Zeh|m|Zehen|toe|A2
+Ferse|f|Fersen|heel|B2
+Haut|f|Häute|skin|A2
+Knochen|m|Knochen|bone|B1
+Muskel|m|Muskeln|muscle|B1
+Herz|n|Herzen|heart|A1
+Lunge|f|Lungen|lung|B1
+Leber|f|Lebern|liver|B1
+Niere|f|Nieren|kidney|B1
+Magen|m|Mägen|stomach|B1
+Darm|m|Därme|intestine|B2
+Blut|n|-|blood|A2
+Gehirn|n|Gehirne|brain|B1
+Nerv|m|Nerven|nerve|B2
+Stirn|f|Stirnen|forehead|B1
+Wange|f|Wangen|cheek|B2
+Kinn|n|Kinne|chin|B1
+Augenbraue|f|Augenbrauen|eyebrow|B2
+Wimper|f|Wimpern|eyelash|C1
+Bart|m|Bärte|beard|A2
+Gelenk|n|Gelenke|joint|B2
+Rippe|f|Rippen|rib|B2
+Wirbelsäule|f|Wirbelsäulen|spine|C1
+Schädel|m|Schädel|skull|B2
+Kehle|f|Kehlen|throat|B2
+Stimme|f|Stimmen|voice|A2
+Atem|m|-|breath|B1
+Puls|m|-|pulse|B2
+Kreislauf|m|Kreisläufe|circulation|B2
+Schweiß|m|-|sweat|B2
+Träne|f|Tränen|tear|B1
+@domain health
+Gesundheit|f|-|health|A1
+Krankheit|f|Krankheiten|illness; disease|A2
+Schmerz|m|Schmerzen|pain|A2
+Kopfschmerzen|p|-|headache|A2
+Bauchschmerzen|p|-|stomachache|A2
+Zahnschmerzen|p|-|toothache|A2
+Halsschmerzen|p|-|sore throat|A2
+Rückenschmerzen|p|-|back pain|B1
+Fieber|n|-|fever|A2
+Erkältung|f|Erkältungen|cold|A2
+Grippe|f|Grippen|flu|A2
+Husten|m|-|cough|A2
+Schnupfen|m|-|runny nose|A2
+Allergie|f|Allergien|allergy|B1
+Verletzung|f|Verletzungen|injury|B1
+Wunde|f|Wunden|wound|B1
+Unfall|m|Unfälle|accident|A2
+Entzündung|f|Entzündungen|inflammation|B2
+Infektion|f|Infektionen|infection|B2
+Virus|n|Viren|virus|B2
+Bakterie|f|Bakterien|bacterium|B2
+Impfung|f|Impfungen|vaccination|B1
+Impfstoff|m|Impfstoffe|vaccine|B2
+Medizin|f|-|medicine|B1
+Medikament|n|Medikamente|medication|A2
+Tablette|f|Tabletten|tablet; pill|A2
+Salbe|f|Salben|ointment|B2
+Spritze|f|Spritzen|syringe; injection|B1
+Verband|m|Verbände|bandage; association|B1
+Pflaster|n|Pflaster|plaster|B1
+Rezept|n|Rezepte|prescription; recipe|A2
+Untersuchung|f|Untersuchungen|examination|B1
+Behandlung|f|Behandlungen|treatment|B1
+Operation|f|Operationen|operation|B1
+Diagnose|f|Diagnosen|diagnosis|B2
+Symptom|n|Symptome|symptom|B2
+Therapie|f|Therapien|therapy|B2
+Arzt|m|Ärzte|doctor (male)|A1
+Ärztin|f|Ärztinnen|doctor (female)|A1
+Zahnarzt|m|Zahnärzte|dentist|A1
+Krankenhaus|n|Krankenhäuser|hospital|A1
+Krankenschwester|f|Krankenschwestern|nurse (female)|A2
+Krankenpfleger|m|Krankenpfleger|nurse (male)|B1
+Apotheke|f|Apotheken|pharmacy|A1
+Apotheker|m|Apotheker|pharmacist|A2
+Praxis|f|Praxen|practice; surgery|A2
+Sprechstunde|f|Sprechstunden|consultation hours|A2
+Termin|m|Termine|appointment|A1
+Krankenkasse|f|Krankenkassen|health insurance fund|A2
+Versicherung|f|Versicherungen|insurance|A2
+Notaufnahme|f|Notaufnahmen|emergency room|B1
+Krankenwagen|m|Krankenwagen|ambulance|A2
+Notfall|m|Notfälle|emergency|B1
+Rettungsdienst|m|Rettungsdienste|emergency medical service|B2
+Patient|m|Patienten|patient|A2
+Patientin|f|Patientinnen|female patient|A2
+Chirurg|m|Chirurgen|surgeon|B2
+Kur|f|Kuren|spa treatment; cure|B2
+Übelkeit|f|-|nausea|B2
+Schwindel|m|-|dizziness|B2
+Müdigkeit|f|-|tiredness|B1
+Stress|m|-|stress|B1
+Depression|f|Depressionen|depression|B2
+Krebs|m|-|cancer|B2
+Diabetes|m|-|diabetes|B2
+Asthma|n|-|asthma|B2
+Herzinfarkt|m|Herzinfarkte|heart attack|B2
+Schlaganfall|m|Schlaganfälle|stroke|B2
+Blutdruck|m|-|blood pressure|B1
+Blutzucker|m|-|blood sugar|B2
+Allergiker|m|Allergiker|allergy sufferer|C1
+Krankheitserreger|m|Krankheitserreger|pathogen|C1
+Seuche|f|Seuchen|epidemic|C1
+Pandemie|f|Pandemien|pandemic|B2
+Quarantäne|f|Quarantänen|quarantine|B2
+Gesundheitsamt|n|Gesundheitsämter|public health office|B2
+Rollstuhl|m|Rollstühle|wheelchair|B1
+Brille|f|Brillen|glasses|A1
+Kontaktlinse|f|Kontaktlinsen|contact lens|B1
+Hörgerät|n|Hörgeräte|hearing aid|B2
+Zahnspange|f|Zahnspangen|braces|B2
+Zahnbürste|f|Zahnbürsten|toothbrush|A1
+Zahnpasta|f|Zahnpasten|toothpaste|A1
+Fitness|f|-|fitness|A2
+Ernährung|f|-|nutrition; diet|B1
+Diät|f|Diäten|diet|B1
+Vitamin|n|Vitamine|vitamin|B1
+Schlaf|m|-|sleep|A2
+Erholung|f|-|recovery; relaxation|B1
+Ruhe|f|-|rest; quiet|A2
+Sucht|f|Süchte|addiction|B2
+Rauchen|n|-|smoking|A2
+Alkohol|m|-|alcohol|A2

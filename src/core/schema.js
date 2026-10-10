@@ -29,6 +29,23 @@ const Schema = (() => {
   /* The skill model. Overall level is never derived from one skill alone. */
   const SKILLS = ['vocabulary','grammar','reading','writing','listening','speaking','pronunciation','conversation'];
 
+  /* Word types a vocabulary/dictionary entry can carry (spec: dictionary
+     must support all of these, and the UI must adapt per type — a verb
+     entry must never render "der gehen"). */
+  const WORD_TYPES = ['noun','verb','adjective','adverb','pronoun','article',
+    'preposition','conjunction','particle','interjection','number','determiner',
+    'expression','phrase','abbreviation'];
+  /* Legacy/DSL short forms map onto the canonical types above. Vocabulary
+     authored before this phase uses 'adj'/'adv' as shorthand; both are
+     kept working rather than requiring every existing entry to be edited. */
+  const WORD_TYPE_ALIASES = {adj:'adjective', adv:'adverb', prep:'preposition', pron:'pronoun', num:'number',
+    qword:'pronoun' /* legacy Phase-2.5 seed data's tag for interrogatives (wer/was/wo/wann) */};
+  function canonicalWordType(type){ return WORD_TYPE_ALIASES[type] || type || 'expression'; }
+  const WORD_TYPE_LABELS = {noun:'noun', verb:'verb', adjective:'adjective', adverb:'adverb',
+    pronoun:'pronoun', article:'article', preposition:'preposition', conjunction:'conjunction',
+    particle:'particle', interjection:'interjection', number:'number', determiner:'determiner',
+    expression:'expression', phrase:'phrase', abbreviation:'abbreviation'};
+
   /* Weakness buckets — the vocabulary the learner-facing dashboard speaks. */
   const WEAKNESS_AREAS = [
     'vocabulary','grammar','articles','gender','cases','wordOrder',
@@ -106,14 +123,20 @@ const Schema = (() => {
      defaults so downstream code can rely on fields existing. */
 
   function normalizeVocab(v){
-    return Object.assign({
+    const base = Object.assign({
       id:null, de:'', lemma:v.lemma || v.de, article:'', plural:'', en:'',
-      type:'noun', level:'A1', topic:'general', subtopic:null,
+      type:'noun', level:'A1', topic:'general', subtopic:null, topicTags:null,
       ex_de:'', ex_en:'', examples:[], phrases:[], collocations:[],
-      related:[], opposites:[], synonyms:[], commonMistakes:[],
-      grammarIds:[], lessonIds:[], forms:null, pathways:[],
+      related:[], opposites:[], synonyms:[], commonMistakes:[], commonMistakeIds:[],
+      grammarIds:[], lessonIds:[], forms:null, pathways:[], senses:[],
       frequency:3, translations:{}, meta:meta(),
     }, v);
+    // topicTags lets a word carry more than one topic (spec §26) without
+    // breaking every existing `.topic` string-equality check in the UI —
+    // `topic` stays the primary/first tag, `topicTags` is the full set.
+    if(!base.topicTags){ base.topicTags = [base.topic].filter(Boolean); }
+    else if(!base.topicTags.includes(base.topic)){ base.topicTags = [base.topic, ...base.topicTags]; }
+    return base;
   }
 
   function normalizeGrammar(g){
@@ -155,6 +178,7 @@ const Schema = (() => {
     SCHEMA_VERSION, CONTENT_VERSION, LEVELS, OFFICIAL_CEFR, SKILLS, WEAKNESS_AREAS,
     MASTERY_STATES, SRS_STATES, EXERCISE_TYPES, EXERCISE_SUBTYPES, DIFFICULTIES,
     PATHWAYS, PACKS, EXPLANATION_LANGS, ID_PREFIX, TEACHER_QUERY_TYPES,
+    WORD_TYPES, WORD_TYPE_ALIASES, WORD_TYPE_LABELS, canonicalWordType,
     levelIndex, isBelow, nextLevel, prevLevel, slug, meta,
     normalizeVocab, normalizeGrammar, normalizeLesson, teacherRef,
   };

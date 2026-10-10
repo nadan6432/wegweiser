@@ -1,0 +1,278 @@
+@domain compounds
+Krankenhaus|n|Krankenhäuser|hospital|A1
+Krankenschwester|f|Krankenschwestern|nurse|A2
+Krankenversicherung|f|Krankenversicherungen|health insurance|B1
+Krankenwagen|m|Krankenwagen|ambulance|A2
+Krankheitsverlauf|m|Krankheitsverläufe|course of an illness|C1
+Bahnhof|m|Bahnhöfe|train station|A1
+Busbahnhof|m|Busbahnhöfe|bus station|A2
+Bahnfahrt|f|Bahnfahrten|train journey|A2
+Bahnticket|n|Bahntickets|train ticket|B1
+Fahrradfahren|n|-|cycling|A1
+Fahrradweg|m|Fahrradwege|cycle path|A2
+Fahrradhelm|m|Fahrradhelme|bicycle helmet|A2
+Fahrradschloss|n|Fahrradschlösser|bicycle lock|B1
+Fahrradständer|m|Fahrradständer|bicycle stand|B1
+Wohnzimmer|n|Wohnzimmer|living room|A1
+Schlafzimmer|n|Schlafzimmer|bedroom|A1
+Wohnungssuche|f|-|flat hunting|A2
+Wohnungsschlüssel|m|Wohnungsschlüssel|flat key|A2
+Wohngemeinschaft|f|Wohngemeinschaften|shared flat|A2
+Geburtstag|m|Geburtstage|birthday|A1
+Geburtstagsgeschenk|n|Geburtstagsgeschenke|birthday present|A1
+Geburtstagsfeier|f|Geburtstagsfeiern|birthday party|A1
+Geburtsdatum|n|Geburtsdaten|date of birth|A1
+Geburtsort|m|Geburtsorte|place of birth|A1
+Geburtsurkunde|f|Geburtsurkunden|birth certificate|B1
+Ausbildungsplatz|m|Ausbildungsplätze|training place|B1
+Ausbildungsvertrag|m|Ausbildungsverträge|training contract|B2
+Ausbildungsberuf|m|Ausbildungsberufe|recognised trade|B2
+Arbeitsplatz|m|Arbeitsplätze|workplace|A2
+Arbeitsvertrag|m|Arbeitsverträge|employment contract|B1
+Arbeitsamt|n|Arbeitsämter|employment office|B1
+Arbeitserlaubnis|f|Arbeitserlaubnisse|work permit|B2
+Arbeitsmarkt|m|Arbeitsmärkte|labour market|B2
+Arbeitsweg|m|Arbeitswege|way to work|B1
+Arbeitsalltag|m|-|working day|B2
+Arbeitsbedingungen|p|-|working conditions|B2
+Arbeitskollege|m|Arbeitskollegen|work colleague|A2
+Arbeitsstelle|f|Arbeitsstellen|job; place of work|B1
+Arbeitslosenversicherung|f|-|unemployment insurance|B2
+Computerprogramm|n|Computerprogramme|computer program|B1
+Computerspiel|n|Computerspiele|computer game|A2
+Computerraum|m|Computerräume|computer room|B1
+Internetzugang|m|Internetzugänge|internet access|B1
+Internetverbindung|f|Internetverbindungen|internet connection|A2
+Internetseite|f|Internetseiten|web page|A2
+Internetcafé|n|Internetcafés|internet café|A2
+Datenschutz|m|-|data protection|B1
+Datensicherheit|f|-|data security|C1
+Datenverarbeitung|f|-|data processing|C1
+Datenverlust|m|Datenverluste|data loss|C1
+Datenmenge|f|Datenmengen|amount of data|C1
+Informationssicherheit|f|-|information security|C1
+Informationstechnik|f|-|information technology|C1
+Informationsquelle|f|Informationsquellen|source of information|B2
+Cybersicherheit|f|-|cybersecurity|C1
+Cyberkriminalität|f|-|cybercrime|C1
+Sicherheitssystem|n|Sicherheitssysteme|security system|C1
+Sicherheitsvorkehrung|f|Sicherheitsvorkehrungen|safety precaution|C1
+Passwortmanager|m|Passwortmanager|password manager|C1
+Zwei-Faktor-Authentifizierung|f|-|two-factor authentication|C1
+Netzwerksicherheit|f|-|network security|C1
+Netzwerkadministrator|m|Netzwerkadministratoren|network administrator|C1
+Systemadministrator|m|Systemadministratoren|system administrator|C1
+Softwareentwicklung|f|-|software development|B2
+Softwareentwickler|m|Softwareentwickler|software developer|B2
+Webentwicklung|f|-|web development|B2
+Webserver|m|Webserver|web server|C1
+Programmierfehler|m|Programmierfehler|programming error|C1
+Fehlersuche|f|-|troubleshooting|C1
+Betriebssystem|n|Betriebssysteme|operating system|B2
+Dateiformat|n|Dateiformate|file format|B2
+Dateiname|m|Dateinamen|file name|B1
+Dateisystem|n|Dateisysteme|file system|C1
+Speicherplatz|m|-|storage space|B1
+Speicherkarte|f|Speicherkarten|memory card|B1
+Bildschirmschoner|m|Bildschirmschoner|screensaver|B2
+Tastenkombination|f|Tastenkombinationen|keyboard shortcut|B2
+Lesezeichen|n|Lesezeichen|bookmark|B1
+Suchanfrage|f|Suchanfragen|search query|B2
+Suchergebnis|n|Suchergebnisse|search result|B2
+Benutzerkonto|n|Benutzerkonten|user account|B1
+Benutzeroberfläche|f|Benutzeroberflächen|user interface|B2
+Benutzerhandbuch|n|Benutzerhandbücher|user manual|B2
+Bedienungsanleitung|f|Bedienungsanleitungen|instruction manual|B1
+Gebrauchsanweisung|f|Gebrauchsanweisungen|instructions for use|B1
+Kundenservice|m|-|customer service|B1
+Kundenkarte|f|Kundenkarten|loyalty card|B1
+Kundenberater|m|Kundenberater|customer adviser|B2
+Einkaufsstraße|f|Einkaufsstraßen|shopping street|A2
+Einkaufszentrum|n|Einkaufszentren|shopping centre|A2
+Supermarktkasse|f|Supermarktkassen|supermarket checkout|B1
+Kaffeepause|f|Kaffeepausen|coffee break|A2
+Mittagspause|f|Mittagspausen|lunch break|A2
+Pausenbrot|n|Pausenbrote|snack sandwich|B1
+Frühstückstisch|m|Frühstückstische|breakfast table|B1
+Küchentisch|m|Küchentische|kitchen table|A2
+Esstisch|m|Esstische|dining table|A2
+Kleiderschrank|m|Kleiderschränke|wardrobe|A2
+Bücherregal|n|Bücherregale|bookshelf|A2
+Nachttisch|m|Nachttische|bedside table|B1
+Bettwäsche|f|-|bed linen|B1
+Schlafsack|m|Schlafsäcke|sleeping bag|B1
+Zahnarzt|m|Zahnärzte|dentist|A1
+Zahnarztpraxis|f|Zahnarztpraxen|dental practice|B1
+Hausarzt|m|Hausärzte|family doctor|A2
+Facharzt|m|Fachärzte|specialist|B1
+Kinderarzt|m|Kinderärzte|paediatrician|A2
+Augenarzt|m|Augenärzte|ophthalmologist|B1
+Frauenarzt|m|Frauenärzte|gynaecologist|B1
+Hautarzt|m|Hautärzte|dermatologist|B1
+Tierarztpraxis|f|Tierarztpraxen|vet's practice|B2
+Lehrerzimmer|n|Lehrerzimmer|staff room|B1
+Schulhof|m|Schulhöfe|schoolyard|A2
+Schulweg|m|Schulwege|way to school|A2
+Schulfach|n|Schulfächer|school subject|A2
+Schuljahr|n|Schuljahre|school year|A2
+Klassenlehrer|m|Klassenlehrer|form teacher|B1
+Klassenarbeit|f|Klassenarbeiten|class test|B1
+Hausaufgaben|p|-|homework|A1
+Deutschkurs|m|Deutschkurse|German course|A1
+Deutschlehrer|m|Deutschlehrer|German teacher|A1
+Deutschunterricht|m|-|German lessons|A1
+Wortschatz|m|-|vocabulary|A2
+Rechtschreibfehler|m|Rechtschreibfehler|spelling mistake|B1
+Fremdsprache|f|Fremdsprachen|foreign language|A2
+Muttersprache|f|Muttersprachen|mother tongue|A2
+Sprachkenntnisse|p|-|language skills|B1
+Sprachniveau|n|Sprachniveaus|language level|B1
+Studienplatz|m|Studienplätze|university place|B2
+Studiengang|m|Studiengänge|degree programme|B1
+Studiengebühren|p|-|tuition fees|B2
+Studentenwohnheim|n|Studentenwohnheime|student hall of residence|A2
+Studentenausweis|m|Studentenausweise|student ID|B1
+Semesterferien|p|-|semester break|B1
+Wintersemester|n|Wintersemester|winter semester|B1
+Sommersemester|n|Sommersemester|summer semester|B1
+Abschlussarbeit|f|Abschlussarbeiten|final thesis|C1
+Bachelorarbeit|f|Bachelorarbeiten|bachelor's thesis|C1
+Masterarbeit|f|Masterarbeiten|master's thesis|C1
+Doktorarbeit|f|Doktorarbeiten|doctoral thesis|C1
+Lebensmittel|p|-|groceries; food|A2
+Lebensmittelgeschäft|n|Lebensmittelgeschäfte|grocery store|B1
+Nahrungsmittel|n|Nahrungsmittel|foodstuff|B2
+Getränkemarkt|m|Getränkemärkte|drinks store|B1
+Weinglas|n|Weingläser|wine glass|A2
+Wasserflasche|f|Wasserflaschen|water bottle|A2
+Kaffeetasse|f|Kaffeetassen|coffee cup|A1
+Teelöffel|m|Teelöffel|teaspoon|A2
+Esslöffel|m|Esslöffel|tablespoon|A2
+Kochbuch|n|Kochbücher|cookbook|A2
+Backofen|m|Backöfen|oven|A2
+Spülbecken|n|Spülbecken|kitchen sink|B1
+Küchenmesser|n|Küchenmesser|kitchen knife|B1
+Kochtopf|m|Kochtöpfe|cooking pot|B1
+Bratpfanne|f|Bratpfannen|frying pan|B1
+Obstsalat|m|Obstsalate|fruit salad|A2
+Kartoffelsalat|m|Kartoffelsalate|potato salad|A2
+Apfelsaft|m|Apfelsäfte|apple juice|A1
+Orangensaft|m|Orangensäfte|orange juice|A1
+Tomatensuppe|f|Tomatensuppen|tomato soup|A2
+Hühnersuppe|f|Hühnersuppen|chicken soup|B1
+Schweinebraten|m|Schweinebraten|roast pork|B1
+Bratwurst|f|Bratwürste|fried sausage|A2
+Currywurst|f|Currywürste|curry sausage|A2
+Sauerkraut|n|-|sauerkraut|B1
+Schwarzbrot|n|Schwarzbrote|dark bread|B1
+Vollkornbrot|n|Vollkornbrote|wholemeal bread|B1
+Butterbrot|n|Butterbrote|bread and butter|A2
+Käsebrot|n|Käsebrote|cheese sandwich|A2
+Schokoladenkuchen|m|Schokoladenkuchen|chocolate cake|A2
+Geburtstagskuchen|m|Geburtstagskuchen|birthday cake|A2
+Weihnachtsbaum|m|Weihnachtsbäume|Christmas tree|A2
+Weihnachtsmarkt|m|Weihnachtsmärkte|Christmas market|A2
+Weihnachtsgeschenk|n|Weihnachtsgeschenke|Christmas present|A2
+Osterei|n|Ostereier|Easter egg|B1
+Osterhase|m|Osterhasen|Easter bunny|B1
+Sommerferien|p|-|summer holidays|A2
+Herbstferien|p|-|autumn holidays|B1
+Winterurlaub|m|Winterurlaube|winter holiday|B1
+Sommerurlaub|m|Sommerurlaube|summer holiday|B1
+Strandurlaub|m|Strandurlaube|beach holiday|B1
+Städtereise|f|Städtereisen|city trip|B1
+Wochenendreise|f|Wochenendreisen|weekend trip|B1
+Reiseziel|n|Reiseziele|travel destination|B1
+Reiseversicherung|f|Reiseversicherungen|travel insurance|B2
+Flugticket|n|Flugtickets|flight ticket|A2
+Flugzeug|n|Flugzeuge|aeroplane|A1
+Flugverspätung|f|Flugverspätungen|flight delay|B1
+Flugzeugträger|m|Flugzeugträger|aircraft carrier|C1
+Fluggast|m|Fluggäste|air passenger|B2
+Gepäckband|n|Gepäckbänder|baggage belt|B1
+Zollkontrolle|f|Zollkontrollen|customs check|B1
+Passkontrolle|f|Passkontrollen|passport control|B1
+Verkehrsmittel|n|Verkehrsmittel|means of transport|A2
+Verkehrsschild|n|Verkehrsschilder|traffic sign|B1
+Verkehrsunfall|m|Verkehrsunfälle|traffic accident|B1
+Verkehrsverbund|m|Verkehrsverbünde|transport association|C1
+Führerschein|m|Führerscheine|driving licence|A2
+Fahrschule|f|Fahrschulen|driving school|B1
+Fahrlehrer|m|Fahrlehrer|driving instructor|B1
+Autobahnkreuz|n|Autobahnkreuze|motorway interchange|B2
+Tankstelle|f|Tankstellen|petrol station|A1
+Werkstatt|f|Werkstätten|garage; workshop|A2
+Umweltschutz|m|-|environmental protection|B1
+Umweltverschmutzung|f|-|environmental pollution|B2
+Klimaschutz|m|-|climate protection|B2
+Erneuerbare Energien|p|-|renewable energies|B2
+Solaranlage|f|Solaranlagen|solar panel system|B2
+Windrad|n|Windräder|wind turbine|B2
+Kernkraftwerk|n|Kernkraftwerke|nuclear power plant|B2
+Atomkraft|f|-|nuclear power|B2
+Stromversorgung|f|-|power supply|B2
+Wasserversorgung|f|-|water supply|B2
+Abwasser|n|Abwässer|waste water|C1
+Müllabfuhr|f|-|refuse collection|B1
+Mülltrennung|f|-|waste separation|B1
+Gesundheitssystem|n|Gesundheitssysteme|health system|B2
+Gesundheitsamt|n|Gesundheitsämter|public health office|B2
+Gesundheitszustand|m|-|state of health|B2
+Gesundheitsbewusstsein|n|-|health awareness|C1
+Wirtschaftswachstum|n|-|economic growth|C1
+Wirtschaftskrise|f|Wirtschaftskrisen|economic crisis|B2
+Wirtschaftspolitik|f|-|economic policy|C1
+Finanzkrise|f|Finanzkrisen|financial crisis|B2
+Arbeitslosenquote|f|Arbeitslosenquoten|unemployment rate|C1
+Lebenshaltungskosten|p|-|cost of living|B2
+Bruttogehalt|n|Bruttogehälter|gross salary|B2
+Nettogehalt|n|Nettogehälter|net salary|B2
+Mindestlohn|m|Mindestlöhne|minimum wage|B2
+Steuernummer|f|Steuernummern|tax number|B2
+Sozialversicherungsnummer|f|Sozialversicherungsnummern|social security number|C1
+Meldebescheinigung|f|Meldebescheinigungen|registration certificate|B2
+Aufenthaltstitel|m|Aufenthaltstitel|residence title|B2
+Krankschreibung|f|Krankschreibungen|sick note|B2
+Elternzeit|f|-|parental leave|B2
+Mutterschutz|m|-|maternity protection|C1
+Kinderbetreuung|f|-|childcare|B1
+Kindertagesstätte|f|Kindertagesstätten|day-care centre|B2
+Grundschullehrer|m|Grundschullehrer|primary school teacher|B1
+Rechtsanwaltskanzlei|f|Rechtsanwaltskanzleien|law firm|C1
+Gerichtsverhandlung|f|Gerichtsverhandlungen|court hearing|C1
+Gerichtsurteil|n|Gerichtsurteile|court verdict|C1
+Rechtsstaat|m|Rechtsstaaten|state governed by law|C1
+Meinungsfreiheit|f|-|freedom of speech|C1
+Pressefreiheit|f|-|freedom of the press|C1
+Wahlrecht|n|-|right to vote|C1
+Bundesverfassungsgericht|n|-|Federal Constitutional Court|C1
+Gesetzgebung|f|Gesetzgebungen|legislation|C1
+Volksabstimmung|f|Volksabstimmungen|referendum|C1
+Wehrpflicht|f|-|conscription|C1
+Entwicklungshilfe|f|-|development aid|C1
+Menschenwürde|f|-|human dignity|C1
+Naturkatastrophe|f|Naturkatastrophen|natural disaster|B2
+Erdbebenwarnung|f|Erdbebenwarnungen|earthquake warning|C1
+Hochwasserschutz|m|-|flood protection|C1
+Landwirtschaft|f|-|agriculture|B1
+Landwirt|m|Landwirte|farmer|B1
+Bauernhof|m|Bauernhöfe|farm|A2
+Ackerbau|m|-|arable farming|C1
+Viehzucht|f|-|livestock farming|C1
+Gewächshaus|n|Gewächshäuser|greenhouse|B2
+Ernteertrag|m|Ernteerträge|crop yield|C1
+Dünger|m|Dünger|fertiliser|B2
+Pflanzenschutz|m|-|crop protection|C1
+Baustelle|f|Baustellen|building site|A2
+Bauarbeiter|m|Bauarbeiter|construction worker|A2
+Baumaterial|n|Baumaterialien|building material|B2
+Bauplan|m|Baupläne|building plan|B2
+Baugenehmigung|f|Baugenehmigungen|building permit|C1
+Rohbau|m|Rohbauten|shell construction|C1
+Fundament|n|Fundamente|foundation|B2
+Fertigung|f|Fertigungen|manufacturing|C1
+Fließband|n|Fließbänder|assembly line|B2
+Maschinenbau|m|-|mechanical engineering|B2
+Elektrotechnik|f|-|electrical engineering|B2
+Bauingenieur|m|Bauingenieure|civil engineer|B2
+Energieversorgung|f|-|energy supply|C1

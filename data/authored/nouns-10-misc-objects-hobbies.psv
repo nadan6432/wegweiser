@@ -1,0 +1,198 @@
+@domain objects
+Ding|n|Dinge|thing|A1
+Sache|f|Sachen|thing; matter|A1
+Gegenstand|m|Gegenstände|object; item|B1
+Zeug|n|-|stuff|B1
+Kram|m|-|stuff; junk|C1
+Ausweis|m|Ausweise|ID card|A2
+Karte|f|Karten|card|A1
+Brief|m|Briefe|letter|A1
+Umschlag|m|Umschläge|envelope|A2
+Briefmarke|f|Briefmarken|stamp|A1
+Paket|n|Pakete|parcel|A2
+Päckchen|n|Päckchen|small parcel|B1
+Zeitschrift|f|Zeitschriften|magazine|A2
+Prospekt|m|Prospekte|brochure|B1
+Plakat|n|Plakate|poster|B1
+Schild|n|Schilder|sign|A2
+Zettel|m|Zettel|note; slip of paper|A2
+Notiz|f|Notizen|note|B1
+Notizbuch|n|Notizbücher|notebook|A2
+Ordner|m|Ordner|folder; binder|A2
+Mappe|f|Mappen|folder; portfolio|B1
+Akte|f|Akten|file; record|B2
+Stempel|m|Stempel|stamp; rubber stamp|B1
+Unterschrift|f|Unterschriften|signature|A2
+Kopie|f|Kopien|copy|A2
+Kopierer|m|Kopierer|photocopier|B1
+Lupe|f|Lupen|magnifying glass|B2
+Taschenlampe|f|Taschenlampen|torch|A2
+Feuerzeug|n|Feuerzeuge|lighter|B1
+Streichholz|n|Streichhölzer|match|B1
+Regenschirm|m|Regenschirme|umbrella|A2
+Sonnenbrille|f|Sonnenbrillen|sunglasses|A2
+Sonnencreme|f|Sonnencremes|sun cream|B1
+Fernbedienung|f|Fernbedienungen|remote control|B1
+Fernglas|n|Ferngläser|binoculars|B2
+Kompass|m|Kompasse|compass|B1
+Fahrkartenautomat|m|Fahrkartenautomaten|ticket machine|B1
+Automat|m|Automaten|machine; vending machine|B1
+Waage|f|Waagen|scale|B1
+Thermometer|n|Thermometer|thermometer|B1
+Schere|f|Scheren|scissors|A2
+Nadel|f|Nadeln|needle|B1
+Faden|m|Fäden|thread|B1
+Knopf|m|Knöpfe|button|A2
+Kiste|f|Kisten|crate; box|A2
+Karton|m|Kartons|carton|B1
+Schachtel|f|Schachteln|box|A2
+Dose|f|Dosen|tin; can|A2
+Glas|n|Gläser|jar; glass|A1
+Sack|m|Säcke|sack|B1
+Korb|m|Körbe|basket|A2
+Beutel|m|Beutel|bag; pouch|B1
+Tüte|f|Tüten|paper/plastic bag|A1
+Deckel|m|Deckel|lid|B1
+Griff|m|Griffe|handle; grip|B1
+Kette|f|Ketten|chain|A2
+Rad|n|Räder|wheel|A1
+Seil|n|Seile|rope|B1
+Leiter|f|Leitern|ladder|B1
+Zaun|m|Zäune|fence|B1
+Tor|n|Tore|gate|A2
+Rohr|n|Rohre|pipe|B1
+Hahn|m|Hähne|tap|B1
+Wasserhahn|m|Wasserhähne|water tap|A2
+Lampe|f|Lampen|lamp|A1
+Glühbirne|f|Glühbirnen|light bulb|B1
+Steckdose|f|Steckdosen|power socket|A2
+@domain garden
+Garten|m|Gärten|garden|A1
+Rasen|m|Rasen|lawn|A2
+Beet|n|Beete|flower bed|B1
+Hecke|f|Hecken|hedge|B2
+Gartenhaus|n|Gartenhäuser|garden shed|B1
+Gartenarbeit|f|-|gardening|B1
+Rasenmäher|m|Rasenmäher|lawnmower|B1
+Gießkanne|f|Gießkannen|watering can|B1
+Schaufel|f|Schaufeln|shovel|B1
+Spaten|m|Spaten|spade|B2
+Harke|f|Harken|rake|C1
+Schubkarre|f|Schubkarren|wheelbarrow|B2
+Blumenbeet|n|Blumenbeete|flower bed|B1
+Blumenstrauß|m|Blumensträuße|bouquet|B1
+Unkraut|n|Unkräuter|weed|B2
+Kompost|m|-|compost|B2
+@domain hobbies
+Hobby|n|Hobbys|hobby|A1
+Interesse|n|Interessen|interest|A2
+Sammlung|f|Sammlungen|collection|B1
+Briefmarkensammlung|f|Briefmarkensammlungen|stamp collection|B1
+Brettspiel|n|Brettspiele|board game|A2
+Kartenspiel|n|Kartenspiele|card game|A2
+Puzzle|n|Puzzles|jigsaw puzzle|B1
+Schach|n|-|chess|A2
+Würfel|m|Würfel|die; dice; cube|B1
+Spielzeug|n|Spielzeuge|toy|A2
+Puppe|f|Puppen|doll|A2
+Teddybär|m|Teddybären|teddy bear|A2
+Luftballon|m|Luftballons|balloon|A2
+Drachen|m|Drachen|kite; dragon|B1
+Angeln|n|-|fishing|B1
+Angel|f|Angeln|fishing rod|B1
+Wandern|n|-|hiking|A2
+Camping|n|-|camping|A2
+Basteln|n|-|crafting|B1
+Handarbeit|f|Handarbeiten|handicraft|B1
+Nähen|n|-|sewing|B1
+Stricken|n|-|knitting|B1
+Malen|n|-|painting|A2
+Zeichnen|n|-|drawing|A2
+Fotografieren|n|-|photography|A2
+Kochen|n|-|cooking|A1
+Backen|n|-|baking|A2
+Tanzen|n|-|dancing|A1
+Singen|n|-|singing|A1
+Lesen|n|-|reading|A1
+Schwimmen|n|-|swimming|A1
+Joggen|n|-|jogging|A2
+Radfahren|n|-|cycling|A1
+Fernsehen|n|-|watching TV|A1
+Gaming|n|-|gaming|B2
+Ausflug|m|Ausflüge|outing|A2
+Picknick|n|Picknicks|picnic|A2
+Grillen|n|-|barbecuing|A2
+Grill|m|Grills|barbecue; grill|A2
+Lagerfeuer|n|Lagerfeuer|campfire|B1
+Kinobesuch|m|Kinobesuche|cinema visit|A2
+Theaterstück|n|Theaterstücke|play|B1
+Kabarett|n|Kabaretts|cabaret|B2
+Zirkus|m|Zirkusse|circus|A2
+Jahrmarkt|m|Jahrmärkte|fair|B1
+Vergnügungspark|m|Vergnügungsparks|amusement park|B1
+Achterbahn|f|Achterbahnen|roller coaster|B1
+Karussell|n|Karussells|carousel|B1
+@domain weather-more
+Wettervorhersage|f|Wettervorhersagen|weather forecast|A2
+Niederschlag|m|Niederschläge|precipitation|B2
+Luftfeuchtigkeit|f|-|humidity|B2
+Luftdruck|m|-|air pressure|B2
+Sonnenstrahl|m|Sonnenstrahlen|sunbeam|B2
+Schauer|m|Schauer|shower (rain)|B2
+Glatteis|n|-|black ice|B2
+Frost|m|Fröste|frost|B1
+Reif|m|-|hoarfrost|C1
+Schneesturm|m|Schneestürme|blizzard|B2
+Schneemann|m|Schneemänner|snowman|A2
+Schneeflocke|f|Schneeflocken|snowflake|B1
+Pfütze|f|Pfützen|puddle|B1
+Windstille|f|-|calm|C1
+Brise|f|Brisen|breeze|C1
+Orkan|m|Orkane|hurricane|C1
+Tornado|m|Tornados|tornado|B2
+Sonnenfinsternis|f|Sonnenfinsternisse|solar eclipse|C1
+Mondschein|m|-|moonlight|B2
+Sternenhimmel|m|-|starry sky|B2
+Horizont|m|Horizonte|horizon|B2
+@domain body-more
+Handgelenk|n|Handgelenke|wrist|B1
+Knöchel|m|Knöchel|ankle; knuckle|B2
+Oberschenkel|m|Oberschenkel|thigh|B2
+Unterarm|m|Unterarme|forearm|B2
+Handfläche|f|Handflächen|palm|B2
+Fingernagel|m|Fingernägel|fingernail|B1
+Fußnagel|m|Fußnägel|toenail|B2
+Gaumen|m|Gaumen|palate|C1
+Speiseröhre|f|Speiseröhren|oesophagus|C1
+Luftröhre|f|Luftröhren|windpipe|C1
+Blase|f|Blasen|bladder; blister|B2
+Milz|f|Milze|spleen|C1
+Bauchspeicheldrüse|f|Bauchspeicheldrüsen|pancreas|C2
+Schilddrüse|f|Schilddrüsen|thyroid gland|C1
+Gebärmutter|f|Gebärmütter|womb|C1
+Gehör|n|-|hearing|B2
+Geruch|m|Gerüche|smell|B1
+Geschmack|m|Geschmäcke|taste|B1
+Gefühl|n|Gefühle|sense; feeling|A2
+Sehvermögen|n|-|eyesight|C1
+Gedächtnis|n|Gedächtnisse|memory|B2
+Reflex|m|Reflexe|reflex|C1
+Hormon|n|Hormone|hormone|C1
+Immunsystem|n|Immunsysteme|immune system|C1
+Erbgut|n|-|genetic material|C1
+Fortpflanzung|f|-|reproduction|C1
+Verdauung|f|-|digestion|B2
+Atmung|f|-|breathing|B2
+Durchblutung|f|-|blood circulation|C1
+Körperhaltung|f|Körperhaltungen|posture|B2
+Gewicht|n|Gewichte|weight|A2
+Körpergröße|f|Körpergrößen|height|A2
+Körpertemperatur|f|Körpertemperaturen|body temperature|B1
+Gänsehaut|f|-|goosebumps|C1
+Sommersprosse|f|Sommersprossen|freckle|C1
+Falte|f|Falten|wrinkle; fold|B2
+Narbe|f|Narben|scar|B2
+Glatze|f|Glatzen|bald head|B2
+Locke|f|Locken|curl|B2
+Zopf|m|Zöpfe|plait; braid|B1
+Frisur|f|Frisuren|hairstyle|A2

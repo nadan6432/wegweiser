@@ -133,13 +133,13 @@ const VOCAB_CORE = (() => {
   ]);
   g('A1','home',[
     "n|Wohnung|die|die Wohnungen|flat, apartment|Die Wohnung hat drei Zimmer.=The flat has three rooms.",
-    "n|Haus|das|die Häuser|house|Das Haus ist alt, aber schön.=The house is old but beautiful.",
+    "n|Haus|das|die Häuser|house|Das Haus ist alt, aber schön.=The house is old but beautiful.|+ur:گھر|+ps:کور",
     "n|Zimmer|das|die Zimmer|room|Mein Zimmer ist klein.=My room is small.",
     "n|Küche|die|die Küchen|kitchen|Die Küche ist neu.=The kitchen is new.",
     "n|Bad|das|die Bäder|bathroom|Das Bad ist gleich rechts.=The bathroom is right there on the right.",
     "n|Schlafzimmer|das|die Schlafzimmer|bedroom|Das Schlafzimmer liegt hinten.=The bedroom is at the back.",
     "n|Balkon|der|die Balkone|balcony|Die Wohnung hat einen Balkon.=The flat has a balcony.",
-    "n|Tisch|der|die Tische|table|Das Buch liegt auf dem Tisch.=The book is on the table.",
+    "n|Tisch|der|die Tische|table|Das Buch liegt auf dem Tisch.=The book is on the table.|+ur:میز|+ps:میز",
     "n|Stuhl|der|die Stühle|chair|Der Stuhl ist bequem.=The chair is comfortable.",
     "n|Bett|das|die Betten|bed|Das Bett steht am Fenster.=The bed stands by the window.",
     "n|Schrank|der|die Schränke|cupboard, wardrobe|Die Kleidung ist im Schrank.=The clothes are in the wardrobe.",
@@ -154,6 +154,7 @@ const VOCAB_CORE = (() => {
   ]);
   g('A1','food',[
     "n|Frühstück|das|die Frühstücke|breakfast|Zum Frühstück esse ich Brot.=For breakfast I eat bread.",
+    "n|Wasser|das|die Wasser|water|Ich trinke viel Wasser.=I drink a lot of water.|+ur:پانی|+ps:اوبه",
     "n|Brot|das|die Brote|bread|Ich kaufe ein frisches Brot.=I am buying a fresh loaf of bread.",
     "n|Mittagessen|das|die Mittagessen|lunch|Das Mittagessen ist um zwölf.=Lunch is at twelve.",
     "n|Abendessen|das|die Abendessen|dinner|Wir kochen das Abendessen zusammen.=We cook dinner together.",
@@ -213,7 +214,7 @@ const VOCAB_CORE = (() => {
     "n|Krankenhaus|das|die Krankenhäuser|hospital|Sie arbeitet im Krankenhaus.=She works in the hospital.",
     "n|Park|der|die Parks|park|Im Park kann man gut laufen.=You can run well in the park.",
     "v|!fahren|fahre/fährst/fährt|ist gefahren|to travel, to drive|Ich fahre mit dem Bus.=I travel by bus.",
-    "v|!gehen|gehe/gehst/geht|ist gegangen|to go, to walk|Ich gehe zu Fuß.=I go on foot.",
+    "v|!gehen|gehe/gehst/geht|ist gegangen|to go, to walk|Ich gehe zu Fuß.=I go on foot.|+mistakeIds:mk_perfekt_sein_verb",
     "v|!laufen|laufe/läufst/läuft|ist gelaufen|to run, to walk|Wir laufen jeden Morgen.=We run every morning.",
     "w|links|adv|left|Gehen Sie links.=Go left.",
     "w|rechts|adv|right|Die Apotheke ist rechts.=The pharmacy is on the right.",
@@ -237,7 +238,7 @@ const VOCAB_CORE = (() => {
     "n|Chef|der|die Chefs|boss|Der Chef ist heute nicht da.=The boss is not here today.",
     "n|Schule|die|die Schulen|school|Die Kinder gehen zur Schule.=The children go to school.",
     "n|Kurs|der|die Kurse|course|Der Kurs beginnt im September.=The course starts in September.",
-    "n|Lehrer|der|die Lehrer|teacher (m.)|Der Lehrer erklärt die Grammatik.=The teacher explains the grammar.",
+    "n|Lehrer|der|die Lehrer|teacher (m.)|Der Lehrer erklärt die Grammatik.=The teacher explains the grammar.|+mistakeIds:mk_professions_article",
     "n|Hausaufgabe|die|die Hausaufgaben|homework|Ich mache jeden Tag Hausaufgaben.=I do homework every day.",
     "v|arbeiten|arbeite/arbeitest/arbeitet|hat gearbeitet|to work|Ich arbeite von neun bis fünf.=I work from nine to five.",
     "v|lernen|lerne/lernst/lernt|hat gelernt|to learn, to study|Ich lerne jeden Abend Deutsch.=I study German every evening.",
@@ -271,10 +272,10 @@ const VOCAB_CORE = (() => {
     "n|Sport|der|—|sport|Ich mache dreimal pro Woche Sport.=I do sport three times a week.",
     "n|Musik|die|—|music|Ich höre gern Musik.=I like listening to music.",
     "n|Film|der|die Filme|film|Der Film war sehr gut.=The film was very good.",
-    "n|Buch|das|die Bücher|book|Ich lese gerade ein Buch.=I am reading a book right now.",
+    "n|Buch|das|die Bücher|book|Ich lese gerade ein Buch.=I am reading a book right now.|+ur:کتاب|+ps:کتاب",
     "v|spielen|spiele/spielst/spielt|hat gespielt|to play|Die Kinder spielen im Park.=The children are playing in the park.",
     "v|hören|höre/hörst/hört|hat gehört|to hear, to listen|Ich höre Musik.=I listen to music.",
-    "v|!schwimmen|schwimme/schwimmst/schwimmt|ist geschwommen|to swim|Wir schwimmen im Sommer oft.=We often swim in the summer.",
+    "v|!schwimmen|schwimme/schwimmst/schwimmt|ist geschwommen|to swim|Wir schwimmen im Sommer oft.=We often swim in the summer.|+mistakeIds:mk_gern_vs_mogen",
     "v|*fernsehen|sehe fern/siehst fern/sieht fern|hat ferngesehen|to watch TV|Abends sehe ich fern.=In the evening I watch TV.",
     "v|*aufstehen|stehe auf/stehst auf/steht auf|ist aufgestanden|to get up|Ich stehe um sechs Uhr auf.=I get up at six o'clock.",
     "w|immer|adv|always|Ich trinke immer Kaffee.=I always drink coffee.",
@@ -282,7 +283,7 @@ const VOCAB_CORE = (() => {
     "w|manchmal|adv|sometimes|Manchmal koche ich selbst.=Sometimes I cook myself.",
     "w|nie|adv|never|Ich trinke nie Alkohol.=I never drink alcohol.",
     "v|*mitkommen|komme mit/kommst mit/kommt mit|ist mitgekommen|to come along|Kommst du mit?=Are you coming along?",
-    "w|gern|adv|gladly, with pleasure|Ich koche gern.=I like cooking.",
+    "w|gern|adv|gladly, with pleasure|Ich koche gern.=I like cooking.|+mistakeIds:mk_gern_vs_mogen",
     "w|lieber|adv|preferably, rather|Ich trinke lieber Tee.=I prefer drinking tea.",
   ]);
   g('A1','basics',[
@@ -292,10 +293,10 @@ const VOCAB_CORE = (() => {
     "v|sagen|sage/sagst/sagt|hat gesagt|to say|Was hast du gesagt?=What did you say?",
     "v|fragen|frage/fragst/fragt|hat gefragt|to ask|Darf ich etwas fragen?=May I ask something?",
     "v|antworten|antworte/antwortest/antwortet|hat geantwortet|to answer|Er antwortet mir nicht.=He does not answer me.",
-    "v|helfen|helfe/hilfst/hilft|hat geholfen|to help|Kannst du mir helfen?=Can you help me?",
+    "v|helfen|helfe/hilfst/hilft|hat geholfen|to help|Kannst du mir helfen?=Can you help me?|+mistakeIds:mk_dativ_helfen_akk",
     "v|*mitbringen|bringe mit/bringst mit/bringt mit|hat mitgebracht|to bring along|Bring bitte Brot mit.=Please bring bread along.",
     "v|!bleiben|bleibe/bleibst/bleibt|ist geblieben|to stay|Ich bleibe heute zu Hause.=I am staying home today.",
-    "v|mögen|mag/magst/mag|hat gemocht|to like|Ich mag deutschen Kaffee nicht.=I do not like German coffee.",
+    "v|mögen|mag/magst/mag|hat gemocht|to like|Ich mag deutschen Kaffee nicht.=I do not like German coffee.|+mistakeIds:mk_gern_vs_mogen",
     "a|gut|besser/am besten|good|Das Essen ist gut.=The food is good.",
     "a|schlecht|schlechter/am schlechtesten|bad|Das Wetter ist schlecht.=The weather is bad.",
     "a|groß|größer/am größten|big, tall|Die Wohnung ist groß.=The flat is big.",
@@ -381,7 +382,7 @@ const VOCAB_CORE = (() => {
     "v|sich freuen|freue mich/freust dich/freut sich|hat sich gefreut|to be glad|Ich freue mich auf das Wochenende.=I am looking forward to the weekend.",
     "v|sich ärgern|ärgere mich/ärgerst dich/ärgert sich|hat sich geärgert|to be annoyed|Ich ärgere mich über den Lärm.=I am annoyed about the noise.",
     "v|hoffen|hoffe/hoffst/hofft|hat gehofft|to hope|Ich hoffe, dass alles klappt.=I hope everything works out.",
-    "v|sich interessieren|interessiere mich/interessierst dich/interessiert sich|hat sich interessiert|to be interested|Ich interessiere mich für Technik.=I am interested in technology.",
+    "v|sich interessieren|interessiere mich/interessierst dich/interessiert sich|hat sich interessiert|to be interested|Ich interessiere mich für Technik.=I am interested in technology.|+mistakeIds:mk_reflexiv_pronoun_dropped",
   ]);
   g('A2','services',[
     "n|Amt|das|die Ämter|public authority, office|Ich muss zum Amt gehen.=I have to go to the public office.",
@@ -433,6 +434,33 @@ const VOCAB_CORE = (() => {
     "n|Vergangenheit|die|—|past|In der Vergangenheit war das anders.=In the past that was different.",
     "n|Zukunft|die|—|future|In Zukunft mache ich das anders.=In future I will do that differently.",
   ]);
+
+  /* ---------------- polysemy / multiple senses (Phase 4.5 — spec §21/§22) ----------------
+     A handful of words genuinely have more than one common, unrelated
+     meaning. Rather than cramming them into one comma-separated `en`
+     string (which is what "Bank"/"laufen" did before this phase — a
+     confusing paragraph, not structured senses), each gets a `senses`
+     array with its own gloss and a real example per sense. `en` stays as
+     the short/primary gloss for places that only need one string
+     (search, exercise answer keys); `senses` is the structured, richer
+     form the UI can render as numbered meanings. Attached as a targeted
+     post-processing step (only for words that actually need it) rather
+     than a schema-wide rewrite of all 600+ entries. */
+  const SENSES = {
+    v_bank: [
+      {en:'bank (financial institution)', example:{de:'Ich gehe zur Bank, um Geld abzuheben.', en:'I am going to the bank to withdraw money.'}},
+      {en:'bench (seat)', example:{de:'Wir sitzen auf der Bank im Park.', en:'We are sitting on the bench in the park.'}},
+    ],
+    v_laufen: [
+      {en:'to run', example:{de:'Ich laufe jeden Morgen eine Runde.', en:'I run a lap every morning.'}},
+      {en:'to walk, to go on foot', example:{de:'Wir laufen zur Arbeit, es ist nicht weit.', en:'We walk to work, it is not far.'}},
+      {en:'to function, to operate (of a machine)', example:{de:'Die Maschine läuft seit Stunden.', en:'The machine has been running for hours.'}},
+    ],
+  };
+  Object.keys(SENSES).forEach(id=>{
+    const entry = out.find(v=>v.id===id);
+    if(entry) entry.senses = SENSES[id];
+  });
 
   return out;
 })();

@@ -1,0 +1,39 @@
+RESULT warm-start {"shellMs":280,"heapMB":7.7}
+PASS - warm start: app shell usable quickly (<2000 ms) with tiny heap (<40 MB) — no dictionary loaded  {"shellMs":280,"heapMB":7.7}
+PASS - nothing from the master dictionary is in memory at startup (pool = curated only, store not opened)  {"poolSize":753,"lexOpen":"idle"}
+PASS - no dictionary chunk was fetched at startup  {"lemmaRequests":0}
+RESULT cold-dictionary {"openMs":1.7,"firstSearchMs":45.3,"complete":true,"first":"gehen","heapMB":10.8}
+PASS - reopening does not rebuild the index (ready immediately, zero lemma-chunk requests)  {"openMs":1.7,"lemmaRequests":0,"manifestRequests":0}
+RESULT search-bench {"out":{"gehen":{"firstMs":30.4,"avgMs":30.2,"rowsRead":68,"returned":30,"hasMore":true,"top":"exact:gehen"},"ging":{"firstMs":55.9,"avgMs":24,"rowsRead":26,"returned":24,"hasMore":false,"top":"inflected:gehen"},"gegangen":{"firstMs":22.1,"avgMs":26.9,"rowsRead":4,"returned":4,"hasMore":false,"top":"inflected:gehen"},"Haus":{"firstMs":16.9,"avgMs":10.4,"rowsRead":151,"returned":30,"hasMore":true,"top":"exact:das Haus"},"Häuser":{"firstMs":24.9,"avgMs":28.9,"rowsRead":10,"returned":10,"hasMore":false,"top":"inflected:das Haus"},"der Tisch":{"firstMs":30,"avgMs":30.1,"rowsRead":85,"returned":30,"hasMore":true,"top":"exact:der Tisch"},"Tisch":{"firstMs":61,"avgMs":33.4,"rowsRead":86,"returned":30,"hasMore":true,"top":"exact:der Tisch"},"Frau":{"firstMs":3.4,"avgMs":3.2,"rowsRead":41,"returned":30,"hasMore":true,"top":"exact:die Frau"},"frau":{"firstMs":6.5,"avgMs":3,"rowsRead":41,"returned":30,"hasMore":true,"top":"exact:frau"},"arbe":{"firstMs":12.4,"avgMs":8.3,"rowsRead":135,"returned":30,"hasMore":true,"top":"prefix:die Arbeit"},"xqzvbn":{"firstMs":64.8,"avgMs":53.5,"rowsRead":0,"returned":0,"hasMore":false,"top":null}},"heapMB":4.3}
+PASS - IndexedDB search "gehen" -> exact:gehen  "exact:gehen"
+PASS - IndexedDB search "ging" -> inflected:gehen  "inflected:gehen"
+PASS - IndexedDB search "gegangen" -> inflected:gehen  "inflected:gehen"
+PASS - IndexedDB search "Haus" -> exact:das Haus  "exact:das Haus"
+PASS - IndexedDB search "Häuser" -> inflected:das Haus  "inflected:das Haus"
+PASS - IndexedDB search "der Tisch" -> exact:der Tisch  "exact:der Tisch"
+PASS - IndexedDB search "Tisch" -> exact:der Tisch  "exact:der Tisch"
+PASS - IndexedDB search "Frau" -> exact:die Frau  "exact:die Frau"
+PASS - IndexedDB search "frau" -> exact:frau  "exact:frau"
+PASS - IndexedDB search "arbe" -> prefix:die Arbeit  "prefix:die Arbeit"
+PASS - IndexedDB search "xqzvbn" -> null  null
+PASS - typical local searches within 100 ms (avg of 10 repeats, all benchmark queries)  {"gehen":30.2,"ging":24,"gegangen":26.9,"Haus":10.4,"Häuser":28.9,"der Tisch":30.1,"Tisch":33.4,"Frau":3.2,"frau":3,"arbe":8.3,"xqzvbn":53.5}
+PASS - records loaded into JS memory per search stay tiny (<500 rows even for 30-result pages)
+PASS - OFFLINE (network disabled, store re-opened): dictionary ready from IndexedDB and searches resolve  {"phase":"ready","complete":true,"h":"Haus","t":"Tisch","err":null}
+PASS - after a full reload with every /data/ request blocked, search still works from the local index  {"phase":"ready","top":"gehen"}
+PASS - UI: typing "der Tisch" shows the Tisch noun result with the article exactly once  "Starts with\nder Tischler\nnoun · B1 · Master Dictionary\ncarpenter; joiner · pl. Tischler\nOpen\n☆\n+ Add to Learning\nder Tis"
+PASS - UI: empty-result state is shown for a query with no matches
+PASS - UI: typo suggestion ("Did you mean") appears only when nothing else matched
+PASS - searching/opening the master dictionary added nothing to the learning system  {"lexProgressIds":0}
+PASS - found a master-only word (Abbauort) to add  "lex_abbauort_noun"
+PASS - Add to Learning adds exactly one canonical record and one progress item, even if clicked repeatedly  {"n":754,"tracked":true,"copies":1}
+PASS - curated precedence: the curated Tisch card is shown and the duplicate master record is hidden  {"masterCard":false,"curatedCard":true}
+PASS - Add to Learning on a master id that is the same word as a curated entry resolves to the curated record (no duplicate created)  {"n":754,"curated":true,"masterDup":false}
+PASS - after reload the added word and its SRS progress are restored without opening the big dictionary  {"inVocab":true,"tracked":true,"lexPhase":"idle"}
+PASS - A–Z browse (letter B) lists a page of entries with a total and a Show more button  {"txt":"B — full dictionary (6,529 entries)\ndas B\nnoun · CEFR unknown · Master Dictionary\nB-flat; B · pl. B\nOpen\n☆\n+ Add to Lear","cards":29,"more":true,"head":"B — full dictionary (6,529 entries)"}
+PASS - detail view of a master word opens (fetched by id)  {"id":"lex_b_noun","text":"Wegweiser\nGERMAN COMPANION\nHOME\n⌂\nHome\nLEARN\n▸\nPRACTICE\n▸\nREVIEW\n▸\nPROGRESS\n▸\nEX"}
+RESULT heap-after-ui 8.4 MB
+PASS - heap after real UI use stays far below the 288–303 MB Phase 12 baseline  8.4
+PASS - no unexpected console/page errors (network failures deliberately induced by the offline tests are excluded)  []
+
+32 passed, 0 failed (browser phase13 — warm)
+DONE

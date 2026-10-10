@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "name": "german-nouns-csv",
+      "label": "german-nouns (gambolputty, via German Wiktionary)",
+      "importDate": "2026-09-27"
+    },
+    {
+      "name": "wiktextract-jsonl",
+      "label": "kaikki.org Wiktextract (German), by tatuylonen",
+      "importDate": "2026-09-27"
+    }
+  ],
+  "rawDataset": {
+    "totalSourceRows": 4,
+    "bySource": {
+      "german-nouns-csv": 2,
+      "wiktextract-jsonl": 2
+    }
+  },
+  "rejected": {
+    "count": 0,
+    "sample": []
+  },
+  "dedupe": {
+    "input": 4,
+    "uniqueLemmas": 4,
+    "duplicateRows": 0
+  },
+  "masterLexicon": {
+    "totalLemmas": 4,
+    "byWordType": {
+      "noun": 3,
+      "verb": 1
+    },
+    "byQuality": {
+      "VALID": 4,
+      "WARNING": 0,
+      "REJECTED": 0
+    }
+  },
+  "mergeWithCurated": {
+    "curatedBefore": 705,
+    "curatedAfter": 705,
+    "enrichedCount": 1,
+    "dictionaryOnlyCount": 3,
+    "skippedRejectedDuringMerge": 0
+  }
+}

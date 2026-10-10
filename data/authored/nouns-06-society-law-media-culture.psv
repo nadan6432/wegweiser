@@ -1,0 +1,317 @@
+@domain government
+Staat|m|Staaten|state|B1
+Regierung|f|Regierungen|government|B1
+Bundesregierung|f|Bundesregierungen|federal government|B2
+Bundestag|m|-|German federal parliament|B2
+Bundesrat|m|-|German federal council|B2
+Parlament|n|Parlamente|parliament|B1
+Kanzler|m|Kanzler|chancellor|B1
+Bundeskanzler|m|Bundeskanzler|federal chancellor|B1
+Präsident|m|Präsidenten|president|A2
+Minister|m|Minister|minister|B1
+Ministerium|n|Ministerien|ministry|B2
+Bürgermeister|m|Bürgermeister|mayor|B1
+Abgeordnete|m|Abgeordnete|member of parliament|B2
+Partei|f|Parteien|party|B1
+Wahl|f|Wahlen|election; choice|A2
+Wähler|m|Wähler|voter|B1
+Stimme|f|Stimmen|vote; voice|B1
+Abstimmung|f|Abstimmungen|vote|B2
+Demokratie|f|Demokratien|democracy|B1
+Diktatur|f|Diktaturen|dictatorship|B2
+Republik|f|Republiken|republic|B1
+Monarchie|f|Monarchien|monarchy|B2
+König|m|Könige|king|A2
+Königin|f|Königinnen|queen|A2
+Kaiser|m|Kaiser|emperor|B1
+Prinz|m|Prinzen|prince|A2
+Prinzessin|f|Prinzessinnen|princess|A2
+Politik|f|-|politics; policy|B1
+Verfassung|f|Verfassungen|constitution|B2
+Grundgesetz|n|-|Basic Law (German constitution)|B2
+Gesetz|n|Gesetze|law|B1
+Verordnung|f|Verordnungen|regulation|B2
+Vorschrift|f|Vorschriften|regulation; rule|B1
+Regel|f|Regeln|rule|A2
+Recht|n|Rechte|right; law|B1
+Pflicht|f|Pflichten|duty; obligation|B1
+Freiheit|f|Freiheiten|freedom|B1
+Gleichheit|f|-|equality|B2
+Gerechtigkeit|f|-|justice|B2
+Menschenrechte|p|-|human rights|B2
+Verwaltung|f|Verwaltungen|administration|B2
+Behörde|f|Behörden|authority; public office|B1
+Amt|n|Ämter|office; authority|B1
+Ausländerbehörde|f|Ausländerbehörden|immigration office|B2
+Einwohnermeldeamt|n|Einwohnermeldeämter|residents' registration office|B2
+Antrag|m|Anträge|application; request|B1
+Formular|n|Formulare|form|A2
+Genehmigung|f|Genehmigungen|permit; approval|B2
+Aufenthaltserlaubnis|f|Aufenthaltserlaubnisse|residence permit|B1
+Staatsangehörigkeit|f|Staatsangehörigkeiten|nationality|B1
+Einbürgerung|f|Einbürgerungen|naturalisation|B2
+Integration|f|-|integration|B1
+Einwanderung|f|-|immigration|B2
+Auswanderung|f|-|emigration|B2
+Asyl|n|-|asylum|B2
+Flüchtling|m|Flüchtlinge|refugee|B1
+Migration|f|-|migration|B2
+Sozialversicherung|f|Sozialversicherungen|social insurance|B2
+Krankenversicherung|f|Krankenversicherungen|health insurance|B1
+Rentenversicherung|f|Rentenversicherungen|pension insurance|B2
+Arbeitslosengeld|n|-|unemployment benefit|B2
+Kindergeld|n|-|child benefit|B1
+Wohngeld|n|-|housing benefit|B2
+Sozialhilfe|f|-|social assistance|B2
+Sozialstaat|m|Sozialstaaten|welfare state|C1
+Haushalt|m|Haushalte|household; budget|B1
+Bundesland|n|Bundesländer|federal state|B1
+Landtag|m|Landtage|state parliament|C1
+Landesregierung|f|Landesregierungen|state government|C1
+Kommune|f|Kommunen|municipality|C1
+Europäische Union|f|-|European Union|B1
+EU|f|-|EU|A2
+Bündnis|n|Bündnisse|alliance|C1
+Vertrag|m|Verträge|treaty; contract|B1
+Botschaft|f|Botschaften|embassy; message|B1
+Botschafter|m|Botschafter|ambassador|B2
+Konsulat|n|Konsulate|consulate|B2
+Diplomatie|f|-|diplomacy|C1
+Krieg|m|Kriege|war|A2
+Frieden|m|-|peace|A2
+Armee|f|Armeen|army|B1
+Militär|n|-|military|B2
+Waffe|f|Waffen|weapon|B1
+Terror|m|-|terror|B2
+Sicherheitskräfte|p|-|security forces|C1
+Demonstration|f|Demonstrationen|demonstration|B1
+Streik|m|Streiks|strike|B1
+Protest|m|Proteste|protest|B1
+Revolution|f|Revolutionen|revolution|B2
+Reform|f|Reformen|reform|B2
+Opposition|f|-|opposition|C1
+Koalition|f|Koalitionen|coalition|C1
+Mehrheit|f|Mehrheiten|majority|B2
+Wahlkampf|m|Wahlkämpfe|election campaign|B2
+Umfrage|f|Umfragen|survey; poll|B1
+@domain law
+Gericht|n|Gerichte|court|B1
+Richter|m|Richter|judge|B1
+Staatsanwalt|m|Staatsanwälte|public prosecutor|B2
+Anwalt|m|Anwälte|lawyer|B1
+Zeuge|m|Zeugen|witness|B1
+Angeklagte|m|Angeklagte|defendant|B2
+Kläger|m|Kläger|plaintiff|C1
+Prozess|m|Prozesse|trial; process|B2
+Verhandlung|f|Verhandlungen|hearing; negotiation|B2
+Urteil|n|Urteile|verdict; judgement|B2
+Strafe|f|Strafen|punishment; fine|B1
+Geldstrafe|f|Geldstrafen|fine|B2
+Gefängnis|n|Gefängnisse|prison|B1
+Haft|f|-|custody; detention|C1
+Verbrechen|n|Verbrechen|crime|B1
+Straftat|f|Straftaten|criminal offence|B2
+Täter|m|Täter|perpetrator|B2
+Opfer|n|Opfer|victim|B1
+Dieb|m|Diebe|thief|A2
+Mord|m|Morde|murder|B1
+Mörder|m|Mörder|murderer|B1
+Betrug|m|-|fraud|B1
+Anzeige|f|Anzeigen|report (to police); advertisement|B1
+Ermittlung|f|Ermittlungen|investigation|C1
+Beweis|m|Beweise|evidence|B1
+Schuld|f|-|guilt; debt|B1
+Unschuld|f|-|innocence|C1
+Klage|f|Klagen|lawsuit; complaint|B2
+Haftung|f|Haftungen|liability|C1
+Schaden|m|Schäden|damage|B1
+Schadenersatz|m|-|compensation|C1
+Vertragsbedingungen|p|-|terms and conditions|C1
+Datenschutzgesetz|n|Datenschutzgesetze|data protection law|C1
+Urheberrecht|n|-|copyright|C1
+Patent|n|Patente|patent|B2
+Lizenz|f|Lizenzen|licence|B2
+Bürgerliches Gesetzbuch|n|-|German Civil Code|C1
+Strafgesetzbuch|n|-|German Criminal Code|C2
+@domain media
+Medien|p|-|media|B1
+Zeitung|f|Zeitungen|newspaper|A1
+Zeitschrift|f|Zeitschriften|magazine|A2
+Artikel|m|Artikel|article|A2
+Nachrichten|p|-|news|A1
+Meldung|f|Meldungen|report; notice|B1
+Bericht|m|Berichte|report|B1
+Schlagzeile|f|Schlagzeilen|headline|B2
+Interview|n|Interviews|interview|B1
+Fernsehen|n|-|television|A1
+Fernseher|m|Fernseher|television set|A1
+Sendung|f|Sendungen|programme; broadcast|A2
+Programm|n|Programme|programme|A1
+Kanal|m|Kanäle|channel|B1
+Sender|m|Sender|broadcaster; station|B1
+Radio|n|Radios|radio|A1
+Film|m|Filme|film|A1
+Serie|f|Serien|series|A2
+Dokumentation|f|Dokumentationen|documentary|B2
+Werbespot|m|Werbespots|advertisement (TV)|B2
+Publikum|n|-|audience|B1
+Zuschauer|m|Zuschauer|viewer|B1
+Leser|m|Leser|reader|B1
+Hörer|m|Hörer|listener|B1
+Presse|f|-|press|B1
+Journalismus|m|-|journalism|B2
+Öffentlichkeit|f|-|public|B2
+Meinung|f|Meinungen|opinion|A2
+Pressefreiheit|f|-|freedom of the press|C1
+@domain arts
+Kultur|f|Kulturen|culture|A2
+Kunst|f|Künste|art|A2
+Künstler|m|Künstler|artist|A2
+Ausstellung|f|Ausstellungen|exhibition|A2
+Galerie|f|Galerien|gallery|B1
+Gemälde|n|Gemälde|painting|B1
+Zeichnung|f|Zeichnungen|drawing|B1
+Skulptur|f|Skulpturen|sculpture|B2
+Foto|n|Fotos|photo|A1
+Fotografie|f|Fotografien|photography|B1
+Malerei|f|Malereien|painting (art form)|B2
+Architektur|f|Architekturen|architecture|B1
+Musik|f|-|music|A1
+Lied|n|Lieder|song|A1
+Song|m|Songs|song|A2
+Konzert|n|Konzerte|concert|A1
+Oper|f|Opern|opera|B1
+Orchester|n|Orchester|orchestra|B1
+Band|f|Bands|band|A2
+Chor|m|Chöre|choir|B1
+Melodie|f|Melodien|melody|B1
+Rhythmus|m|Rhythmen|rhythm|B1
+Text|m|Texte|text; lyrics|A1
+Instrument|n|Instrumente|instrument|A2
+Klavier|n|Klaviere|piano|A1
+Gitarre|f|Gitarren|guitar|A1
+Geige|f|Geigen|violin|A2
+Flöte|f|Flöten|flute|A2
+Trommel|f|Trommeln|drum|B1
+Schlagzeug|n|Schlagzeuge|drums|B1
+Trompete|f|Trompeten|trumpet|B1
+Saxophon|n|Saxophone|saxophone|B2
+Harfe|f|Harfen|harp|B2
+Roman|m|Romane|novel|B1
+Geschichte|f|Geschichten|story; history|A1
+Märchen|n|Märchen|fairy tale|A2
+Gedicht|n|Gedichte|poem|B1
+Drama|n|Dramen|drama|B1
+Komödie|f|Komödien|comedy|B1
+Krimi|m|Krimis|crime thriller|A2
+Autor|m|Autoren|author|A2
+Autorin|f|Autorinnen|female author|A2
+Dichter|m|Dichter|poet|B1
+Verlag|m|Verlage|publisher|B2
+Bühne|f|Bühnen|stage|B1
+Schauspiel|n|Schauspiele|play; drama|B2
+Vorstellung|f|Vorstellungen|performance; idea; introduction|A2
+Eintrittskarte|f|Eintrittskarten|entrance ticket|A2
+Eintritt|m|-|admission; entry|A2
+Tradition|f|Traditionen|tradition|B1
+Brauch|m|Bräuche|custom|B1
+Fest|n|Feste|festival; celebration|A2
+Feiertag|m|Feiertage|public holiday|A1
+Weihnachten|n|-|Christmas|A1
+Ostern|n|-|Easter|A1
+Silvester|n|-|New Year's Eve|A1
+Neujahr|n|-|New Year|A1
+Karneval|m|Karnevale|carnival|B1
+Fasching|m|-|carnival (Southern German)|B1
+Oktoberfest|n|-|Oktoberfest|B1
+Geburtstag|m|Geburtstage|birthday|A1
+Geschenk|n|Geschenke|present; gift|A1
+Party|f|Partys|party|A1
+Feier|f|Feiern|celebration|A2
+Einladung|f|Einladungen|invitation|A2
+Glückwunsch|m|Glückwünsche|congratulation|A2
+Religion|f|Religionen|religion|A2
+Glaube|m|-|belief; faith|B1
+Gott|m|Götter|god|A2
+Kirche|f|Kirchen|church|A1
+Moschee|f|Moscheen|mosque|B1
+Synagoge|f|Synagogen|synagogue|B2
+Tempel|m|Tempel|temple|B1
+Gebet|n|Gebete|prayer|B1
+@domain sport
+Sport|m|-|sport|A1
+Fußball|m|Fußbälle|football; football (game)|A1
+Ball|m|Bälle|ball|A1
+Mannschaft|f|Mannschaften|team|A2
+Spieler|m|Spieler|player|A1
+Trainer|m|Trainer|coach|A2
+Training|n|Trainings|training|A2
+Spiel|n|Spiele|game; match|A1
+Tor|n|Tore|goal; gate|A1
+Sieg|m|Siege|victory|B1
+Niederlage|f|Niederlagen|defeat|B1
+Meisterschaft|f|Meisterschaften|championship|B1
+Weltmeisterschaft|f|Weltmeisterschaften|world championship|B1
+Olympische Spiele|p|-|Olympic Games|B1
+Turnier|n|Turniere|tournament|B1
+Wettkampf|m|Wettkämpfe|competition|B1
+Rennen|n|Rennen|race|B1
+Läufer|m|Läufer|runner|B1
+Schwimmer|m|Schwimmer|swimmer|B1
+Basketball|m|Basketbälle|basketball|A2
+Handball|m|Handbälle|handball|A2
+Volleyball|m|Volleybälle|volleyball|A2
+Tennis|n|-|tennis|A1
+Golf|n|-|golf|A2
+Eishockey|n|-|ice hockey|A2
+Skifahren|n|-|skiing|A2
+Ski|m|Skier|ski|A2
+Schlittschuh|m|Schlittschuhe|ice skate|B1
+Radsport|m|-|cycling|B1
+Reiten|n|-|horse riding|A2
+Segeln|n|-|sailing|B1
+Klettern|n|-|climbing|B1
+Yoga|n|-|yoga|A2
+Fitnessstudio|n|Fitnessstudios|gym|A2
+Gymnastik|f|-|gymnastics|B1
+Leichtathletik|f|-|athletics|B1
+Boxen|n|-|boxing|B1
+Kampfsport|m|Kampfsportarten|martial arts|B2
+Schiedsrichter|m|Schiedsrichter|referee|B1
+Pokal|m|Pokale|cup; trophy|B1
+Medaille|f|Medaillen|medal|B1
+Rekord|m|Rekorde|record|B1
+Punkt|m|Punkte|point|A1
+Ergebnis|n|Ergebnisse|result|A2
+Hobby|n|Hobbys|hobby|A1
+Freizeit|f|-|free time|A1
+Wanderung|f|Wanderungen|hike|A2
+Spaziergang|m|Spaziergänge|walk|A2
+@domain society
+Gesellschaft|f|Gesellschaften|society|B1
+Kultur|f|Kulturen|culture|A2
+Zukunft|f|-|future|A2
+Vergangenheit|f|-|past|A2
+Gegenwart|f|-|present|B1
+Leben|n|Leben|life|A1
+Tod|m|Tode|death|A2
+Alltag|m|-|everyday life|A2
+Lebensstil|m|Lebensstile|lifestyle|B2
+Lebensqualität|f|-|quality of life|B2
+Lebensunterhalt|m|-|livelihood|C1
+Wohlstand|m|-|prosperity|C1
+Armut|f|-|poverty|B1
+Einkommen|n|Einkommen|income|B1
+Klasse|f|Klassen|class|A1
+Ungleichheit|f|Ungleichheiten|inequality|C1
+Diskriminierung|f|Diskriminierungen|discrimination|B2
+Vorurteil|n|Vorurteile|prejudice|B2
+Toleranz|f|-|tolerance|B2
+Respekt|m|-|respect|B1
+Ehrenamt|n|Ehrenämter|voluntary work|C1
+Freiwillige|m|Freiwillige|volunteer|B2
+Verein|m|Vereine|club|A2
+Stiftung|f|Stiftungen|foundation|C1
+Organisation|f|Organisationen|organisation|B1
+Institution|f|Institutionen|institution|B2
+Einrichtung|f|Einrichtungen|facility; furnishing|B2

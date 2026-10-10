@@ -1,0 +1,256 @@
+{
+  "pipelineVersion": "phase12-1",
+  "source": {
+    "name": "wiktextract-jsonl",
+    "label": "kaikki.org Wiktextract (German), by tatuylonen",
+    "version": "kaikki.org Wiktextract (German), uploaded Phase 12, dump date unconfirmed for this exact file — see NOTE.md",
+    "importDate": "2026-10-01",
+    "files": [
+      "kaikki_part_1.jsonl",
+      "kaikki_part_2.jsonl",
+      "kaikki_part_3.jsonl",
+      "kaikki_part_4.jsonl"
+    ]
+  },
+  "raw": {
+    "lines": 371261,
+    "malformed": 0,
+    "nonGermanOrEmpty": 0,
+    "formOfEntries": 276895,
+    "byFile": {
+      "kaikki_part_1.jsonl": {
+        "lines": 100000,
+        "formEntries": 68144,
+        "lemmaCandidates": 31632,
+        "rejected": 224
+      },
+      "kaikki_part_2.jsonl": {
+        "lines": 100000,
+        "formEntries": 87031,
+        "lemmaCandidates": 12929,
+        "rejected": 40
+      },
+      "kaikki_part_3.jsonl": {
+        "lines": 100000,
+        "formEntries": 75777,
+        "lemmaCandidates": 24099,
+        "rejected": 124
+      },
+      "kaikki_part_4.jsonl": {
+        "lines": 71261,
+        "formEntries": 45943,
+        "lemmaCandidates": 25097,
+        "rejected": 221
+      }
+    }
+  },
+  "rejected": {
+    "count": 609,
+    "sample": [
+      {
+        "lemma": "-um",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-um\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-um",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-um\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "!",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"!\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ist",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ist\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-tion",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-tion\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-er",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-er\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-er",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-er\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-er",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-er\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-er",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-er\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-er",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-er\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ie",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ie\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-itis",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-itis\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-gon",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-gon\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ing",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ing\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-gate",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-gate\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ese",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ese\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ed",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ed\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-or",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-or\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "-ade",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"-ade\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      },
+      {
+        "lemma": "–",
+        "reasons": [
+          "lemma contains unexpected characters/script: \"–\""
+        ],
+        "file": "kaikki_part_1.jsonl"
+      }
+    ]
+  },
+  "dedupe": {
+    "input": 98862,
+    "uniqueLemmas": 92880,
+    "duplicateRows": 5982
+  },
+  "forms": {
+    "attachedToLemmas": 253425,
+    "orphanFormsWithNoLemma": 12555,
+    "totalSurfaceForms": 1502402
+  },
+  "masterLexicon": {
+    "totalLemmas": 92880,
+    "existingBefore": 5105,
+    "newLemmasThisImport": 87775,
+    "byWordType": {
+      "proper_noun": 8806,
+      "preposition": 141,
+      "verb": 10019,
+      "adverb": 2053,
+      "noun": 54195,
+      "adjective": 15308,
+      "interjection": 384,
+      "number": 220,
+      "idiom": 82,
+      "conjunction": 98,
+      "particle": 27,
+      "pronoun": 136,
+      "phrase": 860,
+      "subjunction": 21,
+      "determiner": 37,
+      "modal_particle": 9,
+      "article": 9,
+      "unknown": 475
+    },
+    "byQuality": {
+      "VALID": 91495,
+      "WARNING": 1385
+    },
+    "byCefr": {
+      "B1": 1417,
+      "A2": 1084,
+      "B2": 1071,
+      "C1": 608,
+      "A1": 871,
+      "C2": 50,
+      "unknown": 87779
+    },
+    "withGloss": 92861,
+    "withIpa": 58866,
+    "withExamples": 15297,
+    "withMultipleSenses": 18471
+  },
+  "mergeWithCurated": {
+    "curatedBefore": 705,
+    "curatedAfter": 705,
+    "enrichedCount": 635,
+    "dictionaryOnlyCount": 92245
+  },
+  "timingSeconds": {
+    "parse": 36.992,
+    "dedupe": 0.206,
+    "merge": 0.751,
+    "export": 27.895
+  }
+}

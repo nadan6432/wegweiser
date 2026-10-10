@@ -29,6 +29,13 @@ const CORRECTION_OPTS = [
 function uid(){ return 'id'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); }
 function todayStr(d){ d=d||new Date(); return d.toISOString().slice(0,10); }
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+/* Light debounce for search inputs (spec §42/§49): the dictionary scan
+   itself is fast even at a few thousand entries, but debouncing avoids
+   re-rendering the whole result list on every single keystroke. */
+function debounce(fn, ms){
+  let t = null;
+  return function(...args){ clearTimeout(t); t = setTimeout(()=>fn.apply(this,args), ms); };
+}
 const shuffle = Logic.shuffle;
 const normalize = Logic.normalize;
 const labelForCategory = Logic.labelForCategory;
@@ -57,15 +64,18 @@ const State = {
   readingId:null, readingAnswers:{}, listeningAnswers:{},
   writingId:null, writingDraft:'', writingResult:null,
   conversationId:null, conversationRun:null,
-  teacherChat:[], speakingRecording:false, speakingAttempted:false,
-  visionTried:false, screenTried:false, examSection:null,
+  teacherChat:[], speakingRecording:false, speakingAttempted:false, speakingId:null,
+  visionTried:false, screenTried:false, examSection:null, examTaskId:null, examTaskAnswers:null, examtaskAnswers:{},
   globalSearchQuery:'', _challenges:[], _achievements:[], _feedbackHistory:[], _updateInfo:null,
   navOpenGroups: new Set(['HOME']), _isOnline: (typeof navigator!=='undefined' ? navigator.onLine : true),
   lessonRuntime:null,
   exerciseRuntime:null,
-  vocabTab:'browse',
-  vocabSearch:'',
+  vocabTab:'dashboard',
+  vocabSearch:'', vocabDetailId:null, vocabLevelFilter:'', vocabTopicFilter:'',
+  vocabLearn:{queue:[], index:0, phase:'word'},
   vocabReview:{queue:[], index:0, showAnswer:false, sessionTotal:0},
+  dictLetter:null, dictDetailId:null, dictFilters:{wordType:'', level:'', topic:'', gender:''},
+  readingWordLookup:null,
   grammarDetailId:null,
   vocabProgress:{}, // id -> item
   lessonProgress:{}, // id -> {completed,score,attempts,lastDone}
@@ -388,7 +398,7 @@ function renderPlacementResult(){
   <h1>Quick Placement estimate: ${r.level}</h1>
   <p style="color:var(--text-dim);">Based on ${PLACEMENT_TEST.length} grammar/vocabulary questions \u2014 a fast estimate, not a full CEFR skills assessment or official certification. Reading, writing, listening and speaking aren't separately measured yet. You can retake this any time from Settings.</p>
   <div class="panel">${rows}</div>
-  <div class="panel-note">Structured lessons in this version currently cover <strong>A1–A2</strong>. If your estimate is higher, start at A2 and use the Grammar Lab and Vocabulary browser to go further — deeper B1+ content is planned next.</div>
+  <div class="panel-note">Structured lessons and units now cover <strong>every level from A0 through C2</strong> \u2014 open Learn to start at your estimated level, or take a Full Skills Assessment from Placement &amp; Level for a more detailed check.</div>
   <button class="btn gold block" data-action="placement-continue">${State.placement.retake?'Save this level':'Continue'}</button>
   </div>`;
 }
@@ -410,13 +420,22 @@ function handlePlacementAnswer(el){
 /* ================================================================
    HOME
    ================================================================ */
+/* Scans every level in CEFR order, honouring the unit/lesson `order`
+   field and each lesson's own prerequisite chain (see DSL.buildLevel),
+   rather than assuming only A1–A2 exist. A lesson is only offered once
+   every id in its prereq list is actually marked completed. */
 function nextRecommendedLesson(){
-  const order = LESSONS.filter(l=>['A1','A2'].includes(l.level)).sort((a,b)=>a.order-b.order);
+  const order = ALL_CEFR_ORDER.flatMap(lvl => LESSONS.filter(l=>l.level===lvl).sort((a,b)=>a.order-b.order));
   for(const l of order){
     const p = State.lessonProgress[l.id];
-    if(!p || !p.completed) return l;
+    if(p && p.completed) continue;
+    const prereqsMet = (l.prereq||[]).every(id => State.lessonProgress[id] && State.lessonProgress[id].completed);
+    if(prereqsMet) return l;
   }
-  return order[order.length-1];
+  // Everything with a satisfied prerequisite chain is done — offer the
+  // very last lesson again rather than nothing, so the Home screen still
+  // has something concrete to point at.
+  return order[order.length-1] || null;
 }
 
 function dueVocabCount(){
@@ -431,8 +450,7 @@ function weakestGroup(){
 }
 
 function allCurrentLessonsDone(){
-  return LESSONS.filter(l=>['A1','A2'].includes(l.level))
-    .every(l=> State.lessonProgress[l.id] && State.lessonProgress[l.id].completed);
+  return LESSONS.every(l => State.lessonProgress[l.id] && State.lessonProgress[l.id].completed);
 }
 
 function newWordsAvailableCount(){
@@ -511,27 +529,99 @@ function renderHome(){
 /* ================================================================
    LEARN
    ================================================================ */
-function renderLearn(){
-  const tabs = ['A1','A2','B1','B2','C1','C2'];
-  const tabRow = tabs.map(t=>`<button class="btn ${State.learnTab===t?'gold':'secondary'} small" data-action="learn-tab" data-arg="${t}">${t}</button>`).join(' ');
-  const levelLessons = LESSONS.filter(l=>l.level===State.learnTab).sort((a,b)=>a.order-b.order);
-  let list;
-  if(levelLessons.length===0){
-    list = `<div class="empty-state">Structured lessons for ${State.learnTab} are not built in this version yet.<br>Phase roadmap: A1–A2 now, B1–C2 planned next.</div>`;
-  } else {
-    list = levelLessons.map(l=>{
-      const p = State.lessonProgress[l.id];
-      const tier = Logic.masteryTier(p);
-      const status = `<span class="pill" style="border-color:${Logic.masteryColor(tier)};color:${Logic.masteryColor(tier)};">${tier}${p&&p.completed?' · '+Math.round((p.bestScore||0)*100)+'%':''}</span>`;
-      return `<div class="lesson-list-item">
-        <div><div style="font-weight:600;">${escapeHtml(l.title)}</div><div class="meta">${l.topic}</div></div>
-        <div style="display:flex;align-items:center;gap:10px;">${status}
-          <button class="btn small ${p&&p.completed?'secondary':'gold'}" data-action="open-lesson" data-arg="${l.id}">${p&&p.completed?'Review':'Start'}</button>
-        </div>
-      </div>`;
-    }).join('');
+/* ================================================================
+   LEARN — Level Hub (Level → Unit → Lesson)
+   Reads WEGWEISER.UNITS/LEVEL_META (from the Phase 2.5 registry)
+   so every level A0–C2 is real navigation, not a hardcoded list.
+   Falls back gracefully to a flat per-level lesson list if the
+   registry hasn't run (e.g. an older data.js on its own).
+   ================================================================ */
+const ALL_CEFR_ORDER = ['A0','A1','A2','B1','B2','C1','C2'];
+
+function unitsForLevel(level){
+  if(typeof WEGWEISER!=='undefined' && WEGWEISER.UNITS && WEGWEISER.UNITS.length){
+    return WEGWEISER.UNITS.filter(u=>u.level===level).sort((a,b)=>a.order-b.order);
   }
-  return `<h1>Learn German</h1><div style="margin-bottom:16px;">${tabRow}</div>${list}`;
+  return [];
+}
+function levelMetaFor(level){
+  return (typeof WEGWEISER!=='undefined' && WEGWEISER.LEVEL_META) ? WEGWEISER.LEVEL_META.find(m=>m.level===level) : null;
+}
+/* Real completion %, computed from actual lessonProgress — never invented. */
+function levelProgressStats(level){
+  const ls = LESSONS.filter(l=>l.level===level);
+  const done = ls.filter(l=>State.lessonProgress[l.id] && State.lessonProgress[l.id].completed).length;
+  const pct = ls.length ? Math.round(100*done/ls.length) : 0;
+  return {level, total:ls.length, done, pct};
+}
+function unitProgressStats(unit){
+  const ls = LESSONS.filter(l=>l.unitId===unit.id);
+  const done = ls.filter(l=>State.lessonProgress[l.id] && State.lessonProgress[l.id].completed).length;
+  const pct = ls.length ? Math.round(100*done/ls.length) : 0;
+  return {total:ls.length, done, pct};
+}
+
+function renderLearn(){
+  const tabRow = ALL_CEFR_ORDER.map(t=>{
+    const stats = levelProgressStats(t);
+    const hasContent = stats.total>0;
+    return `<button class="btn ${State.learnTab===t?'gold':'secondary'} small" data-action="learn-tab" data-arg="${t}" ${hasContent?'':'style="opacity:.55;"'}>
+      ${t}${hasContent?` <span style="opacity:.7;">${stats.pct}%</span>`:''}
+    </button>`;
+  }).join(' ');
+
+  const level = State.learnTab;
+  const meta = levelMetaFor(level);
+  const units = unitsForLevel(level);
+  const stats = levelProgressStats(level);
+
+  let body;
+  if(stats.total===0){
+    body = `<div class="empty-state">No lessons are loaded for ${level} in this build.</div>`;
+  } else if(units.length===0){
+    // Registry not present (older data.js only) — fall back to the original flat list.
+    const levelLessons = LESSONS.filter(l=>l.level===level).sort((a,b)=>a.order-b.order);
+    body = levelLessons.map(l=>lessonListItem(l)).join('');
+  } else {
+    body = `
+    <div class="panel" style="margin-bottom:16px;">
+      <h3>${level}${meta?' \u2014 '+escapeHtml(meta.title):''}</h3>
+      ${meta ? `<p style="color:var(--text-dim);font-size:.9rem;">${escapeHtml(meta.description)}</p>` : ''}
+      <div class="progress-bar" style="margin-top:8px;"><div style="width:${stats.pct}%"></div></div>
+      <div style="font-size:.82rem;color:var(--text-dim);margin-top:4px;">${stats.done}/${stats.total} lessons complete${!meta || meta.official!==false ? '' : ' \u00b7 pre-CEFR foundation level'}</div>
+    </div>
+    ${units.map(u=>{
+      const up = unitProgressStats(u);
+      const unitLessons = LESSONS.filter(l=>u.lessonIds.includes(l.id)).sort((a,b)=>a.order-b.order);
+      return `<div class="panel" style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <h3 style="margin:0;">${escapeHtml(u.title)}</h3>
+          <span style="font-size:.8rem;color:var(--text-dim);">${up.done}/${up.total}</span>
+        </div>
+        ${u.goal?`<p style="color:var(--text-dim);font-size:.85rem;margin:4px 0 10px;">${escapeHtml(u.goal)}</p>`:''}
+        <div class="progress-bar" style="margin-bottom:10px;"><div style="width:${up.pct}%"></div></div>
+        ${unitLessons.map(l=>lessonListItem(l)).join('')}
+        ${up.done>0 ? `<button class="btn secondary small" style="margin-top:8px;" data-action="start-unit-assessment" data-arg="${u.id}">Take unit assessment</button>` : ''}
+      </div>`;
+    }).join('')}`;
+  }
+
+  return `<h1>Learn German</h1>
+  <div style="margin-bottom:16px;display:flex;flex-wrap:wrap;gap:6px;">${tabRow}</div>
+  ${body}`;
+}
+
+function lessonListItem(l){
+  const p = State.lessonProgress[l.id];
+  const tier = Logic.masteryTier(p);
+  const prereqsMet = (l.prereq||[]).every(id => State.lessonProgress[id] && State.lessonProgress[id].completed);
+  const status = `<span class="pill" style="border-color:${Logic.masteryColor(tier)};color:${Logic.masteryColor(tier)};">${tier}${p&&p.completed?' \u00b7 '+Math.round((p.bestScore||0)*100)+'%':''}</span>`;
+  return `<div class="lesson-list-item">
+    <div><div style="font-weight:600;">${escapeHtml(l.title)}</div><div class="meta">${escapeHtml(l.topic)}${!prereqsMet?' \u00b7 <span style="color:var(--brick);">prerequisite pending</span>':''}</div></div>
+    <div style="display:flex;align-items:center;gap:10px;">${status}
+      <button class="btn small ${p&&p.completed?'secondary':'gold'}" data-action="open-lesson" data-arg="${l.id}">${p&&p.completed?'Review':(prereqsMet?'Start':'Start anyway')}</button>
+    </div>
+  </div>`;
 }
 
 function openLesson(id){
@@ -633,12 +723,12 @@ function renderLessonDone(lesson){
   </div>`;
 }
 
-/* ---------- generic exercise engine (used by lessons and grammar quizzes) ---------- */
-function startExercises(exercises, lessonId){
+/* ---------- generic exercise engine (used by lessons, grammar quizzes, and assessments) ---------- */
+function startExercises(exercises, lessonId, assessmentMeta){
   State.exerciseRuntime = {
     exercises: exercises, index:0, correct:0, total:exercises.length,
     lessonId: lessonId||null, missedCategories:[], answered:false, buildAnswer:[], buildWords:[],
-    deferredCorrections:[],
+    deferredCorrections:[], assessment: assessmentMeta||null,
   };
   if(State.lessonRuntime) State.lessonRuntime.phase='exercises';
   render();
@@ -648,8 +738,8 @@ function renderExerciseFlow(){
   const run = State.exerciseRuntime;
   if(run.index >= run.exercises.length){
     // Pure render only — finalization side effects happen in handleExerciseNext,
-    // before this render is ever reached, so this branch is just the quiz-results view.
-    return renderGrammarQuizDone(run);
+    // before this render is ever reached, so this branch is just the results view.
+    return run.assessment ? renderAssessmentDone(run) : renderGrammarQuizDone(run);
   }
   const ex = run.exercises[run.index];
   const progressLabel = `Exercise ${run.index+1} of ${run.exercises.length}`;
@@ -708,6 +798,7 @@ function renderExerciseFlow(){
       <div>\u2705 Correct: <strong>${escapeHtml(run.feedback.correctAnswer)}</strong></div>
     </div>` : '';
   const feedback = run.feedback ? `<div class="panel-note ${run.feedback.ok?'success':'error'}" role="status" aria-live="polite"><strong>${run.feedback.ok?'Correct.':'Not quite.'}</strong>${answerCompare}${skipCorrectDetail?'':`<p style="margin:6px 0 0;">${escapeHtml(run.feedback.explain)}</p>`}</div>
+    ${(!run.feedback.ok && typeof TeacherContextService!=='undefined') ? `<div style="margin:8px 0;">${askTeacherLink('exercise', ex.id, labelForCategory(ex.category), {'lesson-id': run.lessonId||''})}</div>` : ''}
     <button class="btn gold block" data-action="ex-next">${run.index+1>=run.exercises.length?'See results':'Next exercise'}</button>` : '';
 
   return `
@@ -854,10 +945,24 @@ async function handleExerciseNext(){
     await refreshStreak();
     State.lessonRuntime.phase='done';
   } else if(run.index >= run.exercises.length && !State.lessonRuntime){
-    // Standalone grammar-lab quiz finished: this is real study activity too,
-    // so it should count toward the daily session log and streak.
+    // Standalone grammar-lab quiz OR a real assessment finished: both count
+    // as study activity for the session log and streak.
     await touchSessionToday();
     await refreshStreak();
+    if(run.assessment){
+      // Reuses the exact correct/total the live exercise handlers already
+      // computed (handleMcq/handleFillSubmit/handleBuildSubmit/handleMatchLeft)
+      // rather than re-grading raw answers through AssessmentService.gradeAssessment,
+      // which exists for non-UI/service-level use (see tests/test_engine.js) —
+      // recording the result is still real, DB-backed, and skill-tagged.
+      const score = run.total ? run.correct/run.total : 1;
+      const passed = (run.assessment.passThreshold==null) ? null : score >= run.assessment.passThreshold;
+      await Repositories.recordAssessmentResult({
+        assessmentType: run.assessment.type, target: run.assessment.target,
+        correct: run.correct, total: run.total, score, passed,
+      });
+      run.assessment.result = {score, passed};
+    }
   }
   render();
 }
@@ -871,30 +976,125 @@ function renderGrammarQuizDone(run){
   <button class="btn gold" data-action="nav" data-arg="grammar">Back to Grammar Lab</button>`;
 }
 
+function renderAssessmentDone(run){
+  const {type, target, passThreshold, result} = run.assessment;
+  const score = result ? result.score : (run.total ? run.correct/run.total : 1);
+  const passed = result ? result.passed : null;
+  const label = type==='unit' ? 'Unit assessment' : type==='level' ? `${target} level assessment` : `${labelForGroup(target)||target} skill assessment`;
+  return `
+  <h1>${label} \u2014 complete</h1>
+  <div class="panel">
+    <p style="font-size:1.8rem;font-family:var(--serif);">${Math.round(score*100)}%</p>
+    <p>${run.correct} of ${run.total} correct.</p>
+    ${passed!==null ? `<div class="panel-note ${passed?'success':'error'}" style="margin-top:10px;">${passed?'Passed \u2014 saved to your assessment history.':'Not yet at the pass threshold ('+Math.round(passThreshold*100)+'%) \u2014 still saved to your history so you can track progress over attempts.'}</div>` : ''}
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button class="btn gold" data-action="nav" data-arg="placement-hub">Back to Placement &amp; Level</button>
+    <button class="btn secondary" data-action="nav" data-arg="learn">Back to Learn</button>
+  </div>`;
+}
+
 /* ================================================================
-   VOCABULARY
+   VOCABULARY — the learning system (distinct from Dictionary, the
+   universal lookup layer below). See ARCHITECTURE.md "Vocabulary
+   vs Dictionary" for the deliberate split this phase introduces.
    ================================================================ */
+
+/* Real counts from actual DB state — never invented (spec §28/§45). */
+function vocabStats(){
+  const total = VOCAB.length;
+  let learning=0, mastered=0, weak=0, favorites=0;
+  const favs = (State.profile && State.profile.favorites) || [];
+  VOCAB.forEach(v=>{
+    const p = State.vocabProgress[v.id];
+    if(p){
+      if(p.status==='mastered') mastered++;
+      else learning++;
+      if(p.status==='forgotten' || (p.lapses>0 && p.status!=='mastered')) weak++;
+    }
+    if(favs.includes('v:'+v.id)) favorites++;
+  });
+  const tracked = learning+mastered;
+  return {total, new: total-tracked, learning, mastered, weak, favorites, tracked};
+}
+
+function vocabTopics(){
+  const set = new Set();
+  VOCAB.forEach(v=>(v.topicTags&&v.topicTags.length?v.topicTags:[v.topic]).forEach(t=>t&&set.add(t)));
+  return [...set].sort();
+}
+
 function renderVocab(){
-  const tabRow = `<button class="btn ${State.vocabTab==='browse'?'gold':'secondary'} small" data-action="vocab-tab" data-arg="browse">Browse</button>
-    <button class="btn ${State.vocabTab==='review'?'gold':'secondary'} small" data-action="vocab-tab" data-arg="review">Review (${dueVocabCount()} due)</button>`;
-  const body = State.vocabTab==='browse' ? renderVocabBrowse() : renderVocabReview();
-  return `<h1>Vocabulary</h1><div style="margin-bottom:16px;">${tabRow}</div>${body}`;
+  if(State.vocabDetailId) return renderVocabDetail();
+  const tabs = [['dashboard','Dashboard'],['browse','Browse'],['learn','Learn new'],['review',`Review (${dueVocabCount()} due)`]];
+  const tabRow = tabs.map(([k,label])=>`<button class="btn ${State.vocabTab===k?'gold':'secondary'} small" data-action="vocab-tab" data-arg="${k}">${label}</button>`).join(' ');
+  const body = State.vocabTab==='browse' ? renderVocabBrowse()
+    : State.vocabTab==='learn' ? renderVocabLearn()
+    : State.vocabTab==='review' ? renderVocabReview()
+    : renderVocabDashboard();
+  return `<h1>Vocabulary</h1><div style="margin-bottom:16px;display:flex;gap:6px;flex-wrap:wrap;">${tabRow}</div>${body}`;
+}
+
+function renderVocabDashboard(){
+  const s = vocabStats();
+  const weakGroup = weakestGroup();
+  const nextLesson = nextRecommendedLesson();
+  const level = (State.profile && State.profile.level) || 'A1';
+  return `
+  <div class="grid cols-3" style="margin-bottom:16px;">
+    <div class="panel"><div style="font-size:1.6rem;font-family:var(--serif);">${s.total}</div><div class="meta">words available</div></div>
+    <div class="panel"><div style="font-size:1.6rem;font-family:var(--serif);">${s.mastered}</div><div class="meta">mastered</div></div>
+    <div class="panel"><div style="font-size:1.6rem;font-family:var(--serif);">${dueVocabCount()}</div><div class="meta">due for review</div></div>
+  </div>
+  <div class="grid cols-2" style="margin-bottom:16px;">
+    <div class="panel"><h3>Your vocabulary</h3>
+      <div class="skill-row"><div class="label">New</div><div class="progress-bar"><div style="width:${s.total?Math.round(100*s.new/s.total):0}%;background:var(--text-dim);"></div></div><div class="pct">${s.new}</div></div>
+      <div class="skill-row"><div class="label">Learning</div><div class="progress-bar"><div style="width:${s.total?Math.round(100*s.learning/s.total):0}%;"></div></div><div class="pct">${s.learning}</div></div>
+      <div class="skill-row"><div class="label">Mastered</div><div class="progress-bar"><div style="width:${s.total?Math.round(100*s.mastered/s.total):0}%;background:var(--teal);"></div></div><div class="pct">${s.mastered}</div></div>
+      ${s.weak?`<div class="skill-row"><div class="label">Weak</div><div class="progress-bar"><div style="width:${Math.round(100*s.weak/s.total)}%;background:var(--brick);"></div></div><div class="pct">${s.weak}</div></div>`:''}
+      <div class="skill-row"><div class="label">Favorites</div><div class="progress-bar"><div style="width:${s.total?Math.round(100*s.favorites/s.total):0}%;background:var(--gold);"></div></div><div class="pct">${s.favorites}</div></div>
+    </div>
+    <div class="panel"><h3>Continue</h3>
+      <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:10px;">${s.new} new word${s.new===1?'':'s'} available at your level and beyond.</p>
+      <button class="btn gold block" data-action="vocab-tab" data-arg="learn" style="margin-bottom:8px;">Learn new words</button>
+      ${dueVocabCount()>0?`<button class="btn secondary block" data-action="vocab-tab" data-arg="review" style="margin-bottom:8px;">Review ${dueVocabCount()} due</button>`:''}
+      ${weakGroup?`<button class="btn secondary block" data-action="practice-group" data-arg="${weakGroup}">Practice ${labelForGroup(weakGroup)}</button>`:''}
+    </div>
+  </div>
+  <div class="panel" style="margin-bottom:16px;">
+    <h3>Browse</h3>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+      <button class="btn secondary small" data-action="vocab-filter-level" data-arg="">All levels</button>
+      ${ALL_CEFR_ORDER.filter(l=>VOCAB.some(v=>v.level===l)).map(l=>`<button class="btn secondary small" data-action="vocab-filter-level" data-arg="${l}">${l}</button>`).join('')}
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      ${vocabTopics().slice(0,14).map(t=>`<button class="btn secondary small" data-action="vocab-filter-topic" data-arg="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
+    </div>
+  </div>
+  <button class="btn secondary block" data-action="nav" data-arg="dictionary">Open Dictionary \u2192 search any German word, any level</button>
+  `;
 }
 
 function renderVocabBrowse(){
   const q = State.vocabSearch.toLowerCase();
   const favs = State.profile.favorites||[];
-  const filtered = VOCAB.filter(v=> !q || v.de.toLowerCase().includes(q) || v.en.toLowerCase().includes(q) || v.topic.includes(q));
-  const rows = filtered.map(v=>{
+  let filtered = VOCAB.filter(v=> !q || v.de.toLowerCase().includes(q) || v.en.toLowerCase().includes(q) || v.topic.includes(q));
+  if(State.vocabLevelFilter) filtered = filtered.filter(v=>v.level===State.vocabLevelFilter);
+  if(State.vocabTopicFilter) filtered = filtered.filter(v=>(v.topicTags||[v.topic]).includes(State.vocabTopicFilter));
+  const rows = filtered.slice(0,300).map(v=>{
     const prog = State.vocabProgress[v.id];
     const status = prog ? prog.status : 'new';
     const artClass = v.article?`article-${v.article}`:'';
     const isFav = favs.includes('v:'+v.id);
-    return `<tr><td><button class="icon-btn" style="width:30px;height:30px;font-size:.85rem;" data-action="toggle-favorite" data-arg="v:${v.id}" aria-label="${isFav?'Remove from favorites':'Add to favorites'}">${isFav?'\u2605':'\u2606'}</button></td><td class="${artClass}">${v.article||''}</td><td>${escapeHtml(v.de)}</td><td class="hide-narrow" style="color:var(--text-dim);">${v.plural||''}</td><td>${escapeHtml(v.en)}</td><td><span class="pill ${status==='mastered'?'on':''}">${status}</span></td></tr>`;
+    return `<tr data-action="open-vocab-detail" data-arg="${v.id}" style="cursor:pointer;"><td><button class="icon-btn" style="width:30px;height:30px;font-size:.85rem;" data-action="toggle-favorite" data-arg="v:${v.id}" aria-label="${isFav?'Remove from favorites':'Add to favorites'}">${isFav?'\u2605':'\u2606'}</button></td><td class="${artClass}">${v.article||''}</td><td>${escapeHtml(v.de)}</td><td class="hide-narrow" style="color:var(--text-dim);">${v.plural||''}</td><td>${escapeHtml(v.en)}</td><td><span class="pill ${status==='mastered'?'on':''}">${status}</span></td></tr>`;
   }).join('');
+  const activeFilters = (State.vocabLevelFilter?`<span class="pill on">${State.vocabLevelFilter} <button data-action="vocab-filter-level" data-arg="" aria-label="Clear level filter" style="border:none;background:none;color:inherit;cursor:pointer;">\u00d7</button></span>`:'')
+    + (State.vocabTopicFilter?` <span class="pill on">${escapeHtml(State.vocabTopicFilter)} <button data-action="vocab-filter-topic" data-arg="" aria-label="Clear topic filter" style="border:none;background:none;color:inherit;cursor:pointer;">\u00d7</button></span>`:'');
   return `
   <label class="visually-hidden" for="vocabSearchInput">Search vocabulary</label>
-  <input type="text" class="fill-input" style="width:100%;margin-bottom:12px;" placeholder="Search vocabulary..." id="vocabSearchInput" aria-label="Search vocabulary" value="${escapeHtml(State.vocabSearch)}">
+  <input type="text" class="fill-input" style="width:100%;margin-bottom:8px;" placeholder="Search vocabulary..." id="vocabSearchInput" aria-label="Search vocabulary" value="${escapeHtml(State.vocabSearch)}">
+  ${activeFilters?`<div style="margin-bottom:10px;">${activeFilters}</div>`:''}
+  <div style="color:var(--text-dim);font-size:.82rem;margin-bottom:8px;">${filtered.length} word${filtered.length===1?'':'s'}${filtered.length>300?' (showing first 300 \u2014 refine your search)':''}</div>
   <div class="table-scroll">
   <table class="vocab-table"><thead><tr><th scope="col"></th><th scope="col"></th><th scope="col">German</th><th scope="col" class="hide-narrow">Plural</th><th scope="col">English</th><th scope="col">Status</th></tr></thead>
   <tbody>${rows || '<tr><td colspan="6" style="color:var(--text-dim);padding:16px;">No matches.</td></tr>'}</tbody></table>
@@ -902,10 +1102,163 @@ function renderVocabBrowse(){
   `;
 }
 
-// Session size genuinely responds to the learner's stated difficulty
-// preference from onboarding — previously collected but never used
+/* Shared profile content for BOTH Vocabulary detail (a word the learner is
+   studying) and Dictionary detail (any word, regardless of learning
+   status) — same word, same facts, different header/actions around it.
+   Kept in one place so the two screens can never drift out of sync. */
+function wordProfileBody(v){
+  const wtype = (typeof Schema!=='undefined') ? Schema.canonicalWordType(v.type) : v.type;
+  const relatedLessons = LESSONS.filter(l=>(l.vocabIds||[]).includes(v.id));
+  const relatedGrammar = [];
+  relatedLessons.forEach(l=>(l.grammarIds||(l.grammarId?[l.grammarId]:[])).forEach(gid=>{
+    const g = grammarById(gid); if(g && !relatedGrammar.some(x=>x.id===g.id)) relatedGrammar.push(g);
+  }));
+  const relatedWords = (v.related||[]).map(id=>vocabById(id)).filter(Boolean);
+  const extraExamples = (v.examples||[]).slice(1);
+  const openVocabAction = (typeof State!=='undefined' && State.view==='dictionary') ? 'open-dict-detail' : 'open-vocab-detail';
+
+  let grammarBlock = '';
+  if(wtype==='noun'){
+    grammarBlock = `<div class="panel"><h3>Noun</h3>
+      <div class="skill-row"><div class="label">Article</div><div>${v.article?GENDER_LABELS[v.article]+' ('+v.article+')':'\u2014'}</div></div>
+      <div class="skill-row"><div class="label">Plural</div><div>${escapeHtml(v.plural||'\u2014')}</div></div>
+    </div>`;
+  } else if(wtype==='verb' && v.forms){
+    grammarBlock = `<div class="panel"><h3>Verb</h3>
+      ${v.forms.praesens?`<div class="skill-row"><div class="label">ich / du / er</div><div>${escapeHtml(v.forms.praesens.ich||'')} / ${escapeHtml(v.forms.praesens.du||'')} / ${escapeHtml(v.forms.praesens.er||'')}</div></div>`:''}
+      ${v.forms.perfekt?`<div class="skill-row"><div class="label">Perfekt</div><div>${escapeHtml(v.forms.perfekt)}</div></div>`:''}
+      ${v.forms.sep?`<div class="skill-row"><div class="label">Separable</div><div>Yes</div></div>`:''}
+      ${v.forms.aux?`<div class="skill-row"><div class="label">Auxiliary</div><div>${escapeHtml(v.forms.aux)}</div></div>`:''}
+    </div>`;
+  } else if(wtype==='adjective' && v.forms){
+    grammarBlock = `<div class="panel"><h3>Adjective</h3>
+      ${v.forms.comparative?`<div class="skill-row"><div class="label">Comparative</div><div>${escapeHtml(v.forms.comparative)}</div></div>`:''}
+      ${v.forms.superlative?`<div class="skill-row"><div class="label">Superlative</div><div>am ${escapeHtml(v.forms.superlative)}</div></div>`:''}
+    </div>`;
+  }
+
+  const translations = v.translations||{};
+  const naText = '<em style="color:var(--text-dim);">Translation not yet available.</em>';
+  const translationRows =
+    `<div class="skill-row"><div class="label">English</div><div>${v.en?escapeHtml(v.en):naText}</div></div>`+
+    `<div class="skill-row"><div class="label">Urdu</div><div>${translations.ur?escapeHtml(translations.ur):naText}</div></div>`+
+    `<div class="skill-row"><div class="label">Pashto</div><div>${translations.ps?escapeHtml(translations.ps):naText}</div></div>`;
+
+  return `
+  ${(v.senses&&v.senses.length) ? `<div class="panel"><h3>Meanings</h3>${v.senses.map((s,i)=>`
+    <div style="margin-bottom:${i<v.senses.length-1?'12px':'0'};padding-bottom:${i<v.senses.length-1?'12px':'0'};${i<v.senses.length-1?'border-bottom:1px solid var(--border);':''}">
+      <p style="font-size:1.05rem;"><strong>${i+1}.</strong> ${escapeHtml(s.en)}</p>
+      ${s.example?`<p style="color:var(--text-dim);font-size:.9rem;margin-top:4px;">${escapeHtml(s.example.de)}<br>${escapeHtml(s.example.en)}</p>`:''}
+    </div>`).join('')}</div>` : `<div class="panel"><h3>Meaning</h3><p style="font-size:1.1rem;">${escapeHtml(v.en)}</p></div>`}
+  ${translationRows ? `<div class="panel"><h3>Translations</h3>${translationRows}</div>` : ''}
+  ${grammarBlock}
+  ${(v.ex_de && !(v.senses&&v.senses.length)) ? `<div class="panel"><h3>Example</h3><p>${escapeHtml(v.ex_de)}</p><p style="color:var(--text-dim);">${escapeHtml(v.ex_en||'')}</p>
+    ${extraExamples.length ? `<div style="margin-top:8px;font-size:.9rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:8px;">${extraExamples.map(e=>`${escapeHtml(e.de)} \u2014 ${escapeHtml(e.en)}`).join('<br>')}</div>` : ''}</div>` : ''}
+  ${(v.phrases&&v.phrases.length) ? `<div class="panel"><h3>Useful phrase</h3>${v.phrases.map(escapeHtml).join('<br>')}</div>` : ''}
+  ${(v.synonyms&&v.synonyms.length)||(v.opposites&&v.opposites.length)||(v.collocations&&v.collocations.length) ? `<div class="panel"><h3>Related</h3>
+    ${(v.synonyms&&v.synonyms.length)?`<p><strong>Similar:</strong> ${v.synonyms.map(escapeHtml).join(', ')}</p>`:''}
+    ${(v.opposites&&v.opposites.length)?`<p><strong>Opposite:</strong> ${v.opposites.map(escapeHtml).join(', ')}</p>`:''}
+    ${(v.collocations&&v.collocations.length)?`<p><strong>Often used with:</strong> ${v.collocations.map(escapeHtml).join(', ')}</p>`:''}
+  </div>` : ''}
+  ${relatedWords.length ? `<div class="panel"><h3>Related vocabulary</h3>${relatedWords.map(w=>`<button class="btn secondary small" data-action="${openVocabAction}" data-arg="${w.id}" style="margin:3px;">${w.article?w.article+' ':''}${escapeHtml(w.de)}</button>`).join('')}</div>` : ''}
+  ${(v.commonMistakes&&v.commonMistakes.length) ? `<div class="panel-note error"><strong>Common mistake</strong><p style="margin:6px 0 0;">${v.commonMistakes.map(escapeHtml).join('<br>')}</p></div>` : ''}
+  ${(v.commonMistakeIds&&v.commonMistakeIds.length) ? v.commonMistakeIds.map(id=>{
+    const m = (typeof COMMON_MISTAKES!=='undefined') ? COMMON_MISTAKES.find(x=>x.id===id) : null;
+    if(!m) return '';
+    return `<div class="panel-note error"><strong>Common mistake</strong>
+      <p style="margin:6px 0 2px;">\u274c ${escapeHtml(m.wrong)}</p>
+      <p style="margin:0 0 6px;color:var(--teal);">\u2705 ${escapeHtml(m.right)}</p>
+      <p style="margin:0;color:var(--text-dim);font-size:.85rem;"><strong>Why?</strong> ${escapeHtml(m.explanation)}</p>
+    </div>`;
+  }).join('') : ''}
+  ${relatedGrammar.length ? `<div class="panel"><h3>Grammar</h3>${relatedGrammar.map(g=>`<button class="btn secondary small" data-action="open-grammar" data-arg="${g.id}" style="margin:3px;">${escapeHtml(g.title)}</button>`).join('')}</div>` : ''}
+  ${relatedLessons.length ? `<div class="panel"><h3>Taught in</h3>${relatedLessons.map(l=>`<button class="btn secondary small" data-action="open-lesson" data-arg="${l.id}" style="margin:3px;">${escapeHtml(l.title)}</button>`).join('')}</div>` : ''}
+  `;
+}
+
+function renderVocabDetail(){
+  const v = vocabById(State.vocabDetailId);
+  if(!v) { State.vocabDetailId = null; return renderVocab(); }
+  const prog = State.vocabProgress[v.id];
+  const tier = prog ? prog.status : 'not-started';
+  const favs = (State.profile && State.profile.favorites) || [];
+  const isFav = favs.includes('v:'+v.id);
+  const wtype = (typeof Schema!=='undefined') ? Schema.canonicalWordType(v.type) : v.type;
+
+  return `
+  <button class="btn secondary small" data-action="vocab-detail-back">\u2190 Back</button>
+  <h1 style="margin-top:14px;" class="${v.article?'article-'+v.article:''}">${escapeHtml(dictDisplay(v))}</h1>
+  <p style="color:var(--text-dim);">${WORD_TYPE_LABELS_UI[wtype]||wtype} \u00b7 ${v.level} \u00b7 ${escapeHtml(v.topic)} ${prog?`\u00b7 <span class="pill ${tier==='mastered'?'on':''}">${tier}</span>`:''}</p>
+  ${wordProfileBody(v)}
+  <div class="panel"><h3>Your learning</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:10px;">${prog ? `Status: ${tier}${prog.reps?` \u00b7 reviewed ${prog.reps} time${prog.reps===1?'':'s'}`:''}${prog.due?` \u00b7 ${SRS.isDue(prog)?'due now':'next review '+new Date(prog.due).toLocaleDateString()}`:''}` : 'Not yet in your learning system.'}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn secondary small" data-action="toggle-favorite" data-arg="v:${v.id}">${isFav?'\u2605 Favorited':'\u2606 Favorite'}</button>
+      <button class="btn gold small" data-action="dict-add-review" data-arg="${v.id}">${prog?'In learning \u2713':'+ Add to Learning'}</button>
+      ${prog ? `<button class="btn secondary small" data-action="vocab-practice-one" data-arg="${v.id}">Practice</button>` : ''}
+      ${askTeacherLink('vocab', v.id, v.de)}
+    </div>
+  </div>
+  `;
+}
+const WORD_TYPE_LABELS_UI = {noun:'noun', verb:'verb', adjective:'adjective', adverb:'adverb', pronoun:'pronoun',
+  article:'article', preposition:'preposition', conjunction:'conjunction', particle:'particle',
+  interjection:'interjection', number:'number', determiner:'determiner', expression:'expression',
+  phrase:'phrase', abbreviation:'abbreviation'};
+
 // anywhere, which is exactly the kind of decorative-only preference
 // this phase's personalization audit calls out.
+/* ---------------- Learn new words: Word → Meaning → Example → Recall → grade ----------------
+   Reuses the exact same SRS grading path as Review (gradeVocab/SRS.schedule)
+   so a word learned here and a word reviewed later are the same underlying
+   record — no second mastery system. Where a real exercise already exists
+   for a word (via lesson vocabIds), a genuine "Try an exercise" bonus
+   button launches the actual exercise engine instead of a fake one. */
+function buildLearnQueue(){
+  const level = (State.profile && State.profile.level) || 'A1';
+  const order = ALL_CEFR_ORDER.indexOf(level)>=0 ? ALL_CEFR_ORDER.slice(0, ALL_CEFR_ORDER.indexOf(level)+1).reverse() : ['A1'];
+  const pool = [];
+  order.forEach(lvl=>{ VOCAB.filter(v=>v.level===lvl && !State.vocabProgress[v.id]).forEach(v=>pool.push(v)); });
+  VOCAB.filter(v=>!order.includes(v.level) && !State.vocabProgress[v.id]).forEach(v=>pool.push(v));
+  return pool.slice(0,10).map(v=>v.id);
+}
+
+function renderVocabLearn(){
+  const lq = State.vocabLearn;
+  if(lq.queue.length===0 && lq.index===0){
+    const q = buildLearnQueue();
+    if(q.length===0) return `<div class="empty-state">Every word in the dataset is already in your learning system. Try Review instead.</div>`;
+    return `<div class="panel"><p>${q.length} new words ready to learn, starting with your current level.</p><button class="btn gold" data-action="vocab-learn-start">Start learning</button></div>`;
+  }
+  if(lq.index >= lq.queue.length){
+    return `<div class="panel"><h3>Session complete</h3><p>You added ${lq.queue.length} new words to your learning system.</p><button class="btn gold" data-action="vocab-learn-reset">Back</button></div>`;
+  }
+  const v = vocabById(lq.queue[lq.index]);
+  const artClass = v.article?`article-${v.article}`:'';
+  const hasExercise = LESSONS.some(l=>(l.vocabIds||[]).includes(v.id) && l.exercises.length);
+  return `
+  <div class="onboard-step-count">WORD ${lq.index+1} OF ${lq.queue.length}</div>
+  <div class="flashcard">
+    <div style="font-family:var(--serif);font-size:1.6rem;" class="${artClass}">${escapeHtml(dictDisplay(v))}</div>
+    <div style="font-size:.85rem;color:var(--text-dim);margin-top:4px;">${WORD_TYPE_LABELS_UI[Schema.canonicalWordType(v.type)]||v.type} \u00b7 ${v.level}</div>
+    ${lq.phase==='word' ? `<button class="btn secondary" data-action="vocab-learn-reveal" style="margin-top:14px;">Show meaning</button>` : `
+      <div style="font-size:1.1rem;margin-top:10px;">${escapeHtml(v.en)}</div>
+      ${v.plural?`<div style="color:var(--text-dim);font-size:.85rem;">Plural: ${escapeHtml(v.plural)}</div>`:''}
+      ${v.ex_de?`<div style="margin-top:14px;font-size:.9rem;color:var(--text-dim);">${escapeHtml(v.ex_de)}<br>${escapeHtml(v.ex_en||'')}</div>`:''}
+    `}
+  </div>
+  ${lq.phase!=='word' ? `
+  <p style="text-align:center;color:var(--text-dim);font-size:.85rem;margin-top:12px;">How well did you know this word?</p>
+  <div class="grid cols-3" style="margin-top:8px;">
+    <button class="btn secondary" data-action="vocab-learn-grade" data-arg="1">New to me</button>
+    <button class="btn secondary" data-action="vocab-learn-grade" data-arg="3">Recognised it</button>
+    <button class="btn gold" data-action="vocab-learn-grade" data-arg="5">Knew it well</button>
+  </div>
+  ${hasExercise ? `<button class="btn secondary block" style="margin-top:10px;" data-action="vocab-practice-one" data-arg="${v.id}">Try a real exercise for this word</button>` : ''}
+  ` : ''}
+  `;
+}
+
 const DIFFICULTY_SESSION_SIZE = {'Relaxed':12, 'Balanced':20, 'Challenging':28, 'Very challenging':36};
 function buildReviewQueue(){
   const due = Object.values(State.vocabProgress).filter(v=>SRS.isDue(v));
@@ -935,7 +1288,7 @@ function renderVocabReview(){
   return `
   <div class="onboard-step-count">CARD ${rv.index+1} OF ${rv.queue.length}</div>
   <div class="flashcard">
-    <div style="font-family:var(--serif);font-size:1.6rem;" class="${artClass}">${v.article?v.article+' ':''}${escapeHtml(v.de)}</div>
+    <div style="font-family:var(--serif);font-size:1.6rem;" class="${artClass}">${escapeHtml(dictDisplay(v))}</div>
     ${rv.showAnswer ? `
       <div style="font-size:1.1rem;margin-top:6px;">${escapeHtml(v.en)}</div>
       ${v.plural?`<div style="color:var(--text-dim);font-size:.85rem;">Plural: ${escapeHtml(v.plural)}</div>`:''}
@@ -967,14 +1320,25 @@ function renderGrammar(){
 function renderGrammarDetail(g){
   const relatedExercises = [];
   LESSONS.forEach(l=>l.exercises.forEach(e=>{ if(e.category===g.category && relatedExercises.length<6) relatedExercises.push(e); }));
+  const relatedLessons = LESSONS.filter(l=>(l.grammarIds||[]).includes(g.id) || l.grammarId===g.id);
+  const prereqGrammar = (g.prereq||[]).map(id=>grammarById(id)).filter(Boolean);
+  const relatedVocabIds = new Set();
+  relatedLessons.forEach(l=>(l.vocabIds||[]).forEach(id=>relatedVocabIds.add(id)));
+  const relatedVocab = [...relatedVocabIds].map(id=>vocabById(id)).filter(Boolean).slice(0,8);
   return `
   <button class="btn secondary small" data-action="grammar-back">\u2190 Back to Grammar Lab</button>
   <h1 style="margin-top:14px;">${escapeHtml(g.title)}</h1>
+  <p style="color:var(--text-dim);font-size:.85rem;">${g.level}${g.category?' \u00b7 '+escapeHtml(g.category):''}</p>
   <p>${escapeHtml(g.explanation)}</p>
+  ${prereqGrammar.length ? `<div class="panel-note" style="margin-bottom:14px;"><strong>Builds on:</strong> ${prereqGrammar.map(p=>`<button class="btn secondary small" data-action="open-grammar" data-arg="${p.id}" style="margin:2px;">${escapeHtml(p.title)}</button>`).join('')}</div>` : ''}
   <div class="panel"><h3>Rules</h3><ul>${g.rules.map(r=>`<li>${escapeHtml(r)}</li>`).join('')}</ul></div>
   <div class="panel"><h3>Examples</h3>${g.examples.map(e=>`<div style="margin:8px 0;"><strong>${escapeHtml(e.de)}</strong><br><span style="color:var(--text-dim);">${escapeHtml(e.en)}</span></div>`).join('')}</div>
+  ${(g.negativeExamples&&g.negativeExamples.length) ? `<div class="panel"><h3>Not like this</h3>${g.negativeExamples.map(e=>`<div style="margin:8px 0;"><span style="text-decoration:line-through;color:var(--brick);">${escapeHtml(e.wrong)}</span><br><strong>${escapeHtml(e.right)}</strong></div>`).join('')}</div>` : ''}
   <div class="panel-note error"><strong>Common mistake</strong><p style="margin:6px 0 0;">${g.mistakes.map(escapeHtml).join(' ')}</p></div>
-  <div style="margin:10px 0;">${askTeacherLink(g.title)}</div>
+  ${(g.exceptions&&g.exceptions.length) ? `<div class="panel-note"><strong>Exceptions</strong><p style="margin:6px 0 0;">${g.exceptions.map(escapeHtml).join(' ')}</p></div>` : ''}
+  ${relatedVocab.length ? `<div class="panel"><h3>Related vocabulary</h3>${relatedVocab.map(v=>`<button class="btn secondary small" data-action="open-vocab" data-arg="${v.id}" style="margin:3px;">${escapeHtml(dictDisplay(v))}</button>`).join('')}</div>` : ''}
+  ${relatedLessons.length ? `<div class="panel"><h3>Taught in</h3>${relatedLessons.map(l=>`<button class="btn secondary small" data-action="open-lesson" data-arg="${l.id}" style="margin:3px;">${escapeHtml(l.title)}</button>`).join('')}</div>` : ''}
+  <div style="margin:10px 0;">${askTeacherLink('grammar', g.id, g.title)}</div>
   ${relatedExercises.length ? `<button class="btn gold block" data-action="grammar-quiz" data-arg="${g.id}">Quick quiz (${relatedExercises.length} questions)</button>` : ''}
   `;
 }
@@ -1006,13 +1370,20 @@ function renderProgress(){
   const statusCounts = {new:VOCAB.length - vocabItems.length, learning:0, familiar:0, mastered:0, forgotten:0};
   vocabItems.forEach(v=>{ statusCounts[v.status] = (statusCounts[v.status]||0)+1; });
 
-  const levels = ['A1','A2'];
+  const levels = ALL_CEFR_ORDER.filter(lvl => LESSONS.some(l=>l.level===lvl));
   const lessonRows = levels.map(lvl=>{
     const ls = LESSONS.filter(l=>l.level===lvl);
     const done = ls.filter(l=>State.lessonProgress[l.id] && State.lessonProgress[l.id].completed).length;
     const pct = ls.length ? Math.round(100*done/ls.length) : 0;
     return `<div class="skill-row"><div class="label">${lvl}</div><div class="progress-bar"><div style="width:${pct}%"></div></div><div class="pct">${done}/${ls.length}</div></div>`;
   }).join('');
+
+  const weak = weakestGroup();
+  const weakPanel = weak ? `<div class="panel" style="border-color:var(--brick);">
+    <h3>Focus area</h3>
+    <p style="color:var(--text-dim);font-size:.9rem;">Based on your last few attempts, <strong>${labelForGroup(weak)}</strong> is where mistakes are most common right now.</p>
+    <button class="btn gold small" data-action="practice-group" data-arg="${weak}">Practice ${labelForGroup(weak)}</button>
+  </div>` : '';
 
   const groupStats = State._groupStats || {};
   const groupRows = Object.entries(groupStats).filter(([,s])=>s.total>0).sort((a,b)=>(a[1].correct/a[1].total)-(b[1].correct/b[1].total)).map(([g,s])=>{
@@ -1034,6 +1405,7 @@ function renderProgress(){
 
   return `
   <h1>Progress</h1>
+  ${weakPanel}
   <div class="grid cols-2">
     <div class="panel"><h3>Lessons completed</h3>${lessonRows}</div>
     <div class="panel"><h3>Vocabulary (${vocabBarTotal} words)</h3>${vocabBars}</div>
@@ -1156,6 +1528,7 @@ function renderMain(){
   if(State.view==='listening') return renderListening();
   if(State.view==='listening-detail') return renderListeningDetail();
   if(State.view==='speaking') return renderSpeaking();
+  if(State.view==='speaking-detail') return renderSpeakingDetail();
   if(State.view==='pronunciation') return renderPronunciation();
   if(State.view==='reading') return renderReading();
   if(State.view==='reading-detail') return renderReadingDetail();
@@ -1192,8 +1565,17 @@ function notConnectedPanel(title, reason){
   return `<div class="not-connected-panel"><strong>${escapeHtml(title)}</strong>${escapeHtml(reason)}</div>`;
 }
 
-function askTeacherLink(context){
-  return `<button class="btn secondary small" data-action="nav" data-arg="teacher">Ask the Teacher about ${escapeHtml(context)}</button>`;
+/* Builds a real teacher-context reference (see src/services/teacher.js)
+   and attaches it to the button so the click can hand the future AI
+   Teacher actual structured context (kind + id + learner context),
+   not just a bare label. Falls back to a plain nav link if the
+   TeacherContextService isn't loaded (e.g. an older build). */
+function askTeacherLink(kind, id, label, extraData){
+  if(typeof TeacherContextService === 'undefined'){
+    return `<button class="btn secondary small" data-action="nav" data-arg="teacher">Ask the Teacher about ${escapeHtml(label)}</button>`;
+  }
+  const extra = extraData ? Object.entries(extraData).map(([k,v])=>` data-${k}="${escapeHtml(String(v))}"`).join('') : '';
+  return `<button class="btn secondary small" data-action="teacher-ask-context" data-kind="${escapeHtml(kind)}" data-id="${escapeHtml(id)}" data-label="${escapeHtml(label)}"${extra}>Ask the Teacher about ${escapeHtml(label)}</button>`;
 }
 
 /* Real, DB-derived stats used by Challenges/Achievements/Notifications —
@@ -1234,26 +1616,281 @@ async function computeLiveStats(){
 /* ================================================================
    DICTIONARY
    ================================================================ */
+/* Phase 13: the dictionary is no longer one big in-memory pool.
+   * Curated + promoted ("Added to Learning") words live in VOCAB and are searched
+     synchronously by the Phase 4 DictionaryService (a few hundred records).
+   * The 92,880-lemma master dictionary lives in IndexedDB (src/lexicon/) and is queried
+     through indexes, lazily, only when the dictionary / a lookup is used. Nothing from
+     it is held in memory except the handful of results currently displayed (MasterUI.cache). */
+/* Display form with the article shown exactly once. Master-dictionary entries already carry
+   "article lemma" in `de` (Phase 9 bridge); curated entries carry the bare noun. Phase 12's cards
+   printed the article twice for master entries ("das das Haus"). */
+function dictDisplay(v){
+  const d = v.de || v.lemma || '';
+  return (v.article && !/^(der|die|das)\s/i.test(d)) ? v.article + ' ' + d : d;
+}
+function dictionaryPool(){ return VOCAB; }
+const UnifiedDictionaryService = DictionaryService.create(dictionaryPool, null);
+
+const MasterUI = { seq:0, key:'', items:[], hasMore:false, offset:0, total:null, loading:false, partial:false, unavailable:false,
+  fuzzy:[], browseTotal:null, cache:new Map(), detailLoading:null, curatedKeys:null, curatedKeysFor:-1 };
+const MASTER_PAGE = 30;
+function masterCachePut(entry){
+  if(!entry) return; MasterUI.cache.delete(entry.id); MasterUI.cache.set(entry.id, entry);
+  while(MasterUI.cache.size > 300) MasterUI.cache.delete(MasterUI.cache.keys().next().value);
+}
+function curatedKeySet(){
+  if(MasterUI.curatedKeys && MasterUI.curatedKeysFor === VOCAB.length) return MasterUI.curatedKeys;
+  MasterUI.curatedKeys = new Set(VOCAB.map(v => MasterLexiconBridge.dedupeKey(v.lemma || v.de, v.type)));
+  MasterUI.curatedKeysFor = VOCAB.length; return MasterUI.curatedKeys;
+}
+/* Curated-precedence (unchanged rule from Phase 9): a master record that is the same word as a
+   curated/promoted one is dropped; the richer curated record already represents it. */
+function masterVisible(entry){
+  return entry && !vocabById(entry.id) && !curatedKeySet().has(MasterLexiconBridge.dedupeKey(entry.lemma, entry.type));
+}
+/* Resolves a Dictionary-screen id: curated/promoted first (sync), then the small recently-seen
+   master cache. A master id that is in neither is fetched by id on demand (see detail view). */
+function dictEntryById(id){
+  return vocabById(id) || MasterUI.cache.get(id) || null;
+}
+Object.assign(WORD_TYPE_LABELS_UI, { subjunction:'subjunction', modal_particle:'modal particle', proper_noun:'proper noun' });
+function dictFilterWordTypes(){
+  const present = new Set((LexiconStore.wordTypes().length ? LexiconStore.wordTypes() : ['proper_noun','subjunction','modal_particle']).map(t=>Schema.canonicalWordType(t)));
+  const extra = Array.from(present).filter(t=>!Schema.WORD_TYPES.includes(t));
+  return Schema.WORD_TYPES.concat(extra.sort());
+}
+
+function dictHasUnknownCefr(){ return true; /* the master dictionary carries real, honest 'unknown' CEFR levels */ }
+
 function renderDictionary(){
+  if(State.dictDetailId) return renderDictionaryDetail();
   const q = State.dictQuery||'';
-  const results = q ? VOCAB.filter(v=>v.de.toLowerCase().includes(q.toLowerCase())||v.en.toLowerCase().includes(q.toLowerCase())).slice(0,30) : [];
+  const filters = State.dictFilters||{};
+  const hasFilters = filters.wordType||filters.level||filters.topic||filters.gender;
   const dayIndex = Math.floor(Date.now()/86400000);
   const wotd = VOCAB[dayIndex % VOCAB.length];
+
+  const filterBar = `<div class="panel" style="margin-bottom:14px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <label style="font-size:.8rem;color:var(--text-dim);" for="dictFilterType">Type</label>
+      <select id="dictFilterType" data-key="wordType" style="padding:6px;border-radius:6px;">
+        <option value="">Any</option>
+        ${dictFilterWordTypes().map(t=>`<option value="${t}" ${filters.wordType===t?'selected':''}>${WORD_TYPE_LABELS_UI[t]||t}</option>`).join('')}
+      </select>
+      <label style="font-size:.8rem;color:var(--text-dim);" for="dictFilterLevel">CEFR</label>
+      <select id="dictFilterLevel" data-key="level" style="padding:6px;border-radius:6px;">
+        <option value="">Any</option>
+        ${ALL_CEFR_ORDER.map(l=>`<option value="${l}" ${filters.level===l?'selected':''}>${l}</option>`).join('')}
+        ${dictHasUnknownCefr()?`<option value="unknown" ${filters.level==='unknown'?'selected':''}>Unknown</option>`:''}
+      </select>
+      <label style="font-size:.8rem;color:var(--text-dim);" for="dictFilterGender">Gender</label>
+      <select id="dictFilterGender" data-key="gender" style="padding:6px;border-radius:6px;">
+        <option value="">Any</option>
+        <option value="der" ${filters.gender==='der'?'selected':''}>der</option>
+        <option value="die" ${filters.gender==='die'?'selected':''}>die</option>
+        <option value="das" ${filters.gender==='das'?'selected':''}>das</option>
+      </select>
+      ${hasFilters?`<button class="btn secondary small" data-action="dict-filter-clear">Clear filters</button>`:''}
+    </div>
+  </div>`;
+
+  const azBar = `<div class="az-bar" role="navigation" aria-label="Browse dictionary alphabetically">
+    ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l=>{
+      return `<button class="az-letter ${State.dictLetter===l?'active':''}" data-action="dict-letter" data-arg="${l}" aria-label="Browse words starting with ${l}">${l}</button>`;
+    }).join('')}
+  </div>`;
+
+  const masterBase = q ? 's:'+q : State.dictLetter ? 'b:'+State.dictLetter : '';
+  const masterKey = masterBase ? masterBase + '|' + JSON.stringify(filters) : '';
+  let body;
+  if(q){
+    const res = UnifiedDictionaryService.search(q, hasFilters?filters:null);
+    const section = (title, list) => list.length ? `<div style="margin-bottom:14px;"><h3 style="font-size:.95rem;color:var(--text-dim);">${title} (${list.length})</h3>${list.slice(0,20).map(dictResultCard).join('')}</div>` : '';
+    body = section('Core vocabulary: exact match', res.exact) + section('Core vocabulary: word form of', res.inflected)
+      + section('Core vocabulary: meaning match', res.translationExact) + section('Core vocabulary: starts with', res.prefix)
+      + section('Core vocabulary: meaning starts with', res.translationPrefix) + section('Core vocabulary: also contains', res.partial)
+      + section('Core vocabulary: related word', res.related);
+    body += `<div id="dictMaster">${masterPanelHtml(masterKey)}</div>`;
+  } else if(State.dictLetter){
+    const list = UnifiedDictionaryService.browseLetter(State.dictLetter, hasFilters?filters:null);
+    body = (list.length ? `<div class="panel"><h3>Core vocabulary \u2014 ${State.dictLetter} (${list.length})</h3>${list.slice(0,80).map(dictResultCard).join('')}</div>` : '')
+      + `<div id="dictMaster">${masterPanelHtml(masterKey)}</div>`;
+  } else {
+    body = `
+    <div class="panel"><h3>Word of the day ${sourceBadge('local')}</h3>${dictResultCard(wotd)}</div>
+    <div id="dictMaster">${masterPanelHtml('')}</div>
+    <p style="color:var(--text-dim);font-size:.88rem;">Search above for any German word or English meaning, or browse A\u2013Z. The dictionary is not limited by your current level \u2014 you can look up a C1 word even as an A1 learner. Looking words up never adds them to your learning queue.</p>
+    `;
+  }
+  MasterUI.pendingKey = masterKey;
+
   return `
   <h1>Dictionary</h1>
-  <label class="visually-hidden" for="dictSearch">Search the dictionary</label>
-  <input type="text" class="fill-input" id="dictSearch" style="width:100%;margin-bottom:16px;" placeholder="Search German or English..." value="${escapeHtml(q)}">
-  ${q ? `
-    <div class="panel"><h3>${results.length} result${results.length===1?'':'s'}</h3>
-      ${results.map(v=>dictWordRow(v)).join('') || '<p style="color:var(--text-dim);">No matches. Try another spelling.</p>'}
+  <label class="visually-hidden" for="dictSearch">Search the dictionary in German, English, Urdu, or Pashto</label>
+  <input type="text" class="fill-input" id="dictSearch" style="width:100%;margin-bottom:12px;" placeholder="Search German, English, Urdu, or Pashto..." value="${escapeHtml(q)}">
+  ${filterBar}
+  ${!q ? azBar : ''}
+  ${body}
+  `;
+}
+function stripArt(s){ return String(s).replace(/^(der|die|das)\s+/,''); }
+
+/* Resolves a word tapped in reading/speaking content to a real VOCAB
+   entry: exact headword match (either case, since German capitalises
+   nouns but the clicked token might be mid-sentence), then the same
+   irregular-inflection index Dictionary search uses. Returns null rather
+   than inventing anything when nothing matches (spec §14: never fake a
+   dictionary entry for an unmapped word). */
+function resolveClickedWord(word){
+  const w = word.trim();
+  const wLower = w.toLowerCase();
+  let hit = dictionaryPool().find(v=> stripArt(v.de)===w || stripArt(v.de).toLowerCase()===wLower || (v.lemma||'').toLowerCase()===wLower);
+  if(hit) return hit;
+  const inflected = UnifiedDictionaryService.lookupInflected(w);
+  return inflected.length ? inflected[0] : null;
+}
+
+
+
+/* ---- master dictionary panel (async, indexed) ---- */
+function lexStatusHtml(){
+  const st = LexiconStore.getStatus();
+  const pct = st.total ? Math.min(100, Math.round(100*st.done/st.total)) : 0;
+  if(st.phase==='building' || st.phase==='opening'){
+    return `<div class="panel-note" role="status" aria-live="polite"><strong>Preparing the offline dictionary\u2026</strong>
+      <div style="margin:6px 0;"><progress value="${st.done||0}" max="${st.total||1}" style="width:100%;"></progress></div>
+      <span style="font-size:.85rem;color:var(--text-dim);">${(st.done||0).toLocaleString()} of ${(st.total||0).toLocaleString()} words (${pct}%). One-time step; you can keep using the app. ${st.usable?'Results are partial until this finishes.':''}</span></div>`;
+  }
+  if(st.error){
+    return `<div class="panel-note" role="alert"><strong>Dictionary problem:</strong> ${escapeHtml(st.error.message)}
+      ${st.error.kind==='unavailable'?'':`<div style="margin-top:6px;"><button class="btn secondary small" data-action="dict-lex-retry">Try again</button></div>`}</div>`;
+  }
+  if(st.warning){ return `<div class="panel-note" style="font-size:.85rem;">${escapeHtml(st.warning)}</div>`; }
+  return '';
+}
+function masterPanelHtml(key){
+  if(!key) return `<div id="dictMasterStatus">${lexStatusHtml()}</div>`;
+  const M = MasterUI;
+  const status = `<div id="dictMasterStatus">${lexStatusHtml()}</div>`;
+  if(M.key !== key || (M.loading && !M.items.length)) return status + `<p style="color:var(--text-dim);font-size:.9rem;" role="status">Searching the full dictionary\u2026</p>`;
+  const q = State.dictQuery||'';
+  const visible = M.items.filter(i => masterVisible(i.entry));
+  const group = (tiers, title) => { const l = visible.filter(i => tiers.includes(i.tier)); return l.length ? `<div style="margin-bottom:14px;"><h3 style="font-size:.95rem;color:var(--text-dim);">${title}</h3>${l.map(i=>dictResultCard(i.entry)).join('')}</div>` : ''; };
+  let out = status;
+  if(M.unavailable) return out + `<p style="color:var(--text-dim);">The full dictionary isn't available right now; core vocabulary results are shown above.</p>`;
+  if(key.startsWith('b:')){
+    out += `<div class="panel"><h3>${State.dictLetter} \u2014 full dictionary${M.browseTotal!=null?` (${M.browseTotal.toLocaleString()} entries)`:''}</h3>
+      ${visible.map(i=>dictResultCard(i.entry)).join('') || '<p style="color:var(--text-dim);">No words match the current filters.</p>'}
+      ${M.hasMore?`<button class="btn secondary small" data-action="dict-master-more">Show more</button>`:''}</div>`;
+  } else {
+    const fuzzy = M.items.filter(i=>i.tier==='fuzzy');          // suggestions are search shortcuts, not entries: curated-precedence does not apply
+    const real = visible.filter(i=>i.tier!=='fuzzy');
+    if(!real.length && fuzzy.length){
+      out += `<div class="panel"><p>No exact result for "${escapeHtml(q)}".</p><p style="color:var(--text-dim);font-size:.85rem;margin-top:4px;">Did you mean:</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">${fuzzy.map(i=>`<button class="btn secondary small" data-action="dict-suggest" data-arg="${escapeHtml(i.entry.lemma)}">${i.entry.article?i.entry.article+' ':''}${escapeHtml(i.entry.lemma)}</button>`).join('')}</div></div>`;
+    } else if(!real.length){
+      const coreHits = UnifiedDictionaryService.totalResultCount(UnifiedDictionaryService.search(q, null));
+      if(!coreHits) out += `<div class="panel"><p>No dictionary entry found for "${escapeHtml(q)}".</p>
+        <p style="color:var(--text-dim);font-size:.85rem;margin-top:8px;">Try:</p>
+        <ul style="color:var(--text-dim);font-size:.85rem;"><li>checking the spelling</li><li>searching the German form directly (e.g. the infinitive of a verb)</li><li>searching an English, Urdu, or Pashto translation instead</li></ul>
+        ${M.partial?'<p style="color:var(--text-dim);font-size:.85rem;">The offline dictionary index is still being built, so this search covers only part of it.</p>':''}</div>`;
+    } else {
+      out += group(['exact','ci'], 'Exact match') + group(['inflected'], 'Word form of') + group(['variant'], 'Alternative spelling')
+        + group(['translationExact'], 'Meaning match') + group(['prefix'], 'Starts with') + group(['translationPrefix'], 'Meaning starts with')
+        + group(['partial'], 'Also contains');
+      if(M.hasMore) out += `<button class="btn secondary small" data-action="dict-master-more">Show more results</button>`;
+      if(M.partial) out += `<p style="color:var(--text-dim);font-size:.82rem;">Partial results: the offline dictionary index is still being built.</p>`;
+    }
+  }
+  return out;
+}
+/* Runs after every render of the dictionary screen. Starts (or reuses) the async master lookup for
+   the current query/letter; stale answers are discarded by sequence number. */
+function dictMasterSync(more){
+  if(State.view!=='dictionary' || State.dictDetailId) return;
+  const M = MasterUI, key = M.pendingKey;
+  if(!document.getElementById('dictMaster')) return;
+  if(!key){ LexiconStore.ensureReady().then(()=>{}); return; }      // opening the dictionary starts the one-time index build (if needed)
+  if(!more && M.key === key && !M.loading) return;
+  const seq = ++M.seq, q = State.dictQuery||'', filters = State.dictFilters||{};
+  const hasF = filters.wordType||filters.level||filters.topic||filters.gender;
+  if(!more){ M.key = key; M.items = []; M.offset = 0; M.hasMore = false; }
+  M.loading = true;
+  const isStale = () => seq !== M.seq;
+  const p = key.startsWith('s:')
+    ? LexiconStore.search(q, { limit: MASTER_PAGE, offset: more ? M.offset : 0, filters: hasF?filters:null, isStale })
+    : LexiconStore.browse(State.dictLetter.toLowerCase(), { limit: MASTER_PAGE, offset: more ? M.offset : 0, filters: hasF?filters:null });
+  p.then(r => {
+    if(isStale()) return;
+    M.loading = false; M.unavailable = !!r.unavailable; M.partial = !!r.partialIndex; M.hasMore = !!r.hasMore;
+    const newItems = key.startsWith('s:') ? (r.entries||[]).map(x=>({tier:x.tier, entry:x.entry})) : (r.entries||[]).map(e=>({tier:'browse', entry:e}));
+    newItems.forEach(i=>masterCachePut(i.entry));
+    M.items = more ? M.items.concat(newItems) : newItems; M.offset = M.items.length; M.browseTotal = r.total != null ? r.total : null;
+    const box = document.getElementById('dictMaster'); if(box && State.view==='dictionary' && !State.dictDetailId) box.innerHTML = masterPanelHtml(key);
+  }).catch(err => { if(isStale()) return; M.loading = false; M.unavailable = true; const box = document.getElementById('dictMaster'); if(box) box.innerHTML = masterPanelHtml(key); });
+}
+LexiconStore.subscribe(st => {
+  const el = document.getElementById('dictMasterStatus'); if(el) el.innerHTML = lexStatusHtml();
+  if(st.phase==='ready' || (st.usable && st.phase==='building' && st.chunksDone && st.chunksDone % 8 === 0)){ if(MasterUI.key){ MasterUI.key=''; } dictMasterSync(); }
+  if(st.phase==='ready') backfillLearnedLexicon();
+});
+
+/* Lean result card for search/browse LISTS (spec §20) — only functional
+   actions, progressive disclosure; the full profile lives in the detail
+   view (renderDictionaryDetail / wordProfileBody), opened via "Open". */
+function dictResultCard(v){
+  const wtype = (typeof Schema!=='undefined') ? Schema.canonicalWordType(v.type) : v.type;
+  const favs = (State.profile && State.profile.favorites) || [];
+  const isFav = favs.includes('v:'+v.id);
+  const tracked = !!State.vocabProgress[v.id];
+  const artClass = v.article?`article-${v.article}`:'';
+  const levelLabel = v.level==='unknown' ? 'CEFR unknown' : v.level;
+  return `<div class="panel-note" style="margin:8px 0;cursor:pointer;" data-action="open-dict-detail" data-arg="${v.id}">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <div style="font-family:var(--serif);font-size:1.1rem;" class="${artClass}">${escapeHtml(dictDisplay(v))}</div>
+      <span style="font-size:.78rem;color:var(--text-dim);">${WORD_TYPE_LABELS_UI[wtype]||wtype} \u00b7 ${levelLabel}${v.dictionaryOnly?' \u00b7 <span class="pill">Master Dictionary</span>':''}</span>
     </div>
-  ` : `
-    <div class="panel">
-      <h3>Word of the day ${sourceBadge('local')}</h3>
-      ${dictWordRow(wotd)}
+    <div style="color:var(--text-dim);">${v.en?escapeHtml(v.en):'<em>Translation not yet available.</em>'}${v.plural?' \u00b7 pl. '+escapeHtml(v.plural):''}</div>
+    ${(v.translations&&(v.translations.ur||v.translations.ps))?`<div style="font-size:.85rem;color:var(--text-dim);margin-top:2px;">${v.translations.ur?escapeHtml(v.translations.ur):''}${v.translations.ur&&v.translations.ps?' · ':''}${v.translations.ps?escapeHtml(v.translations.ps):''}</div>`:''}
+    <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;" onclick="event.stopPropagation()">
+      <button class="btn secondary small" data-action="open-dict-detail" data-arg="${v.id}">Open</button>
+      <button class="btn secondary small" data-action="toggle-favorite" data-arg="v:${v.id}">${isFav?'\u2605':'\u2606'}</button>
+      ${tracked?'':`<button class="btn secondary small" data-action="dict-add-review" data-arg="${v.id}">+ Add to Learning</button>`}
     </div>
-    <p style="color:var(--text-dim);font-size:.88rem;">Search above, or browse the full list in <button class="btn secondary small" data-action="nav" data-arg="vocab" style="display:inline-flex;">Vocabulary</button>.</p>
-  `}
+  </div>`;
+}
+
+function renderDictionaryDetail(){
+  const v = dictEntryById(State.dictDetailId);
+  if(!v && String(State.dictDetailId).startsWith('lex_') && MasterUI.detailLoading !== State.dictDetailId){
+    // master word not in the small cache (e.g. after a reload): fetch just this one record by id
+    const want = State.dictDetailId; MasterUI.detailLoading = want;
+    LexiconStore.getEntry(want).then(e => { if(e) masterCachePut(e); else if(State.dictDetailId===want) State.dictDetailId = null; MasterUI.detailLoading = null; if(State.view==='dictionary') render(); });
+  }
+  if(!v && MasterUI.detailLoading === State.dictDetailId) return `<button class="btn secondary small" data-action="dict-detail-back">\u2190 Back to Dictionary</button><p style="margin-top:14px;color:var(--text-dim);" role="status">Loading entry\u2026</p>`;
+  if(!v){ State.dictDetailId = null; return renderDictionary(); }
+  const wtype = (typeof Schema!=='undefined') ? Schema.canonicalWordType(v.type) : v.type;
+  const favs = (State.profile && State.profile.favorites) || [];
+  const isFav = favs.includes('v:'+v.id);
+  const tracked = !!State.vocabProgress[v.id];
+  const levelLabel = v.level==='unknown' ? 'Unknown' : v.level;
+  const cefrNote = v.cefrBasis==='authored-estimate'
+    ? ' <span style="color:var(--text-dim);">(estimate — not an official Goethe/telc/CEFR classification)</span>'
+    : (v.level==='unknown' ? ' <span style="color:var(--text-dim);">(not classified)</span>' : '');
+  return `
+  <button class="btn secondary small" data-action="dict-detail-back">\u2190 Back to Dictionary</button>
+  <h1 style="margin-top:14px;" class="${v.article?'article-'+v.article:''}">${escapeHtml(dictDisplay(v))}</h1>
+  <p style="color:var(--text-dim);">${WORD_TYPE_LABELS_UI[wtype]||wtype} \u00b7 CEFR: ${levelLabel}${cefrNote} \u00b7 ${escapeHtml(v.topic||'')}${v.dictionaryOnly?' \u00b7 <span class="pill">Master Dictionary entry</span>':''}</p>
+  ${wordProfileBody(v)}
+  <div class="panel">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn secondary small" data-action="toggle-favorite" data-arg="v:${v.id}">${isFav?'\u2605 Favorited':'\u2606 Favorite'}</button>
+      <button class="btn gold small" data-action="dict-add-review" data-arg="${v.id}">${tracked?'In your Learning system \u2713':'+ Add to Learning'}</button>
+      ${tracked?`<button class="btn secondary small" data-action="open-vocab-detail" data-arg="${v.id}">View in Vocabulary</button>`:''}
+      ${askTeacherLink('vocab', v.id, v.de)}
+    </div>
+  </div>
   `;
 }
 const GENDER_LABELS = {der:'masculine', die:'feminine', das:'neuter'};
@@ -1262,16 +1899,26 @@ function dictWordRow(v){
   const favs = (State.profile && State.profile.favorites) || [];
   const isFav = favs.includes('v:'+v.id);
   const tracked = !!State.vocabProgress[v.id];
+  // Richer fields only exist on the Phase 2.5+ vocabulary pack; every
+  // block below is skipped cleanly for older/plainer entries.
+  const extraExamples = (v.examples||[]).slice(1); // examples[0] duplicates ex_de/ex_en, shown above already
+  const relatedLessons = LESSONS.filter(l=>(l.vocabIds||[]).includes(v.id));
   return `<div class="panel-note" style="margin:10px 0;">
-    <div style="font-family:var(--serif);font-size:1.2rem;" class="${artClass}">${v.article?v.article+' ':''}${escapeHtml(v.de)}</div>
+    <div style="font-family:var(--serif);font-size:1.2rem;" class="${artClass}">${escapeHtml(dictDisplay(v))}</div>
     <div style="color:var(--text-dim);">${escapeHtml(v.en)} ${v.plural?'· plural: '+escapeHtml(v.plural):''} · ${v.level}</div>
     ${v.article?`<div style="color:var(--text-dim);font-size:.82rem;margin-top:2px;">Grammar: ${GENDER_LABELS[v.article]} noun</div>`:''}
     ${v.ex_de?`<div style="margin-top:8px;font-size:.9rem;">${escapeHtml(v.ex_de)}<br><span style="color:var(--text-dim);">${escapeHtml(v.ex_en||'')}</span></div>`:''}
+    ${extraExamples.length ? `<div style="margin-top:6px;font-size:.85rem;color:var(--text-dim);">${extraExamples.map(e=>`${escapeHtml(e.de)} \u2014 ${escapeHtml(e.en)}`).join('<br>')}</div>` : ''}
+    ${(v.synonyms&&v.synonyms.length) ? `<div style="margin-top:6px;font-size:.82rem;"><strong>Similar:</strong> ${v.synonyms.map(escapeHtml).join(', ')}</div>` : ''}
+    ${(v.opposites&&v.opposites.length) ? `<div style="margin-top:4px;font-size:.82rem;"><strong>Opposite:</strong> ${v.opposites.map(escapeHtml).join(', ')}</div>` : ''}
+    ${(v.collocations&&v.collocations.length) ? `<div style="margin-top:4px;font-size:.82rem;"><strong>Often used with:</strong> ${v.collocations.map(escapeHtml).join(', ')}</div>` : ''}
+    ${(v.commonMistakes&&v.commonMistakes.length) ? `<div class="panel-note error" style="margin-top:8px;padding:8px;"><strong>Common mistake</strong><br>${v.commonMistakes.map(escapeHtml).join('<br>')}</div>` : ''}
+    ${relatedLessons.length ? `<div style="margin-top:8px;font-size:.82rem;">Appears in: ${relatedLessons.map(l=>`<button class="btn secondary small" data-action="open-lesson" data-arg="${l.id}" style="margin:2px;">${escapeHtml(l.title)}</button>`).join('')}</div>` : ''}
     <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
       <button class="btn secondary small" data-action="toggle-favorite" data-arg="v:${v.id}">${isFav?'\u2605 Favorited':'\u2606 Favorite'}</button>
       <button class="btn secondary small" data-action="dict-add-review" data-arg="${v.id}">${tracked?'In review \u2713':'Add to Review'}</button>
       <button class="btn secondary small" data-action="nav" data-arg="vocab">Practice</button>
-      ${askTeacherLink('this word')}
+      ${askTeacherLink('vocab', v.id, v.de)}
     </div>
   </div>`;
 }
@@ -1310,16 +1957,64 @@ function renderListeningDetail(){
    SPEAKING LAB
    ================================================================ */
 function renderSpeaking(){
+  const tasks = (typeof SPEAKING_TASKS!=='undefined') ? SPEAKING_TASKS : [];
+  if(!tasks.length){
+    // Fallback to the single legacy demo sentence if the speaking pack isn't loaded.
+    return `
+    <h1>Speaking Lab</h1>
+    <p style="color:var(--text-dim);">Practice speaking sentences aloud. Recording works locally in your browser for self-review; automatic pronunciation/fluency scoring is not connected yet.</p>
+    <div class="panel" style="text-align:center;">
+      <p style="font-family:var(--serif);font-size:1.1rem;">"Ich möchte einen Kaffee, bitte."</p>
+      <button class="record-circle" data-action="speaking-toggle-record" aria-label="Start recording">${State.speakingRecording?'\u25A0':'\u25CF'}</button>
+      <p style="color:var(--text-dim);font-size:.85rem;margin-top:10px;">${State.speakingRecording?'Recording... click to stop':'Click to record yourself, then play it back'}</p>
+    </div>
+    ${State.speakingAttempted ? notConnectedPanel('Analysis not connected', 'Speech analysis isn\u2019t connected in this build. You can still listen back to your own recording to self-check against the model sentence above.') : ''}
+    <div style="margin-top:14px;">${askTeacherLink('speaking', 'legacy', 'speaking practice')}</div>
+    `;
+  }
   return `
   <h1>Speaking Lab</h1>
-  <p style="color:var(--text-dim);">Practice speaking sentences aloud. Recording works locally in your browser for self-review; automatic pronunciation/fluency scoring is not connected yet.</p>
+  <p style="color:var(--text-dim);">No speech recognition or pronunciation scoring is connected in this build. Each task gives you a real prompt, key phrases, and a self-check list \u2014 record yourself if you like, then judge your own attempt against the checklist.</p>
+  <div class="card-grid">
+    ${tasks.map(t=>`<div class="challenge-card"><strong>${escapeHtml(t.title)}</strong><div style="color:var(--text-dim);font-size:.85rem;margin:4px 0 10px;">${t.level}</div>
+      <button class="btn gold small" data-action="open-speaking" data-arg="${t.id}">Open</button></div>`).join('')}
+  </div>`;
+}
+/* Real (not curated/hand-picked) target-vocabulary extraction: tokenizes
+   the task text plus its key phrases, resolves each token through the
+   same resolver reading-word-click uses, and keeps unique hits. This is
+   genuinely derived from the content, not a fabricated "suggested words"
+   list — a word only appears here if it actually resolves to a real
+   VOCAB entry. */
+function targetVocabForText(...texts){
+  const seen = new Set(), out = [];
+  texts.join(' ').match(/[A-Za-zÀ-ÖØ-öø-ÿ]+/g||[]).forEach(w=>{
+    const v = resolveClickedWord(w);
+    if(v && !seen.has(v.id)){ seen.add(v.id); out.push(v); }
+  });
+  return out;
+}
+
+function renderSpeakingDetail(){
+  const tasks = (typeof SPEAKING_TASKS!=='undefined') ? SPEAKING_TASKS : [];
+  const t = tasks.find(x=>x.id===State.speakingId);
+  if(!t) return renderSpeaking();
+  const targetVocab = targetVocabForText(t.task, ...(t.keyPhrases||[])).slice(0,10);
+  return `
+  <button class="btn secondary small" data-action="nav" data-arg="speaking">\u2190 Back to Speaking</button>
+  <h1 style="margin-top:14px;">${escapeHtml(t.title)}</h1>
+  <p style="color:var(--text-dim);font-size:.85rem;">${t.level} \u00b7 prep ${t.prepTimeSeconds}s \u00b7 speak ${t.speakTimeSeconds}s</p>
+  <div class="panel"><p>${clickableWords(t.task)}</p></div>
+  ${t.keyPhrases.length ? `<div class="panel"><h3>Key phrases</h3><ul>${t.keyPhrases.map(p=>`<li>${clickableWords(p)}</li>`).join('')}</ul></div>` : ''}
+  ${targetVocab.length ? `<div class="panel"><h3>Target vocabulary</h3><div style="display:flex;gap:6px;flex-wrap:wrap;">${targetVocab.map(v=>`<button class="btn secondary small" data-action="open-dict-detail" data-arg="${v.id}">${escapeHtml(dictDisplay(v))}</button>`).join('')}</div></div>` : ''}
+  ${State.readingWordLookup ? renderInlineWordLookup(State.readingWordLookup) : ''}
   <div class="panel" style="text-align:center;">
-    <p style="font-family:var(--serif);font-size:1.1rem;">"Ich möchte einen Kaffee, bitte."</p>
     <button class="record-circle" data-action="speaking-toggle-record" aria-label="Start recording">${State.speakingRecording?'\u25A0':'\u25CF'}</button>
     <p style="color:var(--text-dim);font-size:.85rem;margin-top:10px;">${State.speakingRecording?'Recording... click to stop':'Click to record yourself, then play it back'}</p>
   </div>
-  ${State.speakingAttempted ? notConnectedPanel('Analysis not connected', 'Speech analysis isn\u2019t connected in this build. You can still listen back to your own recording to self-check against the model sentence above.') : ''}
-  <div style="margin-top:14px;">${askTeacherLink('speaking practice')}</div>
+  ${State.speakingAttempted ? `<div class="panel"><h3>Self-check</h3><ul>${t.selfCheck.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>${notConnectedPanel('Automatic scoring not connected', t.disclosure)}</div>` : ''}
+  ${t.modelAnswer ? `<div class="panel"><h3>One possible answer</h3><p style="color:var(--text-dim);">${escapeHtml(t.modelAnswer)}</p></div>` : ''}
+  <div style="margin-top:14px;">${askTeacherLink('speaking', t.id, t.title)}</div>
   `;
 }
 
@@ -1367,9 +2062,49 @@ function renderReadingDetail(){
   return `
   <button class="btn secondary small" data-action="nav" data-arg="reading">\u2190 Back to Reading</button>
   <h1 style="margin-top:14px;">${escapeHtml(r.title)} ${sourceBadge('local')}</h1>
-  <div class="panel" style="white-space:pre-line;line-height:1.8;">${escapeHtml(r.text)}</div>
+  <p style="color:var(--text-dim);font-size:.82rem;">Tap any German word to look it up.</p>
+  <div class="panel" style="white-space:pre-line;line-height:1.9;">${clickableWords(r.text)}</div>
+  ${State.readingWordLookup ? renderInlineWordLookup(State.readingWordLookup) : ''}
   ${renderInlineQuiz(r.questions, 'reading', r.id)}
   `;
+}
+
+/* Wraps each German word token in a clickable span (spec §14/§15) without
+   touching the underlying text, scoring, or exercises — a word click only
+   ever adds an inline lookup panel below the text; it never replaces or
+   re-renders the reading passage itself. Punctuation and whitespace are
+   left untouched outside the spans so the text displays identically to
+   before this feature existed. */
+function clickableWords(text){
+  return escapeHtml(text).replace(/([A-Za-zÀ-ÖØ-öø-ÿ]+)/g, (word) =>
+    `<span class="clickable-word" data-action="reading-word-click" data-arg="${escapeHtml(word)}" tabindex="0" role="button">${word}</span>`
+  );
+}
+
+/* Same word-click affordance for Speaking task prompts/key phrases (spec
+   §17) and, where useful, other short German passages — one shared
+   tokenizer rather than a second implementation. */
+function renderInlineWordLookup(lookup){
+  if(!lookup.vocab){
+    return `<div class="panel-note" style="margin-top:10px;">
+      <p>No dictionary entry found for "${escapeHtml(lookup.term)}".</p>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn secondary small" data-action="reading-word-search" data-arg="${escapeHtml(lookup.term)}">Search dictionary for this</button>
+        <button class="btn secondary small" data-action="reading-word-close">Close</button>
+      </div>
+    </div>`;
+  }
+  const v = lookup.vocab;
+  return `<div class="panel-note" style="margin-top:10px;border-color:var(--gold);">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <div style="font-family:var(--serif);font-size:1.1rem;" class="${v.article?'article-'+v.article:''}">${escapeHtml(dictDisplay(v))}</div>
+      <button class="icon-btn" style="width:28px;height:28px;" data-action="reading-word-close" aria-label="Close">\u00d7</button>
+    </div>
+    <div style="color:var(--text-dim);">${escapeHtml(v.en)}${v.plural?' \u00b7 pl. '+escapeHtml(v.plural):''}</div>
+    <div style="margin-top:8px;">
+      <button class="btn gold small" data-action="open-dict-detail" data-arg="${v.id}">Open full entry</button>
+    </div>
+  </div>`;
 }
 
 /* Shared inline comprehension-quiz renderer for Reading & Listening —
@@ -1406,11 +2141,13 @@ function renderWritingDetail(){
   const p = WRITING_PROMPTS.find(x=>x.id===State.writingId);
   if(!p) return renderWriting();
   const result = State.writingResult;
+  const suggested = targetVocabForText(p.prompt).slice(0,8);
   return `
   <button class="btn secondary small" data-action="nav" data-arg="writing">\u2190 Back to Writing</button>
   <h1 style="margin-top:14px;">${escapeHtml(p.title)}</h1>
   <p>${escapeHtml(p.prompt)}</p>
   <p style="color:var(--text-dim);font-size:.85rem;">Target: at least ${p.minWords} words.</p>
+  ${suggested.length ? `<div class="panel-note" style="margin-bottom:10px;"><strong style="font-size:.82rem;color:var(--text-dim);">Suggested vocabulary:</strong> ${suggested.map(v=>`<button class="btn secondary small" data-action="open-dict-detail" data-arg="${v.id}" style="margin:3px;">${escapeHtml(dictDisplay(v))}</button>`).join('')}</div>` : ''}
   <label class="visually-hidden" for="writingArea">Your German text</label>
   <textarea id="writingArea" rows="8" placeholder="Schreib hier auf Deutsch...">${escapeHtml(State.writingDraft||'')}</textarea>
   <div style="margin-top:12px;"><button class="btn gold" data-action="writing-submit">Check word count &amp; save</button></div>
@@ -1530,7 +2267,7 @@ function renderReview(){
     <div class="panel"><h3>Vocabulary due</h3><p style="font-size:1.8rem;font-family:var(--serif);">${due}</p>
       <button class="btn gold" data-action="nav" data-arg="vocab">Review now</button></div>
     <div class="panel"><h3>Weakest area</h3><p>${weak?labelForGroup(weak):'Not enough data yet'}</p>
-      ${weak?`<button class="btn secondary" data-action="nav" data-arg="grammar">Practice</button>`:''}</div>
+      ${weak?`<button class="btn secondary" data-action="practice-group" data-arg="${weak}">Practice</button>`:''}</div>
   </div>
   ${needsReviewLessons.length ? `
   <h3 style="margin-top:18px;">Lessons that need another pass</h3>
@@ -1571,18 +2308,28 @@ function renderChallenges(){
    EXAM PREPARATION
    ================================================================ */
 function renderExamPrep(){
+  const tasks = (typeof WEGWEISER!=='undefined' && WEGWEISER.EXAM_TASKS) ? WEGWEISER.EXAM_TASKS : [];
   const sectionStatus = {
     'Lesen':{label:'Available', cls:'local'}, 'H\u00f6ren':{label:'Demo (transcript-based)', cls:'demo'},
     'Schreiben':{label:'Available (local check)', cls:'local'}, 'Grammatik & Wortschatz':{label:'Available', cls:'local'},
   };
+  const levelsCovered = new Set(tasks.map(t=>t.level));
   return `
   <h1>Exam Preparation</h1>
-  <p style="color:var(--text-dim);">Practice sections built from Wegweiser\u2019s own vetted content. These are not official exam questions and no certification is implied.</p>
+  <p style="color:var(--text-dim);">Practice sections and original practice tasks built from Wegweiser\u2019s own vetted content, modelled on the publicly known structure of these exams. These are <strong>not official exam questions</strong> and no certification is implied.</p>
   <div class="grid cols-3" style="margin-bottom:16px;">
-    ${EXAM_FRAMEWORKS.map(f=>`<div class="panel"><strong>${escapeHtml(f.name)}</strong><div style="color:var(--text-dim);font-size:.82rem;">${f.levels.map(l=>['A1','A2'].includes(l)?l:l+' (later)').join(', ')}</div></div>`).join('')}
+    ${EXAM_FRAMEWORKS.map(f=>`<div class="panel"><strong>${escapeHtml(f.name)}</strong><div style="color:var(--text-dim);font-size:.82rem;">${f.levels.map(l=>levelsCovered.has(l)?l:l+' (no original tasks yet)').join(', ')}</div></div>`).join('')}
   </div>
-  <div class="panel-note">Only <strong>A1\u2013A2</strong> practice content exists right now. B1\u2013C2 sections are shown above for context but aren\u2019t built yet \u2014 no fake questions are generated to fill the gap.</div>
-  <div class="panel" style="margin-top:14px;"><h3>Practice sections (A1\u2013A2)</h3>
+  ${tasks.length ? `
+  <div class="panel" style="margin-top:14px;"><h3>Original practice tasks (${tasks.length})</h3>
+    <div class="card-grid">
+      ${tasks.map(t=>`<div class="challenge-card"><strong>${escapeHtml(t.title)}</strong>
+        <div style="color:var(--text-dim);font-size:.82rem;margin:4px 0 10px;">${escapeHtml(t.framework)} \u00b7 ${t.level} \u00b7 ${escapeHtml(t.section)} ${escapeHtml(t.part||'')}</div>
+        <button class="btn gold small" data-action="open-exam-task" data-arg="${t.id}">Open</button></div>`).join('')}
+    </div>
+  </div>` : ''}
+  ${State.examTaskId ? renderExamTaskDetail() : ''}
+  <div class="panel" style="margin-top:14px;"><h3>Practice by section (routes to the labs)</h3>
     <div class="card-grid">
       ${EXAM_SECTIONS.map(s=>{ const st=sectionStatus[s]||{label:'Demo',cls:'demo'}; return `<div class="challenge-card"><strong>${escapeHtml(s)}</strong> ${sourceBadge(st.cls)}
         <div style="margin-top:8px;"><button class="btn secondary small" data-action="examprep-open" data-arg="${escapeHtml(s)}">Practice</button></div></div>`; }).join('')}
@@ -1590,6 +2337,40 @@ function renderExamPrep(){
   </div>
   ${State.examSection ? renderExamSectionResult() : ''}
   `;
+}
+function renderExamTaskDetail(){
+  const tasks = (typeof WEGWEISER!=='undefined' && WEGWEISER.EXAM_TASKS) ? WEGWEISER.EXAM_TASKS : [];
+  const t = tasks.find(x=>x.id===State.examTaskId);
+  if(!t) return '';
+  let body = '';
+  if(t.items && t.statements){
+    // Matching-style task (e.g. Goethe A1 Lesen Teil 1): show the source
+    // items and, for each statement, let the learner pick which item it matches.
+    body = `<div class="panel"><h3>Items</h3>${t.items.map(i=>`<div style="margin:6px 0;padding:8px;border:1px solid var(--border);border-radius:var(--radius);">${escapeHtml(i.text)}</div>`).join('')}</div>
+    <div class="panel"><h3>Match each statement</h3>${t.statements.map((s,i)=>`<p style="margin:10px 0 4px;">${escapeHtml(s.text)}</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">${t.items.map(it=>`<button class="choice" data-action="examtask-match" data-arg="${i}" data-tag="${it.tag}">${it.tag}</button>`).join('')}</div>
+      ${State.examTaskAnswers && State.examTaskAnswers[i]!==undefined ? `<p style="font-size:.85rem;color:${State.examTaskAnswers[i]===s.correctTag?'var(--teal)':'var(--brick)'};">${State.examTaskAnswers[i]===s.correctTag?'Correct':'Correct answer: '+s.correctTag}</p>` : ''}`).join('')}</div>`;
+  } else if(t.fields){
+    body = `<div class="panel"><h3>Fill in</h3>${t.fields.map(f=>`<label style="display:block;margin:8px 0 2px;font-size:.85rem;color:var(--text-dim);">${escapeHtml(f)}</label><input type="text" class="fill-input">`).join('')}</div>`;
+  } else if(t.transcript){
+    body = `<div class="panel"><h3>Transcript</h3><p style="white-space:pre-line;">${escapeHtml(t.transcript)}</p></div>
+    ${t.questions ? renderInlineQuiz(t.questions.map((q,i)=>({id:t.id+'_q'+i, prompt:q.q, options:q.accept?undefined:q.options, correct:q.correct})).filter(q=>q.options), 'examtask', t.id) : ''}
+    ${(t.questions||[]).some(q=>q.accept) ? `<div class="panel"><h3>Short answers</h3>${t.questions.filter(q=>q.accept).map(q=>`<p style="margin:8px 0 2px;">${escapeHtml(q.q)}</p><input type="text" class="fill-input">`).join('')}</div>` : ''}`;
+  } else if(t.text && t.options){
+    body = `<div class="panel"><p>${escapeHtml(t.text)}</p></div>
+    <div class="panel"><h3>Choose the best summary</h3>${t.options.map(o=>`<button class="mcq-option" data-action="examtask-choose" data-arg="${escapeHtml(o)}">${escapeHtml(o)}</button>`).join('')}
+    ${State.examTaskAnswers && State.examTaskAnswers.choice ? `<p style="margin-top:8px;color:${State.examTaskAnswers.choice===t.correct?'var(--teal)':'var(--brick)'};">${State.examTaskAnswers.choice===t.correct?'Correct.':'Correct answer: '+escapeHtml(t.correct)}</p>` : ''}</div>`;
+  } else if(t.minWords!=null || t.instructions){
+    body = `<div class="panel"><p>${escapeHtml(t.instructions||'')}</p>${t.minWords?`<p style="color:var(--text-dim);font-size:.85rem;">Target: ${t.minWords}\u2013${t.maxWords||''} words.</p>`:''}
+      ${t.prepTimeSeconds?`<p style="color:var(--text-dim);font-size:.85rem;">Prep ${t.prepTimeSeconds}s, speak ${t.speakTimeSeconds}s.</p>`:''}
+      <textarea rows="6" placeholder="Write or plan your answer here (kept only in this session)..."></textarea></div>`;
+  }
+  return `<div class="panel" style="border-color:var(--gold);margin-top:14px;">
+    <h3>${escapeHtml(t.title)}</h3>
+    <p style="color:var(--text-dim);font-size:.85rem;">${escapeHtml(t.framework)} \u00b7 ${t.level} \u00b7 ${escapeHtml(t.section)} ${escapeHtml(t.part||'')}</p>
+    ${t.instructions ? `<p>${escapeHtml(t.instructions)}</p>` : ''}
+    ${body}
+  </div>`;
 }
 function renderExamSectionResult(){
   const s = State.examSection;
@@ -1616,12 +2397,20 @@ function renderPlacementHub(){
     <strong>What "Quick Placement" means</strong>
     <p style="margin:6px 0 0;">This is a fast, ${PLACEMENT_TEST.length}-question multiple-choice estimate \u2014 useful for picking a sensible starting point, but it is <em>not</em> a full CEFR skills assessment. It mainly checks grammar and vocabulary recognition, not reading, writing, listening, or speaking ability.</p>
   </div>
-  <div class="not-connected-panel">
-    <strong>Full Skills Assessment \u2014 coming later</strong>
-    A separate, longer assessment covering Reading, Writing, Listening, Speaking, Grammar, and Vocabulary individually is planned but not built yet. When available, it will give a confidence rating and a per-skill breakdown instead of one combined estimate.
+  <div class="panel" style="margin-top:16px;">
+    <strong>Full Skills Assessment</strong>
+    <p style="margin:6px 0 12px;color:var(--text-dim);font-size:.88rem;">Longer, level-specific checks sampled from the real exercise pool \u2014 distinct from Quick Placement above, and saved to your assessment history with a pass/fail threshold.</p>
+    <p style="font-size:.85rem;margin-bottom:6px;">By level:</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+      ${ALL_CEFR_ORDER.filter(l=>LESSONS.some(x=>x.level===l)).map(l=>`<button class="btn secondary small" data-action="start-level-assessment" data-arg="${l}">${l}</button>`).join('')}
+    </div>
+    <p style="font-size:.85rem;margin-bottom:6px;">By skill:</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      ${Schema.SKILLS.map(sk=>`<button class="btn secondary small" data-action="start-skill-assessment" data-arg="${sk}">${sk}</button>`).join('')}
+    </div>
   </div>
   <div class="panel" style="margin-top:16px;"><h3>CEFR levels</h3>
-    <p style="color:var(--text-dim);font-size:.88rem;">A0 (beginner) \u2192 A1 \u2192 A2 \u2192 B1 \u2192 B2 \u2192 C1 \u2192 C2 (near-native). Structured lessons currently cover A1\u2013A2; higher levels are reachable via Grammar Lab, Reading, and the placement estimate.</p>
+    <p style="color:var(--text-dim);font-size:.88rem;">A0 (foundation, pre-CEFR) \u2192 A1 \u2192 A2 \u2192 B1 \u2192 B2 \u2192 C1 \u2192 C2 (near-native). Structured lessons and units exist for every level \u2014 open <button class="btn secondary small" data-action="nav" data-arg="learn" style="display:inline-flex;">Learn</button> to navigate them.</p>
   </div>
   ${p.placementResult ? `<div class="panel"><h3>Last result breakdown by level</h3>${Object.entries(p.placementResult.byLevel||{}).filter(([,v])=>v.total>0).map(([lvl,v])=>
     `<div class="skill-row"><div class="label">${lvl}</div><div class="progress-bar"><div style="width:${Math.round(100*v.correct/v.total)}%"></div></div><div class="pct">${v.correct}/${v.total}</div></div>`).join('')}</div>` : ''}
@@ -1782,8 +2571,17 @@ function attachAfterRender(){
   if(dictInput){
     dictInput.focus();
     dictInput.selectionStart = dictInput.value.length;
-    dictInput.addEventListener('input', (e)=>{ State.dictQuery = e.target.value; render(); });
+    dictInput.addEventListener('input', debounce((e)=>{ State.dictQuery = e.target.value; State.dictLetter=null; render(); }, 180));
   }
+  dictMasterSync();   // Phase 13: async indexed master-dictionary lookup for the current query/letter
+  ['dictFilterType','dictFilterLevel','dictFilterGender'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.addEventListener('change', (e)=>{
+      State.dictFilters = State.dictFilters || {};
+      State.dictFilters[e.target.dataset.key] = e.target.value;
+      render();
+    });
+  });
   const searchInput = document.getElementById('globalSearch');
   if(searchInput){
     searchInput.focus();
@@ -1813,6 +2611,18 @@ const LOCKING_ACTIONS = new Set([
   'reset-data','settings-set','settings-set-num','toggle-theme','retake-placement',
 ]);
 
+/* Keyboard activation for non-<button> clickable elements (currently just
+   the reading/speaking word-lookup spans, which use role="button" +
+   tabindex since wrapping every word in a real <button> would be far
+   heavier markup for a passage of running text). Real <button> elements
+   already get Enter/Space for free from the browser and are unaffected. */
+document.addEventListener('keydown', (e)=>{
+  if(e.key!=='Enter' && e.key!==' ') return;
+  const el = e.target.closest('[role="button"][data-action]');
+  if(!el || el.tagName==='BUTTON') return;
+  e.preventDefault();
+  el.click();
+});
 document.addEventListener('click', async (e)=>{
   const el = e.target.closest('[data-action]');
   if(!el) return;
@@ -1899,6 +2709,19 @@ async function handleAction(action, el, e){
     return;
   }
   if(action==='open-lesson'){ openLesson(el.dataset.arg); return; }
+  if(action==='open-vocab'){
+    // Now that Dictionary has a real per-word detail screen (Phase 4),
+    // cross-links from Grammar/lesson content open it directly instead
+    // of a pre-filled search.
+    const v = vocabById(el.dataset.arg);
+    if(v){ State.dictDetailId = v.id; State.dictQuery=''; State.dictLetter=null; State.view = 'dictionary'; render(); }
+    return;
+  }
+  if(action==='open-dict-detail'){ State.dictDetailId = el.dataset.arg; render(); return; }
+  if(action==='dict-detail-back'){ State.dictDetailId = null; render(); return; }
+  if(action==='dict-letter'){ State.dictLetter = (State.dictLetter===el.dataset.arg)?null:el.dataset.arg; State.dictQuery=''; render(); return; }
+  if(action==='dict-suggest'){ State.dictQuery = el.dataset.arg; render(); return; }
+  if(action==='dict-filter-clear'){ State.dictFilters = {wordType:'', level:'', topic:'', gender:''}; render(); return; }
   if(action==='start-exercises'){ startExercises(State.lessonRuntime.lesson.exercises, State.lessonRuntime.lesson.id); return; }
   if(action==='ex-mcq'){ handleMcq(el); return; }
   if(action==='ex-fill-submit'){ handleFillSubmit(); return; }
@@ -1910,7 +2733,36 @@ async function handleAction(action, el, e){
   if(action==='ex-match-right'){ await handleMatchRight(el); return; }
   if(action==='ex-next'){ await handleExerciseNext(); return; }
   if(action==='learn-tab'){ State.learnTab = el.dataset.arg; render(); return; }
-  if(action==='vocab-tab'){ State.vocabTab = el.dataset.arg; render(); return; }
+  if(action==='vocab-tab'){ State.vocabTab = el.dataset.arg; State.vocabDetailId = null; render(); return; }
+  if(action==='vocab-filter-level'){ State.vocabLevelFilter = el.dataset.arg; State.vocabTab='browse'; render(); return; }
+  if(action==='vocab-filter-topic'){ State.vocabTopicFilter = el.dataset.arg; State.vocabTab='browse'; render(); return; }
+  if(action==='open-vocab-detail'){ State.vocabDetailId = el.dataset.arg; render(); return; }
+  if(action==='vocab-detail-back'){ State.vocabDetailId = null; render(); return; }
+  if(action==='vocab-practice-one'){
+    const v = vocabById(el.dataset.arg);
+    const pool = [];
+    LESSONS.forEach(l=>{ if((l.vocabIds||[]).includes(v.id)) (l.exercises||[]).forEach(ex=>pool.push(ex)); });
+    if(!pool.length) return;
+    State.lessonRuntime = null; State.view = 'quiz';
+    startExercises(shuffle(pool).slice(0,6), null);
+    return;
+  }
+  if(action==='vocab-learn-start'){
+    State.vocabLearn = {queue: buildLearnQueue(), index:0, phase:'word'};
+    render(); return;
+  }
+  if(action==='vocab-learn-reveal'){ State.vocabLearn.phase = 'revealed'; render(); return; }
+  if(action==='vocab-learn-grade'){
+    const quality = Number(el.dataset.arg);
+    const vocabId = State.vocabLearn.queue[State.vocabLearn.index];
+    await gradeVocab(vocabId, quality);
+    await touchSessionToday();
+    await refreshStreak();
+    State.vocabLearn.index++;
+    State.vocabLearn.phase = 'word';
+    render(); return;
+  }
+  if(action==='vocab-learn-reset'){ State.vocabLearn = {queue:[], index:0, phase:'word'}; render(); return; }
   if(action==='vocab-review-start'){
     State.vocabReview = {queue: buildReviewQueue(), index:0, showAnswer:false, started:true};
     render(); return;
@@ -1938,6 +2790,51 @@ async function handleAction(action, el, e){
     startExercises(related, null);
     return;
   }
+  if(action==='practice-group'){
+    // Weak-area practice: pull real exercises tagged in the same category
+    // group (see Logic.CATEGORY_GROUPS) from across every lesson, not a
+    // fixed quiz — this is Progress's "Focus area" button and the Review
+    // Center's weak-area practice acting on the same underlying data.
+    const group = el.dataset.arg;
+    const pool = [];
+    LESSONS.forEach(l=>(l.exercises||[]).forEach(ex=>{ if(Logic.groupCategory(ex.category)===group) pool.push(ex); }));
+    const sample = shuffle(pool).slice(0, 12);
+    State.lessonRuntime = null;
+    State.view = 'quiz';
+    startExercises(sample, null);
+    return;
+  }
+  if(action==='start-unit-assessment'){
+    const assessment = await AssessmentService.buildUnitAssessment(el.dataset.arg);
+    if(!assessment.items.length){ return; }
+    State.lessonRuntime = null; State.view = 'quiz';
+    startExercises(assessment.items, null, {type:'unit', target:el.dataset.arg, passThreshold:assessment.passThreshold});
+    return;
+  }
+  if(action==='start-level-assessment'){
+    const assessment = await AssessmentService.buildLevelAssessment(el.dataset.arg);
+    if(!assessment.items.length){ return; }
+    State.lessonRuntime = null; State.view = 'quiz';
+    startExercises(assessment.items, null, {type:'level', target:el.dataset.arg, passThreshold:assessment.passThreshold});
+    return;
+  }
+  if(action==='start-skill-assessment'){
+    const assessment = await AssessmentService.buildSkillAssessment(el.dataset.arg, State.profile ? State.profile.level : null);
+    if(!assessment.items.length){
+      // Not every skill has exercises tagged for the learner's exact current
+      // level (e.g. speaking/listening/pronunciation-tagged exercises are
+      // sparse) — fall back to searching every level rather than showing
+      // an empty quiz.
+      const wider = await AssessmentService.buildSkillAssessment(el.dataset.arg, null);
+      if(!wider.items.length) return;
+      State.lessonRuntime = null; State.view = 'quiz';
+      startExercises(wider.items, null, {type:'skill', target:el.dataset.arg, passThreshold:wider.passThreshold});
+      return;
+    }
+    State.lessonRuntime = null; State.view = 'quiz';
+    startExercises(assessment.items, null, {type:'skill', target:el.dataset.arg, passThreshold:assessment.passThreshold});
+    return;
+  }
   if(action==='settings-set'){ State.profile[el.dataset.key]=el.dataset.arg; await saveProfile(State.profile); render(); return; }
   if(action==='settings-set-num'){ State.profile[el.dataset.key]=Number(el.dataset.arg); await saveProfile(State.profile); render(); return; }
   if(action==='export-data'){ await exportData(); return; }
@@ -1948,12 +2845,29 @@ async function handleAction(action, el, e){
   if(action==='listening-show-transcript'){ State.listeningRun.showTranscript=true; render(); return; }
 
   if(action==='open-reading'){
-    State.readingId=el.dataset.arg; State.view='reading-detail';
+    State.readingId=el.dataset.arg; State.view='reading-detail'; State.readingWordLookup=null;
     const rec = {id:el.dataset.arg, openedAt:Date.now()};
     await DB.put('readingProgress', rec);
     render(); return;
   }
+  if(action==='reading-word-click'){
+    const vocab = resolveClickedWord(el.dataset.arg);
+    State.readingWordLookup = {term: el.dataset.arg, vocab};
+    render();
+    if(!vocab){ // not in core vocabulary: ask the indexed master dictionary (async; never invents an entry)
+      const term = el.dataset.arg;
+      LexiconStore.resolveWord(term).then(e => { if(e && State.readingWordLookup && State.readingWordLookup.term===term){ masterCachePut(e); State.readingWordLookup = {term, vocab:e}; render(); } }).catch(()=>{});
+    }
+    return;
+  }
+  if(action==='reading-word-close'){ State.readingWordLookup = null; render(); return; }
+  if(action==='reading-word-search'){
+    State.readingWordLookup = null;
+    State.dictQuery = el.dataset.arg; State.dictDetailId = null; State.dictLetter = null;
+    State.view = 'dictionary'; render(); return;
+  }
   if(action==='open-writing'){ State.writingId=el.dataset.arg; State.writingDraft=''; State.writingResult=null; State.view='writing-detail'; render(); return; }
+  if(action==='open-speaking'){ State.speakingId=el.dataset.arg; State.speakingRecording=false; State.speakingAttempted=false; State.readingWordLookup=null; State.view='speaking-detail'; render(); return; }
   if(action==='writing-submit'){
     const text = document.getElementById('writingArea').value;
     State.writingDraft = text;
@@ -1996,6 +2910,27 @@ async function handleAction(action, el, e){
     State.teacherChat.push({role:'teacher', text: res.ok ? res.data : res.reason});
     render(); return;
   }
+  if(action==='teacher-ask-context'){
+    // Builds a real, local teacher-context reference (kind/id/learner
+    // context) via TeacherContextService and routes it through the same
+    // honest, no-AI-connected Teacher chat — see providers.js TeacherService.ask.
+    const {kind, id, label} = el.dataset;
+    State.teacherChat = State.teacherChat || [];
+    State.teacherChat.push({role:'user', text:`Explain ${label}`});
+    let context = null;
+    try{
+      const ref = kind==='grammar' ? TeacherContextService.refForGrammar(id)
+        : kind==='vocab' ? TeacherContextService.refForVocab(id)
+        : kind==='lesson' ? TeacherContextService.refForLesson(id)
+        : kind==='exercise' ? TeacherContextService.refForExercise(id, el.dataset.lessonId)
+        : TeacherContextService.refForVocab(id);
+      context = await TeacherContextService.buildQuery('explain', ref);
+    }catch(e){ /* context building is best-effort; the chat still degrades gracefully below */ }
+    const res = await Providers.TeacherService.ask(`Explain ${label}`, context);
+    State.teacherChat.push({role:'teacher', text: res.ok ? res.data : res.reason});
+    State.view = 'teacher';
+    render(); return;
+  }
 
   if(action==='speaking-toggle-record'){
     State.speakingRecording = !State.speakingRecording;
@@ -2006,6 +2941,17 @@ async function handleAction(action, el, e){
   if(action==='screen-try'){ State.screenTried = true; render(); return; }
 
   if(action==='examprep-open'){ State.examSection = el.dataset.arg; render(); return; }
+  if(action==='open-exam-task'){ State.examTaskId = el.dataset.arg; State.examTaskAnswers = {}; render(); return; }
+  if(action==='examtask-match'){
+    State.examTaskAnswers = State.examTaskAnswers || {};
+    State.examTaskAnswers[Number(el.dataset.arg)] = el.dataset.tag;
+    render(); return;
+  }
+  if(action==='examtask-choose'){
+    State.examTaskAnswers = State.examTaskAnswers || {};
+    State.examTaskAnswers.choice = el.dataset.arg;
+    render(); return;
+  }
 
   if(action==='feedback-submit'){
     const type = document.getElementById('fbType').value;
@@ -2038,9 +2984,26 @@ async function handleAction(action, el, e){
     render(); return;
   }
   if(action==='dict-add-review'){
-    await getVocabItem(el.dataset.arg);
+    // Deliberate user action only (searching/opening never reaches here). Resolve to ONE canonical record:
+    // an existing curated/promoted entry for the same lemma+word-type wins, so no duplicate is ever created.
+    const id = el.dataset.arg;
+    let targetId = id;
+    if(!vocabById(id)){
+      const entry = MasterUI.cache.get(id) || await LexiconStore.getEntry(id);
+      if(!entry) return;
+      const key = MasterLexiconBridge.dedupeKey(entry.lemma, entry.type);
+      const dup = VOCAB.find(v => MasterLexiconBridge.dedupeKey(v.lemma || v.de, v.type) === key);
+      if(dup){ targetId = dup.id; }
+      else {
+        VOCAB.push(entry); MasterUI.curatedKeys = null;
+        try{ await DB.put('learnedLexicon', { id: entry.id, entry, addedAt: Date.now() }); }catch(e){ /* snapshot is best-effort; progress below is the source of truth */ }
+      }
+    }
+    await getVocabItem(targetId);
     render(); return;
   }
+  if(action==='dict-master-more'){ dictMasterSync(true); return; }
+  if(action==='dict-lex-retry'){ LexiconStore.retry().then(()=>{ MasterUI.key=''; dictMasterSync(); }); return; }
 }
 
 /* ================================================================
@@ -2056,8 +3019,39 @@ async function boot(){
   const activeGroup = groupForView(State.view);
   if(activeGroup) State.navOpenGroups.add(activeGroup);
   render();
+  // Phase 13: nothing from the master dictionary is loaded at startup. The indexed store is opened (and, once,
+  // built) only when the dictionary or a word lookup is used. Words the learner deliberately added to Learning
+  // are restored from their small snapshots so the learning system never depends on the big dictionary.
+  await restoreLearnedLexicon();
+}
+/* Promoted master words: restore snapshots into VOCAB (same shape Add to Learning pushed before). */
+async function restoreLearnedLexicon(){
+  try{
+    const snaps = await DB.getAll('learnedLexicon');
+    snaps.forEach(r => { if(r && r.entry && !vocabById(r.entry.id)) VOCAB.push(r.entry); });
+    if(snaps.length) MasterUI.curatedKeys = null;
+  }catch(e){ console.warn('learnedLexicon restore failed', e); }
+}
+/* Words added to Learning BEFORE Phase 13 have progress but no snapshot (their entry only lived in memory).
+   Once the indexed dictionary is complete, fill them in from it — read-only, by id. */
+async function backfillLearnedLexicon(){
+  const orphans = Object.keys(State.vocabProgress).filter(id => id.startsWith('lex_') && !vocabById(id));
+  for(const id of orphans){
+    const e = await LexiconStore.getEntry(id); if(!e) continue;
+    VOCAB.push(e); MasterUI.curatedKeys = null;
+    try{ await DB.put('learnedLexicon', { id, entry: e, addedAt: Date.now(), backfilled: true }); }catch(err){}
+  }
 }
 boot();
+
+// Phase 9 test hook: read-only introspection for the Playwright smoke test
+// (tools/lexicon/browser-test.js) — exposes no new capability beyond what
+// the existing global `app.js` scope already does internally, changes no
+// behavior, and every real user interaction still goes through the normal
+// data-action click handlers.
+window.__WG_TEST = { getState:()=>State, render, saveProfile, getVocab:()=>VOCAB,
+  dictionaryPool, dictEntryById, LexiconStore, MasterUI, restoreLearnedLexicon, backfillLearnedLexicon,
+  UnifiedDictionaryService };
 
 // Live offline/online indicator — pure client-side network status,
 // no backend involved. The app already works fully offline; this

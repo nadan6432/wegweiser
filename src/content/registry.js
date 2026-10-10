@@ -140,6 +140,8 @@
 
       const VOCAB_CORE = (nodeRequire('./vocabulary.core.js')||{}).VOCAB_CORE || [];
       const VOCAB_UPPER = (nodeRequire('./vocabulary.upper.js')||{}).VOCAB_UPPER || [];
+      const VOCAB_EXPANSION = (nodeRequire('./vocabulary.expansion.js')||{}).VOCAB_EXPANSION || [];
+      const VOCAB_EXPANSION2 = (nodeRequire('./vocabulary.expansion2.js')||{}).VOCAB_EXPANSION2 || [];
       const GRAMMAR_DB = (nodeRequire('./grammar.js')||{}).GRAMMAR_DB || [];
       const CURRICULUM_A0A1 = nodeRequire('./lessons.a0a1.js') || {A0:{units:[],lessons:[]},A1:{units:[],lessons:[]}};
       const CURRICULUM_A2 = (nodeRequire('./lessons.a2.js')||{}).CURRICULUM_A2 || {units:[],lessons:[]};
@@ -157,7 +159,7 @@
 
       return { VOCAB, LESSONS, GRAMMAR, PLACEMENT_TEST, READING_TEXTS, LISTENING_ITEMS,
         WRITING_PROMPTS, CONVERSATION_SCENARIOS, EXAM_FRAMEWORKS,
-        VOCAB_CORE, VOCAB_UPPER, GRAMMAR_DB,
+        VOCAB_CORE, VOCAB_UPPER, VOCAB_EXPANSION, VOCAB_EXPANSION2, GRAMMAR_DB,
         A0: CURRICULUM_A0A1.A0, A1: CURRICULUM_A0A1.A1, A2: CURRICULUM_A2, B1: CURRICULUM_B1,
         B2: b2c1c2.B2, C1: b2c1c2.C1, C2: b2c1c2.C2,
         READING_TEXTS_RICH, LISTENING_ITEMS_RICH, WRITING_PROMPTS_RICH, CONVERSATION_SCENARIOS_RICH,
@@ -180,6 +182,8 @@
       EXAM_FRAMEWORKS: (typeof EXAM_FRAMEWORKS!=='undefined')?EXAM_FRAMEWORKS:[],
       VOCAB_CORE: (typeof VOCAB_CORE!=='undefined')?VOCAB_CORE:[],
       VOCAB_UPPER: (typeof VOCAB_UPPER!=='undefined')?VOCAB_UPPER:[],
+      VOCAB_EXPANSION: (typeof VOCAB_EXPANSION!=='undefined')?VOCAB_EXPANSION:[],
+      VOCAB_EXPANSION2: (typeof VOCAB_EXPANSION2!=='undefined')?VOCAB_EXPANSION2:[],
       GRAMMAR_DB: (typeof GRAMMAR_DB!=='undefined')?GRAMMAR_DB:[],
       A0: (typeof CURRICULUM_A0A1!=='undefined')?CURRICULUM_A0A1.A0:{units:[],lessons:[]},
       A1: (typeof CURRICULUM_A0A1!=='undefined')?CURRICULUM_A0A1.A1:{units:[],lessons:[]},
@@ -205,7 +209,7 @@
     const s = gather();
     const allUnits = [].concat(s.A0.units,s.A1.units,s.A2.units,s.B1.units,s.B2.units,s.C1.units,s.C2.units);
     const allNewLessons = [].concat(s.A0.lessons,s.A1.lessons,s.A2.lessons,s.B1.lessons,s.B2.lessons,s.C1.lessons,s.C2.lessons);
-    const newVocab = [].concat(s.VOCAB_CORE, s.VOCAB_UPPER);
+    const newVocab = [].concat(s.VOCAB_CORE, s.VOCAB_UPPER, s.VOCAB_EXPANSION, s.VOCAB_EXPANSION2);
 
     const VOCAB = mergeVocab(s.VOCAB, newVocab);
     const GRAMMAR = mergeById(s.GRAMMAR, s.GRAMMAR_DB);

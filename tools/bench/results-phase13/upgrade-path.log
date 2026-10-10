@@ -1,0 +1,14 @@
+OLD state: {"dbVersion":3,"counts":{"masterLexiconCache":32,"vocabProgress":2},"progressIds":["lex_bibliothek_noun","v_gehen"]}
+PASS - Phase 12 user state created: DB v3, progress for a curated and a master word, chunk cache populated  {"masterLexiconCache":32,"vocabProgress":2}
+PASS - no page errors  []
+2 passed, 0 failed (upgrade old)
+PASS - existing database upgraded v3 -> v4 in place (additive store learnedLexicon)  {"version":4}
+PASS - ALL pre-existing learning progress is byte-for-byte unchanged after the upgrade (SRS fields included)  {"ids":["lex_bibliothek_noun","v_gehen"]}
+PASS - startup after upgrade: dictionary not opened, pool is small  {"inVocab":false,"lexPhase":"idle","pool":753}
+PASS - (documented) a master word added before Phase 13 has progress but no in-memory entry until the index exists  {"inVocab":false,"lexPhase":"idle","pool":753}
+PASS - after the index completes, the pre-Phase-13 learned word is restored exactly once (backfill)  {"inVocab":true,"copies":1}
+PASS - legacy masterLexiconCache (duplicate full copy) is emptied only after the new index is complete  {"masterLexiconCache":0,"vocabProgress":2}
+PASS - learning progress still identical after build + backfill
+PASS - a snapshot of the learned master word is now persisted (survives reloads independent of the big dictionary)  ["lex_bibliothek_noun"]
+PASS - no page errors  []
+9 passed, 0 failed (upgrade new)

@@ -1,0 +1,23 @@
+PASS - the indexed master dictionary is complete in IndexedDB (92,880 lemmas)
+   PERFORMANCE (real Chromium, IndexedDB-backed): {"firstSearchMs":13.7,"avgOf20SearchesMs":11.8,"results":30,"rowsRead":136,"jsHeapUsedMB":5.9}
+PASS - IndexedDB search "arbeit" averages under 100 ms
+PASS - NO eager load: in-memory pool is only curated + promoted words (<1000), not the 92,880-lemma lexicon
+   pool size: 753
+PASS - search finds a master-dictionary-only word (Bibliothek)
+PASS - master-dictionary badge is shown for that result
+PASS - exact search for "gehen" returns exactly one record (curated precedence, no duplicate)
+PASS - that one "gehen" record is the curated one, not a master-dictionary duplicate
+PASS - typing an inflected form (Häuser) surfaces its lemma (Haus) via the real search box
+PASS - detail view shows an "Add to Learning" button for a dictionary-only word
+PASS - after clicking Add to Learning, the button switches to "In your Learning system"
+PASS - the master word was promoted into the live VOCAB array (findable by vocabById henceforth)
+PASS - exactly one VOCAB entry exists for Bibliothek after one Add-to-Learning click
+PASS - missing Urdu/Pashto shows an explicit "Translation not yet available." message, not blank
+PASS - CEFR filter includes a real "Unknown" option (only once the master lexicon added unknown-CEFR entries)
+PASS - filtering by CEFR=unknown only ever returns unknown-CEFR entries (indexed browse, letters a-z)
+PASS - no uncaught console errors during the whole flow
+PASS - Dictionary search input is visible at a 390px mobile viewport
+PASS - with the network blocked for the master-lexicon files, a reload still searches the full dictionary from IndexedDB
+   offline reload: {"phase":"ready","top":"Haus"}
+
+18 passed, 0 failed (Phase 9 real-browser test, Playwright/Chromium headless)

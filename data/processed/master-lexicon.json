@@ -1,0 +1,480 @@
+{
+  "masterLexicon": [
+    {
+      "id": "lex_fahrrad_noun",
+      "lemma": "Fahrrad",
+      "normalizedLemma": "fahrrad::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "das",
+      "gender": "n",
+      "plural": "Fahrräder",
+      "meanings": [],
+      "senses": [],
+      "forms": {
+        "nominativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrräder"
+        },
+        "genitiv": {
+          "singular": "Fahrrades",
+          "plural": "Fahrräder"
+        },
+        "dativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrrädern"
+        },
+        "akkusativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrräder"
+        }
+      },
+      "inflections": null,
+      "pronunciation": null,
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "german-nouns-csv",
+        "sourceLabel": "german-nouns (gambolputty, via German Wiktionary)",
+        "sourceId": "Fahrrad#0",
+        "importDate": "2026-09-27"
+      }
+    },
+    {
+      "id": "lex_stein_noun",
+      "lemma": "Stein",
+      "normalizedLemma": "stein::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "der",
+      "gender": "m",
+      "plural": "Steine",
+      "meanings": [],
+      "senses": [],
+      "forms": {
+        "nominativ": {
+          "singular": "Stein",
+          "plural": "Steine"
+        },
+        "genitiv": {
+          "singular": "Steins",
+          "plural": "Steine"
+        },
+        "dativ": {
+          "singular": "Stein",
+          "plural": "Steinen"
+        },
+        "akkusativ": {
+          "singular": "Stein",
+          "plural": "Steine"
+        }
+      },
+      "inflections": null,
+      "pronunciation": null,
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "german-nouns-csv",
+        "sourceLabel": "german-nouns (gambolputty, via German Wiktionary)",
+        "sourceId": "Stein#1",
+        "importDate": "2026-09-27"
+      }
+    },
+    {
+      "id": "lex_wiki_noun",
+      "lemma": "Wiki",
+      "normalizedLemma": "wiki::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "das",
+      "gender": "n",
+      "plural": "Wikis",
+      "meanings": [
+        "wiki"
+      ],
+      "senses": [
+        {
+          "glosses": [
+            "wiki"
+          ],
+          "tags": [
+            "neuter",
+            "strong"
+          ]
+        }
+      ],
+      "forms": {},
+      "inflections": [
+        {
+          "form": "Wikis",
+          "tags": [
+            "genitive"
+          ]
+        },
+        {
+          "form": "Wikis",
+          "tags": [
+            "plural"
+          ]
+        }
+      ],
+      "pronunciation": "/ˈviːki/",
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "wiktextract-jsonl",
+        "sourceLabel": "kaikki.org Wiktextract (German), by tatuylonen",
+        "sourceId": "Wiki#0",
+        "importDate": "2026-09-27"
+      }
+    },
+    {
+      "id": "lex_gehen_verb",
+      "lemma": "gehen",
+      "normalizedLemma": "gehen::verb",
+      "language": "de",
+      "wordType": "verb",
+      "subType": null,
+      "article": "",
+      "gender": null,
+      "plural": "",
+      "meanings": [
+        "to go, to walk",
+        "to leave",
+        "to work, to function (of a machine, method or the like)"
+      ],
+      "senses": [
+        {
+          "glosses": [
+            "to go, to walk"
+          ],
+          "tags": [
+            "class-7",
+            "intransitive",
+            "strong"
+          ]
+        },
+        {
+          "glosses": [
+            "to leave"
+          ],
+          "tags": [
+            "class-7",
+            "intransitive",
+            "strong"
+          ]
+        },
+        {
+          "glosses": [
+            "to work, to function (of a machine, method or the like)"
+          ],
+          "tags": [
+            "class-7",
+            "colloquial",
+            "intransitive",
+            "strong"
+          ]
+        }
+      ],
+      "forms": null,
+      "inflections": [
+        {
+          "form": "geht",
+          "tags": [
+            "present",
+            "singular",
+            "third-person"
+          ]
+        },
+        {
+          "form": "ging",
+          "tags": [
+            "past"
+          ]
+        },
+        {
+          "form": "gegangen",
+          "tags": [
+            "participle",
+            "past"
+          ]
+        },
+        {
+          "form": "sein",
+          "tags": [
+            "auxiliary"
+          ]
+        }
+      ],
+      "pronunciation": "/ˈɡeːən/",
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [
+        {
+          "de": "Ich sah die Kinder über die Straße gehen.",
+          "en": "I saw the children walk/go across the street."
+        },
+        {
+          "de": "Ich gehe jetzt.",
+          "en": "I’m leaving now."
+        },
+        {
+          "de": "Der Kaffeeautomat geht nicht.",
+          "en": "The coffee dispenser doesn't work."
+        }
+      ],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "wiktextract-jsonl",
+        "sourceLabel": "kaikki.org Wiktextract (German), by tatuylonen",
+        "sourceId": "gehen#1",
+        "importDate": "2026-09-27"
+      }
+    }
+  ],
+  "dictionaryOnly": [
+    {
+      "id": "lex_fahrrad_noun",
+      "lemma": "Fahrrad",
+      "normalizedLemma": "fahrrad::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "das",
+      "gender": "n",
+      "plural": "Fahrräder",
+      "meanings": [],
+      "senses": [],
+      "forms": {
+        "nominativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrräder"
+        },
+        "genitiv": {
+          "singular": "Fahrrades",
+          "plural": "Fahrräder"
+        },
+        "dativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrrädern"
+        },
+        "akkusativ": {
+          "singular": "Fahrrad",
+          "plural": "Fahrräder"
+        }
+      },
+      "inflections": null,
+      "pronunciation": null,
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "german-nouns-csv",
+        "sourceLabel": "german-nouns (gambolputty, via German Wiktionary)",
+        "sourceId": "Fahrrad#0",
+        "importDate": "2026-09-27"
+      },
+      "dictionaryOnly": true,
+      "learningStatus": "not-added"
+    },
+    {
+      "id": "lex_stein_noun",
+      "lemma": "Stein",
+      "normalizedLemma": "stein::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "der",
+      "gender": "m",
+      "plural": "Steine",
+      "meanings": [],
+      "senses": [],
+      "forms": {
+        "nominativ": {
+          "singular": "Stein",
+          "plural": "Steine"
+        },
+        "genitiv": {
+          "singular": "Steins",
+          "plural": "Steine"
+        },
+        "dativ": {
+          "singular": "Stein",
+          "plural": "Steinen"
+        },
+        "akkusativ": {
+          "singular": "Stein",
+          "plural": "Steine"
+        }
+      },
+      "inflections": null,
+      "pronunciation": null,
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "german-nouns-csv",
+        "sourceLabel": "german-nouns (gambolputty, via German Wiktionary)",
+        "sourceId": "Stein#1",
+        "importDate": "2026-09-27"
+      },
+      "dictionaryOnly": true,
+      "learningStatus": "not-added"
+    },
+    {
+      "id": "lex_wiki_noun",
+      "lemma": "Wiki",
+      "normalizedLemma": "wiki::noun",
+      "language": "de",
+      "wordType": "noun",
+      "subType": null,
+      "article": "das",
+      "gender": "n",
+      "plural": "Wikis",
+      "meanings": [
+        "wiki"
+      ],
+      "senses": [
+        {
+          "glosses": [
+            "wiki"
+          ],
+          "tags": [
+            "neuter",
+            "strong"
+          ]
+        }
+      ],
+      "forms": {},
+      "inflections": [
+        {
+          "form": "Wikis",
+          "tags": [
+            "genitive"
+          ]
+        },
+        {
+          "form": "Wikis",
+          "tags": [
+            "plural"
+          ]
+        }
+      ],
+      "pronunciation": "/ˈviːki/",
+      "variants": [],
+      "compounds": [],
+      "separable": null,
+      "reflexive": null,
+      "register": null,
+      "domain": null,
+      "frequency": null,
+      "examples": [],
+      "collocations": [],
+      "synonyms": [],
+      "antonyms": [],
+      "relatedWords": [],
+      "cefr": "unknown",
+      "quality": {
+        "status": "VALID",
+        "reasons": []
+      },
+      "provenance": {
+        "sourceName": "wiktextract-jsonl",
+        "sourceLabel": "kaikki.org Wiktextract (German), by tatuylonen",
+        "sourceId": "Wiki#0",
+        "importDate": "2026-09-27"
+      },
+      "dictionaryOnly": true,
+      "learningStatus": "not-added"
+    }
+  ]
+}

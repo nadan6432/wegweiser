@@ -1,0 +1,53 @@
+{
+  "totalLemmas": 5105,
+  "newAuthoredRecords": 5101,
+  "surfaceForms": 13408,
+  "byWordType": {
+    "noun": 2529,
+    "verb": 893,
+    "adjective": 591,
+    "pronoun": 24,
+    "determiner": 11,
+    "article": 8,
+    "preposition": 39,
+    "conjunction": 9,
+    "subjunction": 21,
+    "adverb": 299,
+    "particle": 12,
+    "modal_particle": 9,
+    "interjection": 48,
+    "number": 45,
+    "idiom": 82,
+    "phrase": 323,
+    "proper_noun": 162
+  },
+  "cefr": {
+    "A0": 0,
+    "A1": 871,
+    "A2": 1084,
+    "B1": 1417,
+    "B2": 1071,
+    "C1": 608,
+    "C2": 50,
+    "unknown": 4
+  },
+  "englishGloss": 5103,
+  "urdu": 0,
+  "pashto": 0,
+  "nounsWithGender": 2492,
+  "nounsWithPlural": 2080,
+  "verbsWithPrincipalParts": 892,
+  "adjectivesWithComparison": 345,
+  "withIpa": 2,
+  "withExamples": 1,
+  "multiSense": 1,
+  "buildStats": {
+    "authoredLines": 6012,
+    "invalid": 0,
+    "duplicatesInAuthored": 354,
+    "duplicateOfSourcedBase": 2,
+    "matchedCurated": 555,
+    "homographDifferentType": 44
+  },
+  "curatedExisting": 705
+}

@@ -1,0 +1,411 @@
+@domain transport
+Verkehr|m|-|traffic|A1
+Auto|n|Autos|car|A1
+Wagen|m|Wagen|car; carriage|A1
+Bus|m|Busse|bus|A1
+Zug|m|Züge|train|A1
+Straßenbahn|f|Straßenbahnen|tram|A1
+U-Bahn|f|U-Bahnen|underground; subway|A1
+S-Bahn|f|S-Bahnen|suburban train|A1
+Taxi|n|Taxis|taxi|A1
+Fahrrad|n|Fahrräder|bicycle|A1
+Rad|n|Räder|wheel; bike|A1
+Motorrad|n|Motorräder|motorcycle|A1
+Roller|m|Roller|scooter|A2
+Lastwagen|m|Lastwagen|lorry; truck|A2
+LKW|m|LKWs|lorry; truck|A2
+Flugzeug|n|Flugzeuge|aeroplane|A1
+Hubschrauber|m|Hubschrauber|helicopter|B1
+Schiff|n|Schiffe|ship|A1
+Boot|n|Boote|boat|A1
+Fähre|f|Fähren|ferry|A2
+Fahrzeug|n|Fahrzeuge|vehicle|B1
+Anhänger|m|Anhänger|trailer; pendant|B2
+Bahnhof|m|Bahnhöfe|train station|A1
+Hauptbahnhof|m|Hauptbahnhöfe|main station|A1
+Bahnsteig|m|Bahnsteige|platform|A1
+Gleis|n|Gleise|platform; track|A1
+Haltestelle|f|Haltestellen|stop|A1
+Flughafen|m|Flughäfen|airport|A1
+Hafen|m|Häfen|harbour; port|A2
+Fahrkarte|f|Fahrkarten|ticket|A1
+Ticket|n|Tickets|ticket|A1
+Fahrschein|m|Fahrscheine|ticket|A2
+Fahrplan|m|Fahrpläne|timetable|A2
+Verbindung|f|Verbindungen|connection|A2
+Verspätung|f|Verspätungen|delay|A2
+Abfahrt|f|Abfahrten|departure|A1
+Ankunft|f|Ankünfte|arrival|A1
+Umsteigen|n|-|changing (trains)|A2
+Reise|f|Reisen|journey; trip|A1
+Ausflug|m|Ausflüge|excursion; trip|A2
+Fahrt|f|Fahrten|drive; journey|A1
+Flug|m|Flüge|flight|A1
+Straße|f|Straßen|street; road|A1
+Weg|m|Wege|way; path|A1
+Autobahn|f|Autobahnen|motorway|A1
+Landstraße|f|Landstraßen|country road|B1
+Kreuzung|f|Kreuzungen|crossing; junction|A1
+Ampel|f|Ampeln|traffic light|A1
+Kreisverkehr|m|Kreisverkehre|roundabout|B1
+Brücke|f|Brücken|bridge|A1
+Tunnel|m|Tunnel|tunnel|A2
+Parkplatz|m|Parkplätze|car park; parking space|A1
+Parkhaus|n|Parkhäuser|multi-storey car park|A2
+Stau|m|Staus|traffic jam|A2
+Baustelle|f|Baustellen|building site; roadworks|A2
+Umleitung|f|Umleitungen|diversion|B1
+Führerschein|m|Führerscheine|driving licence|A2
+Verkehrsschild|n|Verkehrsschilder|traffic sign|B1
+Geschwindigkeit|f|Geschwindigkeiten|speed|A2
+Tempo|n|Tempi|speed; pace|B1
+Unfall|m|Unfälle|accident|A2
+Panne|f|Pannen|breakdown|B1
+Reifen|m|Reifen|tyre|A2
+Motor|m|Motoren|engine|A2
+Bremse|f|Bremsen|brake|A2
+Lenkrad|n|Lenkräder|steering wheel|B1
+Benzin|n|-|petrol|A1
+Diesel|m|-|diesel|A2
+Kofferraum|m|Kofferräume|boot; trunk|B1
+Sitz|m|Sitze|seat|A2
+Sicherheitsgurt|m|Sicherheitsgurte|seat belt|B1
+Kennzeichen|n|Kennzeichen|number plate|B1
+Fußgänger|m|Fußgänger|pedestrian|A2
+Radfahrer|m|Radfahrer|cyclist|A2
+Autofahrer|m|Autofahrer|driver|A2
+Fahrgast|m|Fahrgäste|passenger|B1
+Passagier|m|Passagiere|passenger|A2
+Zebrastreifen|m|Zebrastreifen|zebra crossing|B1
+Bürgersteig|m|Bürgersteige|pavement|B1
+Gehweg|m|Gehwege|footpath|B1
+Radweg|m|Radwege|cycle path|A2
+Fußgängerzone|f|Fußgängerzonen|pedestrian zone|A2
+Elektroauto|n|Elektroautos|electric car|B1
+@domain travel
+Urlaub|m|Urlaube|holiday|A1
+Ferien|p|-|holidays (school)|A1
+Tourist|m|Touristen|tourist|A2
+Reisebüro|n|Reisebüros|travel agency|A2
+Reiseführer|m|Reiseführer|guidebook; tour guide|B1
+Reisepass|m|Reisepässe|passport|A2
+Pass|m|Pässe|passport; pass|A2
+Personalausweis|m|Personalausweise|identity card|B1
+Visum|n|Visa|visa|B1
+Gepäck|n|-|luggage|A2
+Handgepäck|n|-|hand luggage|B1
+Koffer|m|Koffer|suitcase|A1
+Reisetasche|f|Reisetaschen|travel bag|A2
+Hotel|n|Hotels|hotel|A1
+Pension|f|Pensionen|guesthouse; pension|A2
+Jugendherberge|f|Jugendherbergen|youth hostel|A2
+Campingplatz|m|Campingplätze|campsite|A2
+Zelt|n|Zelte|tent|A2
+Ferienwohnung|f|Ferienwohnungen|holiday flat|A2
+Rezeption|f|Rezeptionen|reception|A2
+Einzelzimmer|n|Einzelzimmer|single room|A1
+Doppelzimmer|n|Doppelzimmer|double room|A1
+Übernachtung|f|Übernachtungen|overnight stay|A2
+Frühstücksbuffet|n|Frühstücksbuffets|breakfast buffet|B1
+Halbpension|f|-|half board|B1
+Vollpension|f|-|full board|B1
+Buchung|f|Buchungen|booking|B1
+Reservierung|f|Reservierungen|reservation|A2
+Stadtplan|m|Stadtpläne|city map|A2
+Karte|f|Karten|map; card; ticket|A1
+Sehenswürdigkeit|f|Sehenswürdigkeiten|sight; attraction|A2
+Museum|n|Museen|museum|A1
+Denkmal|n|Denkmäler|monument|B1
+Burg|f|Burgen|castle; fortress|B1
+Kirche|f|Kirchen|church|A1
+Dom|m|Dome|cathedral|B1
+Turm|m|Türme|tower|A2
+Strand|m|Strände|beach|A1
+Meer|n|Meere|sea|A1
+See|m|Seen|lake|A1
+Insel|f|Inseln|island|A1
+Berg|m|Berge|mountain|A1
+Gebirge|n|Gebirge|mountain range|B1
+Küste|f|Küsten|coast|A2
+Reisegruppe|f|Reisegruppen|tour group|B1
+Führung|f|Führungen|guided tour|B1
+Zoll|m|Zölle|customs|B1
+Grenze|f|Grenzen|border; limit|A2
+Ausland|n|-|abroad|A2
+Heimat|f|-|home; homeland|B1
+Fernweh|n|-|wanderlust|C1
+Heimweh|n|-|homesickness|B2
+Abenteuer|n|Abenteuer|adventure|B1
+Erlebnis|n|Erlebnisse|experience|B1
+Erinnerung|f|Erinnerungen|memory; reminder|B1
+Souvenir|n|Souvenirs|souvenir|B1
+Postkarte|f|Postkarten|postcard|A1
+@domain city
+Stadt|f|Städte|city; town|A1
+Großstadt|f|Großstädte|big city|A2
+Dorf|n|Dörfer|village|A1
+Zentrum|n|Zentren|centre|A1
+Innenstadt|f|Innenstädte|city centre|A2
+Stadtmitte|f|-|city centre|A2
+Vorort|m|Vororte|suburb|B1
+Viertel|n|Viertel|district; quarter|B1
+Platz|m|Plätze|square; place; seat|A1
+Marktplatz|m|Marktplätze|market square|A2
+Park|m|Parks|park|A1
+Spielplatz|m|Spielplätze|playground|A2
+Friedhof|m|Friedhöfe|cemetery|A2
+Rathaus|n|Rathäuser|town hall|A1
+Post|f|-|post; post office|A1
+Polizei|f|-|police|A1
+Feuerwehr|f|Feuerwehren|fire brigade|A2
+Gebäude|n|Gebäude|building|A2
+Hochhaus|n|Hochhäuser|high-rise|B1
+Wolkenkratzer|m|Wolkenkratzer|skyscraper|B1
+Schloss|n|Schlösser|palace; castle|A2
+Theater|n|Theater|theatre|A1
+Kino|n|Kinos|cinema|A1
+Schwimmbad|n|Schwimmbäder|swimming pool|A1
+Freibad|n|Freibäder|open-air pool|A2
+Stadion|n|Stadien|stadium|A2
+Sporthalle|f|Sporthallen|sports hall|A2
+Restaurant|n|Restaurants|restaurant|A1
+Café|n|Cafés|café|A1
+Kneipe|f|Kneipen|pub|B1
+Bar|f|Bars|bar|A2
+Imbiss|m|Imbisse|snack bar|A2
+Konditorei|f|Konditoreien|patisserie|B1
+Disco|f|Discos|disco|A2
+Club|m|Clubs|club|A2
+Verein|m|Vereine|club; association|A2
+Brunnen|m|Brunnen|fountain; well|B1
+Statue|f|Statuen|statue|B1
+Ecke|f|Ecken|corner|A1
+Gasse|f|Gassen|alley|B1
+Allee|f|Alleen|avenue|B2
+Straßenecke|f|Straßenecken|street corner|A2
+Adresse|f|Adressen|address|A1
+Hausnummer|f|Hausnummern|house number|A1
+Postleitzahl|f|Postleitzahlen|postcode|A1
+Bezirk|m|Bezirke|district|B1
+Gemeinde|f|Gemeinden|municipality|B1
+Landkreis|m|Landkreise|rural district|C1
+Hauptstadt|f|Hauptstädte|capital city|A2
+Umgebung|f|Umgebungen|surroundings|A2
+Nachbarschaft|f|-|neighbourhood|B1
+Land|n|Länder|country; land|A1
+Bundesland|n|Bundesländer|federal state|B1
+Landschaft|f|Landschaften|landscape|B1
+Ausland|n|-|foreign countries|A2
+@domain nature
+Natur|f|-|nature|A1
+Umwelt|f|-|environment|A2
+Erde|f|-|earth; soil|A2
+Welt|f|Welten|world|A1
+Himmel|m|-|sky; heaven|A1
+Sonne|f|Sonnen|sun|A1
+Mond|m|Monde|moon|A1
+Stern|m|Sterne|star|A1
+Planet|m|Planeten|planet|B1
+Weltall|n|-|universe; space|B2
+Feuer|n|Feuer|fire|A2
+Wasser|n|-|water|A1
+Luft|f|-|air|A1
+Wind|m|Winde|wind|A1
+Sturm|m|Stürme|storm|A2
+Gewitter|n|Gewitter|thunderstorm|A2
+Blitz|m|Blitze|lightning|B1
+Donner|m|Donner|thunder|B1
+Regen|m|-|rain|A1
+Schnee|m|-|snow|A1
+Hagel|m|-|hail|B2
+Eis|n|-|ice|A1
+Nebel|m|Nebel|fog|A2
+Wolke|f|Wolken|cloud|A1
+Regenbogen|m|Regenbögen|rainbow|B1
+Tau|m|-|dew|C1
+Wetter|n|-|weather|A1
+Temperatur|f|Temperaturen|temperature|A1
+Grad|m|Grade|degree|A1
+Hitze|f|-|heat|A2
+Kälte|f|-|cold|A2
+Wärme|f|-|warmth|B1
+Sonnenschein|m|-|sunshine|A2
+Jahreszeit|f|Jahreszeiten|season|A1
+Frühling|m|Frühlinge|spring|A1
+Sommer|m|Sommer|summer|A1
+Herbst|m|Herbste|autumn|A1
+Winter|m|Winter|winter|A1
+Wetterbericht|m|Wetterberichte|weather report|A2
+Klima|n|Klimas|climate|B1
+Klimawandel|m|-|climate change|B1
+Erderwärmung|f|-|global warming|B2
+Dürre|f|Dürren|drought|B2
+Überschwemmung|f|Überschwemmungen|flood|B1
+Hochwasser|n|-|flood|B1
+Erdbeben|n|Erdbeben|earthquake|B1
+Vulkan|m|Vulkane|volcano|B1
+Lawine|f|Lawinen|avalanche|B2
+Waldbrand|m|Waldbrände|forest fire|B2
+Wald|m|Wälder|forest|A1
+Baum|m|Bäume|tree|A1
+Ast|m|Äste|branch|B1
+Zweig|m|Zweige|twig|B1
+Blatt|n|Blätter|leaf; sheet|A1
+Wurzel|f|Wurzeln|root|B1
+Rinde|f|Rinden|bark|C1
+Busch|m|Büsche|bush|B1
+Strauch|m|Sträucher|shrub|B2
+Gras|n|Gräser|grass|A1
+Wiese|f|Wiesen|meadow|A1
+Feld|n|Felder|field|A1
+Acker|m|Äcker|field (arable)|B1
+Blume|f|Blumen|flower|A1
+Rose|f|Rosen|rose|A1
+Tulpe|f|Tulpen|tulip|A2
+Sonnenblume|f|Sonnenblumen|sunflower|A2
+Pflanze|f|Pflanzen|plant|A1
+Samen|m|Samen|seed|B1
+Saat|f|Saaten|seed; sowing|C1
+Ernte|f|Ernten|harvest|B1
+Moos|n|Moose|moss|B2
+Pilz|m|Pilze|mushroom|A2
+Tanne|f|Tannen|fir|B1
+Fichte|f|Fichten|spruce|B2
+Kiefer|f|Kiefern|pine|B2
+Birke|f|Birken|birch|B2
+Eiche|f|Eichen|oak|B1
+Buche|f|Buchen|beech|B2
+Ahorn|m|Ahorne|maple|B2
+Linde|f|Linden|linden|C1
+Weide|f|Weiden|willow; pasture|B2
+Palme|f|Palmen|palm|B1
+Fluss|m|Flüsse|river|A1
+Bach|m|Bäche|stream|A2
+Teich|m|Teiche|pond|B1
+Quelle|f|Quellen|spring; source|B1
+Wasserfall|m|Wasserfälle|waterfall|B1
+Ufer|n|Ufer|shore; bank|B1
+Welle|f|Wellen|wave|B1
+Ozean|m|Ozeane|ocean|B1
+Sand|m|-|sand|A2
+Stein|m|Steine|stone|A1
+Fels|m|Felsen|rock; cliff|B1
+Felsen|m|Felsen|rock|B1
+Gipfel|m|Gipfel|summit|B1
+Tal|n|Täler|valley|A2
+Hügel|m|Hügel|hill|A2
+Höhle|f|Höhlen|cave|B1
+Wüste|f|Wüsten|desert|B1
+Dschungel|m|Dschungel|jungle|B1
+Gletscher|m|Gletscher|glacier|B1
+Rohstoff|m|Rohstoffe|raw material|B2
+Kohle|f|Kohlen|coal|B1
+Erdöl|n|-|crude oil|B2
+Erdgas|n|-|natural gas|B2
+Energie|f|Energien|energy|B1
+Sonnenenergie|f|-|solar energy|B1
+Windkraft|f|-|wind power|B2
+Umweltschutz|m|-|environmental protection|B1
+Naturschutz|m|-|nature conservation|B2
+Verschmutzung|f|Verschmutzungen|pollution|B2
+Abfall|m|Abfälle|waste|B1
+Recycling|n|-|recycling|B1
+Mülltrennung|f|-|waste separation|B1
+Nachhaltigkeit|f|-|sustainability|B2
+Ressource|f|Ressourcen|resource|B2
+@domain animals
+Tier|n|Tiere|animal|A1
+Haustier|n|Haustiere|pet|A1
+Hund|m|Hunde|dog|A1
+Katze|f|Katzen|cat|A1
+Pferd|n|Pferde|horse|A1
+Kuh|f|Kühe|cow|A1
+Schwein|n|Schweine|pig|A1
+Schaf|n|Schafe|sheep|A1
+Ziege|f|Ziegen|goat|A1
+Esel|m|Esel|donkey|A2
+Hase|m|Hasen|hare|A2
+Kaninchen|n|Kaninchen|rabbit|A1
+Maus|f|Mäuse|mouse|A1
+Ratte|f|Ratten|rat|A2
+Hamster|m|Hamster|hamster|A2
+Meerschweinchen|n|Meerschweinchen|guinea pig|A2
+Vogel|m|Vögel|bird|A1
+Huhn|n|Hühner|chicken|A1
+Hahn|m|Hähne|rooster|A2
+Ente|f|Enten|duck|A1
+Gans|f|Gänse|goose|A2
+Taube|f|Tauben|pigeon; dove|A2
+Adler|m|Adler|eagle|B1
+Eule|f|Eulen|owl|B1
+Rabe|m|Raben|raven|B2
+Krähe|f|Krähen|crow|B2
+Spatz|m|Spatzen|sparrow|B1
+Schwan|m|Schwäne|swan|B1
+Storch|m|Störche|stork|B1
+Papagei|m|Papageien|parrot|B1
+Fisch|m|Fische|fish|A1
+Hai|m|Haie|shark|B1
+Wal|m|Wale|whale|B1
+Delfin|m|Delfine|dolphin|B1
+Robbe|f|Robben|seal|B2
+Krebs|m|Krebse|crab; cancer|B1
+Frosch|m|Frösche|frog|A2
+Kröte|f|Kröten|toad|B2
+Schlange|f|Schlangen|snake; queue|A2
+Eidechse|f|Eidechsen|lizard|B2
+Schildkröte|f|Schildkröten|turtle|A2
+Krokodil|n|Krokodile|crocodile|A2
+Insekt|n|Insekten|insect|A2
+Biene|f|Bienen|bee|A2
+Wespe|f|Wespen|wasp|B1
+Fliege|f|Fliegen|fly; bow tie|A2
+Mücke|f|Mücken|mosquito; midge|A2
+Ameise|f|Ameisen|ant|B1
+Käfer|m|Käfer|beetle|B1
+Schmetterling|m|Schmetterlinge|butterfly|A2
+Spinne|f|Spinnen|spider|A2
+Wurm|m|Würmer|worm|B1
+Schnecke|f|Schnecken|snail; slug|B1
+Löwe|m|Löwen|lion|A1
+Tiger|m|Tiger|tiger|A1
+Bär|m|Bären|bear|A1
+Wolf|m|Wölfe|wolf|A2
+Fuchs|m|Füchse|fox|A2
+Hirsch|m|Hirsche|deer; stag|A2
+Reh|n|Rehe|roe deer|B1
+Wildschwein|n|Wildschweine|wild boar|B1
+Elefant|m|Elefanten|elephant|A1
+Affe|m|Affen|monkey|A1
+Giraffe|f|Giraffen|giraffe|A1
+Zebra|n|Zebras|zebra|A2
+Nashorn|n|Nashörner|rhinoceros|B1
+Nilpferd|n|Nilpferde|hippopotamus|B1
+Känguru|n|Kängurus|kangaroo|A2
+Kamel|n|Kamele|camel|A2
+Eichhörnchen|n|Eichhörnchen|squirrel|A2
+Igel|m|Igel|hedgehog|B1
+Fledermaus|f|Fledermäuse|bat|B1
+Maulwurf|m|Maulwürfe|mole|B2
+Dachs|m|Dachse|badger|B2
+Otter|m|Otter|otter|B2
+Biber|m|Biber|beaver|B2
+Pinguin|m|Pinguine|penguin|A2
+Eisbär|m|Eisbären|polar bear|A2
+Raubtier|n|Raubtiere|predator|B2
+Säugetier|n|Säugetiere|mammal|B2
+Reptil|n|Reptilien|reptile|B2
+Zoo|m|Zoos|zoo|A1
+Tierheim|n|Tierheime|animal shelter|B1
+Käfig|m|Käfige|cage|B1
+Fell|n|Felle|fur|B1
+Feder|f|Federn|feather; spring|B1
+Flügel|m|Flügel|wing; grand piano|B1
+Schwanz|m|Schwänze|tail|B1
+Pfote|f|Pfoten|paw|B1
+Kralle|f|Krallen|claw|B2
+Schnabel|m|Schnäbel|beak|B2
+Horn|n|Hörner|horn|B1
+Nest|n|Nester|nest|B1
+Herde|f|Herden|herd|B2
+Schwarm|m|Schwärme|swarm; flock|C1

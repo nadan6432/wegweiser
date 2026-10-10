@@ -59,10 +59,30 @@ const ContentValidator = (() => {
       if(ex.type==='build' && ex.correctOrder && JSON.stringify(ex.words)===JSON.stringify(ex.correctOrder) && ex.words.length>1) warnings.push(`build exercise ${ex.id} words array equals correctOrder (answer may be visible)`);
     }));
 
-    /* vocab structural checks */
+    /* vocab structural checks (extended in Phase 4 — spec §50) */
+    const validWordTypes = new Set((typeof Schema!=='undefined' ? Schema.WORD_TYPES.concat(Object.keys(Schema.WORD_TYPE_ALIASES)) : []));
+    const wordTypesThatTakeArticles = new Set(['noun']);
+    const mistakeIds = new Set((merged.COMMON_MISTAKES||[]).map(m=>m.id));
     merged.VOCAB.forEach(v=>{
       if(!v.de) errors.push(`Vocab ${v.id} has empty 'de' field`);
       if(v.type==='noun' && !v.article) warnings.push(`Vocab ${v.id} is a noun with no article`);
+      if(validWordTypes.size && !validWordTypes.has(v.type)) errors.push(`Vocab ${v.id} has invalid word type '${v.type}'`);
+      if(v.article && !wordTypesThatTakeArticles.has(v.type)) errors.push(`Vocab ${v.id} has an article but is type '${v.type}' (only nouns take an article)`);
+      (v.lessonIds||[]).forEach(id=>{ if(!lessonIds.has(id)) warnings.push(`Vocab ${v.id} references missing lesson id ${id}`); });
+      (v.grammarIds||[]).forEach(id=>{ if(!grammarIds.has(id)) warnings.push(`Vocab ${v.id} references missing grammar id ${id}`); });
+      (v.commonMistakeIds||[]).forEach(id=>{ if(!mistakeIds.has(id)) errors.push(`Vocab ${v.id} references missing common-mistake id ${id}`); });
+      if(v.senses && v.senses.length){
+        v.senses.forEach((s,i)=>{
+          if(!s.en || !s.en.trim()) errors.push(`Vocab ${v.id} sense #${i+1} has no 'en' gloss`);
+        });
+      }
+      if(v.translations){
+        Object.keys(v.translations).forEach(lang=>{
+          if(typeof v.translations[lang] !== 'string' || !v.translations[lang].trim()){
+            errors.push(`Vocab ${v.id} has a malformed translations.${lang} value`);
+          }
+        });
+      }
     });
 
     return {

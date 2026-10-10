@@ -1,0 +1,11 @@
+PASS - interrupted mid-chunk: status reports an interruption, no crash, app state stays usable  {"kind":"interrupted","message":"Dictionary index build was interrupted. It will resume where it stopped."}
+PASS - the app UI still renders (dictionary screen) after the failed build
+PASS - resumed after reload: exactly 2 MORE chunks completed on top of the earlier run, then interrupted again  {"afterRun1":1,"afterRun2":3,"rows":14349}
+PASS - an interrupted build leaves a usable partial index (flagged partial)  {"partial":true,"n":3}
+PASS - storage quota failure is reported as kind=quota with a human-readable message  {"phase":"error","kind":"quota","msg":"Not enough browser storage to build the offline dictionary. Free some space and try again; the app keeps working without the full dictionary."}
+PASS - final resume completes the index (92,880 rows) after three earlier failures  {"rows":92880,"secs":35}
+PASS - final resume downloaded ONLY the missing chunks (31 total minus those already completed)  {"lemmaRequests":28,"alreadyDone":3}
+PASS - after interrupted+resumed builds there are no duplicate records (exact row count, single Tisch noun)  {"rows":92880,"tisch":1}
+PASS - no unexpected console/page errors (network failures deliberately induced by the offline tests are excluded)  []
+
+9 passed, 0 failed (browser phase13 — resume)

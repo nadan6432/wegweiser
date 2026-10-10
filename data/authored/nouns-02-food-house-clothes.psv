@@ -1,0 +1,336 @@
+@domain food
+Essen|n|-|food; meal|A1
+Mahlzeit|f|Mahlzeiten|meal|A2
+Frühstück|n|Frühstücke|breakfast|A1
+Mittagessen|n|Mittagessen|lunch|A1
+Abendessen|n|Abendessen|dinner|A1
+Snack|m|Snacks|snack|B1
+Brot|n|Brote|bread|A1
+Brötchen|n|Brötchen|bread roll|A1
+Toast|m|Toasts|toast|A2
+Butter|f|-|butter|A1
+Margarine|f|-|margarine|B1
+Käse|m|Käse|cheese|A1
+Wurst|f|Würste|sausage|A1
+Schinken|m|Schinken|ham|A1
+Speck|m|-|bacon|B1
+Salami|f|Salamis|salami|B1
+Ei|n|Eier|egg|A1
+Milch|f|-|milk|A1
+Joghurt|m|Joghurts|yoghurt|A1
+Sahne|f|-|cream|A2
+Quark|m|-|quark; curd cheese|B1
+Marmelade|f|Marmeladen|jam; marmalade|A1
+Honig|m|-|honey|A1
+Zucker|m|-|sugar|A1
+Salz|n|-|salt|A1
+Pfeffer|m|-|pepper|A1
+Essig|m|-|vinegar|A2
+Öl|n|Öle|oil|A1
+Mehl|n|-|flour|A2
+Nudel|f|Nudeln|noodle|A1
+Reis|m|-|rice|A1
+Kartoffel|f|Kartoffeln|potato|A1
+Pommes|p|-|chips; French fries|A1
+Suppe|f|Suppen|soup|A1
+Salat|m|Salate|salad; lettuce|A1
+Fleisch|n|-|meat|A1
+Rindfleisch|n|-|beef|A2
+Schweinefleisch|n|-|pork|A2
+Hähnchen|n|Hähnchen|chicken|A1
+Huhn|n|Hühner|chicken; hen|A1
+Lamm|n|Lämmer|lamb|B1
+Fisch|m|Fische|fish|A1
+Lachs|m|Lachse|salmon|A2
+Thunfisch|m|Thunfische|tuna|A2
+Garnele|f|Garnelen|prawn; shrimp|B1
+Gemüse|n|-|vegetables|A1
+Obst|n|-|fruit|A1
+Apfel|m|Äpfel|apple|A1
+Birne|f|Birnen|pear|A1
+Banane|f|Bananen|banana|A1
+Orange|f|Orangen|orange|A1
+Zitrone|f|Zitronen|lemon|A1
+Traube|f|Trauben|grape|A1
+Erdbeere|f|Erdbeeren|strawberry|A1
+Himbeere|f|Himbeeren|raspberry|A2
+Kirsche|f|Kirschen|cherry|A1
+Pflaume|f|Pflaumen|plum|A2
+Pfirsich|m|Pfirsiche|peach|A2
+Melone|f|Melonen|melon|A2
+Ananas|f|Ananas|pineapple|A2
+Mango|f|Mangos|mango|B1
+Tomate|f|Tomaten|tomato|A1
+Gurke|f|Gurken|cucumber|A1
+Karotte|f|Karotten|carrot|A1
+Möhre|f|Möhren|carrot|A2
+Zwiebel|f|Zwiebeln|onion|A1
+Knoblauch|m|-|garlic|A2
+Paprika|f|Paprikas|pepper (vegetable)|A2
+Pilz|m|Pilze|mushroom|A2
+Spinat|m|-|spinach|A2
+Kohl|m|-|cabbage|B1
+Blumenkohl|m|-|cauliflower|B1
+Brokkoli|m|-|broccoli|B1
+Bohne|f|Bohnen|bean|A2
+Erbse|f|Erbsen|pea|A2
+Mais|m|-|corn; maize|B1
+Linse|f|Linsen|lentil|B1
+Nuss|f|Nüsse|nut|A2
+Mandel|f|Mandeln|almond|B1
+Kuchen|m|Kuchen|cake|A1
+Torte|f|Torten|gateau; layer cake|A2
+Keks|m|Kekse|biscuit; cookie|A1
+Plätzchen|n|Plätzchen|small biscuit|B1
+Schokolade|f|Schokoladen|chocolate|A1
+Bonbon|n|Bonbons|sweet; candy|A2
+Eis|n|-|ice cream; ice|A1
+Pudding|m|Puddings|pudding|B1
+Müsli|n|Müslis|muesli|A2
+Cornflakes|p|-|cornflakes|B1
+Pizza|f|Pizzen|pizza|A1
+Burger|m|Burger|burger|A2
+Sandwich|n|Sandwiches|sandwich|A2
+Brezel|f|Brezeln|pretzel|B1
+Pfannkuchen|m|Pfannkuchen|pancake|B1
+Semmel|f|Semmeln|bread roll (Southern German)|B1
+Sauce|f|Saucen|sauce|A2
+Soße|f|Soßen|sauce|A2
+Ketchup|m|Ketchups|ketchup|A2
+Senf|m|-|mustard|A2
+Mayonnaise|f|-|mayonnaise|A2
+Gewürz|n|Gewürze|spice|B1
+Zutat|f|Zutaten|ingredient|B1
+Rezept|n|Rezepte|recipe|A2
+Portion|f|Portionen|portion|A2
+Speisekarte|f|Speisekarten|menu|A2
+Vorspeise|f|Vorspeisen|starter|A2
+Hauptgericht|n|Hauptgerichte|main course|A2
+Nachspeise|f|Nachspeisen|dessert|A2
+Nachtisch|m|Nachtische|dessert|A2
+Beilage|f|Beilagen|side dish|B1
+Gericht|n|Gerichte|dish; court|A2
+Spezialität|f|Spezialitäten|speciality|B1
+@domain drinks
+Getränk|n|Getränke|drink|A1
+Wasser|n|-|water|A1
+Mineralwasser|n|-|mineral water|A1
+Saft|m|Säfte|juice|A1
+Limonade|f|Limonaden|lemonade|A2
+Cola|f|Colas|cola|A1
+Tee|m|Tees|tea|A1
+Kaffee|m|Kaffees|coffee|A1
+Espresso|m|Espressos|espresso|A2
+Cappuccino|m|Cappuccinos|cappuccino|A2
+Kakao|m|-|cocoa|A2
+Bier|n|Biere|beer|A1
+Wein|m|Weine|wine|A1
+Rotwein|m|Rotweine|red wine|A2
+Weißwein|m|Weißweine|white wine|A2
+Sekt|m|Sekte|sparkling wine|B1
+Schnaps|m|Schnäpse|schnapps; spirits|B1
+Whisky|m|Whiskys|whisky|B1
+Cocktail|m|Cocktails|cocktail|B1
+Glühwein|m|Glühweine|mulled wine|B1
+Durst|m|-|thirst|A2
+Hunger|m|-|hunger|A1
+@domain house
+Haus|n|Häuser|house|A1
+Wohnung|f|Wohnungen|flat; apartment|A1
+Zimmer|n|Zimmer|room|A1
+Raum|m|Räume|room; space|A2
+Wohnzimmer|n|Wohnzimmer|living room|A1
+Schlafzimmer|n|Schlafzimmer|bedroom|A1
+Kinderzimmer|n|Kinderzimmer|children's room|A1
+Esszimmer|n|Esszimmer|dining room|A2
+Arbeitszimmer|n|Arbeitszimmer|study|A2
+Badezimmer|n|Badezimmer|bathroom|A1
+Bad|n|Bäder|bathroom; bath|A1
+Toilette|f|Toiletten|toilet|A1
+Küche|f|Küchen|kitchen|A1
+Flur|m|Flure|hallway|A2
+Diele|f|Dielen|hall|B2
+Treppe|f|Treppen|stairs|A1
+Stockwerk|n|Stockwerke|floor; storey|A2
+Etage|f|Etagen|floor; storey|A2
+Erdgeschoss|n|Erdgeschosse|ground floor|A1
+Keller|m|Keller|cellar; basement|A1
+Dachboden|m|Dachböden|attic|B1
+Dach|n|Dächer|roof|A2
+Balkon|m|Balkone|balcony|A1
+Terrasse|f|Terrassen|terrace|A2
+Garten|m|Gärten|garden|A1
+Garage|f|Garagen|garage|A1
+Eingang|m|Eingänge|entrance|A1
+Ausgang|m|Ausgänge|exit|A1
+Tür|f|Türen|door|A1
+Haustür|f|Haustüren|front door|A1
+Fenster|n|Fenster|window|A1
+Wand|f|Wände|wall|A1
+Mauer|f|Mauern|wall (outer)|B1
+Decke|f|Decken|ceiling; blanket|A2
+Boden|m|Böden|floor; ground|A2
+Fußboden|m|Fußböden|floor|A2
+Aufzug|m|Aufzüge|lift; elevator|A2
+Fahrstuhl|m|Fahrstühle|lift|A2
+Heizung|f|Heizungen|heating|A2
+Klimaanlage|f|Klimaanlagen|air conditioning|B1
+Schlüssel|m|Schlüssel|key|A1
+Schloss|n|Schlösser|lock; castle|A2
+Klingel|f|Klingeln|doorbell|B1
+Briefkasten|m|Briefkästen|letterbox|A2
+Miete|f|Mieten|rent|A2
+Vermieter|m|Vermieter|landlord|A2
+Mieter|m|Mieter|tenant|A2
+Nebenkosten|p|-|additional costs; utilities|B1
+Kaution|f|Kautionen|deposit|B1
+Mietvertrag|m|Mietverträge|rental agreement|B1
+Umzug|m|Umzüge|move (house)|A2
+Möbel|p|-|furniture|A1
+Sofa|n|Sofas|sofa|A1
+Sessel|m|Sessel|armchair|A1
+Stuhl|m|Stühle|chair|A1
+Tisch|m|Tische|table|A1
+Schreibtisch|m|Schreibtische|desk|A1
+Bett|n|Betten|bed|A1
+Schrank|m|Schränke|cupboard; wardrobe|A1
+Kleiderschrank|m|Kleiderschränke|wardrobe|A2
+Regal|n|Regale|shelf|A1
+Kommode|f|Kommoden|chest of drawers|B1
+Spiegel|m|Spiegel|mirror|A1
+Teppich|m|Teppiche|carpet; rug|A1
+Vorhang|m|Vorhänge|curtain|A2
+Lampe|f|Lampen|lamp|A1
+Licht|n|Lichter|light|A1
+Kissen|n|Kissen|pillow; cushion|A2
+Matratze|f|Matratzen|mattress|B1
+Bettdecke|f|Bettdecken|duvet|B1
+Laken|n|Laken|sheet|B2
+Handtuch|n|Handtücher|towel|A1
+Bild|n|Bilder|picture|A1
+Uhr|f|Uhren|clock; watch|A1
+Wecker|m|Wecker|alarm clock|A1
+Kerze|f|Kerzen|candle|A2
+Vase|f|Vasen|vase|B1
+Blumentopf|m|Blumentöpfe|flowerpot|B1
+Herd|m|Herde|stove; cooker|A2
+Backofen|m|Backöfen|oven|A2
+Ofen|m|Öfen|oven; stove|A2
+Mikrowelle|f|Mikrowellen|microwave|A2
+Kühlschrank|m|Kühlschränke|fridge|A1
+Gefrierschrank|m|Gefrierschränke|freezer|B1
+Spülmaschine|f|Spülmaschinen|dishwasher|A2
+Geschirrspüler|m|Geschirrspüler|dishwasher|B1
+Waschmaschine|f|Waschmaschinen|washing machine|A2
+Trockner|m|Trockner|dryer|B1
+Staubsauger|m|Staubsauger|vacuum cleaner|A2
+Bügeleisen|n|Bügeleisen|iron|B1
+Toaster|m|Toaster|toaster|B1
+Kaffeemaschine|f|Kaffeemaschinen|coffee machine|A2
+Wasserkocher|m|Wasserkocher|kettle|B1
+Mixer|m|Mixer|blender|B1
+Geschirr|n|-|crockery; dishes|A2
+Teller|m|Teller|plate|A1
+Tasse|f|Tassen|cup|A1
+Becher|m|Becher|mug; tumbler|A2
+Glas|n|Gläser|glass|A1
+Flasche|f|Flaschen|bottle|A1
+Messer|n|Messer|knife|A1
+Gabel|f|Gabeln|fork|A1
+Löffel|m|Löffel|spoon|A1
+Besteck|n|Bestecke|cutlery|A2
+Schüssel|f|Schüsseln|bowl|A2
+Schale|f|Schalen|bowl; shell; peel|B1
+Topf|m|Töpfe|pot|A2
+Pfanne|f|Pfannen|frying pan|A2
+Kanne|f|Kannen|jug; pot|B1
+Tablett|n|Tabletts|tray|B1
+Serviette|f|Servietten|napkin|A2
+Tischdecke|f|Tischdecken|tablecloth|B1
+Korkenzieher|m|Korkenzieher|corkscrew|B2
+Dosenöffner|m|Dosenöffner|tin opener|B2
+Reibe|f|Reiben|grater|C1
+Sieb|n|Siebe|sieve|B2
+Schneidebrett|n|Schneidebretter|chopping board|B2
+Mülleimer|m|Mülleimer|rubbish bin|A2
+Müll|m|-|rubbish|A2
+Besen|m|Besen|broom|B1
+Eimer|m|Eimer|bucket|B1
+Seife|f|Seifen|soap|A1
+Shampoo|n|Shampoos|shampoo|A2
+Waschbecken|n|Waschbecken|sink; washbasin|A2
+Dusche|f|Duschen|shower|A1
+Badewanne|f|Badewannen|bathtub|A2
+Zahnputzbecher|m|Zahnputzbecher|toothbrush mug|C1
+Kamm|m|Kämme|comb|A2
+Bürste|f|Bürsten|brush|A2
+Rasierer|m|Rasierer|razor|B1
+Kosmetik|f|-|cosmetics|B1
+Lippenstift|m|Lippenstifte|lipstick|B1
+Parfüm|n|Parfüms|perfume|B1
+Deo|n|Deos|deodorant|B1
+Taschentuch|n|Taschentücher|handkerchief; tissue|A2
+Toilettenpapier|n|-|toilet paper|A2
+@domain clothes
+Kleidung|f|-|clothing|A1
+Kleid|n|Kleider|dress|A1
+Rock|m|Röcke|skirt|A1
+Hose|f|Hosen|trousers|A1
+Jeans|f|-|jeans|A1
+Shorts|p|-|shorts|A2
+Hemd|n|Hemden|shirt|A1
+Bluse|f|Blusen|blouse|A1
+T-Shirt|n|T-Shirts|T-shirt|A1
+Pullover|m|Pullover|jumper; sweater|A1
+Pulli|m|Pullis|jumper (colloquial)|A2
+Jacke|f|Jacken|jacket|A1
+Mantel|m|Mäntel|coat|A1
+Anzug|m|Anzüge|suit|A1
+Krawatte|f|Krawatten|tie|A2
+Weste|f|Westen|waistcoat; vest|B1
+Schal|m|Schals|scarf|A1
+Mütze|f|Mützen|cap; hat|A1
+Hut|m|Hüte|hat|A1
+Handschuh|m|Handschuhe|glove|A1
+Socke|f|Socken|sock|A1
+Strumpf|m|Strümpfe|stocking|A2
+Strumpfhose|f|Strumpfhosen|tights|B1
+Schuh|m|Schuhe|shoe|A1
+Stiefel|m|Stiefel|boot|A1
+Sandale|f|Sandalen|sandal|A2
+Turnschuh|m|Turnschuhe|trainer; sneaker|A2
+Pantoffel|m|Pantoffeln|slipper|B1
+Unterhose|f|Unterhosen|underpants|A2
+Unterwäsche|f|-|underwear|A2
+Schlafanzug|m|Schlafanzüge|pyjamas|A2
+Nachthemd|n|Nachthemden|nightdress|B1
+Badeanzug|m|Badeanzüge|swimsuit|A2
+Badehose|f|Badehosen|swimming trunks|A2
+Regenmantel|m|Regenmäntel|raincoat|A2
+Schirm|m|Schirme|umbrella|A2
+Regenschirm|m|Regenschirme|umbrella|A2
+Gürtel|m|Gürtel|belt|A2
+Tasche|f|Taschen|bag; pocket|A1
+Handtasche|f|Handtaschen|handbag|A2
+Rucksack|m|Rucksäcke|backpack|A1
+Koffer|m|Koffer|suitcase|A1
+Geldbeutel|m|Geldbeutel|wallet|A2
+Portemonnaie|n|Portemonnaies|purse; wallet|A2
+Ring|m|Ringe|ring|A2
+Kette|f|Ketten|chain; necklace|A2
+Armband|n|Armbänder|bracelet|A2
+Ohrring|m|Ohrringe|earring|A2
+Schmuck|m|-|jewellery|B1
+Stoff|m|Stoffe|fabric; material|B1
+Baumwolle|f|-|cotton|B1
+Wolle|f|-|wool|A2
+Seide|f|Seiden|silk|B1
+Leder|n|Leder|leather|B1
+Größe|f|Größen|size; height|A1
+Mode|f|Moden|fashion|A2
+Knopf|m|Knöpfe|button|A2
+Reißverschluss|m|Reißverschlüsse|zip|B1
+Ärmel|m|Ärmel|sleeve|B1
+Kragen|m|Kragen|collar|B1
+Naht|f|Nähte|seam|B2
+Uniform|f|Uniformen|uniform|B1

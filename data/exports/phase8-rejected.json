@@ -1,0 +1,1775 @@
+{
+  "invalid": [],
+  "duplicates": [
+    {
+      "at": "adj-01-core.psv:194",
+      "id": "lex_alt_adjective",
+      "first": "adj-01-core.psv:9"
+    },
+    {
+      "at": "adj-01-core.psv:203",
+      "id": "lex_wichtig_adjective",
+      "first": "adj-01-core.psv:32"
+    },
+    {
+      "at": "adj-01-core.psv:247",
+      "id": "lex_boese_adjective",
+      "first": "adj-01-core.psv:96"
+    },
+    {
+      "at": "adj-01-core.psv:288",
+      "id": "lex_praktisch_adjective",
+      "first": "adj-01-core.psv:191"
+    },
+    {
+      "at": "adj-01-core.psv:294",
+      "id": "lex_suess_adjective",
+      "first": "adj-01-core.psv:145"
+    },
+    {
+      "at": "adj-01-core.psv:300",
+      "id": "lex_langweilig_adjective",
+      "first": "adj-01-core.psv:34"
+    },
+    {
+      "at": "adj-02-more.psv:29",
+      "id": "lex_bereit_adjective",
+      "first": "adj-01-core.psv:106"
+    },
+    {
+      "at": "adj-02-more.psv:38",
+      "id": "lex_billig_adjective",
+      "first": "adj-01-core.psv:30"
+    },
+    {
+      "at": "adj-02-more.psv:87",
+      "id": "lex_feucht_adjective",
+      "first": "adj-01-core.psv:142"
+    },
+    {
+      "at": "adj-02-more.psv:109",
+      "id": "lex_gewaltig_adjective",
+      "first": "adj-01-core.psv:231"
+    },
+    {
+      "at": "adj-02-more.psv:119",
+      "id": "lex_gruendlich_adjective",
+      "first": "adj-01-core.psv:234"
+    },
+    {
+      "at": "adj-02-more.psv:122",
+      "id": "lex_guenstig_adjective",
+      "first": "adj-01-core.psv:31"
+    },
+    {
+      "at": "adj-02-more.psv:144",
+      "id": "lex_kalt_adjective",
+      "first": "adj-01-core.psv:17"
+    },
+    {
+      "at": "adj-02-more.psv:189",
+      "id": "lex_nah_adjective",
+      "first": "adj-01-core.psv:4"
+    },
+    {
+      "at": "adj-02-more.psv:202",
+      "id": "lex_ordentlich_adjective",
+      "first": "adj-01-core.psv:61"
+    },
+    {
+      "at": "adj-02-more.psv:206",
+      "id": "lex_praktisch_adjective",
+      "first": "adj-01-core.psv:191"
+    },
+    {
+      "at": "adj-02-more.psv:232",
+      "id": "lex_schaedlich_adjective",
+      "first": "adj-01-core.psv:310"
+    },
+    {
+      "at": "adj-02-more.psv:248",
+      "id": "lex_stabil_adjective",
+      "first": "adj-02-more.psv:140"
+    },
+    {
+      "at": "adj-02-more.psv:253",
+      "id": "lex_stolz_adjective",
+      "first": "adj-01-core.psv:250"
+    },
+    {
+      "at": "adj-02-more.psv:260",
+      "id": "lex_technisch_adjective",
+      "first": "adj-01-core.psv:185"
+    },
+    {
+      "at": "adj-02-more.psv:267",
+      "id": "lex_ueberfluessig_adjective",
+      "first": "adj-01-core.psv:210"
+    },
+    {
+      "at": "adj-02-more.psv:341",
+      "id": "lex_zart_adjective",
+      "first": "adj-01-core.psv:156"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:64",
+      "id": "lex_nicht_mehr_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:63"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:151",
+      "id": "lex_davor_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:23"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:156",
+      "id": "lex_ueberall_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:109"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:216",
+      "id": "lex_so_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:194"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:222",
+      "id": "lex_ebenfalls_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:220"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:289",
+      "id": "lex_eigentlich_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:250"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:290",
+      "id": "lex_zumindest_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:191"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:301",
+      "id": "lex_allein_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:225"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:311",
+      "id": "lex_wirklich_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:174"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:312",
+      "id": "lex_hoffentlich_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:235"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:319",
+      "id": "lex_schliesslich_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:28"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:349",
+      "id": "lex_dagegen_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:272"
+    },
+    {
+      "at": "func-02-adverbs-particles-numerals.psv:357",
+      "id": "lex_darum_adverb",
+      "first": "func-02-adverbs-particles-numerals.psv:258"
+    },
+    {
+      "at": "nouns-02-food-house-clothes.psv:104",
+      "id": "lex_rezept_noun",
+      "first": "nouns-01-people-family-body-health.psv:195"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:127",
+      "id": "lex_kollege_noun",
+      "first": "nouns-01-people-family-body-health.psv:20"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:139",
+      "id": "lex_termin_noun",
+      "first": "nouns-01-people-family-body-health.psv:212"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:160",
+      "id": "lex_aufgabe_noun",
+      "first": "nouns-03-school-work-money-shop.psv:17"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:164",
+      "id": "lex_direktor_noun",
+      "first": "nouns-03-school-work-money-shop.psv:38"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:216",
+      "id": "lex_beruf_noun",
+      "first": "nouns-03-school-work-money-shop.psv:119"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:217",
+      "id": "lex_arzt_noun",
+      "first": "nouns-01-people-family-body-health.psv:202"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:231",
+      "id": "lex_lehrer_noun",
+      "first": "nouns-03-school-work-money-shop.psv:34"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:322",
+      "id": "lex_miete_noun",
+      "first": "nouns-02-food-house-clothes.psv:182"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:332",
+      "id": "lex_markt_noun",
+      "first": "nouns-03-school-work-money-shop.psv:185"
+    },
+    {
+      "at": "nouns-03-school-work-money-shop.psv:350",
+      "id": "lex_regal_noun",
+      "first": "nouns-02-food-house-clothes.psv:198"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:62",
+      "id": "lex_unfall_noun",
+      "first": "nouns-01-people-family-body-health.psv:181"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:86",
+      "id": "lex_urlaub_noun",
+      "first": "nouns-03-school-work-money-shop.psv:148"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:97",
+      "id": "lex_koffer_noun",
+      "first": "nouns-02-food-house-clothes.psv:316"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:132",
+      "id": "lex_zoll_noun",
+      "first": "nouns-03-school-work-money-shop.psv:201"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:164",
+      "id": "lex_schloss_noun",
+      "first": "nouns-02-food-house-clothes.psv:179"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:198",
+      "id": "lex_ausland_noun",
+      "first": "nouns-04-travel-city-nature.psv:134"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:211",
+      "id": "lex_wasser_noun",
+      "first": "nouns-02-food-house-clothes.psv:116"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:221",
+      "id": "lex_eis_noun",
+      "first": "nouns-02-food-house-clothes.psv:87"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:271",
+      "id": "lex_pilz_noun",
+      "first": "nouns-02-food-house-clothes.psv:70"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:334",
+      "id": "lex_huhn_noun",
+      "first": "nouns-02-food-house-clothes.psv:41"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:347",
+      "id": "lex_fisch_noun",
+      "first": "nouns-02-food-house-clothes.psv:43"
+    },
+    {
+      "at": "nouns-04-travel-city-nature.psv:352",
+      "id": "lex_krebs_noun",
+      "first": "nouns-01-people-family-body-health.psv:228"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:13",
+      "id": "lex_nagel_noun",
+      "first": "nouns-01-people-family-body-health.psv:125"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:24",
+      "id": "lex_leitung_noun",
+      "first": "nouns-03-school-work-money-shop.psv:162"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:43",
+      "id": "lex_maus_noun",
+      "first": "nouns-04-travel-city-nature.psv:329"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:70",
+      "id": "lex_fenster_noun",
+      "first": "nouns-02-food-house-clothes.psv:168"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:87",
+      "id": "lex_konto_noun",
+      "first": "nouns-03-school-work-money-shop.psv:292"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:105",
+      "id": "lex_bibliothek_noun",
+      "first": "nouns-03-school-work-money-shop.psv:112"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:108",
+      "id": "lex_fehler_noun",
+      "first": "nouns-03-school-work-money-shop.psv:21"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:115",
+      "id": "lex_verbindung_noun",
+      "first": "nouns-04-travel-city-nature.psv:35"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:117",
+      "id": "lex_adresse_noun",
+      "first": "nouns-04-travel-city-nature.psv:186"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:145",
+      "id": "lex_beitrag_noun",
+      "first": "nouns-03-school-work-money-shop.psv:319"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:173",
+      "id": "lex_schluessel_noun",
+      "first": "nouns-02-food-house-clothes.psv:178"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:199",
+      "id": "lex_wissenschaftler_noun",
+      "first": "nouns-03-school-work-money-shop.psv:267"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:224",
+      "id": "lex_geschwindigkeit_noun",
+      "first": "nouns-04-travel-city-nature.psv:60"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:226",
+      "id": "lex_licht_noun",
+      "first": "nouns-02-food-house-clothes.psv:204"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:228",
+      "id": "lex_waerme_noun",
+      "first": "nouns-04-travel-city-nature.psv:231"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:246",
+      "id": "lex_salz_noun",
+      "first": "nouns-02-food-house-clothes.psv:26"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:249",
+      "id": "lex_mathematik_noun",
+      "first": "nouns-03-school-work-money-shop.psv:46"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:250",
+      "id": "lex_zahl_noun",
+      "first": "nouns-03-school-work-money-shop.psv:69"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:251",
+      "id": "lex_summe_noun",
+      "first": "nouns-03-school-work-money-shop.psv:317"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:253",
+      "id": "lex_produkt_noun",
+      "first": "nouns-03-school-work-money-shop.psv:180"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:287",
+      "id": "lex_paar_noun",
+      "first": "nouns-01-people-family-body-health.psv:79"
+    },
+    {
+      "at": "nouns-05-tech-science.psv:291",
+      "id": "lex_viertel_noun",
+      "first": "nouns-04-travel-city-nature.psv:151"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:18",
+      "id": "lex_stimme_noun",
+      "first": "nouns-01-people-family-body-health.psv:158"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:32",
+      "id": "lex_gesetz_noun",
+      "first": "nouns-05-tech-science.psv:217"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:68",
+      "id": "lex_bundesland_noun",
+      "first": "nouns-04-travel-city-nature.psv:196"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:75",
+      "id": "lex_vertrag_noun",
+      "first": "nouns-03-school-work-money-shop.psv:151"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:94",
+      "id": "lex_mehrheit_noun",
+      "first": "nouns-01-people-family-body-health.psv:43"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:98",
+      "id": "lex_gericht_noun",
+      "first": "nouns-02-food-house-clothes.psv:112"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:99",
+      "id": "lex_richter_noun",
+      "first": "nouns-03-school-work-money-shop.psv:264"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:101",
+      "id": "lex_anwalt_noun",
+      "first": "nouns-03-school-work-money-shop.psv:263"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:106",
+      "id": "lex_verhandlung_noun",
+      "first": "nouns-03-school-work-money-shop.psv:207"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:119",
+      "id": "lex_betrug_noun",
+      "first": "nouns-05-tech-science.psv:185"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:122",
+      "id": "lex_beweis_noun",
+      "first": "nouns-05-tech-science.psv:205"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:149",
+      "id": "lex_programm_noun",
+      "first": "nouns-05-tech-science.psv:59"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:168",
+      "id": "lex_kunst_noun",
+      "first": "nouns-03-school-work-money-shop.psv:54"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:169",
+      "id": "lex_kuenstler_noun",
+      "first": "nouns-03-school-work-money-shop.psv:257"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:179",
+      "id": "lex_musik_noun",
+      "first": "nouns-03-school-work-money-shop.psv:55"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:189",
+      "id": "lex_text_noun",
+      "first": "nouns-03-school-work-money-shop.psv:66"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:201",
+      "id": "lex_geschichte_noun",
+      "first": "nouns-03-school-work-money-shop.psv:50"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:233",
+      "id": "lex_religion_noun",
+      "first": "nouns-03-school-work-money-shop.psv:56"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:236",
+      "id": "lex_kirche_noun",
+      "first": "nouns-04-travel-city-nature.psv:120"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:242",
+      "id": "lex_sport_noun",
+      "first": "nouns-03-school-work-money-shop.psv:53"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:284",
+      "id": "lex_punkt_noun",
+      "first": "nouns-05-tech-science.psv:268"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:285",
+      "id": "lex_ergebnis_noun",
+      "first": "nouns-03-school-work-money-shop.psv:213"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:291",
+      "id": "lex_gesellschaft_noun",
+      "first": "nouns-01-people-family-body-health.psv:40"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:292",
+      "id": "lex_kultur_noun",
+      "first": "nouns-06-society-law-media-culture.psv:167"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:303",
+      "id": "lex_armut_noun",
+      "first": "nouns-03-school-work-money-shop.psv:304"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:304",
+      "id": "lex_einkommen_noun",
+      "first": "nouns-03-school-work-money-shop.psv:145"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:305",
+      "id": "lex_klasse_noun",
+      "first": "nouns-03-school-work-money-shop.psv:11"
+    },
+    {
+      "at": "nouns-06-society-law-media-culture.psv:313",
+      "id": "lex_verein_noun",
+      "first": "nouns-04-travel-city-nature.psv:179"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:54",
+      "id": "lex_einladung_noun",
+      "first": "nouns-06-society-law-media-culture.psv:231"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:62",
+      "id": "lex_stunde_noun",
+      "first": "nouns-03-school-work-money-shop.psv:14"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:96",
+      "id": "lex_pause_noun",
+      "first": "nouns-03-school-work-money-shop.psv:15"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:97",
+      "id": "lex_verspaetung_noun",
+      "first": "nouns-04-travel-city-nature.psv:36"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:121",
+      "id": "lex_meinung_noun",
+      "first": "nouns-06-society-law-media-culture.psv:164"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:125",
+      "id": "lex_plan_noun",
+      "first": "nouns-03-school-work-money-shop.psv:212"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:131",
+      "id": "lex_ursache_noun",
+      "first": "nouns-05-tech-science.psv:212"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:137",
+      "id": "lex_loesung_noun",
+      "first": "nouns-05-tech-science.psv:248"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:140",
+      "id": "lex_fehler_noun",
+      "first": "nouns-03-school-work-money-shop.psv:21"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:141",
+      "id": "lex_erfolg_noun",
+      "first": "nouns-03-school-work-money-shop.psv:214"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:143",
+      "id": "lex_bedeutung_noun",
+      "first": "nouns-03-school-work-money-shop.psv:73"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:147",
+      "id": "lex_verbindung_noun",
+      "first": "nouns-04-travel-city-nature.psv:35"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:148",
+      "id": "lex_beziehung_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:40"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:155",
+      "id": "lex_bedingung_noun",
+      "first": "nouns-05-tech-science.psv:100"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:157",
+      "id": "lex_folge_noun",
+      "first": "nouns-05-tech-science.psv:214"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:158",
+      "id": "lex_ergebnis_noun",
+      "first": "nouns-03-school-work-money-shop.psv:213"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:160",
+      "id": "lex_wahl_noun",
+      "first": "nouns-06-society-law-media-culture.psv:16"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:161",
+      "id": "lex_entwicklung_noun",
+      "first": "nouns-05-tech-science.psv:30"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:164",
+      "id": "lex_fortschritt_noun",
+      "first": "nouns-05-tech-science.psv:31"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:165",
+      "id": "lex_ziel_noun",
+      "first": "nouns-03-school-work-money-shop.psv:211"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:166",
+      "id": "lex_aufgabe_noun",
+      "first": "nouns-03-school-work-money-shop.psv:17"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:167",
+      "id": "lex_verantwortung_noun",
+      "first": "nouns-03-school-work-money-shop.psv:161"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:168",
+      "id": "lex_pflicht_noun",
+      "first": "nouns-06-society-law-media-culture.psv:37"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:169",
+      "id": "lex_recht_noun",
+      "first": "nouns-06-society-law-media-culture.psv:36"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:170",
+      "id": "lex_regel_noun",
+      "first": "nouns-06-society-law-media-culture.psv:35"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:172",
+      "id": "lex_prinzip_noun",
+      "first": "nouns-05-tech-science.psv:216"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:173",
+      "id": "lex_theorie_noun",
+      "first": "nouns-05-tech-science.psv:203"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:174",
+      "id": "lex_praxis_noun",
+      "first": "nouns-01-people-family-body-health.psv:210"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:175",
+      "id": "lex_erfahrung_noun",
+      "first": "nouns-03-school-work-money-shop.psv:159"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:176",
+      "id": "lex_wissen_noun",
+      "first": "nouns-03-school-work-money-shop.psv:104"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:184",
+      "id": "lex_versuch_noun",
+      "first": "nouns-05-tech-science.psv:201"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:188",
+      "id": "lex_kraft_noun",
+      "first": "nouns-05-tech-science.psv:219"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:194",
+      "id": "lex_sicherheit_noun",
+      "first": "nouns-05-tech-science.psv:159"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:196",
+      "id": "lex_risiko_noun",
+      "first": "nouns-05-tech-science.psv:182"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:199",
+      "id": "lex_glueck_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:5"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:201",
+      "id": "lex_beispiel_noun",
+      "first": "nouns-03-school-work-money-shop.psv:74"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:206",
+      "id": "lex_typ_noun",
+      "first": "nouns-01-people-family-body-health.psv:37"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:210",
+      "id": "lex_stueck_noun",
+      "first": "nouns-05-tech-science.psv:286"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:218",
+      "id": "lex_stelle_noun",
+      "first": "nouns-03-school-work-money-shop.psv:120"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:224",
+      "id": "lex_weg_noun",
+      "first": "nouns-04-travel-city-nature.psv:45"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:225",
+      "id": "lex_ziel_noun",
+      "first": "nouns-03-school-work-money-shop.psv:211"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:227",
+      "id": "lex_folge_noun",
+      "first": "nouns-05-tech-science.psv:214"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:230",
+      "id": "lex_anzahl_noun",
+      "first": "nouns-05-tech-science.psv:295"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:231",
+      "id": "lex_betrag_noun",
+      "first": "nouns-03-school-work-money-shop.psv:316"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:232",
+      "id": "lex_grad_noun",
+      "first": "nouns-04-travel-city-nature.psv:228"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:289",
+      "id": "lex_stoff_noun",
+      "first": "nouns-02-food-house-clothes.psv:324"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:291",
+      "id": "lex_glas_noun",
+      "first": "nouns-02-food-house-clothes.psv:236"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:294",
+      "id": "lex_papier_noun",
+      "first": "nouns-03-school-work-money-shop.psv:86"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:297",
+      "id": "lex_metall_noun",
+      "first": "nouns-05-tech-science.psv:244"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:309",
+      "id": "lex_sand_noun",
+      "first": "nouns-04-travel-city-nature.psv:290"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:313",
+      "id": "lex_leder_noun",
+      "first": "nouns-02-food-house-clothes.psv:328"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:314",
+      "id": "lex_wolle_noun",
+      "first": "nouns-02-food-house-clothes.psv:326"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:315",
+      "id": "lex_stoff_noun",
+      "first": "nouns-02-food-house-clothes.psv:324"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:320",
+      "id": "lex_oel_noun",
+      "first": "nouns-02-food-house-clothes.psv:29"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:321",
+      "id": "lex_benzin_noun",
+      "first": "nouns-04-travel-city-nature.psv:68"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:324",
+      "id": "lex_kleber_noun",
+      "first": "nouns-03-school-work-money-shop.psv:85"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:332",
+      "id": "lex_licht_noun",
+      "first": "nouns-02-food-house-clothes.psv:204"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:334",
+      "id": "lex_farbe_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:322"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:336",
+      "id": "lex_tag_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:63"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:337",
+      "id": "lex_alltag_noun",
+      "first": "nouns-06-society-law-media-culture.psv:298"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:338",
+      "id": "lex_gewohnheit_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:245"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:340",
+      "id": "lex_ordnung_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:192"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:341",
+      "id": "lex_haushalt_noun",
+      "first": "nouns-06-society-law-media-culture.psv:67"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:344",
+      "id": "lex_einkauf_noun",
+      "first": "nouns-03-school-work-money-shop.psv:343"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:347",
+      "id": "lex_feierabend_noun",
+      "first": "nouns-03-school-work-money-shop.psv:149"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:348",
+      "id": "lex_wochenende_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:65"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:349",
+      "id": "lex_nachbarschaft_noun",
+      "first": "nouns-04-travel-city-nature.psv:194"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:351",
+      "id": "lex_ruhe_noun",
+      "first": "nouns-01-people-family-body-health.psv:254"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:360",
+      "id": "lex_bargeld_noun",
+      "first": "nouns-03-school-work-money-shop.psv:288"
+    },
+    {
+      "at": "nouns-07-abstract-emotion-time-material.psv:371",
+      "id": "lex_traum_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:127"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:2",
+      "id": "lex_krankenhaus_noun",
+      "first": "nouns-01-people-family-body-health.psv:205"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:3",
+      "id": "lex_krankenschwester_noun",
+      "first": "nouns-01-people-family-body-health.psv:206"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:4",
+      "id": "lex_krankenversicherung_noun",
+      "first": "nouns-06-society-law-media-culture.psv:60"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:5",
+      "id": "lex_krankenwagen_noun",
+      "first": "nouns-01-people-family-body-health.psv:216"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:7",
+      "id": "lex_bahnhof_noun",
+      "first": "nouns-04-travel-city-nature.psv:24"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:16",
+      "id": "lex_wohnzimmer_noun",
+      "first": "nouns-02-food-house-clothes.psv:142"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:17",
+      "id": "lex_schlafzimmer_noun",
+      "first": "nouns-02-food-house-clothes.psv:143"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:21",
+      "id": "lex_geburtstag_noun",
+      "first": "nouns-06-society-law-media-culture.psv:227"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:30",
+      "id": "lex_arbeitsplatz_noun",
+      "first": "nouns-03-school-work-money-shop.psv:121"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:31",
+      "id": "lex_arbeitsvertrag_noun",
+      "first": "nouns-03-school-work-money-shop.psv:152"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:44",
+      "id": "lex_internetzugang_noun",
+      "first": "nouns-05-tech-science.psv:125"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:48",
+      "id": "lex_datenschutz_noun",
+      "first": "nouns-05-tech-science.psv:153"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:53",
+      "id": "lex_informationssicherheit_noun",
+      "first": "nouns-05-tech-science.psv:160"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:56",
+      "id": "lex_cybersicherheit_noun",
+      "first": "nouns-05-tech-science.psv:161"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:71",
+      "id": "lex_betriebssystem_noun",
+      "first": "nouns-05-tech-science.psv:62"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:91",
+      "id": "lex_einkaufszentrum_noun",
+      "first": "nouns-03-school-work-money-shop.psv:331"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:94",
+      "id": "lex_mittagspause_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:346"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:99",
+      "id": "lex_kleiderschrank_noun",
+      "first": "nouns-02-food-house-clothes.psv:197"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:104",
+      "id": "lex_zahnarzt_noun",
+      "first": "nouns-01-people-family-body-health.psv:204"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:152",
+      "id": "lex_backofen_noun",
+      "first": "nouns-02-food-house-clothes.psv:217"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:188",
+      "id": "lex_flugzeug_noun",
+      "first": "nouns-04-travel-city-nature.psv:17"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:196",
+      "id": "lex_verkehrsschild_noun",
+      "first": "nouns-04-travel-city-nature.psv:59"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:199",
+      "id": "lex_fuehrerschein_noun",
+      "first": "nouns-04-travel-city-nature.psv:58"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:203",
+      "id": "lex_tankstelle_noun",
+      "first": "nouns-03-school-work-money-shop.psv:342"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:204",
+      "id": "lex_werkstatt_noun",
+      "first": "nouns-03-school-work-money-shop.psv:134"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:205",
+      "id": "lex_umweltschutz_noun",
+      "first": "nouns-04-travel-city-nature.psv:308"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:217",
+      "id": "lex_muelltrennung_noun",
+      "first": "nouns-04-travel-city-nature.psv:313"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:219",
+      "id": "lex_gesundheitsamt_noun",
+      "first": "nouns-01-people-family-body-health.psv:240"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:246",
+      "id": "lex_pressefreiheit_noun",
+      "first": "nouns-06-society-law-media-culture.psv:165"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:258",
+      "id": "lex_landwirt_noun",
+      "first": "nouns-03-school-work-money-shop.psv:245"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:266",
+      "id": "lex_baustelle_noun",
+      "first": "nouns-04-travel-city-nature.psv:56"
+    },
+    {
+      "at": "nouns-08-compounds-technical.psv:267",
+      "id": "lex_bauarbeiter_noun",
+      "first": "nouns-03-school-work-money-shop.psv:244"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:2",
+      "id": "lex_programmierer_noun",
+      "first": "nouns-03-school-work-money-shop.psv:269"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:10",
+      "id": "lex_feld_noun",
+      "first": "nouns-04-travel-city-nature.psv:260"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:11",
+      "id": "lex_liste_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:228"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:14",
+      "id": "lex_baum_noun",
+      "first": "nouns-04-travel-city-nature.psv:250"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:19",
+      "id": "lex_klasse_noun",
+      "first": "nouns-03-school-work-money-shop.psv:11"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:20",
+      "id": "lex_methode_noun",
+      "first": "nouns-05-tech-science.psv:210"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:23",
+      "id": "lex_argument_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:265"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:24",
+      "id": "lex_ausnahme_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:171"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:34",
+      "id": "lex_prozess_noun",
+      "first": "nouns-06-society-law-media-culture.psv:105"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:46",
+      "id": "lex_dokumentation_noun",
+      "first": "nouns-06-society-law-media-culture.psv:155"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:82",
+      "id": "lex_kuenstliche_intelligenz_noun",
+      "first": "nouns-05-tech-science.psv:157"
+    },
+    {
+      "at": "nouns-09-tech-specialist.psv:168",
+      "id": "lex_einkauf_noun",
+      "first": "nouns-03-school-work-money-shop.psv:343"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:8",
+      "id": "lex_karte_noun",
+      "first": "nouns-04-travel-city-nature.psv:115"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:14",
+      "id": "lex_zeitschrift_noun",
+      "first": "nouns-06-society-law-media-culture.psv:139"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:21",
+      "id": "lex_ordner_noun",
+      "first": "nouns-05-tech-science.psv:64"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:32",
+      "id": "lex_regenschirm_noun",
+      "first": "nouns-02-food-house-clothes.psv:311"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:42",
+      "id": "lex_schere_noun",
+      "first": "nouns-03-school-work-money-shop.psv:84"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:44",
+      "id": "lex_faden_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:316"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:45",
+      "id": "lex_knopf_noun",
+      "first": "nouns-02-food-house-clothes.psv:331"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:47",
+      "id": "lex_karton_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:296"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:50",
+      "id": "lex_glas_noun",
+      "first": "nouns-02-food-house-clothes.psv:236"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:54",
+      "id": "lex_tuete_noun",
+      "first": "nouns-03-school-work-money-shop.psv:347"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:57",
+      "id": "lex_kette_noun",
+      "first": "nouns-02-food-house-clothes.psv:320"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:58",
+      "id": "lex_rad_noun",
+      "first": "nouns-04-travel-city-nature.psv:12"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:59",
+      "id": "lex_seil_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:317"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:60",
+      "id": "lex_leiter_noun",
+      "first": "nouns-05-tech-science.psv:16"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:62",
+      "id": "lex_tor_noun",
+      "first": "nouns-06-society-law-media-culture.psv:250"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:64",
+      "id": "lex_hahn_noun",
+      "first": "nouns-04-travel-city-nature.psv:335"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:66",
+      "id": "lex_lampe_noun",
+      "first": "nouns-02-food-house-clothes.psv:203"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:68",
+      "id": "lex_steckdose_noun",
+      "first": "nouns-05-tech-science.psv:19"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:70",
+      "id": "lex_garten_noun",
+      "first": "nouns-02-food-house-clothes.psv:162"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:87",
+      "id": "lex_hobby_noun",
+      "first": "nouns-06-society-law-media-culture.psv:286"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:88",
+      "id": "lex_interesse_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:181"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:120",
+      "id": "lex_fernsehen_noun",
+      "first": "nouns-06-society-law-media-culture.psv:146"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:122",
+      "id": "lex_ausflug_noun",
+      "first": "nouns-04-travel-city-nature.psv:41"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:176",
+      "id": "lex_gefuehl_noun",
+      "first": "nouns-07-abstract-emotion-time-material.psv:2"
+    },
+    {
+      "at": "nouns-10-misc-objects-hobbies.psv:188",
+      "id": "lex_gewicht_noun",
+      "first": "nouns-05-tech-science.psv:221"
+    },
+    {
+      "at": "phrases-01-everyday.psv:240",
+      "id": "lex_freut_mich_phrase",
+      "first": "phrases-01-everyday.psv:43"
+    },
+    {
+      "at": "phrases-01-everyday.psv:285",
+      "id": "lex_macht_nichts_phrase",
+      "first": "phrases-01-everyday.psv:61"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:70",
+      "id": "lex_schwimmen_verb",
+      "first": "verbs-01-strong-irregular.psv:51"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:72",
+      "id": "lex_finden_verb",
+      "first": "verbs-01-strong-irregular.psv:52"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:107",
+      "id": "lex_steigen_verb",
+      "first": "verbs-01-strong-irregular.psv:93"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:136",
+      "id": "lex_kommen_verb",
+      "first": "verbs-01-strong-irregular.psv:14"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:137",
+      "id": "lex_gehen_verb",
+      "first": "verbs-01-strong-irregular.psv:13"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:139",
+      "id": "lex_lesen_verb",
+      "first": "verbs-01-strong-irregular.psv:35"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:145",
+      "id": "lex_verzeihen_verb",
+      "first": "verbs-01-strong-irregular.psv:97"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:147",
+      "id": "lex_rufen_verb",
+      "first": "verbs-01-strong-irregular.psv:21"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:149",
+      "id": "lex_laufen_verb",
+      "first": "verbs-01-strong-irregular.psv:16"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:165",
+      "id": "lex_sprechen_verb",
+      "first": "verbs-01-strong-irregular.psv:33"
+    },
+    {
+      "at": "verbs-01-strong-irregular.psv:170",
+      "id": "lex_treffen_verb",
+      "first": "verbs-01-strong-irregular.psv:42"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:20",
+      "id": "lex_sagen_verb",
+      "first": "verbs-02-weak-basic.psv:8"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:26",
+      "id": "lex_lieben_verb",
+      "first": "verbs-02-weak-basic.psv:13"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:73",
+      "id": "lex_ziehen_verb",
+      "first": "verbs-01-strong-irregular.psv:111"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:97",
+      "id": "lex_brechen_verb",
+      "first": "verbs-01-strong-irregular.psv:41"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:98",
+      "id": "lex_danken_verb",
+      "first": "verbs-02-weak-basic.psv:32"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:99",
+      "id": "lex_denken_verb",
+      "first": "verbs-01-strong-irregular.psv:60"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:124",
+      "id": "lex_gehoeren_verb",
+      "first": "verbs-01-strong-irregular.psv:154"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:134",
+      "id": "lex_leihen_verb",
+      "first": "verbs-01-strong-irregular.psv:96"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:138",
+      "id": "lex_meiden_verb",
+      "first": "verbs-01-strong-irregular.psv:98"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:141",
+      "id": "lex_moegen_verb",
+      "first": "verbs-01-strong-irregular.psv:10"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:166",
+      "id": "lex_streichen_verb",
+      "first": "verbs-01-strong-irregular.psv:105"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:167",
+      "id": "lex_suchen_verb",
+      "first": "verbs-02-weak-basic.psv:15"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:174",
+      "id": "lex_treiben_verb",
+      "first": "verbs-01-strong-irregular.psv:95"
+    },
+    {
+      "at": "verbs-02-weak-basic.psv:222",
+      "id": "lex_zulassen_verb",
+      "first": "verbs-01-strong-irregular.psv:161"
+    },
+    {
+      "at": "verbs-03-separable.psv:3",
+      "id": "lex_anfangen_verb",
+      "first": "verbs-01-strong-irregular.psv:152"
+    },
+    {
+      "at": "verbs-03-separable.psv:40",
+      "id": "lex_einladen_verb",
+      "first": "verbs-01-strong-irregular.psv:131"
+    },
+    {
+      "at": "verbs-03-separable.psv:83",
+      "id": "lex_unterschreiben_verb",
+      "first": "verbs-02-weak-basic.psv:184"
+    },
+    {
+      "at": "verbs-03-separable.psv:94",
+      "id": "lex_abfahren_verb",
+      "first": "verbs-03-separable.psv:9"
+    },
+    {
+      "at": "verbs-03-separable.psv:139",
+      "id": "lex_bestellen_verb",
+      "first": "verbs-02-weak-basic.psv:81"
+    },
+    {
+      "at": "verbs-03-separable.psv:141",
+      "id": "lex_vorstellen_verb",
+      "first": "verbs-02-weak-basic.psv:216"
+    },
+    {
+      "at": "verbs-03-separable.psv:175",
+      "id": "lex_anbauen_verb",
+      "first": "verbs-03-separable.psv:45"
+    },
+    {
+      "at": "verbs-03-separable.psv:197",
+      "id": "lex_abschreiben_verb",
+      "first": "verbs-03-separable.psv:79"
+    },
+    {
+      "at": "verbs-03-separable.psv:198",
+      "id": "lex_beschreiben_verb",
+      "first": "verbs-02-weak-basic.psv:88"
+    },
+    {
+      "at": "verbs-04-more.psv:2",
+      "id": "lex_freuen_verb",
+      "first": "verbs-02-weak-basic.psv:36"
+    },
+    {
+      "at": "verbs-04-more.psv:6",
+      "id": "lex_setzen_verb",
+      "first": "verbs-02-weak-basic.psv:30"
+    },
+    {
+      "at": "verbs-04-more.psv:7",
+      "id": "lex_treffen_verb",
+      "first": "verbs-01-strong-irregular.psv:42"
+    },
+    {
+      "at": "verbs-04-more.psv:10",
+      "id": "lex_entscheiden_verb",
+      "first": "verbs-01-strong-irregular.psv:99"
+    },
+    {
+      "at": "verbs-04-more.psv:57",
+      "id": "lex_bezahlen_verb",
+      "first": "verbs-02-weak-basic.psv:82"
+    },
+    {
+      "at": "verbs-04-more.psv:59",
+      "id": "lex_danken_verb",
+      "first": "verbs-02-weak-basic.psv:32"
+    },
+    {
+      "at": "verbs-04-more.psv:60",
+      "id": "lex_darstellen_verb",
+      "first": "verbs-03-separable.psv:138"
+    },
+    {
+      "at": "verbs-04-more.psv:68",
+      "id": "lex_entlassen_verb",
+      "first": "verbs-01-strong-irregular.psv:160"
+    },
+    {
+      "at": "verbs-04-more.psv:72",
+      "id": "lex_entstehen_verb",
+      "first": "verbs-02-weak-basic.psv:107"
+    },
+    {
+      "at": "verbs-04-more.psv:122",
+      "id": "lex_hinweisen_verb",
+      "first": "verbs-03-separable.psv:226"
+    },
+    {
+      "at": "verbs-04-more.psv:131",
+      "id": "lex_mitteilen_verb",
+      "first": "verbs-03-separable.psv:211"
+    },
+    {
+      "at": "verbs-04-more.psv:132",
+      "id": "lex_nachweisen_verb",
+      "first": "verbs-03-separable.psv:227"
+    },
+    {
+      "at": "verbs-04-more.psv:157",
+      "id": "lex_unterbrechen_verb",
+      "first": "verbs-01-strong-irregular.psv:166"
+    },
+    {
+      "at": "verbs-04-more.psv:194",
+      "id": "lex_vorschlagen_verb",
+      "first": "verbs-03-separable.psv:205"
+    },
+    {
+      "at": "verbs-04-more.psv:195",
+      "id": "lex_vorsehen_verb",
+      "first": "verbs-03-separable.psv:73"
+    },
+    {
+      "at": "verbs-04-more.psv:196",
+      "id": "lex_vorstellen_verb",
+      "first": "verbs-02-weak-basic.psv:216"
+    },
+    {
+      "at": "verbs-04-more.psv:207",
+      "id": "lex_zweifeln_verb",
+      "first": "verbs-02-weak-basic.psv:74"
+    },
+    {
+      "at": "verbs-04-more.psv:210",
+      "id": "lex_anpassen_verb",
+      "first": "verbs-03-separable.psv:166"
+    },
+    {
+      "at": "verbs-04-more.psv:214",
+      "id": "lex_berechnen_verb",
+      "first": "verbs-04-more.psv:35"
+    },
+    {
+      "at": "verbs-04-more.psv:220",
+      "id": "lex_drucken_verb",
+      "first": "verbs-02-weak-basic.psv:101"
+    },
+    {
+      "at": "verbs-04-more.psv:233",
+      "id": "lex_speichern_verb",
+      "first": "verbs-02-weak-basic.psv:159"
+    },
+    {
+      "at": "verbs-04-more.psv:236",
+      "id": "lex_verwalten_verb",
+      "first": "verbs-04-more.psv:187"
+    },
+    {
+      "at": "verbs-05-extra.psv:12",
+      "id": "lex_aufnehmen_verb",
+      "first": "verbs-03-separable.psv:61"
+    },
+    {
+      "at": "verbs-05-extra.psv:22",
+      "id": "lex_ausschalten_verb",
+      "first": "verbs-03-separable.psv:35"
+    },
+    {
+      "at": "verbs-05-extra.psv:33",
+      "id": "lex_einhalten_verb",
+      "first": "verbs-03-separable.psv:124"
+    },
+    {
+      "at": "verbs-05-extra.psv:35",
+      "id": "lex_einkaufen_verb",
+      "first": "verbs-03-separable.psv:5"
+    },
+    {
+      "at": "verbs-05-extra.psv:36",
+      "id": "lex_einladen_verb",
+      "first": "verbs-01-strong-irregular.psv:131"
+    },
+    {
+      "at": "verbs-05-extra.psv:39",
+      "id": "lex_einrichten_verb",
+      "first": "verbs-04-more.psv:64"
+    },
+    {
+      "at": "verbs-05-extra.psv:42",
+      "id": "lex_einstellen_verb",
+      "first": "verbs-03-separable.psv:135"
+    },
+    {
+      "at": "verbs-05-extra.psv:46",
+      "id": "lex_einzahlen_verb",
+      "first": "verbs-03-separable.psv:179"
+    },
+    {
+      "at": "verbs-05-extra.psv:47",
+      "id": "lex_ergaenzen_verb",
+      "first": "verbs-04-more.psv:79"
+    },
+    {
+      "at": "verbs-05-extra.psv:51",
+      "id": "lex_feststellen_verb",
+      "first": "verbs-03-separable.psv:136"
+    },
+    {
+      "at": "verbs-05-extra.psv:55",
+      "id": "lex_gehoeren_verb",
+      "first": "verbs-01-strong-irregular.psv:154"
+    },
+    {
+      "at": "verbs-05-extra.psv:56",
+      "id": "lex_gelten_verb",
+      "first": "verbs-01-strong-irregular.psv:46"
+    },
+    {
+      "at": "verbs-05-extra.psv:71",
+      "id": "lex_liefern_verb",
+      "first": "verbs-04-more.psv:127"
+    },
+    {
+      "at": "verbs-05-extra.psv:75",
+      "id": "lex_messen_verb",
+      "first": "verbs-01-strong-irregular.psv:47"
+    },
+    {
+      "at": "verbs-05-extra.psv:90",
+      "id": "lex_rechnen_verb",
+      "first": "verbs-02-weak-basic.psv:49"
+    },
+    {
+      "at": "verbs-05-extra.psv:93",
+      "id": "lex_rennen_verb",
+      "first": "verbs-01-strong-irregular.psv:63"
+    },
+    {
+      "at": "verbs-05-extra.psv:94",
+      "id": "lex_riechen_verb",
+      "first": "verbs-01-strong-irregular.psv:117"
+    },
+    {
+      "at": "verbs-05-extra.psv:111",
+      "id": "lex_setzen_verb",
+      "first": "verbs-02-weak-basic.psv:30"
+    },
+    {
+      "at": "verbs-05-extra.psv:112",
+      "id": "lex_sichern_verb",
+      "first": "verbs-04-more.psv:148"
+    },
+    {
+      "at": "verbs-05-extra.psv:113",
+      "id": "lex_sinken_verb",
+      "first": "verbs-01-strong-irregular.psv:56"
+    },
+    {
+      "at": "verbs-05-extra.psv:122",
+      "id": "lex_stehlen_verb",
+      "first": "verbs-01-strong-irregular.psv:43"
+    },
+    {
+      "at": "verbs-05-extra.psv:124",
+      "id": "lex_stellen_verb",
+      "first": "verbs-02-weak-basic.psv:29"
+    },
+    {
+      "at": "verbs-05-extra.psv:128",
+      "id": "lex_suchen_verb",
+      "first": "verbs-02-weak-basic.psv:15"
+    },
+    {
+      "at": "verbs-05-extra.psv:132",
+      "id": "lex_teilen_verb",
+      "first": "verbs-02-weak-basic.psv:169"
+    },
+    {
+      "at": "verbs-05-extra.psv:134",
+      "id": "lex_tragen_verb",
+      "first": "verbs-01-strong-irregular.psv:23"
+    },
+    {
+      "at": "verbs-05-extra.psv:136",
+      "id": "lex_treten_verb",
+      "first": "verbs-01-strong-irregular.psv:37"
+    },
+    {
+      "at": "verbs-05-extra.psv:144",
+      "id": "lex_ueberraschen_verb",
+      "first": "verbs-02-weak-basic.psv:176"
+    },
+    {
+      "at": "verbs-05-extra.psv:152",
+      "id": "lex_unterhalten_verb",
+      "first": "verbs-01-strong-irregular.psv:159"
+    },
+    {
+      "at": "verbs-05-extra.psv:154",
+      "id": "lex_unterscheiden_verb",
+      "first": "verbs-01-strong-irregular.psv:100"
+    },
+    {
+      "at": "verbs-05-extra.psv:159",
+      "id": "lex_verbessern_verb",
+      "first": "verbs-02-weak-basic.psv:187"
+    },
+    {
+      "at": "verbs-05-extra.psv:160",
+      "id": "lex_verbinden_verb",
+      "first": "verbs-01-strong-irregular.psv:74"
+    },
+    {
+      "at": "verbs-05-extra.psv:173",
+      "id": "lex_verlassen_verb",
+      "first": "verbs-01-strong-irregular.psv:155"
+    },
+    {
+      "at": "verbs-05-extra.psv:180",
+      "id": "lex_verraten_verb",
+      "first": "verbs-02-weak-basic.psv:201"
+    },
+    {
+      "at": "verbs-05-extra.psv:181",
+      "id": "lex_verreisen_verb",
+      "first": "verbs-02-weak-basic.psv:202"
+    },
+    {
+      "at": "verbs-05-extra.psv:186",
+      "id": "lex_verschwinden_verb",
+      "first": "verbs-01-strong-irregular.psv:73"
+    },
+    {
+      "at": "verbs-05-extra.psv:189",
+      "id": "lex_verspaeten_verb",
+      "first": "verbs-02-weak-basic.psv:207"
+    },
+    {
+      "at": "verbs-05-extra.psv:193",
+      "id": "lex_verteilen_verb",
+      "first": "verbs-02-weak-basic.psv:210"
+    },
+    {
+      "at": "verbs-05-extra.psv:206",
+      "id": "lex_vorbeikommen_verb",
+      "first": "verbs-03-separable.psv:106"
+    },
+    {
+      "at": "verbs-05-extra.psv:208",
+      "id": "lex_vorkommen_verb",
+      "first": "verbs-03-separable.psv:115"
+    },
+    {
+      "at": "verbs-05-extra.psv:209",
+      "id": "lex_vorlesen_verb",
+      "first": "verbs-03-separable.psv:75"
+    },
+    {
+      "at": "verbs-05-extra.psv:215",
+      "id": "lex_waehlen_verb",
+      "first": "verbs-02-weak-basic.psv:66"
+    },
+    {
+      "at": "verbs-05-extra.psv:219",
+      "id": "lex_weiterleiten_verb",
+      "first": "verbs-04-more.psv:198"
+    },
+    {
+      "at": "verbs-05-extra.psv:221",
+      "id": "lex_wenden_verb",
+      "first": "verbs-01-strong-irregular.psv:66"
+    },
+    {
+      "at": "verbs-05-extra.psv:223",
+      "id": "lex_wiegen_verb",
+      "first": "verbs-01-strong-irregular.psv:122"
+    },
+    {
+      "at": "verbs-05-extra.psv:227",
+      "id": "lex_zahlen_verb",
+      "first": "verbs-02-weak-basic.psv:71"
+    },
+    {
+      "at": "verbs-05-extra.psv:235",
+      "id": "lex_zunehmen_verb",
+      "first": "verbs-03-separable.psv:59"
+    },
+    {
+      "at": "verbs-05-extra.psv:236",
+      "id": "lex_zurechtkommen_verb",
+      "first": "verbs-03-separable.psv:111"
+    },
+    {
+      "at": "verbs-05-extra.psv:247",
+      "id": "lex_zuweisen_verb",
+      "first": "verbs-03-separable.psv:228"
+    },
+    {
+      "at": "verbs-05-extra.psv:248",
+      "id": "lex_zwingen_verb",
+      "first": "verbs-01-strong-irregular.psv:76"
+    }
+  ]
+}

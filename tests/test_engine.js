@@ -11,7 +11,7 @@ const files = [
   'data.js','content2.js','logic.js','db.js','srs.js','providers.js',
   'src/core/schema.js','src/core/dsl.js',
   'src/content/levels.js','src/content/grammar.js',
-  'src/content/vocabulary.core.js','src/content/vocabulary.upper.js',
+  'src/content/vocabulary.core.js','src/content/vocabulary.upper.js','src/content/vocabulary.expansion.js','src/content/vocabulary.expansion2.js',
   'src/content/lessons.a0a1.js','src/content/lessons.a2.js',
   'src/content/lessons.b1.js','src/content/lessons.b2c1c2.js',
   'src/content/reading.js','src/content/writing.js','src/content/listening.js',
@@ -20,7 +20,7 @@ const files = [
   'src/content/manifest.js','src/content/registry.js',
   'src/repositories/repositories.js',
   'src/services/learning.js','src/services/assessment.js',
-  'src/services/teacher.js','src/services/query.js',
+  'src/services/teacher.js','src/services/query.js','src/services/dictionary.js',
 ];
 
 const sandbox = { console };

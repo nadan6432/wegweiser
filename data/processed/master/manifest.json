@@ -1,0 +1,143 @@
+{
+  "totalLemmas": 92880,
+  "chunks": [
+    {
+      "letter": "_",
+      "lemmas": 6
+    },
+    {
+      "letter": "a",
+      "lemmas": 7814
+    },
+    {
+      "letter": "b",
+      "lemmas": 6529
+    },
+    {
+      "letter": "c",
+      "lemmas": 1045
+    },
+    {
+      "letter": "d",
+      "lemmas": 3460
+    },
+    {
+      "letter": "e",
+      "lemmas": 4848
+    },
+    {
+      "letter": "f",
+      "lemmas": 4144
+    },
+    {
+      "letter": "g",
+      "lemmas": 4894
+    },
+    {
+      "letter": "h",
+      "lemmas": 4677
+    },
+    {
+      "letter": "i",
+      "lemmas": 1909
+    },
+    {
+      "letter": "j",
+      "lemmas": 736
+    },
+    {
+      "letter": "k",
+      "lemmas": 5759
+    },
+    {
+      "letter": "l",
+      "lemmas": 3099
+    },
+    {
+      "letter": "m",
+      "lemmas": 4552
+    },
+    {
+      "letter": "n",
+      "lemmas": 2743
+    },
+    {
+      "letter": "o",
+      "lemmas": 1324
+    },
+    {
+      "letter": "p",
+      "lemmas": 4202
+    },
+    {
+      "letter": "q",
+      "lemmas": 302
+    },
+    {
+      "letter": "r",
+      "lemmas": 3607
+    },
+    {
+      "letter": "s",
+      "lemmas": 10467
+    },
+    {
+      "letter": "t",
+      "lemmas": 3252
+    },
+    {
+      "letter": "u",
+      "lemmas": 2229
+    },
+    {
+      "letter": "v",
+      "lemmas": 3939
+    },
+    {
+      "letter": "w",
+      "lemmas": 3765
+    },
+    {
+      "letter": "x",
+      "lemmas": 48
+    },
+    {
+      "letter": "y",
+      "lemmas": 61
+    },
+    {
+      "letter": "z",
+      "lemmas": 2647
+    },
+    {
+      "letter": "ß",
+      "lemmas": 1
+    },
+    {
+      "letter": "ä",
+      "lemmas": 151
+    },
+    {
+      "letter": "ö",
+      "lemmas": 137
+    },
+    {
+      "letter": "ü",
+      "lemmas": 533
+    }
+  ],
+  "source": {
+    "name": "wiktextract-jsonl",
+    "label": "kaikki.org Wiktextract (German), by tatuylonen",
+    "version": "kaikki.org Wiktextract (German), uploaded Phase 12, dump date unconfirmed for this exact file — see NOTE.md",
+    "importDate": "2026-10-01",
+    "files": [
+      "kaikki_part_1.jsonl",
+      "kaikki_part_2.jsonl",
+      "kaikki_part_3.jsonl",
+      "kaikki_part_4.jsonl"
+    ]
+  },
+  "pipelineVersion": "phase12-1",
+  "importDate": "2026-10-01"
+}

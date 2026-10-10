@@ -1,0 +1,297 @@
+@domain technology
+Technik|f|Techniken|technology; technique|B1
+Technologie|f|Technologien|technology|B1
+Gerät|n|Geräte|device; appliance|A2
+Maschine|f|Maschinen|machine|A2
+Apparat|m|Apparate|apparatus; phone|B1
+Werkzeug|n|Werkzeuge|tool|A2
+Hammer|m|Hämmer|hammer|A2
+Zange|f|Zangen|pliers|B1
+Schraube|f|Schrauben|screw|B1
+Schraubenzieher|m|Schraubenzieher|screwdriver|B1
+Schraubenschlüssel|m|Schraubenschlüssel|spanner; wrench|B2
+Nagel|m|Nägel|nail|B1
+Säge|f|Sägen|saw|B1
+Bohrer|m|Bohrer|drill|B1
+Leiter|f|Leitern|ladder|B1
+Kabel|n|Kabel|cable|A2
+Stecker|m|Stecker|plug|A2
+Steckdose|f|Steckdosen|socket|A2
+Batterie|f|Batterien|battery|A2
+Akku|m|Akkus|rechargeable battery|B1
+Strom|m|Ströme|electricity; current; stream|A2
+Spannung|f|Spannungen|voltage; tension|B1
+Leitung|f|Leitungen|line; wire; pipe|B1
+Schalter|m|Schalter|switch; counter|A2
+Sensor|m|Sensoren|sensor|B2
+Roboter|m|Roboter|robot|B1
+Drohne|f|Drohnen|drone|B2
+Erfindung|f|Erfindungen|invention|B1
+Entwicklung|f|Entwicklungen|development|B1
+Fortschritt|m|Fortschritte|progress|B1
+@domain computer
+Computer|m|Computer|computer|A1
+Rechner|m|Rechner|computer; calculator|A2
+Laptop|m|Laptops|laptop|A1
+Notebook|n|Notebooks|notebook computer|A2
+Tablet|n|Tablets|tablet|A2
+Handy|n|Handys|mobile phone|A1
+Smartphone|n|Smartphones|smartphone|A1
+Bildschirm|m|Bildschirme|screen|A1
+Monitor|m|Monitore|monitor|A2
+Tastatur|f|Tastaturen|keyboard|A1
+Maus|f|Mäuse|mouse (computer)|A1
+Drucker|m|Drucker|printer|A1
+Scanner|m|Scanner|scanner|B1
+Kamera|f|Kameras|camera|A1
+Lautsprecher|m|Lautsprecher|loudspeaker|B1
+Kopfhörer|m|Kopfhörer|headphones|A2
+Mikrofon|n|Mikrofone|microphone|B1
+Ladegerät|n|Ladegeräte|charger|A2
+USB-Stick|m|USB-Sticks|USB stick|A2
+Festplatte|f|Festplatten|hard drive|B1
+Speicher|m|Speicher|memory; storage|B1
+Arbeitsspeicher|m|Arbeitsspeicher|RAM|B2
+Prozessor|m|Prozessoren|processor|B1
+Grafikkarte|f|Grafikkarten|graphics card|B2
+Hardware|f|-|hardware|B1
+Software|f|-|software|B1
+Programm|n|Programme|program; programme|A1
+Anwendung|f|Anwendungen|application|B1
+App|f|Apps|app|A1
+Betriebssystem|n|Betriebssysteme|operating system|B2
+Datei|f|Dateien|file|A2
+Ordner|m|Ordner|folder|A2
+Dokument|n|Dokumente|document|A2
+Daten|p|-|data|A2
+Datenbank|f|Datenbanken|database|B1
+Information|f|Informationen|information|A2
+Symbol|n|Symbole|symbol; icon|B1
+Fenster|n|Fenster|window|A1
+Menü|n|Menüs|menu|B1
+Schaltfläche|f|Schaltflächen|button (on screen)|B2
+Cursor|m|Cursor|cursor|B2
+Einstellung|f|Einstellungen|setting|B1
+Update|n|Updates|update|B1
+Download|m|Downloads|download|B1
+Upload|m|Uploads|upload|B2
+Installation|f|Installationen|installation|B1
+Sicherung|f|Sicherungen|backup; security|B2
+Absturz|m|Abstürze|crash|B2
+Fehlermeldung|f|Fehlermeldungen|error message|B2
+Passwort|n|Passwörter|password|A2
+Kennwort|n|Kennwörter|password|B1
+Benutzername|m|Benutzernamen|username|B1
+Benutzer|m|Benutzer|user|B1
+Nutzer|m|Nutzer|user|B1
+Konto|n|Konten|account|A2
+Anmeldung|f|Anmeldungen|login; registration|B1
+Abmeldung|f|Abmeldungen|logout|B2
+Oberfläche|f|Oberflächen|surface; interface|B2
+Schnittstelle|f|Schnittstellen|interface|B2
+Code|m|Codes|code|B2
+Quellcode|m|Quellcodes|source code|C1
+Algorithmus|m|Algorithmen|algorithm|B2
+Programmierung|f|Programmierungen|programming|B2
+Programmiersprache|f|Programmiersprachen|programming language|B2
+Variable|f|Variablen|variable|B2
+Funktion|f|Funktionen|function|B1
+Schleife|f|Schleifen|loop|C1
+Bedingung|f|Bedingungen|condition|B1
+Anweisung|f|Anweisungen|instruction; statement|B2
+Befehl|m|Befehle|command|B2
+Eingabe|f|Eingaben|input|B1
+Ausgabe|f|Ausgaben|output; expense|B1
+Bibliothek|f|Bibliotheken|library|A1
+Entwickler|m|Entwickler|developer|B1
+Entwicklerin|f|Entwicklerinnen|female developer|B1
+Fehler|m|Fehler|bug; error|A1
+Kompilierung|f|Kompilierungen|compilation|C2
+Version|f|Versionen|version|B1
+Netzwerk|n|Netzwerke|network|B1
+Netz|n|Netze|net; network|B1
+Server|m|Server|server|B1
+Router|m|Router|router|B1
+Verbindung|f|Verbindungen|connection|A2
+Protokoll|n|Protokolle|protocol; minutes|B2
+Adresse|f|Adressen|address|A1
+Bandbreite|f|Bandbreiten|bandwidth|C1
+Datenübertragung|f|Datenübertragungen|data transfer|C1
+Cloud|f|Clouds|cloud|B2
+Rechenzentrum|n|Rechenzentren|data centre|C1
+Virtualisierung|f|Virtualisierungen|virtualisation|C2
+@domain internet
+Internet|n|-|internet|A1
+Internetzugang|m|Internetzugänge|internet access|B1
+Webseite|f|Webseiten|web page|A2
+Website|f|Websites|website|A2
+Homepage|f|Homepages|homepage|A2
+Browser|m|Browser|browser|B1
+Suchmaschine|f|Suchmaschinen|search engine|B1
+Link|m|Links|link|B1
+E-Mail|f|E-Mails|email|A1
+Nachricht|f|Nachrichten|message; news|A1
+Anhang|m|Anhänge|attachment; appendix|B1
+Posteingang|m|Posteingänge|inbox|B2
+Spam|m|-|spam|B2
+Chat|m|Chats|chat|A2
+Forum|n|Foren|forum|B1
+Blog|m|Blogs|blog|B1
+Video|n|Videos|video|A1
+Podcast|m|Podcasts|podcast|B1
+Stream|m|Streams|stream|B2
+Soziale Medien|p|-|social media|B1
+Profil|n|Profile|profile|B1
+Beitrag|m|Beiträge|post; contribution|B1
+Kommentar|m|Kommentare|comment|B1
+Follower|m|Follower|follower|B2
+Hashtag|m|Hashtags|hashtag|B2
+Online-Banking|n|-|online banking|B1
+WLAN|n|WLANs|Wi-Fi|A2
+Onlineshop|m|Onlineshops|online shop|B1
+Cookie|n|Cookies|cookie|B2
+Datenschutz|m|-|data protection|B1
+Datenschutzerklärung|f|Datenschutzerklärungen|privacy policy|B2
+Werbeanzeige|f|Werbeanzeigen|advertisement|B2
+Plattform|f|Plattformen|platform|B2
+Künstliche Intelligenz|f|-|artificial intelligence|B2
+@domain security
+Sicherheit|f|Sicherheiten|security; safety|A2
+Informationssicherheit|f|-|information security|C1
+Cybersicherheit|f|-|cybersecurity|C1
+IT-Sicherheit|f|-|IT security|C1
+Angriff|m|Angriffe|attack|B1
+Cyberangriff|m|Cyberangriffe|cyberattack|C1
+Hacker|m|Hacker|hacker|B2
+Hackerangriff|m|Hackerangriffe|hacker attack|C1
+Schadsoftware|f|-|malware|C1
+Virenschutz|m|-|antivirus protection|C1
+Virenscanner|m|Virenscanner|virus scanner|C1
+Firewall|f|Firewalls|firewall|C1
+Verschlüsselung|f|Verschlüsselungen|encryption|C1
+Entschlüsselung|f|Entschlüsselungen|decryption|C2
+Schlüssel|m|Schlüssel|key|A1
+Zertifikat|n|Zertifikate|certificate|B2
+Authentifizierung|f|Authentifizierungen|authentication|C1
+Berechtigung|f|Berechtigungen|permission; authorisation|C1
+Zugriff|m|Zugriffe|access|B2
+Zugangsdaten|p|-|login credentials|C1
+Sicherheitslücke|f|Sicherheitslücken|security vulnerability|C1
+Schwachstelle|f|Schwachstellen|weak point; vulnerability|C1
+Bedrohung|f|Bedrohungen|threat|B2
+Risiko|n|Risiken|risk|B1
+Datenleck|n|Datenlecks|data leak|C1
+Datendiebstahl|m|Datendiebstähle|data theft|C1
+Betrug|m|-|fraud|B1
+Phishing|n|-|phishing|C1
+Lösegeld|n|-|ransom|C1
+Datensicherung|f|Datensicherungen|data backup|B2
+Wiederherstellung|f|Wiederherstellungen|recovery; restoration|C1
+Überwachung|f|Überwachungen|surveillance; monitoring|B2
+Privatsphäre|f|-|privacy|B2
+Identität|f|Identitäten|identity|B2
+Sicherheitskopie|f|Sicherheitskopien|backup copy|C1
+Einbruch|m|Einbrüche|burglary; break-in|B1
+Diebstahl|m|Diebstähle|theft|B1
+Schutz|m|-|protection|B1
+Sicherheitsmaßnahme|f|Sicherheitsmaßnahmen|security measure|C1
+@domain science
+Wissenschaftler|m|Wissenschaftler|scientist|B1
+Experiment|n|Experimente|experiment|B1
+Versuch|m|Versuche|experiment; attempt|B1
+Labor|n|Labore|laboratory|B1
+Theorie|f|Theorien|theory|B1
+Hypothese|f|Hypothesen|hypothesis|B2
+Beweis|m|Beweise|proof; evidence|B1
+Formel|f|Formeln|formula|B1
+Gleichung|f|Gleichungen|equation|B2
+Messung|f|Messungen|measurement|B2
+Analyse|f|Analysen|analysis|B2
+Methode|f|Methoden|method|B1
+Studie|f|Studien|study|B1
+Ursache|f|Ursachen|cause|B1
+Wirkung|f|Wirkungen|effect|B1
+Folge|f|Folgen|consequence; episode|B1
+Zusammenhang|m|Zusammenhänge|context; connection|B2
+Prinzip|n|Prinzipien|principle|B2
+Gesetz|n|Gesetze|law|B1
+Naturgesetz|n|Naturgesetze|law of nature|C1
+Kraft|f|Kräfte|force; strength|B1
+Masse|f|Massen|mass|B2
+Gewicht|n|Gewichte|weight|A2
+Dichte|f|-|density|B2
+Druck|m|Drücke|pressure|B1
+Geschwindigkeit|f|Geschwindigkeiten|speed; velocity|A2
+Schwerkraft|f|-|gravity|B2
+Licht|n|-|light|A1
+Schall|m|-|sound (physics)|C1
+Wärme|f|-|heat|B1
+Magnet|m|Magnete|magnet|B2
+Atom|n|Atome|atom|B2
+Molekül|n|Moleküle|molecule|B2
+Element|n|Elemente|element|B2
+Zelle|f|Zellen|cell|B2
+Gen|n|Gene|gene|B2
+Organismus|m|Organismen|organism|B2
+Evolution|f|-|evolution|B2
+Mikroskop|n|Mikroskope|microscope|B2
+Teleskop|n|Teleskope|telescope|B2
+Sauerstoff|m|-|oxygen|B1
+Wasserstoff|m|-|hydrogen|B2
+Kohlenstoff|m|-|carbon|B2
+Stickstoff|m|-|nitrogen|B2
+Kohlendioxid|n|-|carbon dioxide|B2
+Metall|n|Metalle|metal|B1
+Säure|f|Säuren|acid|B2
+Salz|n|Salze|salt|A1
+Reaktion|f|Reaktionen|reaction|B1
+Lösung|f|Lösungen|solution|B1
+Mathematik|f|-|mathematics|A1
+Zahl|f|Zahlen|number|A1
+Summe|f|Summen|sum|A2
+Differenz|f|Differenzen|difference|B2
+Produkt|n|Produkte|product|A2
+Bruch|m|Brüche|fraction; break|B2
+Prozent|n|Prozente|percent|A2
+Durchschnitt|m|Durchschnitte|average|B1
+Wahrscheinlichkeit|f|Wahrscheinlichkeiten|probability|B2
+Statistik|f|Statistiken|statistics|B2
+Diagramm|n|Diagramme|diagram; chart|B1
+Tabelle|f|Tabellen|table|A2
+Kreis|m|Kreise|circle|A2
+Dreieck|n|Dreiecke|triangle|A2
+Viereck|n|Vierecke|quadrilateral|B1
+Quadrat|n|Quadrate|square|A2
+Rechteck|n|Rechtecke|rectangle|A2
+Linie|f|Linien|line|A2
+Winkel|m|Winkel|angle|B1
+Punkt|m|Punkte|point; dot|A1
+Fläche|f|Flächen|area; surface|B1
+Volumen|n|Volumen|volume|B2
+Länge|f|Längen|length|A2
+Breite|f|Breiten|width|A2
+Höhe|f|Höhen|height|A2
+Tiefe|f|Tiefen|depth|B1
+Umfang|m|Umfänge|circumference; extent|B2
+@domain measures
+Meter|m|Meter|metre|A1
+Kilometer|m|Kilometer|kilometre|A1
+Zentimeter|m|Zentimeter|centimetre|A1
+Millimeter|m|Millimeter|millimetre|A2
+Kilogramm|n|Kilogramme|kilogram|A1
+Gramm|n|Gramme|gram|A1
+Pfund|n|Pfunde|pound (500 g)|A2
+Tonne|f|Tonnen|tonne; barrel|B1
+Liter|m|Liter|litre|A1
+Stück|n|Stücke|piece|A1
+Paar|n|Paare|pair|A2
+Dutzend|n|Dutzende|dozen|B1
+Hälfte|f|Hälften|half|A2
+Drittel|n|Drittel|third|B1
+Viertel|n|Viertel|quarter|A1
+Prozentsatz|m|Prozentsätze|percentage|B2
+Maßeinheit|f|Maßeinheiten|unit of measurement|B2
+Einheit|f|Einheiten|unit|B1
+Anzahl|f|-|number; quantity|A2
+Mehrzahl|f|-|plural; majority|B1
+Einzahl|f|-|singular|B1
